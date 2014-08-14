@@ -105,6 +105,38 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
+        public string GetPerson(Plurality plurality)
+        {
+            if (plurality == Plurality.Singular)
+            {
+                return GetSingularPerson(DomainFactory.RandomNumber.GetRand(1, 18));
+            }
+
+            return GetPluralPerson(DomainFactory.RandomNumber.GetRand(1, 12));
+        }
+
+        private string GetPluralPerson(int result)
+        {
+            switch (result)
+            {
+                case 1:
+                    return "key people";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string GetSingularPerson(int result)
+        {
+            switch (result)
+            {
+                case 1:
+                    return "steering committee";
+                default:
+                    return GetBoss();
+            }
+        }
+
         private string Vice()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 41);

@@ -3,6 +3,7 @@
     public interface IGenerator
     {
         string GetBoss();
+        string GetPerson(Plurality plurality);
 
         /// <summary>
         /// For a given random number, return a string representing the managing part of a job
