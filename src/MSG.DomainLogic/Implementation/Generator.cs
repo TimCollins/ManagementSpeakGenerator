@@ -105,14 +105,27 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string GetPerson(Plurality plurality)
+        public string GetPerson()
         {
-            if (plurality == Plurality.Singular)
-            {
-                return GetSingularPerson(DomainFactory.RandomNumber.GetRand(1, 18));
-            }
+            // 1 == singular, 2 == plural
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
 
-            return GetPluralPerson(DomainFactory.RandomNumber.GetRand(1, 12));
+            return result == 1
+                ? GetSingularPerson(DomainFactory.RandomNumber.GetRand(1, 18))
+                : GetPluralPerson(DomainFactory.RandomNumber.GetRand(1, 12));
+        }
+
+        public string GetPersonVerbHavingThingComplement()
+        {
+            return string.Empty;
+            //Boss => Person => Person_Verb_Having_Thing_Complement etc.
+
+            //Sentence_Guaranteed_Amount calls Sentences calls Sentence calls Articulated_Propositions calls Proposition calls Thing_Verb_And_Ending calls Person
+            //Sentence_Guaranteed_Amount calls Sentences calls Sentence calls Articulated_Propositions calls Proposition calls Person
+
+            //Workshop calls Sentence_Guaranteed_Amount 500 times.
+            //Short_Workshop calls Sentence_Guaranteed_Amount 5 times.
+
         }
 
         private string GetPluralPerson(int result)
