@@ -121,6 +121,26 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                     return "key people";
+                case 2:
+                    return "human resources";
+                case 3:
+                    return "customers";
+                case 4:
+                    return "clients";
+                case 5:
+                    return "resources";
+                case 6:
+                    return "team players";
+                case 7:
+                    return "enablers";
+                case 8:
+                    return "stakeholders";
+                case 9:
+                    return "standard-setters";
+                case 10:
+                    return "partners";
+                case 11:
+                    return "business leaders";
                 default:
                     return string.Empty;
             }
@@ -132,10 +152,144 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                     return "steering committee";
+                case 2:
+                    return "group";
+                case 3:
+                    return "project manager";
+                case 4:
+                    // TODO: Establish if this should be a random choice between singular and plural
+                    // or whether it should do as here and follow the parent method.
+                    return GetThingAtom(Plurality.Singular);
+                case 5:
+                    return "community";
+                case 6:
+                    return "sales manager";
+                case 7:
+                    return "enabler";
+                case 8:
+                    return "powerful champion";
+                case 9:
+                    return "thought leader";
+                case 10:
+                    return "gatekeeper";
+                case 11:
+                    return "resource";
+                case 12:
+                    return "senior support staff";
                 default:
                     return GetBoss();
             }
         }
+
+        private string GetThingAtom(Plurality plurality)
+        {
+            if (plurality == Plurality.Singular)
+            {
+                return GetSingularAtom(DomainFactory.RandomNumber.GetRand(1, 469));
+            }
+
+            return GetPluralAtom(DomainFactory.RandomNumber.GetRand(1, 205));
+        }
+
+        private string GetSingularAtom(int rand)
+        {
+            switch (rand)
+            {
+                case 1:
+                    return GetTimelessEvent();
+                case 2:
+                    return "team building";
+                case 3:
+                    return "focus";
+                // ...etc
+                default:
+                    return GetInner();
+            }
+        }
+
+        private string GetInner()
+        {
+            int result = DomainFactory.RandomNumber.GetRand(1, 192);
+
+            switch (result)
+            {
+                case 1:
+                    return "mission";
+                case 2:
+                    return "vision";
+                case 3:
+                    return "guideline";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string GetTimelessEvent()
+        {
+            int result = DomainFactory.RandomNumber.GetRand(1, 5);
+
+            switch (result)
+            {
+                case 1:
+                    return "kick-off";
+                case 2:
+                    return "roll-out";
+                case 3:
+                    return "client-event";
+                case 4:
+                    return "quarter results";
+                default:
+                    return string.Empty;
+            }            
+        }
+
+        private string GetPluralAtom(int rand)
+        {
+            switch (rand)
+            {
+                case 1:
+                    return "key target markets";
+                case 2:
+                    return "style guidelines";
+                default:
+                    // TODO: As elsewhere, check if this should be random or derived from parent.
+                    return GetEventualPlural(GetInner(), Plurality.Plural);
+            }
+        }
+
+        private string GetEventualPlural(string inner, Plurality plurality)
+        {
+            if (inner.Length < 1 || plurality == Plurality.Singular)
+            {
+                return inner;
+            }
+
+            if (inner == "matrix")
+            {
+                return "matrices";
+            }
+
+            if (inner == "analysis")
+            {
+                return "analyses";
+            }
+
+            char last = inner[inner.Length - 1];
+
+            switch (last)
+            {
+                case 's':
+                case 'x':
+                case 'z':
+                case 'h':
+                    return inner + "es";
+                case 'y':
+                    return inner.Substring(0, inner.Length - 1) + "ies";
+                default:
+                    return inner + "s";
+            }
+        }
+        
 
         private string Vice()
         {
