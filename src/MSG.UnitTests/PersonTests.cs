@@ -20,12 +20,12 @@ namespace MSG.UnitTests
         [Test]
         public void PersonTestSingularWithBoss()
         {
-            MoqUtil.SetupRandMock(1, 17, 1, 2, 3, 4, 2, 6);
-            string output = DomainFactory.Generator.GetPerson();
+                MoqUtil.SetupRandMock(1, 17, 1, 2, 3, 4, 2, 6);
+                string output = DomainFactory.Generator.GetPerson();
 
-            MoqUtil.UndoMockRandomNumber();
+                MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Chief of Management Office", output);
+                Assert.AreEqual("Acting Chief of Management Office", output);
         }
 
         [Test]

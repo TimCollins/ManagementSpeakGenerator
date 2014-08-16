@@ -1,9 +1,12 @@
-﻿namespace MSG.DomainLogic.Interfaces
+﻿using System.Collections.Generic;
+
+namespace MSG.DomainLogic.Interfaces
 {
     public interface IGenerator
     {
         string GetBoss();
         string GetPerson();
+        List<string> GetSentences(int count);
 
         /// <summary>
         /// For a given random number, return a string representing the managing part of a job
