@@ -7,7 +7,7 @@ namespace MSG.UnitTests
     class GeneratorTests
     {
         [Test]
-        public void VerifyBlankManagingInTitle()
+        public void VerifyBlankManaging()
         {
             MoqUtil.SetupRandMock(1, 17, 2, 2, 3, 2, 14);
 
@@ -20,7 +20,6 @@ namespace MSG.UnitTests
         [Test]
         public void VerifySpacingInManagingHead()
         {
-            // 1, 1, 2, 2, 3, 2 == Managing
             MoqUtil.SetupRandMock(1, 1, 2, 2, 3, 2, 14);
             
             string boss = DomainFactory.Generator.GetBoss();
@@ -32,13 +31,62 @@ namespace MSG.UnitTests
         [Test]
         public void VerifySpacingInActingHead()
         {
-            // 1, 2, 2, 2, 3, 2 == Acting
             MoqUtil.SetupRandMock(1, 2, 2, 2, 3, 2, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Acting Head of Operations", boss);
+        }
+
+        [Test]
+        public void VerifyDirectorTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 1, 17, 4);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Director of Legal", boss);
+        }
+
+        [Test]
+        public void VerifyChiefTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 2, 7);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Chief of Customer Relations", boss);
+        }
+
+        [Test]
+        public void VerifyHeadTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 3, 17, 4);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Head of Legal", boss);
+        }
+
+        [Test]
+        public void VerifyCoHeadTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 3, 1, 4);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Co-Head of Legal", boss);
+        }
+
+        [Test]
+        public void VerifyPresidentTitle()
+        {
+            
         }
 
         //[Test]

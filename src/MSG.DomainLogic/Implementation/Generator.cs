@@ -53,7 +53,7 @@ namespace MSG.DomainLogic.Implementation
             return result == 1 ? "Executive " : string.Empty;
         }
 
-        public string Title()
+        private string Title()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
