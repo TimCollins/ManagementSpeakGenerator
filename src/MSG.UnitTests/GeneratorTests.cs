@@ -9,7 +9,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBlankManaging()
         {
-            MoqUtil.SetupRandMock(1, 17, 2, 2, 3, 2, 14);
+            MoqUtil.SetupRandMock(1, 7, 2, 2, 3, 2, 14);
 
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
@@ -18,8 +17,10 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                     return Managing() + Age() + Exec() + Title() + " of " + Department();
-                default:
+                case 2:
                     return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
             
         }
@@ -39,8 +40,15 @@ namespace MSG.DomainLogic.Implementation
                     return "Managing ";
                 case 2:
                     return "Acting ";
-                default:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
                     return string.Empty;
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -73,7 +81,7 @@ namespace MSG.DomainLogic.Implementation
                 case 4:
                     return string.Format("{0}President", Vice());
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -112,7 +120,7 @@ namespace MSG.DomainLogic.Implementation
                 case 14:
                     return "Marketing";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -183,7 +191,8 @@ namespace MSG.DomainLogic.Implementation
                 case 18:
                     return GetProposition() + "; this is why " + GetProposition();
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
+
                     //when 18       => return Proposition & "; this is why " & Proposition;
                     //when 19       => return Proposition & "; nevertheless " & Proposition;
                     //when 20       => return Proposition & ", whereas " & Proposition;
@@ -208,7 +217,7 @@ namespace MSG.DomainLogic.Implementation
                 case 5:
                     return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
                     //   when 1 .. 5    => -- "We need to..."
                     //      return
                     //      Faukon & ' ' &
@@ -260,7 +269,7 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     return "across the board";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
 
              //when 4 => return " in this space";
@@ -319,7 +328,7 @@ namespace MSG.DomainLogic.Implementation
                     return GetPersonVerbHavingBadThingComplement(plurality);
 
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
 
               //   when  1 .. 10  =>
@@ -352,7 +361,7 @@ namespace MSG.DomainLogic.Implementation
                 case 4:
                     return "mitigate";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -368,7 +377,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "address the overarching issues ";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
 
             //when 3  => return "benchmark the portfolio";
@@ -445,7 +454,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "credibly ";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
 
               //case R92 is -- proportion: 3/4 empty adverb
@@ -503,7 +512,7 @@ namespace MSG.DomainLogic.Implementation
                 case 9:
                     return "we continue to work tirelessly and diligently to";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -527,8 +536,10 @@ namespace MSG.DomainLogic.Implementation
                     return "matrix";
                 case 11:
                     return "cube";
-                default:
+                case 12:
                     return "sphere";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -559,8 +570,10 @@ namespace MSG.DomainLogic.Implementation
                     return "partners";
                 case 11:
                     return "business leaders";
-                default:
+                case 12:
                     return string.Empty;
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -594,8 +607,14 @@ namespace MSG.DomainLogic.Implementation
                     return "resource";
                 case 12:
                     return "senior support staff";
-                default:
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
                     return GetBoss();
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
             }
         }
 
@@ -657,7 +676,7 @@ namespace MSG.DomainLogic.Implementation
                 case 4:
                     return "quarter results";
                 default:
-                    return string.Empty;
+                    throw new RandomNumberException(result + " is an invalid value.");
             }            
         }
 
