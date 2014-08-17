@@ -1,10 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
 {
     public class Generator : IGenerator
     {
+        /// <summary>
+        /// Get a string representing the job title of a boss.
+        /// </summary>
+        /// <returns></returns>
         public string GetBoss()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
@@ -21,9 +26,9 @@ namespace MSG.DomainLogic.Implementation
 
         /// <summary>
         /// For a given random number, return a string representing the managing part of a job
-        /// title.
+        /// title. Called by GetBoss().
         /// </summary>
-        /// <returns>An appropriate string.</returns>        
+        /// <returns>An appropriate string.</returns>
         private string Managing()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 9);
@@ -121,7 +126,7 @@ namespace MSG.DomainLogic.Implementation
                 : GetPluralPerson(DomainFactory.RandomNumber.GetRand(1, 12));
         }
 
-        public string GetPersonVerbHavingThingComplement()
+        private string GetPersonVerbHavingThingComplement()
         {
             return string.Empty;
             //Boss => Person => Person_Verb_Having_Thing_Complement etc.
@@ -438,7 +443,7 @@ namespace MSG.DomainLogic.Implementation
                 case 1:
                     return "interactively ";
                 case 2:
-                    return "`credibly ";
+                    return "credibly ";
                 default:
                     return string.Empty;
             }
@@ -481,21 +486,52 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                     return "we need to ";
+                case 2:
+                    return "we've got to";
+                case 3:
+                    return "the reporting unit should";
+                case 4:
+                    return "controlling should";
+                case 5:
+                    return "we must activate the " + GetMatrix() + " to";
+                case 6:
+                    return "pursuing this route will enable us to ";
+                case 7:
+                    return "we will go the extra mile to";
+                case 8:
+                    return "we are working hard to";
+                case 9:
+                    return "we continue to work tirelessly and diligently to";
                 default:
                     return string.Empty;
             }
-            //case R9 is
-            //   when 1 => return "we need to";
-            //   when 2 => return "we've got to";
-            //   when 3 => return "the reporting unit should";
-            //   when 4 => return "controlling should";
-            //   when 5 => return "we must activate the " & Matrix_Or_So & " to";
-            //   when 6 => return "pursuing this route will enable us to";
-            //   when 7 => return "we will go the extra mile to";
-            //   when 8 => return "we are working hard to";
-            //   when 9 => return "we continue to work tirelessly and diligently to";
-            //end case;
         }
+
+        private string GetMatrix()
+        {
+            int result = DomainFactory.RandomNumber.GetRand(1, 13);
+            switch (result)
+            {
+                case 1:
+                case 2:
+                    return "organisation";
+                case 3:                    
+                case 4:
+                case 5:
+                case 6:
+                    return "silo";
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    return "matrix";
+                case 11:
+                    return "cube";
+                default:
+                    return "sphere";
+            }
+        }
+
 
         private string GetPluralPerson(int result)
         {
