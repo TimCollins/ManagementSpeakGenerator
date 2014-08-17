@@ -171,39 +171,27 @@ namespace MSG.UnitTests
             Assert.AreEqual("Acting Head of Client Relationship", boss);
         }
 
-        //[Test]
-        //public void VerifySpacingInActingSeniorExecutiveHead()
-        //{
-        //    StringBuilder boss = new StringBuilder();
+        [Test]
+        public void VerifySpacingInActingSeniorExecutiveHead()
+        {
+            MoqUtil.SetupRandMock(1, 2, 1, 1, 3, 2, 12);
 
-        //    MoqUtil.SetupRandMock(2, 1, 1, 3, 12);
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
 
-        //    boss.Append(DomainFactory.Generator.Managing());
-        //    boss.Append(DomainFactory.Generator.Age());
-        //    boss.Append(DomainFactory.Generator.Exec());
-        //    boss.Append(DomainFactory.Generator.Title());
+            Assert.AreEqual("Acting Senior Executive Head of IT Strategy", boss);
+        }
 
-        //    MoqUtil.UndoMockRandomNumber();
+        [Test]
+        public void VerifySpacingInManagingDirector()
+        {
+            MoqUtil.SetupRandMock(1, 1, 2, 2, 1, 12, 10);
 
-        //    Assert.AreEqual("Acting Senior Executive Head", boss.ToString());
-        //}
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
 
-        //[Test]
-        //public void VerifySpacingInManagingDirector()
-        //{
-        //    StringBuilder boss = new StringBuilder();
-
-        //    MoqUtil.SetupRandMock(1, 2, 2, 1, 12);
-
-        //    boss.Append(DomainFactory.Generator.Managing());
-        //    boss.Append(DomainFactory.Generator.Age());
-        //    boss.Append(DomainFactory.Generator.Exec());
-        //    boss.Append(DomainFactory.Generator.Title());
-
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Managing Director", boss.ToString());
-        //}
+            Assert.AreEqual("Managing Director of Business Planning", boss);
+        }
 
         [Test]
         public void VerifyBoss()
@@ -219,30 +207,12 @@ namespace MSG.UnitTests
             Assert.IsNotNull(boss);
         }
 
-        //[Test]
-        //public void VerifyPresidentSpacing()
-        //{
-        //    StringBuilder boss = new StringBuilder();
-
-        //    MoqUtil.SetupRandMock(3, 2, 2, 4, 12);
-
-        //    boss.Append(DomainFactory.Generator.Managing());
-        //    boss.Append(DomainFactory.Generator.Age());
-        //    boss.Append(DomainFactory.Generator.Exec());
-        //    boss.Append(DomainFactory.Generator.Title());
-
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("President", boss.ToString());
-        //}
-
         [Test]
         public void VerifyBossAlt()
         {
             MoqUtil.SetupRandMock(2, 1, 17);
 
             string boss = DomainFactory.Generator.GetBoss();
-
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Group Chief Technical Officer", boss);
@@ -257,7 +227,6 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(2, 3, 14, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
-
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Chief Operations Officer", boss);
@@ -272,7 +241,6 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(2, 1, 16, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
-
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Group Chief Digital Officer", boss);
@@ -287,7 +255,6 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(2, 2, 16, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
-
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Global Chief Digital Officer", boss);
