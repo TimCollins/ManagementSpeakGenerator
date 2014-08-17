@@ -116,6 +116,28 @@ namespace MSG.UnitTests
             Assert.AreEqual("Corporate Vice President of IT Operations", boss);
         }
 
+        [Test]
+        public void VerifySeniorAge()
+        {
+            MoqUtil.SetupRandMock(1, 3, 1, 2, 4, 8, 7);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Senior Vice President of Customer Relations", boss);
+        }
+
+        [Test]
+        public void VerifyNoSeniorAge()
+        {
+            MoqUtil.SetupRandMock(1, 3, 1, 2, 4, 8, 14);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Senior Vice President of Marketing", boss);
+        }
+
         //[Test]
         //public void VerifySpacingInActingSeniorExecutiveHead()
         //{

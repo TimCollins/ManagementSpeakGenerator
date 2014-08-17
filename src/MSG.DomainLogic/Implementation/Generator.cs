@@ -39,7 +39,7 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string Age()
+        private string Age()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 

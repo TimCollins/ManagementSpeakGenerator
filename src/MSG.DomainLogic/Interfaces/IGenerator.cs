@@ -8,8 +8,6 @@ namespace MSG.DomainLogic.Interfaces
         string GetPerson();
         List<string> GetSentences(int count);
 
-        string Age();
-
         string Exec() ;
 
         string Department();
