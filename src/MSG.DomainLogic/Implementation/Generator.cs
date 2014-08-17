@@ -19,7 +19,12 @@ namespace MSG.DomainLogic.Implementation
             
         }
 
-        public string Managing()
+        /// <summary>
+        /// For a given random number, return a string representing the managing part of a job
+        /// title.
+        /// </summary>
+        /// <returns>An appropriate string.</returns>        
+        private string Managing()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 9);
 
@@ -34,21 +39,21 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string Age()
+        private string Age()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
             return result == 1 ? "Senior " : string.Empty;
         }
 
-        public string Exec()
+        private string Exec()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 7);
 
             return result == 1 ? "Executive " : string.Empty;
         }
 
-        public string Title()
+        private string Title()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
@@ -67,7 +72,7 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string Department()
+        private string Department()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 15);
 
@@ -666,7 +671,6 @@ namespace MSG.DomainLogic.Implementation
                     return inner + "s";
             }
         }
-        
 
         private string Vice()
         {
