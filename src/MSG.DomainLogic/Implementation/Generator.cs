@@ -46,7 +46,7 @@ namespace MSG.DomainLogic.Implementation
             return result == 1 ? "Senior " : string.Empty;
         }
 
-        public string Exec()
+        private string Exec()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 7);
 
