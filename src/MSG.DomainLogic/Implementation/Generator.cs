@@ -19,6 +19,11 @@ namespace MSG.DomainLogic.Implementation
             
         }
 
+        /// <summary>
+        /// For a given random number, return a string representing the managing part of a job
+        /// title.
+        /// </summary>
+        /// <returns>An appropriate string.</returns>        
         public string Managing()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 9);
@@ -666,7 +671,6 @@ namespace MSG.DomainLogic.Implementation
                     return inner + "s";
             }
         }
-        
 
         private string Vice()
         {
