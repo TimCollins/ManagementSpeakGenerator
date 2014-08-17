@@ -24,7 +24,7 @@ namespace MSG.DomainLogic.Implementation
         /// title.
         /// </summary>
         /// <returns>An appropriate string.</returns>        
-        public string Managing()
+        private string Managing()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 9);
 
