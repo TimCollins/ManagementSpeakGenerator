@@ -75,18 +75,45 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyCoHeadTitle()
         {
-            MoqUtil.SetupRandMock(1, 3, 2, 2, 3, 1, 4);
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 3, 1, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Co-Head of Legal", boss);
+            Assert.AreEqual("Co-Head of Operations", boss);
         }
 
         [Test]
         public void VerifyPresidentTitle()
         {
-            
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 17, 7);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("President of Customer Relations", boss);
+        }
+
+        [Test]
+        public void VerifyVicePresidentTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 8, 14);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Vice President of Marketing", boss);
+        }
+
+        [Test]
+        public void VerifyCorporateVicePresidentTitle()
+        {
+            MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 11, 13);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Corporate Vice President of IT Operations", boss);
         }
 
         //[Test]
