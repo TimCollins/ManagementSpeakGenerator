@@ -7,7 +7,5 @@ namespace MSG.DomainLogic.Interfaces
         string GetBoss();
         string GetPerson();
         List<string> GetSentences(int count);
-
-        string Department();
     }
 }

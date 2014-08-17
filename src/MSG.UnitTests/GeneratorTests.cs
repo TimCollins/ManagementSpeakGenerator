@@ -160,6 +160,17 @@ namespace MSG.UnitTests
             Assert.AreEqual("Chief of Legal", boss);
         }
 
+        [Test]
+        public void VerifyDepartment()
+        {
+            MoqUtil.SetupRandMock(1, 2, 2, 2, 3, 2, 9);
+
+            string boss = DomainFactory.Generator.GetBoss();
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Acting Head of Client Relationship", boss);
+        }
+
         //[Test]
         //public void VerifySpacingInActingSeniorExecutiveHead()
         //{

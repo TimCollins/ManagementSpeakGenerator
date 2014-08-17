@@ -72,7 +72,7 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string Department()
+        private string Department()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 15);
 
