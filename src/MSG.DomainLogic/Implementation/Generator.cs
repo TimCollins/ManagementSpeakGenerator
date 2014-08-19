@@ -20,7 +20,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer";
                 default:
-                    throw new RandomNumberException(result + " is an invalid value.");
+                    return string.Empty;
             }
             
         }
@@ -190,6 +190,24 @@ namespace MSG.DomainLogic.Implementation
                     return GetProposition();
                 case 18:
                     return GetProposition() + "; this is why " + GetProposition();
+                case 19:
+                    return GetProposition() + "; nevertheless " + GetProposition();
+                case 20:
+                    return GetProposition() + "; whereas " + GetProposition();
+                case 21:
+                    return "our gut feeling is that " + GetProposition();
+                case 22:
+                case 23:
+                case 24:
+                case 25:
+                    return GetProposition() + ", while " + GetProposition();
+                case 26:
+                    return GetProposition() + ". At the same time, " + GetProposition();
+                case 27:
+                    return GetProposition() + ". As a result " + GetProposition();
+                case 28:
+                    return GetProposition() + ", whilst " + GetProposition();
+
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
 
@@ -208,57 +226,61 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 101);
 
-            switch (result)
+            // Switching to if statements instead of enormous case statements.
+            if (result > 0 && result < 6)
             {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                    return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
-                default:
-                    throw new RandomNumberException(result + " is an invalid value.");
-                    //   when 1 .. 5    => -- "We need to..."
-                    //      return
-                    //      Faukon & ' ' &
-                    //      Eventual_Adverb &
-                    //      Person_Verb_And_Ending (Plural) & -- Trick to get the infinitive
-                    //      Eventual_Postfixed_Adverb;
-                    //      -- infinitive written same as present plural
-                    //   when 6 .. 50    => -- ** PERSON...
-                    //      return
-                    //        "the " & Person (Sp1) & ' ' &
-                    //        Eventual_Adverb &
-                    //        Person_Verb_And_Ending (Sp1) &
-                    //        Eventual_Postfixed_Adverb;
-                    //   when 51 .. 92   => -- ** THING...
-                    //      return
-                    //      Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
-                    //      Eventual_Adverb &
-                    //      Thing_Verb_And_Ending (Sp1) &
-                    //      Eventual_Postfixed_Adverb;
-                    //   when 93..97     => -- ** thing and thing ...
-                    //      return -- nb: no article, no adjective
-                    //      Thing_Atom (Singular) & " and " &
-                    //      Thing_Atom (Singular) & ' ' &
-                    //      Eventual_Adverb &
-                    //      Thing_Verb_And_Ending (Plural) &
-                    //      Eventual_Postfixed_Adverb;
-                    //   when 98..100    => -- ** thing, thing and thing ...
-                    //      return -- nb: no article, no adjective
-                    //      Thing_Atom (Singular) & ", " &
-                    //      Thing_Atom (Singular) & " and " &
-                    //      Thing_Atom (Singular) & ' ' &
-                    //      Eventual_Adverb &
-                    //      Thing_Verb_And_Ending (Plural) &
-                    //      Eventual_Postfixed_Adverb;
-                    //end case;
+                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
             }
+
+            if (result > 5 && result < 51)
+            {
+                return "the " + GetPerson() + GetEventualAdverb() + GetPersonVerbAndEnding() +
+                       GetEventualPostfixedAdverb();
+            }
+
+            return string.Empty;
+
+            //   when 1 .. 5    => -- "We need to..."
+            //      return
+            //      Faukon & ' ' &
+            //      Eventual_Adverb &
+            //      Person_Verb_And_Ending (Plural) & -- Trick to get the infinitive
+            //      Eventual_Postfixed_Adverb;
+            //      -- infinitive written same as present plural
+            //   when 6 .. 50    => -- ** PERSON...
+            //      return
+            //        "the " & Person (Sp1) & ' ' &
+            //        Eventual_Adverb &
+            //        Person_Verb_And_Ending (Sp1) &
+            //        Eventual_Postfixed_Adverb;
+            //   when 51 .. 92   => -- ** THING...
+            //      return
+            //      Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
+            //      Eventual_Adverb &
+            //      Thing_Verb_And_Ending (Sp1) &
+            //      Eventual_Postfixed_Adverb;
+            //   when 93..97     => -- ** thing and thing ...
+            //      return -- nb: no article, no adjective
+            //      Thing_Atom (Singular) & " and " &
+            //      Thing_Atom (Singular) & ' ' &
+            //      Eventual_Adverb &
+            //      Thing_Verb_And_Ending (Plural) &
+            //      Eventual_Postfixed_Adverb;
+            //   when 98..100    => -- ** thing, thing and thing ...
+            //      return -- nb: no article, no adjective
+            //      Thing_Atom (Singular) & ", " &
+            //      Thing_Atom (Singular) & " and " &
+            //      Thing_Atom (Singular) & ' ' &
+            //      Eventual_Adverb &
+            //      Thing_Verb_And_Ending (Plural) &
+            //      Eventual_Postfixed_Adverb;
+            //end case;
         }
 
         private string GetEventualPostfixedAdverb()
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 156);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 156);
+            int result = DomainFactory.RandomNumber.GetRand(1, 4);
 
             switch (result)
             {
@@ -311,44 +333,38 @@ namespace MSG.DomainLogic.Implementation
             // TODO: Put a random selector in for this:
             const Plurality plurality = Plurality.Plural;
 
-            switch (result)
+            if (result > 0 && result < 11)
             {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                    return GetPersonVerbAndComplement(plurality);
-                case 11:
-                    return GetPersonVerbHavingBadThingComplement(plurality);
-
-                default:
-                    throw new RandomNumberException(result + " is an invalid value.");
+                return GetPersonVerbAndComplement(plurality);
             }
 
-              //   when  1 .. 10  =>
-              //      return Person_Verb_And_Complement (P);
-              //   when 11 .. 15  => -- Fight-the-Evil situation
-              //      return
-              //        Person_Verb_Having_Bad_Thing_Complement (P) &
-              //        ' ' &
-              //        Add_Random_Article (Plural, Bad_Things);
-              //   when 16 .. 95 =>
-              //      return
-              //        Person_Verb_Having_Thing_Complement (P) &
-              //        ' ' &
-              //        Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
-              //end case;
+            if (result > 10 && result < 16)
+            {
+                return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle();
+            }
+
+            if (result > 15 && result < 96)
+            {
+                return GetPersonHavingThingComplement(plurality) + GetRandomArticle();
+            }
+
+            throw new RandomNumberException(result + " is an invalid value.");
+        }
+
+        private string GetPersonHavingThingComplement(Plurality plurality)
+        {
+            return string.Empty;
+        }
+
+        private string GetRandomArticle()
+        {
+            return string.Empty;
         }
 
         private string GetPersonVerbHavingBadThingComplement(Plurality plurality)
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 93);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 93);
+            int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
             switch (result)
             {
@@ -368,7 +384,8 @@ namespace MSG.DomainLogic.Implementation
         private string GetPersonVerbAndComplement(Plurality plurality)
         {
             // Implements a function called Inner which I think is referenced in a few places.
-            int result = DomainFactory.RandomNumber.GetRand(1, 61);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 61);
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
 
             switch (result)
             {
@@ -454,7 +471,8 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "credibly ";
                 default:
-                    throw new RandomNumberException(result + " is an invalid value.");
+                    //throw new RandomNumberException(result + " is an invalid value.");
+                    return string.Empty;
             }
 
               //case R92 is -- proportion: 3/4 empty adverb

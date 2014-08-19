@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using MSG.DomainLogic;
 
@@ -15,10 +16,16 @@ namespace MSG.ConsoleApp
 
             using (StreamWriter sw = new StreamWriter(fileName))
             {
-                for (int i = 0; i < 500; i++)
+                //for (int i = 0; i < 500; i++)
+                //{
+                //    sw.Write(DomainFactory.Generator.GetBoss() + Environment.NewLine);                    
+                //}
+                List<string> sentences = DomainFactory.Generator.GetSentences(500);
+                foreach (string s in sentences)
                 {
-                    sw.Write(DomainFactory.Generator.GetBoss() + Environment.NewLine);
+                    sw.Write(s + Environment.NewLine);    
                 }
+                
             }
 
             Console.WriteLine("Data written to {0}", fileName);
