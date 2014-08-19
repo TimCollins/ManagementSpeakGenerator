@@ -25,6 +25,28 @@ namespace MSG.DomainLogic.Implementation
             
         }
 
+        public string GetPerson()
+        {
+            // 1 == singular, 2 == plural
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+
+            return result == 1
+                ? GetSingularPerson()
+                : GetPluralPerson();
+        }
+
+        public List<string> GetSentences(int count)
+        {
+            List<string> sentences = new List<string>();
+
+            for (int i = 0; i < count; i++)
+            {
+                sentences.Add(GetSentence());
+            }
+
+            return sentences;
+        }
+
         /// <summary>
         /// For a given random number, return a string representing the managing part of a job
         /// title. Called by GetBoss().
@@ -124,16 +146,6 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public string GetPerson()
-        {
-            // 1 == singular, 2 == plural
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
-
-            return result == 1
-                ? GetSingularPerson()
-                : GetPluralPerson();
-        }
-
         private string GetPersonVerbHavingThingComplement()
         {
             return string.Empty;
@@ -145,18 +157,6 @@ namespace MSG.DomainLogic.Implementation
             //Workshop calls Sentence_Guaranteed_Amount 500 times.
             //Short_Workshop calls Sentence_Guaranteed_Amount 5 times.
 
-        }
-
-        public List<string> GetSentences(int count)
-        {
-            List<string> sentences = new List<string>();
-
-            for (int i = 0; i < count; i++)
-            {
-                sentences.Add(GetSentence());
-            }
-
-            return sentences;
         }
 
         private string GetSentence()
@@ -513,19 +513,19 @@ namespace MSG.DomainLogic.Implementation
                 case 1:
                     return "we need to ";
                 case 2:
-                    return "we've got to";
+                    return "we've got to ";
                 case 3:
-                    return "the reporting unit should";
+                    return "the reporting unit should ";
                 case 4:
-                    return "controlling should";
+                    return "controlling should ";
                 case 5:
-                    return "we must activate the " + GetMatrix() + " to";
+                    return "we must activate the " + GetMatrix() + " to ";
                 case 6:
                     return "pursuing this route will enable us to ";
                 case 7:
-                    return "we will go the extra mile to";
+                    return "we will go the extra mile to ";
                 case 8:
-                    return "we are working hard to";
+                    return "we are working hard to ";
                 case 9:
                     return "we continue to work tirelessly and diligently to ";
                 default:
