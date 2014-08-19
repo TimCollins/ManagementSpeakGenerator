@@ -124,5 +124,16 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.StartsWith("we continue to work tirelessly and diligently to"));
         }
+
+        [Test]
+        public void VerifyEventualAdverbInteractively()
+        {
+            MoqUtil.SetupRandMock(17, 5, 9, 1, 1, 1, 1);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains(" interactively "));
+        }
     }
 }

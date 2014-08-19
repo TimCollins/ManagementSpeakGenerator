@@ -527,7 +527,7 @@ namespace MSG.DomainLogic.Implementation
                 case 8:
                     return "we are working hard to";
                 case 9:
-                    return "we continue to work tirelessly and diligently to";
+                    return "we continue to work tirelessly and diligently to ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
