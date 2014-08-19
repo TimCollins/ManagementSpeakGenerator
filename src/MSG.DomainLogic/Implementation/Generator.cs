@@ -469,39 +469,51 @@ namespace MSG.DomainLogic.Implementation
                     return "interactively ";
                 case 2:
                     return "credibly ";
+                case 3:
+                    return "quickly ";
+                case 4:
+                    return "proactively ";
+                case 5:
+                    return "200% ";
+                case 6:
+                    return "24/7 ";
+                case 7:
+                    return "globally ";
+                case 8:
+                    return "culturally ";
+                case 9:
+                    return "technically ";
+                case 10:
+                    return "strategically ";
+                case 11:
+                    return "swiftly ";
+                case 12:
+                    return "cautiously ";
+                case 13:
+                    return "expediently ";
+                case 14:
+                    return "organically ";
+                case 15:
+                    return "carefully ";
+                case 16:
+                    return "significantly ";
+                case 17:
+                    return "conservatively ";
+                case 18:
+                    return "adequately ";
+                case 19:
+                    return "genuinely ";
+                case 20:
+                    return "efficiently ";
+                case 21:
+                    return "seamlessly ";
+                case 22:
+                    return "consistently ";
+                case 23:
+                    return "diligently ";
                 default:
-                    //throw new RandomNumberException(result + " is an invalid value.");
                     return string.Empty;
             }
-
-              //case R92 is -- proportion: 3/4 empty adverb
-              //   when 1 => return "interactively ";
-              //   when 2 => return "credibly ";
-              //   when 3 => return "quickly ";
-              //   when 4 => return "proactively ";
-              //   when 5 => return "200% ";
-              //   when 6 => return "24/7 ";
-              //      -- UW Presentation Nov 2010
-              //   when 7 => return "globally ";
-              //   when 8 => return "culturally ";
-              //   when 9 => return "technically ";
-              //   --
-              //   when 10 => return "strategically ";
-              //   when 11 => return "swiftly ";
-              //   when 12 => return "cautiously ";
-              //   when 13 => return "expediently ";
-              //   when 14 => return "organically ";
-              //   when 15 => return "carefully ";
-              //   when 16 => return "significantly ";
-              //   when 17 => return "conservatively ";
-              //   when 18 => return "adequately ";
-              //   when 19 => return "genuinely ";
-              //   when 20 => return "efficiently ";
-              //   when 21 => return "seamlessly ";
-              //   when 22 => return "consistently ";
-              //   when 23 => return "diligently ";
-              //   when others => return "";
-              //end case;
         }
 
         private string GetFaukon()
@@ -618,7 +630,7 @@ namespace MSG.DomainLogic.Implementation
                 case 8:
                     return "powerful champion";
                 case 9:
-                    return "thought leader";
+                    return "thought leader ";
                 case 10:
                     return "gatekeeper";
                 case 11:
