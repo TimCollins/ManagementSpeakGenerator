@@ -40,6 +40,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticulatedPropositionTests.cs" />
+    <Compile Include="EventualAdverbTests.cs" />
+    <Compile Include="FaukonTests.cs" />
     <Compile Include="GeneratorTests.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="MoqUtil.cs" />

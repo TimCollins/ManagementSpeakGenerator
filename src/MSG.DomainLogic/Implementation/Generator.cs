@@ -210,15 +210,6 @@ namespace MSG.DomainLogic.Implementation
 
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
-
-                    //when 18       => return Proposition & "; this is why " & Proposition;
-                    //when 19       => return Proposition & "; nevertheless " & Proposition;
-                    //when 20       => return Proposition & ", whereas " & Proposition;
-                    //when 21       => return "our gut-feeling is that " & Proposition;
-                    //when 22 .. 25 => return Proposition & ", while " & Proposition;
-                    //when 26       => return Proposition & ". In the same time, " & Proposition;
-                    //when 27       => return Proposition & ". As a result, " & Proposition;
-                    //when 28       => return Proposition & ", whilst " & Proposition;
             }
         }
 
