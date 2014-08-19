@@ -130,8 +130,8 @@ namespace MSG.DomainLogic.Implementation
             int result = DomainFactory.RandomNumber.GetRand(1, 3);
 
             return result == 1
-                ? GetSingularPerson(DomainFactory.RandomNumber.GetRand(1, 18))
-                : GetPluralPerson(DomainFactory.RandomNumber.GetRand(1, 12));
+                ? GetSingularPerson()
+                : GetPluralPerson();
         }
 
         private string GetPersonVerbHavingThingComplement()
@@ -363,7 +363,6 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbHavingBadThingComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 93);
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
             switch (result)
@@ -561,9 +560,9 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-
-        private string GetPluralPerson(int result)
+        private string GetPluralPerson()
         {
+            int result = DomainFactory.RandomNumber.GetRand(1, 12);
             switch (result)
             {
                 case 1:
@@ -595,8 +594,9 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        private string GetSingularPerson(int result)
+        private string GetSingularPerson()
         {
+            int result = DomainFactory.RandomNumber.GetRand(1, 18);
             switch (result)
             {
                 case 1:
