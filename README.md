@@ -1,9 +1,12 @@
-ManagementSpeakGenerator
+Management Speak Generator
 ========================
 
-This is a C# clone of http://sf.net/projects/cbsg/
-It's written using VS2012 and currently does very little. If you build and run MSG.ConsoleApp it will generate output.txt in the same directory. That file will contain 500 boss job titles.
+This is a C# clone of http://sf.net/projects/cbsg/ which is written in [Ada](http://en.wikipedia.org/wiki/Ada_(programming_language)).
 
+Project Requirements
+--------------------
+To compile the source code Visual Studio 2012 and .NET Framework 4.5 are required. Earlier versions of Visual Studio may work but are untested.
 
-Test
-====
+Demo App
+--------
+Build and run MSG.ConsoleApp to generate output.txt in the same directory as the executable. The file will contain 500 example sentences.
