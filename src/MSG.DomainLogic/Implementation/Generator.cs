@@ -146,17 +146,24 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        private string GetPersonVerbHavingThingComplement()
+        private string GetPersonVerbHavingThingComplement(Plurality plurality)
         {
-            return string.Empty;
-            //Boss => Person => Person_Verb_Having_Thing_Complement etc.
+            //int result = DomainFactory.RandomNumber.GetRand(1, 64);
+            int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
-            //Sentence_Guaranteed_Amount calls Sentences calls Sentence calls Articulated_Propositions calls Proposition calls Thing_Verb_And_Ending calls Person
-            //Sentence_Guaranteed_Amount calls Sentences calls Sentence calls Articulated_Propositions calls Proposition calls Person
-
-            //Workshop calls Sentence_Guaranteed_Amount 500 times.
-            //Short_Workshop calls Sentence_Guaranteed_Amount 5 times.
-
+            switch (result)
+            {
+                case 1:
+                    return "manage ";
+                case 2:
+                    return "target ";
+                case 3:
+                    return "streamline ";
+                case 4:
+                    return "improve ";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
         }
 
         private string GetSentence()
@@ -336,7 +343,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 15 && result < 96)
             {
-                return GetPersonHavingThingComplement(plurality) + GetRandomArticle(plurality, GetThing(plurality));
+                return GetPersonVerbHavingThingComplement(plurality) + GetRandomArticle(plurality, GetThing(plurality));
             }
 
             throw new RandomNumberException(result + " is an invalid value.");
@@ -344,7 +351,8 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThing(Plurality plurality)
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 111);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 111);
+            int result = DomainFactory.RandomNumber.GetRand(1, 10);
 
             if (result > 0 && result < 10)
             {

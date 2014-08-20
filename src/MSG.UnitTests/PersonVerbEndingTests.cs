@@ -29,7 +29,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {17, 5, 9, 10, 1, 1, 1, 1};
+            _defaults = new List<int> { 17, 5, 9, 10, 1, 1, 1, 1, 1, 1 };
         }
 
         [TearDown]
@@ -104,5 +104,59 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.Contains("mitigate"));
         }
+        
+        [Test]
+        public void VerifyRandomArticleThe()
+        {
+            _defaults.Insert(4, 11);
+            _defaults.RemoveAt(5);
+
+            _defaults.Insert(6, 4);
+            _defaults.RemoveAt(7);
+
+            _defaults.Insert(9, 2);
+            _defaults.RemoveAt(10);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("the issues"));
+        }
+
+        [Test]
+        public void VerifyRandomArticleOur()
+        {
+            // Within the industry
+            //_defaults.Insert(9, 2);
+            //_defaults.RemoveAt(10);
+
+            // going forward
+            //_defaults.Insert(8, 2);
+            //_defaults.RemoveAt(9);
+
+            // intricacies
+            //_defaults.Insert(7, 2);
+            //_defaults.RemoveAt(8);
+
+            //_defaults.Insert(5, 2);
+            //_defaults.RemoveAt(6);
+
+            _defaults.Insert(4, 11);
+            _defaults.RemoveAt(5);
+
+            _defaults.Insert(6, 4);
+            _defaults.RemoveAt(7);
+
+            _defaults.Insert(8, 3);
+            _defaults.RemoveAt(9);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("our issues"));
+        }
+        
     }
 }
