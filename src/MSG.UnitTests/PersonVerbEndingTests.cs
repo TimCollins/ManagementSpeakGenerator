@@ -157,6 +157,28 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.Contains("our issues"));
         }
+
+        [Test]
+        public void VerifyGetPersonVerbAndEndingThirdBranch()
+        {
+            _defaults.Insert(4, 17);
+            _defaults.RemoveAt(5);
+
+            _defaults.Insert(6, 4);
+            _defaults.RemoveAt(7);
+
+            _defaults.Insert(8, 3);
+            _defaults.RemoveAt(9);
+
+            _defaults.Add(2);
+            _defaults.Add(2);
+            _defaults.Add(3);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("across the board"));
+        }
         
     }
 }
