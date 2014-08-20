@@ -383,7 +383,7 @@ namespace MSG.DomainLogic.Implementation
         {
             // Implements a function called Inner which I think is referenced in a few places.
             //int result = DomainFactory.RandomNumber.GetRand(1, 61);
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            int result = DomainFactory.RandomNumber.GetRand(1, 11);
 
             switch (result)
             {
@@ -391,19 +391,26 @@ namespace MSG.DomainLogic.Implementation
                     return "streamline the process ";
                 case 2:
                     return "address the overarching issues ";
+                case 3:
+                    return "benchmark the portfolio ";
+                case 4:
+                    return "manage the cycle ";
+                case 5:
+                    return "figure out where we come from, where we are going to ";
+                case 6:
+                    return "maximise the value ";
+                case 7:
+                    return "execute the strategy ";
+                case 8:
+                    return "think outside the box ";
+                case 9:
+                    return "think differently ";
+                case 10:
+                    return "think across the full value chain ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
-            //when 3  => return "benchmark the portfolio";
-            //when 4  => return "manage the cycle";     -- Fad of 2004
-            //when 5  => return "figure out where we come from, where we are going to";
-            //when 6  => return "maximize the value";
-            //when 7  => return "execute the strategy"; -- Obsessive in 2006
-            //when 8  => return "think out of the box";
-            //when 9  => return "think differently";
-            //when 10 => return "think across the full value chain";
-            //   -- BBC office-speak phrases
             //when 11 => return "loop back";
             //when 12 => return "conversate";
             //when 13 => return "go forward together";

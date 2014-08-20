@@ -1,4 +1,5 @@
-﻿using MSG.DomainLogic;
+﻿using System.Collections.Generic;
+using MSG.DomainLogic;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -23,15 +24,29 @@ namespace MSG.UnitTests
             //{
             //    return GetPersonHavingThingComplement(plurality) + GetRandomArticle();
             //}
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int> { 17, 5, 9, 10, 1, 1, 1, 1 };    
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
 
         [Test]
         public void VerifyPersonVerbAndComplementStreamline()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 10, 1, 1, 1, 1);
+            // Insert 1 at position 6.
+            _defaults.Insert(6, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
+            
 
             Assert.IsTrue(output.Contains("streamline the process "));
         }
@@ -39,11 +54,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPersonVerbAndComplementOverarching()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 10, 1, 1, 2, 1);
+            _defaults.Insert(6, 2);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains("address the overarching issues "));
         }
