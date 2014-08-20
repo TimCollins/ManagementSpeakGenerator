@@ -331,15 +331,90 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 10 && result < 16)
             {
-                return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle();
+                return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle(plurality, GetBadThings());
             }
 
             if (result > 15 && result < 96)
             {
-                return GetPersonHavingThingComplement(plurality) + GetRandomArticle();
+                return GetPersonHavingThingComplement(plurality) + GetRandomArticle(plurality, GetThing(plurality));
             }
 
             throw new RandomNumberException(result + " is an invalid value.");
+        }
+
+        private string GetThing(Plurality plurality)
+        {
+            int result = DomainFactory.RandomNumber.GetRand(1, 111);
+
+            if (result > 0 && result < 10)
+            {
+                return string.Format("{0}, {1}, {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            throw new RandomNumberException(result + " is an invalid value.");
+        }
+
+        private string GetThingAdjective()
+        {
+            // LGA banned word list: http://news.bbc.co.uk/2/hi/7949077.stm
+            //int result = DomainFactory.RandomNumber.GetRand(1, 251);
+            int result = DomainFactory.RandomNumber.GetRand(1, 4);
+
+            // The implementation of this list starts on line 191 of the original source. 
+            // There's a lot so I'm not copying them in here in one lump.
+            switch (result)
+            {
+                case 1:
+                    return "efficient ";
+                case 2:
+                    return "strategic";
+                case 3:
+                    return "constructive";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }            
+        }
+
+        // Thing() is implemented on 840.
+
+        private string GetBadThings()
+        {
+            //int result = DomainFactory.RandomNumber.GetRand(1, 22);
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+
+            switch (result)
+            {
+                case 1:
+                    return "issues";
+                case 2:
+                    return "intricacies";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
+
+      //            case R21 is
+      //   when 1  => return "issues";
+      //   when 2  => return "intricacies";
+      //   when 3  => return "organizational diseconomies";
+      //   when 4  => return "black swans";
+      //   when 5  => return "gaps";
+      //   when 6  => return "inefficiencies";
+      //   when 7  => return "overlaps";
+      //   when 8  => return "known unknowns";
+      //   when 9  => return "unknown unknowns";
+      //   when 10 => return "soft cycle issues";
+      //   when 11 => return "obstacles";
+      //   when 12 => return "surprises";
+      //   when 13 => return "weaknesses"; -- The W in SWOT
+      //   when 14 => return "threats";    -- The T in SWOT
+      //   when 15 => return "barriers to success";
+      //   when 16 => return "barriers";
+      //   when 17 => return "shortcomings";
+      //   when 18 => return "problems";
+      //   when 19 => return "uncertainties";
+      //   when 20 => return "unfavorable developments";
+      //   when 21 => return "consumer/agent disconnects";
+      //end case;
         }
 
         private Plurality GetRandomPlurality()
@@ -354,9 +429,36 @@ namespace MSG.DomainLogic.Implementation
             return string.Empty;
         }
 
-        private string GetRandomArticle()
+        private string GetRandomArticle(Plurality plurality, string item)
         {
-            return string.Empty;
+            int result = DomainFactory.RandomNumber.GetRand(1, 16);
+
+            if (result > 0 && result < 3)
+            {
+                return "the " + item;
+            }
+
+            if (result > 2 && result < 7)
+            {
+                return "our " + item;
+            }
+
+            return GetIndefiniteArticle(plurality, item);
+        }
+
+        private string GetIndefiniteArticle(Plurality plurality, string to)
+        {
+            if (plurality == Plurality.Plural)
+            {
+                return to;
+            }
+
+            return StartsWithVowel(to) ? "an " + to : "a " + to;
+        }
+
+        private bool StartsWithVowel(string source)
+        {
+            return "aeiou".Contains(source.Substring(0, 1));
         }
 
         private string GetPersonVerbHavingBadThingComplement(Plurality plurality)
