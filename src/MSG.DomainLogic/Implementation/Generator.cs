@@ -321,8 +321,9 @@ namespace MSG.DomainLogic.Implementation
         private string GetPersonVerbAndEnding()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 96);
+
             // TODO: Put a random selector in for this:
-            const Plurality plurality = Plurality.Plural;
+            Plurality plurality = GetRandomPlurality();
 
             if (result > 0 && result < 11)
             {
@@ -340,6 +341,13 @@ namespace MSG.DomainLogic.Implementation
             }
 
             throw new RandomNumberException(result + " is an invalid value.");
+        }
+
+        private Plurality GetRandomPlurality()
+        {
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+
+            return result == 1 ? Plurality.Singular : Plurality.Plural;
         }
 
         private string GetPersonHavingThingComplement(Plurality plurality)

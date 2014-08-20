@@ -10,7 +10,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonNeedTo()
         {
-            MoqUtil.SetupRandMock(17, 5, 1, 2, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 1, 2, 1, 1, 1, 1);
             List<string> output = DomainFactory.Generator.GetSentences(1);
 
             MoqUtil.UndoMockRandomNumber();
@@ -22,7 +22,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonGotTo()
         {
-            MoqUtil.SetupRandMock(17, 5, 2, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 2, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -33,7 +33,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonUnitShould()
         {
-            MoqUtil.SetupRandMock(17, 5, 3, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 3, 1, 1, 1, 1, 1);
             List<string> output = DomainFactory.Generator.GetSentences(1);
 
             MoqUtil.UndoMockRandomNumber();
@@ -45,7 +45,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonControllingShould()
         {
-            MoqUtil.SetupRandMock(17, 5, 4, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 4, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -56,7 +56,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonActivate()
         {
-            MoqUtil.SetupRandMock(17, 5, 5, 1, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 5, 1, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -67,7 +67,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonPursuing()
         {
-            MoqUtil.SetupRandMock(17, 5, 6, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 6, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -78,7 +78,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonExtraMile()
         {
-            MoqUtil.SetupRandMock(17, 5, 7, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 7, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -89,7 +89,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonWorkingHard()
         {
-            MoqUtil.SetupRandMock(17, 5, 8, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 8, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -100,7 +100,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonTirelessly()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 1, 1, 1, 1);
+            MoqUtil.SetupRandMock(17, 5, 9, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();

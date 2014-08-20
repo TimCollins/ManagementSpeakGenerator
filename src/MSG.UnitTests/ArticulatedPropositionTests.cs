@@ -9,9 +9,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionIsWhy()
         {
-            MoqUtil.SetupRandMock(18,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
-
+            MoqUtil.SetupRandMock(18,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -22,8 +21,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionNeverTheLess()
         {
-            MoqUtil.SetupRandMock(19,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(19,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -35,8 +34,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhereas()
         {
-            MoqUtil.SetupRandMock(20,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(20,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -48,8 +47,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionGutFeeling()
         {
-            MoqUtil.SetupRandMock(21,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(21,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -61,8 +60,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhile()
         {
-            MoqUtil.SetupRandMock(25,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(25,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -74,9 +73,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionSameTime()
         {
-            MoqUtil.SetupRandMock(26,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
-
+            MoqUtil.SetupRandMock(26,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             MoqUtil.UndoMockRandomNumber();
@@ -87,8 +85,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionResult()
         {
-            MoqUtil.SetupRandMock(27,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(27,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -100,8 +98,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhilst()
         {
-            MoqUtil.SetupRandMock(28,   5, 9, 10, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1);
+            MoqUtil.SetupRandMock(28,   5, 9, 10, 1, 1, 1, 1,
+                                        5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
