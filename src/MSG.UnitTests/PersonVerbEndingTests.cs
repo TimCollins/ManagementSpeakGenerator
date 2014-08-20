@@ -29,7 +29,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> { 17, 5, 9, 10, 1, 1, 1, 1 };    
+            _defaults = new List<int> {17, 5, 9, 10, 1, 1, 1, 1};
         }
 
         [TearDown]
@@ -60,6 +60,49 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("address the overarching issues "));
+        }
+
+        [Test]
+        public void VerifyPersonVerbAndComplementValueChain()
+        {
+            _defaults.Insert(6, 10);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("think across the full value chain "));
+        }
+
+        [Test]
+        public void VerifyBadThingIdentify()
+        {
+            _defaults.Insert(4, 11);
+            _defaults.RemoveAt(5);
+
+            _defaults.Insert(6, 2);
+            _defaults.RemoveAt(7);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("identify"));
+        }
+
+        [Test]
+        public void VerifyBadThingMitigate()
+        {
+            _defaults.Insert(4, 11);
+            _defaults.RemoveAt(5);
+
+            _defaults.Insert(6, 4);
+            _defaults.RemoveAt(7);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("mitigate"));
         }
     }
 }

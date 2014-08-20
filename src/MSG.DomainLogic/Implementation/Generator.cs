@@ -322,7 +322,6 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 96);
 
-            // TODO: Put a random selector in for this:
             Plurality plurality = GetRandomPlurality();
 
             if (result > 0 && result < 11)
@@ -364,6 +363,7 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
+            // TODO: Add Build_Plural_Verb call like the original code here.
             switch (result)
             {
                 case 1:
