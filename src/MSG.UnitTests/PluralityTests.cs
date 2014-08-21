@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using MSG.DomainLogic;
+using NUnit.Framework;
 
 namespace MSG.UnitTests
 {
@@ -9,6 +10,26 @@ namespace MSG.UnitTests
         // Can probably use an alternative version of one of the tests from 
         // PersonVerbEndingTests.
 
+        [Test]
+        public void PersonTestPlural()
+        {
+            MoqUtil.SetupRandMock(2, 7);
+            string output = DomainFactory.Generator.GetPerson();
 
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("enablers", output);
+        }
+
+        [Test]
+        public void PersonTestSingular()
+        {
+            MoqUtil.SetupRandMock(1, 7);
+            string output = DomainFactory.Generator.GetPerson();
+
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("enabler", output);
+        }
     }
 }
