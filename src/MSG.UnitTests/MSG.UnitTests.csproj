@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticulatedPropositionTests.cs" />
+    <Compile Include="DepartmentTests.cs" />
     <Compile Include="EventualAdverbTests.cs" />
     <Compile Include="FaukonTests.cs" />
     <Compile Include="GeneratorTests.cs" />

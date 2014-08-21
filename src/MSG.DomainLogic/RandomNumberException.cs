@@ -2,7 +2,7 @@
 
 namespace MSG.DomainLogic
 {
-    class RandomNumberException : Exception
+    public class RandomNumberException : Exception
     {
         public RandomNumberException(string msg) : base(msg)
         {            
