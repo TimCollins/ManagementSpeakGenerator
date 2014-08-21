@@ -7,23 +7,6 @@ namespace MSG.UnitTests
     [TestFixture]
     class PersonVerbEndingTests
     {
-        // This will be testing the output from GetPersonVerbAndComplement(), 
-        // GetPersonVerbHavingBadThingComplement() and GetRandomArticle()
-
-            //if (result > 0 && result < 11)
-            //{
-            //    return GetPersonVerbAndComplement(plurality);
-            //}
-
-            //if (result > 10 && result < 16)
-            //{
-            //    return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle();
-            //}
-
-            //if (result > 15 && result < 96)
-            //{
-            //    return GetPersonHavingThingComplement(plurality) + GetRandomArticle();
-            //}
         private List<int> _defaults;
 
         [SetUp]
@@ -47,7 +30,6 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             
-
             Assert.IsTrue(output.Contains("streamline the process "));
         }
 
@@ -166,7 +148,7 @@ namespace MSG.UnitTests
 
             _defaults.Insert(6, 4);
             _defaults.RemoveAt(7);
-
+            
             _defaults.Insert(8, 3);
             _defaults.RemoveAt(9);
 
@@ -179,6 +161,5 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.Contains("across the board"));
         }
-        
     }
 }

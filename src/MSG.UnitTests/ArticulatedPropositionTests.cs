@@ -1,4 +1,5 @@
-﻿using MSG.DomainLogic;
+﻿using System.Collections.Generic;
+using MSG.DomainLogic;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -6,14 +7,28 @@ namespace MSG.UnitTests
     [TestFixture]
     class ArticulatedPropositionTests
     {
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int>{5, 9, 10, 1, 1, 1, 1,
+                                      5, 9, 10, 1, 1, 1, 1};
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
+
         [Test]
         public void VerifyArticulatedPropositionIsWhy()
         {
-            MoqUtil.SetupRandMock(18,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(0, 18);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("; this is why "));
         }
@@ -21,12 +36,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionNeverTheLess()
         {
-            MoqUtil.SetupRandMock(19,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 19);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains("; nevertheless "));
         }
@@ -39,8 +51,6 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            MoqUtil.UndoMockRandomNumber();
-
             Assert.IsTrue(output.Contains("; whereas "));
         }
 
@@ -51,8 +61,6 @@ namespace MSG.UnitTests
                                         5, 9, 10, 1, 1, 1, 1);
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains("our gut feeling is that "));
         }
@@ -65,8 +73,6 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            MoqUtil.UndoMockRandomNumber();
-
             Assert.IsTrue(output.Contains(", while "));
         }
 
@@ -76,8 +82,6 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(26,   5, 9, 10, 1, 1, 1, 1,
                                         5, 9, 10, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains(". At the same time, "));
         }
@@ -90,8 +94,6 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            MoqUtil.UndoMockRandomNumber();
-
             Assert.IsTrue(output.Contains(". As a result "));
         }
 
@@ -103,10 +105,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            MoqUtil.UndoMockRandomNumber();
-
             Assert.IsTrue(output.Contains(", whilst "));
-
         }
     }
 }
