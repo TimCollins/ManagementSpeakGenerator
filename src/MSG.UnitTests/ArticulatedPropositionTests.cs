@@ -46,9 +46,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhereas()
         {
-            MoqUtil.SetupRandMock(20,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 20);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("; whereas "));
@@ -57,9 +56,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionGutFeeling()
         {
-            MoqUtil.SetupRandMock(21,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 21);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("our gut feeling is that "));
@@ -68,9 +66,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhile()
         {
-            MoqUtil.SetupRandMock(25,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 25);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(", while "));
@@ -79,8 +76,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionSameTime()
         {
-            MoqUtil.SetupRandMock(26,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
+            _defaults.Insert(0, 26);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(". At the same time, "));
@@ -89,9 +86,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionResult()
         {
-            MoqUtil.SetupRandMock(27,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 27);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(". As a result "));
@@ -100,9 +96,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhilst()
         {
-            MoqUtil.SetupRandMock(28,   5, 9, 10, 1, 1, 1, 1,
-                                        5, 9, 10, 1, 1, 1, 1);
-
+            _defaults.Insert(0, 28);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(", whilst "));
