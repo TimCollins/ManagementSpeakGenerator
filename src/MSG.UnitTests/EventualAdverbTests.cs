@@ -1,4 +1,5 @@
-﻿using MSG.DomainLogic;
+﻿using System.Collections.Generic;
+using MSG.DomainLogic;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -6,13 +7,27 @@ namespace MSG.UnitTests
     [TestFixture]
     class EventualAdverbTests
     {
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int> {17, 5, 9, 1, 1, 1, 1, 1};
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
+
         [Test]
         public void VerifyEventualAdverbInteractively()
         {
-            MoqUtil.SetupRandMock(21, 6, 1, 9, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(" interactively "));
         }
@@ -20,10 +35,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbCredibly()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 2, 1, 1, 1, 1);
+            _defaults.Insert(3, 2);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains(" credibly "));
         }
@@ -31,10 +45,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbStrategically()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 10, 1, 1, 1, 1);
+            _defaults.Insert(3, 10);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains(" strategically "));
         }
@@ -42,10 +55,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbConservatively()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 17, 1, 1, 1, 1);
+            _defaults.Insert(3, 17);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.Contains(" conservatively "));
         }
