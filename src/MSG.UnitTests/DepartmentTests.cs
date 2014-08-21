@@ -9,9 +9,6 @@ namespace MSG.UnitTests
     {
         private List<int> _defaults;
 
-        // GetSentence() -> GetArticulatedProposition(17) -> GetProposition(6) -> GetPerson(1) -> GetSingularPerson(17) -> GetBoss(2) -> DepartmentOrTopRole(4)
-        // GetBoss(1)
-
         [SetUp]
         public void SetUpDefaultNumbers()
         {
@@ -66,12 +63,5 @@ namespace MSG.UnitTests
 
             DomainFactory.Generator.GetSentences(1);
         }
-        //"Human Resources";
-
-        //"Customer Relations";
-
-        //"Marketing"
-
-        // 50 -> RandomNumberException
     }
 }

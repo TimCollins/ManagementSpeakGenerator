@@ -16,9 +16,9 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return Managing() + Age() + Exec() + Title() + " of " + Department();
+                    return Managing() + Age() + Exec() + Title() + " of " + Department() + " ";
                 case 2:
-                    return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer";
+                    return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer ";
                 default:
                     return string.Empty;
             }
