@@ -694,27 +694,27 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return "key people";
+                    return "key people ";
                 case 2:
-                    return "human resources";
+                    return "human resources ";
                 case 3:
-                    return "customers";
+                    return "customers ";
                 case 4:
-                    return "clients";
+                    return "clients ";
                 case 5:
-                    return "resources";
+                    return "resources ";
                 case 6:
-                    return "team players";
+                    return "team players ";
                 case 7:
-                    return "enablers";
+                    return "enablers ";
                 case 8:
-                    return "stakeholders";
+                    return "stakeholders ";
                 case 9:
-                    return "standard-setters";
+                    return "standard-setters ";
                 case 10:
-                    return "partners";
+                    return "partners ";
                 case 11:
-                    return "business leaders";
+                    return "business leaders ";
                 case 12:
                     return string.Empty;
                 default:

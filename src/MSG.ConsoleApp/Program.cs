@@ -16,16 +16,14 @@ namespace MSG.ConsoleApp
 
             using (StreamWriter sw = new StreamWriter(fileName))
             {
-                //for (int i = 0; i < 500; i++)
-                //{
-                //    sw.Write(DomainFactory.Generator.GetBoss() + Environment.NewLine);                    
-                //}
-                List<string> sentences = DomainFactory.Generator.GetSentences(500);
-                foreach (string s in sentences)
+                const int max = 1;
+
+                List<string> sentences = DomainFactory.Generator.GetSentences(max);
+                for (int i = 0; i < max; i++)
                 {
-                    sw.Write(s + Environment.NewLine);    
+                    //sw.Write(DomainFactory.Generator.GetBoss() + Environment.NewLine);
+                    sw.Write("{0}. {1}{2}", i + 1, sentences[i], Environment.NewLine);
                 }
-                
             }
 
             Console.WriteLine("Data written to {0}", fileName);

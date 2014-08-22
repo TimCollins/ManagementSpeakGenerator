@@ -18,7 +18,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("enablers", output);
+            Assert.AreEqual("enablers ", output);
         }
 
         [Test]

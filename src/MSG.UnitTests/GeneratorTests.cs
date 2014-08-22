@@ -14,7 +14,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Head of Marketing", boss);
+            Assert.AreEqual("Head of Marketing ", boss);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Managing Head of Marketing", boss);
+            Assert.AreEqual("Managing Head of Marketing ", boss);
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Head of Operations", boss);
+            Assert.AreEqual("Acting Head of Operations ", boss);
         }
 
         [Test]
@@ -47,7 +47,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Director of Legal", boss);
+            Assert.AreEqual("Director of Legal ", boss);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Chief of Customer Relations", boss);
+            Assert.AreEqual("Chief of Customer Relations ", boss);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Head of Legal", boss);
+            Assert.AreEqual("Head of Legal ", boss);
         }
 
         [Test]
@@ -80,7 +80,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Co-Head of Operations", boss);
+            Assert.AreEqual("Co-Head of Operations ", boss);
         }
 
         [Test]
@@ -91,7 +91,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("President of Customer Relations", boss);
+            Assert.AreEqual("President of Customer Relations ", boss);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Vice President of Marketing", boss);
+            Assert.AreEqual("Vice President of Marketing ", boss);
         }
 
         [Test]
@@ -113,7 +113,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Corporate Vice President of IT Operations", boss);
+            Assert.AreEqual("Corporate Vice President of IT Operations ", boss);
         }
 
         [Test]
@@ -124,7 +124,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Senior Vice President of Customer Relations", boss);
+            Assert.AreEqual("Senior Vice President of Customer Relations ", boss);
         }
 
         [Test]
@@ -135,7 +135,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Senior Vice President of Marketing", boss);
+            Assert.AreEqual("Senior Vice President of Marketing ", boss);
         }
 
         [Test]
@@ -146,7 +146,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Executive Chief of Customer Relations", boss);
+            Assert.AreEqual("Executive Chief of Customer Relations ", boss);
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Chief of Legal", boss);
+            Assert.AreEqual("Chief of Legal ", boss);
         }
 
         [Test]
@@ -168,7 +168,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Head of Client Relationship", boss);
+            Assert.AreEqual("Acting Head of Client Relationship ", boss);
         }
 
         [Test]
@@ -179,7 +179,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Senior Executive Head of IT Strategy", boss);
+            Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
         }
 
         [Test]
@@ -190,7 +190,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Managing Director of Business Planning", boss);
+            Assert.AreEqual("Managing Director of Business Planning ", boss);
         }
 
         [Test]
@@ -202,7 +202,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Senior Executive Head of IT Strategy", boss);
+            Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
 
             Assert.IsNotNull(boss);
         }
@@ -215,7 +215,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Group Chief Technical Officer", boss);
+            Assert.AreEqual("Group Chief Technical Officer ", boss);
 
             Assert.IsNotNull(boss);
         }
@@ -229,7 +229,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Chief Operations Officer", boss);
+            Assert.AreEqual("Chief Operations Officer ", boss);
 
             Assert.IsNotNull(boss);
         }
@@ -243,7 +243,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Group Chief Digital Officer", boss);
+            Assert.AreEqual("Group Chief Digital Officer ", boss);
 
             Assert.IsNotNull(boss);
         }
@@ -257,7 +257,7 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Global Chief Digital Officer", boss);
+            Assert.AreEqual("Global Chief Digital Officer ", boss);
 
             Assert.IsNotNull(boss);
         }

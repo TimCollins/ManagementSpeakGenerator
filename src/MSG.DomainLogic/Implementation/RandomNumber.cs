@@ -1,14 +1,21 @@
 ﻿using System;
+using System.IO;
 
 namespace MSG.DomainLogic.Implementation
 {
     class RandomNumber : IRandomNumber
     {
         private static readonly Random _random = new Random();
+        private static readonly string _fileName = Directory.GetCurrentDirectory() + "\\rolls.txt";
 
         public int GetRand(int start, int end)
         {
-            return _random.Next(start, end);
+            int r = _random.Next(start, end);
+            using (StreamWriter sw = new StreamWriter(_fileName, true))
+            {
+                sw.Write("{0},", r);
+            }
+            return r;
         }
 
         public int GetRand(int end)
