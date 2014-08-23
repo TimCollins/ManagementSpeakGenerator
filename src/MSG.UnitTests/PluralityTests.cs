@@ -14,7 +14,8 @@ namespace MSG.UnitTests
         public void PersonTestPlural()
         {
             MoqUtil.SetupRandMock(2, 7);
-            string output = DomainFactory.Generator.GetPerson();
+            Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
+            string output = DomainFactory.Generator.GetPerson(plurality);
 
             MoqUtil.UndoMockRandomNumber();
 
@@ -25,11 +26,12 @@ namespace MSG.UnitTests
         public void PersonTestSingular()
         {
             MoqUtil.SetupRandMock(1, 7);
-            string output = DomainFactory.Generator.GetPerson();
+            Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
+            string output = DomainFactory.Generator.GetPerson(plurality);
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("enabler", output);
+            Assert.AreEqual("enabler ", output);
         }
     }
 }

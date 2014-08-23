@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
@@ -25,14 +26,9 @@ namespace MSG.DomainLogic.Implementation
             
         }
 
-        public string GetPerson()
+        public string GetPerson(Plurality plurality)
         {
-            // 1 == singular, 2 == plural
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
-
-            return result == 1
-                ? GetSingularPerson()
-                : GetPluralPerson();
+            return plurality == Plurality.Singular ? GetSingularPerson() : GetPluralPerson();
         }
 
         public List<string> GetSentences(int count)
@@ -224,7 +220,6 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 101);
 
-            // Switching to if statements instead of enormous case statements.
             if (result > 0 && result < 6)
             {
                 return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
@@ -232,47 +227,212 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 5 && result < 51)
             {
-                return "the " + GetPerson() + GetEventualAdverb() + GetPersonVerbAndEnding() +
+                Plurality plurality = GetRandomPlurality();
+                return "the " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding() +
                        GetEventualPostfixedAdverb();
             }
 
-            return string.Empty;
+            if (result > 50 && result < 93)
+            {
+                Plurality plurality = GetRandomPlurality();
+                return GetRandomArticle(plurality, GetThing(plurality)) + " " + GetEventualAdverb()
+                       + GetThingVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
+            }
 
-            //   when 1 .. 5    => -- "We need to..."
-            //      return
-            //      Faukon & ' ' &
-            //      Eventual_Adverb &
-            //      Person_Verb_And_Ending (Plural) & -- Trick to get the infinitive
-            //      Eventual_Postfixed_Adverb;
-            //      -- infinitive written same as present plural
-            //   when 6 .. 50    => -- ** PERSON...
-            //      return
-            //        "the " & Person (Sp1) & ' ' &
-            //        Eventual_Adverb &
-            //        Person_Verb_And_Ending (Sp1) &
-            //        Eventual_Postfixed_Adverb;
-            //   when 51 .. 92   => -- ** THING...
-            //      return
-            //      Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
-            //      Eventual_Adverb &
-            //      Thing_Verb_And_Ending (Sp1) &
-            //      Eventual_Postfixed_Adverb;
-            //   when 93..97     => -- ** thing and thing ...
-            //      return -- nb: no article, no adjective
-            //      Thing_Atom (Singular) & " and " &
-            //      Thing_Atom (Singular) & ' ' &
-            //      Eventual_Adverb &
-            //      Thing_Verb_And_Ending (Plural) &
-            //      Eventual_Postfixed_Adverb;
-            //   when 98..100    => -- ** thing, thing and thing ...
-            //      return -- nb: no article, no adjective
-            //      Thing_Atom (Singular) & ", " &
-            //      Thing_Atom (Singular) & " and " &
-            //      Thing_Atom (Singular) & ' ' &
-            //      Eventual_Adverb &
-            //      Thing_Verb_And_Ending (Plural) &
-            //      Eventual_Postfixed_Adverb;
-            //end case;
+            if (result > 93 && result < 98)
+            {
+                return GetThingAtom(Plurality.Singular) + " and " + GetThingAtom(Plurality.Singular)
+                       + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                       + GetEventualPostfixedAdverb();
+            }
+
+            if (result > 98 && result < 101)
+            {
+                return GetThingAtom(Plurality.Singular) + ", " + GetThingAtom(Plurality.Singular)
+                       + " and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
+                       GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
+            }
+
+            throw new RandomNumberException(result + " is an invalid value.");
+        }
+
+        private string GetThingVerbAndEnding(Plurality plurality)
+        {
+            Plurality innerPlurality = GetRandomPlurality();
+            int result = DomainFactory.RandomNumber.GetRand(1, 102);
+
+            if (result > 0 && result < 56)
+            {
+                return GetThingVerbHavingThingComplement(plurality) + " " +
+                       GetRandomArticle(innerPlurality, GetThing(innerPlurality));
+            }
+
+            if (result > 56 && result < 101)
+            {
+                return GetThingVerbHavingPersonComplement(plurality) + " the " + GetPerson(innerPlurality);
+            }
+
+            return BuildPluralVerb("add", plurality) + " value";
+        }
+
+        private string GetThingVerbHavingPersonComplement(Plurality plurality)
+        {
+            //int result = DomainFactory.RandomNumber.GetRand(1, 13);
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            string item;
+
+            switch (result)
+            {
+                case 1:
+                    item = "motivate";
+                    break;
+                case 2:
+                    item = "target";
+                    break;
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
+
+            return BuildPluralVerb(item, plurality);
+
+            //when 3 => return "enable";
+            //when 4 => return "drive";
+            //when 5 => return "synergize";
+            //when 6 => return "empower";
+            //when 7 => return "prioritize";
+            //-- BBC office-speak phrases
+            //when 8 => return "incentivise";
+            //when 9 => return "inspire";
+            //--
+            //when 10 => return "transfer";
+            //when 11 => return "promote";
+            //when 12 => return "influence";
+            //when 13 => return "strengthen";
+        }
+
+        private string GetThingVerbHavingThingComplement(Plurality plurality)
+        {
+            //int result = DomainFactory.RandomNumber.GetRand(1, 29);
+            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            string item;
+
+            switch (result)
+            {
+                case 1:
+                    item = "streamline";
+                    break;
+                case 2:
+                    item = "interact with";
+                    break;
+                case 3:
+                    item = "boost";
+                    break;
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
+
+            return BuildPluralVerb(item, plurality);
+
+            //when 4  => return "generate";
+            //when 5  => return "impact";
+            //when 6  => return "enhance";
+            //when 7  => return "leverage";
+            //when 8  => return "synergize";
+            //when 9  => return "generate";
+            //when 10 => return "empower";
+            //when 11 => return "enable";
+            //when 12 => return "prioritize";
+            //when 13 => return "transfer";
+            //when 14 => return "drive";
+            //when 15 => return "result in";
+            //when 16 => return "promote";
+            //when 17 => return "influence";
+            //when 18 => return "facilitate";
+            //when 19 => return "aggregate";
+            //when 20 => return "architect";
+            //when 21 => return "cultivate";
+            //when 22 => return "engage";
+            //when 23 => return "structure";
+            //when 24 => return "standardize";
+            //when 25 => return "accelerate";
+            //when 26 => return "deepen";
+            //when 27 => return "strengthen";
+            //when 28 => return "enforce";
+            //when 29 => return "foster";
+        }
+
+        private bool IsVowel(string input)
+        {
+            return "aeiou".Contains(input);
+        }
+
+        private string BuildPluralVerb(string verb, Plurality plurality)
+        {
+            if (plurality == Plurality.Plural)
+            {
+                return verb;
+            }
+
+            // I think the original code is checking for spaces at the end of the input string.
+            string last = verb.Substring(verb.Length - 1, 1);
+            verb = verb.Trim();
+
+            switch (last)
+            {
+                case "o":
+                case "s":
+                case "z":
+                    return verb + "es";
+                    //return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+                case "h":
+                    string secondLast = verb.Substring(verb.Length - 2, 1);
+                    if (secondLast == "c" || secondLast == "s")
+                    {
+                        // This is the same as above.
+                        return verb + "es";
+                    }
+                    return verb + "s";
+                case "y":
+                    // Check if the 2nd last char is a vowel.
+                    if (IsVowel(verb.Substring(verb.Length - 2, 1)))
+                    {
+                        return verb + "s";
+                    }
+                    return verb.Substring(0, verb.Length - 2) + "s";
+                default:
+                    return verb + "s";
+            }
+
+            return "Fred";
+
+            //Last:= Verb'Last;
+            //for I in reverse Verb'First + 1 .. Verb'Last loop
+            //   if Verb (I) = ' ' then
+            //      Last := I - 1;
+            //   end if;
+            //end loop;
+            //case P is
+            //   when Plural   => return Verb;
+            //   when Singular =>
+            //      case Verb (Last) is
+            //         when 'o' | 's' | 'z' =>
+            //            return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+            //         when 'h' =>
+            //            case Verb (Last - 1) is
+            //               when 'c' | 's' => -- catch -> catches; establish -> establishes
+            //                 return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+            //               when others => -- plough -> ploughs
+            //                 return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+            //            end case;
+            //         when 'y' =>
+            //            if Vowel (Verb (Last - 1)) then -- ploy -> ploys
+            //               return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+            //            else -- try -> tries
+            //               return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
+            //            end if;
+            //         when others =>
+            //            return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+            //      end case;
         }
 
         private string GetEventualPostfixedAdverb()
@@ -425,7 +585,7 @@ namespace MSG.DomainLogic.Implementation
       //end case;
         }
 
-        private Plurality GetRandomPlurality()
+        public Plurality GetRandomPlurality()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 3);
 
@@ -728,31 +888,31 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return "steering committee";
+                    return "steering committee ";
                 case 2:
-                    return "group";
+                    return "group ";
                 case 3:
-                    return "project manager";
+                    return "project manager ";
                 case 4:
                     // TODO: Establish if this should be a random choice between singular and plural
                     // or whether it should do as here and follow the parent method.
                     return GetThingAtom(Plurality.Singular);
                 case 5:
-                    return "community";
+                    return "community ";
                 case 6:
-                    return "sales manager";
+                    return "sales manager ";
                 case 7:
-                    return "enabler";
+                    return "enabler ";
                 case 8:
-                    return "powerful champion";
+                    return "powerful champion ";
                 case 9:
                     return "thought leader ";
                 case 10:
-                    return "gatekeeper";
+                    return "gatekeeper ";
                 case 11:
-                    return "resource";
+                    return "resource ";
                 case 12:
-                    return "senior support staff";
+                    return "senior support staff ";
                 case 13:
                 case 14:
                 case 15:

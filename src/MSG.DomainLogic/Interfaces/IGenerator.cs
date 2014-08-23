@@ -5,7 +5,8 @@ namespace MSG.DomainLogic.Interfaces
     public interface IGenerator
     {
         string GetBoss();
-        string GetPerson();
+        string GetPerson(Plurality plurality);
         List<string> GetSentences(int count);
+        Plurality GetRandomPlurality();
     }
 }
