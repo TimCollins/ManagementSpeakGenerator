@@ -438,7 +438,7 @@ namespace MSG.DomainLogic.Implementation
         private string GetEventualPostfixedAdverb()
         {
             //int result = DomainFactory.RandomNumber.GetRand(1, 156);
-            int result = DomainFactory.RandomNumber.GetRand(1, 4);
+            int result = DomainFactory.RandomNumber.GetRand(1, 11);
 
             switch (result)
             {
@@ -448,17 +448,25 @@ namespace MSG.DomainLogic.Implementation
                     return "within the industry";
                 case 3:
                     return "across the board";
+                case 4:
+                    return "in this space";
+                case 5:
+                    return "from the get-go";
+                case 6:
+                    return "at the end of the day";
+                case 7:
+                    return "throughout the organisation";
+                case 8:
+                    return "as part of the plan";
+                case 9:
+                    return "by thinking outside the box";
+                case 10:
+                    Plurality plurality = GetRandomPlurality();
+                    return "using " + GetRandomArticle(plurality, GetThing(plurality));
+
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
-
-             //when 4 => return " in this space";
-             //when 5 => return " from the get-go";
-             //when 6 => return " at the end of the day";
-             //when 7 => return " throughout the organization";
-             //when 8 => return " as part of the plan";
-             //when 9 => return " by thinking outside of the box";
-             //when 10 => return " using " & Add_Random_Article (P, Thing (P));
              //when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
              //when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
              //when 13 => return " within the " & Matrix_Or_So;
