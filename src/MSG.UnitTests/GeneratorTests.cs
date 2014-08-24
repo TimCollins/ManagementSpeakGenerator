@@ -1,4 +1,5 @@
-﻿using MSG.DomainLogic;
+﻿using System.Collections.Generic;
+using MSG.DomainLogic;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -260,6 +261,43 @@ namespace MSG.UnitTests
             Assert.AreEqual("Global Chief Digital Officer ", boss);
 
             Assert.IsNotNull(boss);
+        }
+
+        [Test]
+        public void FixExtraSpace()
+        {
+            List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 82, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 61, 4 };
+            // This sentence contains a couple of double spaces
+            // "an efficient , constructive,  targets the enablers using our constructive, strategic, "
+            // 1. Fix the space between "efficient" and the comma.
+            // 2. Fix the space between the comma and "targets".
+            // 3. See why the sentence ends at strategic.
+            // I think 2 and 3 are related to the fact that GetInner and GetSingularAtom only have 
+            // a small number of possible selections listed but have huge random number ranges.
+            // This means that the app is often selecting 41 as a value with only 1-3 producing 
+            // output.
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains("efficient,"));
+            Assert.IsTrue(output.Contains(" targets "));
+        }
+
+        [Test]
+        public void FixPluralSpace()
+        {
+            // This sentence has a few more spaces as well as an odd plural space after timeline.
+            //win-win solution  and timeline  24/7 interact with our cost-effective, strategic, timeline sthroughout the organisation
+            List<int> defaults = new List<int> {16, 95, 173, 7, 159, 5, 6, 2, 29, 2, 3, 9, 2, 105, 5, 4, 7};
+
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains("timelines throughout"));
         }
     }
 }

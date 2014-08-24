@@ -241,8 +241,8 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 93 && result < 98)
             {
-                return GetThingAtom(Plurality.Singular) + " and " + GetThingAtom(Plurality.Singular)
-                       + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
+                       + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
                        + GetEventualPostfixedAdverb();
             }
 
@@ -403,8 +403,6 @@ namespace MSG.DomainLogic.Implementation
                     return verb + "s";
             }
 
-            return "Fred";
-
             //Last:= Verb'Last;
             //for I in reverse Verb'First + 1 .. Verb'Last loop
             //   if Verb (I) = ' ' then
@@ -524,7 +522,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 10)
             {
-                return string.Format("{0}, {1}, {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1}, {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             throw new RandomNumberException(result + " is an invalid value.");
@@ -534,18 +532,32 @@ namespace MSG.DomainLogic.Implementation
         {
             // LGA banned word list: http://news.bbc.co.uk/2/hi/7949077.stm
             //int result = DomainFactory.RandomNumber.GetRand(1, 251);
-            int result = DomainFactory.RandomNumber.GetRand(1, 4);
+            int result = DomainFactory.RandomNumber.GetRand(1, 11);
 
             // The implementation of this list starts on line 191 of the original source. 
             // There's a lot so I'm not copying them in here in one lump.
             switch (result)
             {
                 case 1:
-                    return "efficient ";
+                    return "efficient";
                 case 2:
                     return "strategic";
                 case 3:
                     return "constructive";
+                case 4:
+                    return "proactive";
+                case 5:
+                    return "strong";
+                case 6:
+                    return "key";
+                case 7:
+                    return "global";
+                case 8:
+                    return "corporate";
+                case 9:
+                    return "cost-effective";
+                case 10:
+                    return "focused";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }            
@@ -745,7 +757,8 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetEventualAdverb()
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 93);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 93);
+            int result = DomainFactory.RandomNumber.GetRand(1, 24);
 
             switch (result)
             {
@@ -957,22 +970,230 @@ namespace MSG.DomainLogic.Implementation
                     return GetInner();
             }
         }
-
+       
         private string GetInner()
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 192);
+            //int result = DomainFactory.RandomNumber.GetRand(1, 192);
+            int result = DomainFactory.RandomNumber.GetRand(1, 12);
 
             switch (result)
             {
                 case 1:
-                    return "mission";
+                    return "mission ";
                 case 2:
-                    return "vision";
+                    return "vision ";
                 case 3:
-                    return "guideline";
+                    return "guideline ";
+                case 4:
+                    return "roadmap ";
+                case 5:
+                    return "timeline ";
+                case 6:
+                    return GetMatrix();
+                case 7:
+                    return "win-win solution ";
+                case 8:
+                    return "baseline starting point ";
+                case 9:
+                    return "sign-off ";
+                case 10:
+                    return "escalation ";
+                case 11:
+                    return "de-escalation "; // Note this doesn't exist in original.
                 default:
                     return string.Empty;
             }
+
+            //when 12 => return "system";
+            //when 13 => return "Management Information System";
+            //when 14 => return "Quality Management System";
+            //when 15 => return "planning";
+            //when 16 => return "target";
+            //when 17 => return "calibration";
+            //when 18 => return "Control Information System";
+            //when 19 => return "process";
+            //when 20 => return "talent";
+            //when 21 => return "execution"; -- Winner 2006!
+            //when 22 => return "leadership";
+            //when 23 => return "performance";
+            //when 24 => return "solution provider";
+            //when 25 => return "value";
+            //when 26 => return "value creation";
+            //when 27 => return "feedback";
+            //when 28 => return "document";
+            //when 29 => return "bottom line";
+            //when 30 => return "momentum";
+            //when 31 => return "opportunity";
+            //when 32 => return "credibility";
+            //when 33 => return "issue";
+            //when 34 => return "core meeting";
+            //when 35 => return "platform";
+            //when 36 => return "niche";
+            //when 37 => return "content";
+            //when 38 => return "communication";
+            //when 39 => return "goal";
+            //when 40 => return "skill";
+            //when 41 => return "alternative";
+            //when 42 => return "culture";
+            //when 43 => return "requirement";
+            //when 44 => return "potential";
+            //when 45 => return "challenge";
+            //when 46 => return "empowerment";
+            //when 47 => return "benchmarking";
+            //when 48 => return "framework";
+            //when 49 => return "benchmark";
+            //when 50 => return "implication";
+            //when 51 => return "integration";
+            //when 52 => return "enabler"; -- also person
+            //when 53 => return "control";
+            //when 54 => return "trend";
+            //   -- the pyramid-cube 2004, added 2009:
+            //when 55 => return "business case";
+            //when 56 => return "architecture";
+            //when 57 => return "action plan";
+            //when 58 => return "project";
+            //when 59 => return "review cycle";
+            //when 11 => return "trigger event";
+            //when 60 => return "strategy formulation";
+            //when 61 => return "decision";
+            //when 62 => return "enhanced data capture";
+            //when 63 => return "energy";
+            //when 64 => return "plan";
+            //when 65 => return "initiative";
+            //when 66 => return "priority";
+            //when 67 => return "synergy";
+            //when 68 => return "incentive";
+            //when 69 => return "dialogue";
+            //   -- Buzz Phrase Generator.xls (Kurt)
+            //when 70 => return "concept";
+            //when 71 => return "time-phase";
+            //when 72 => return "projection";
+            //   -- Merger buzz 2009:
+            //when 73 => return "blended approach";
+            //   -- BBC office-speak phrases
+            //when 74 => return "low hanging fruit";
+            //when 75 => return "forward planning";
+            //when 76 => return "pre-plan"; -- also a verb
+            //when 77 => return "pipeline";
+            //when 78 => return "bandwidth";
+            //when 79 => return "workshop";
+            //when 80 => return "paradigm";
+            //when 81 => return "paradigm shift";
+            //when 82 => return "strategic staircase";
+            //   --
+            //when 83  => return "cornerstone";
+            //when 84  => return "executive talent";
+            //when 85  => return "evolution";
+            //when 86  => return "workflow";
+            //when 87  => return "message";
+            //   -- GAC 2010
+            //when 88  => return "risk/return profile";
+            //when 89  => return "efficient frontier";
+            //when 90  => return "pillar";
+            //   -- Andy
+            //when 91  => return "internal client";
+            //when 92  => return "consistency";
+            //   -- Ludovic
+            //when 93  => return "on-boarding process";
+            //   --
+            //when 94  => return "dotted line";
+            //when 95  => return "action item";
+            //when 96  => return "cost efficiency";
+            //when 97  => return "channel";
+            //when 98  => return "convergence";
+            //when 99  => return "infrastructure";
+            //when 100 => return "metric";
+            //when 101 => return "technology";
+            //when 102 => return "relationship";
+            //when 103 => return "partnership";
+            //when 104 => return "supply-chain";
+            //when 105 => return "portal";
+            //when 106 => return "solution";
+            //when 107 => return "business line";
+            //when 108 => return "white paper";
+            //when 109 => return "scalability";
+            //when 110 => return "innovation";
+            //when 111 => return "Strategic Management System";
+            //when 112 => return "Balanced Scorecard";
+            //when 113 => return "differentiator"; -- PDM
+            //when 114 => return "case study";
+            //when 115 => return "idiosyncrasy"; -- ED
+            //when 116 => return "benefit";
+            //when 117 => return "say/do ratio";
+            //when 118 => return "segmentation";
+            //when 119 => return "image";
+            //when 120 => return "realignment";
+            //when 121 => return "business model";
+            //when 122 => return "business philosophy";
+            //when 123 => return "branding";
+            //when 124 => return "methodology";
+            //when 125 => return "profile";
+            //when 126 => return "measure";
+            //when 127 => return "measurement";
+            //when 128 => return "philosophy";
+            //when 129 => return "branding strategy";
+            //when 130 => return "efficiency";
+            //when 131 => return "industry";
+            //when 132 => return "commitment";
+            //when 133 => return "perspective";
+            //when 134 => return "risk appetite";
+            //when 135 => return "best practice";
+            //when 136 => return "brand identity";
+            //when 137 => return "customer centricity"; -- Mili
+            //when 138 => return "shareholder value"; -- Andrew
+            //when 139 => return "attitude";
+            //when 140 => return "mindset";
+            //when 141 => return "flexibility";
+            //when 142 => return "granularity";
+            //when 143 => return "engagement";
+            //when 144 => return "pyramid";
+            //when 145 => return "market";
+            //when 146 => return "diversity";
+            //when 147 => return "interdependency";
+            //when 148 => return "scaling";
+            //when 149 => return "asset";
+            //when 150 => return "flow charting";
+            //when 151 => return "value proposition";
+            //when 152 => return "performance culture";
+            //when 153 => return "change";
+            //when 154 => return "reward";
+            //when 155 => return "learning";
+            //when 156 => return "next step";
+            //when 157 => return "delivery framework";
+            //when 158 => return "structure";
+            //when 159 => return "support structure";
+            //when 160 => return "standardization";
+            //when 161 => return "objective";
+            //when 162 => return "footprint";
+            //when 163 => return "transformation process";
+            //when 164 => return "policy";
+            //when 165 => return "sales target";
+            //when 166 => return "ecosystem";
+            //when 167 => return "landscape";
+            //when 168 => return "atmosphere";
+            //when 169 => return "environment";
+            //when 170 => return "core competency";
+            //when 171 => return "market practice";
+            //when 172 => return "operating strategy";
+            //when 173 => return "insight";
+            //when 174 => return "accomplishment";
+            //when 175 => return "correlation";
+            //when 176 => return "touchpoint";
+            //when 177 => return "knowledge transfer";
+            //when 178 => return "correlation";
+            //when 179 => return "capability";
+            //when 180 => return "gamification";
+            //when 181 => return "smooth transition";
+            //when 182 => return "leadership strategy";
+            //when 183 => return "collaboration";
+            //when 184 => return "success factor";
+            //when 185 => return "lever";
+            //when 186 => return "breakthrough";
+            //when 187 => return "open-door policy";
+            //when 188 => return "recalibration";
+            //when 189 => return "wow factor"; -- (obtained by bootstrapping)
+            //when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
+            //when 191 => return "brand pyramid"; 
         }
 
         private string GetTimelessEvent()
@@ -1010,6 +1231,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetEventualPlural(string inner, Plurality plurality)
         {
+            inner = inner.Trim();
             if (inner.Length < 1 || plurality == Plurality.Singular)
             {
                 return inner;
