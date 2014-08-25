@@ -932,7 +932,7 @@ namespace MSG.DomainLogic.Implementation
                     return "focus";
                 // ...etc
                 default:
-                    return GetInner();
+                    return GetInner().Trim();
             }
         }
        

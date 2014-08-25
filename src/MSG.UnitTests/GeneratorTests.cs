@@ -330,13 +330,28 @@ namespace MSG.UnitTests
         {
             // This sentence is "the significantly think differently across the board."
             // which is missing a word, not sure what.
+            // Word was the output from GetBoss which was wrong.
             List<int> defaults = new List<int> { 5, 43, 1, 15, 4, 16, 8, 1, 9, 3, 1, 1, 1, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("Chief Human Resources Officer."));
+            Assert.IsTrue(output.Contains("Chief Human Resources Officer"));
+        }
+
+        [Test]
+        public void DeEscalationSpacingAgain()
+        {
+            // This is a long sentence but contains an extra space in the middle: 
+            // "de-escalation  by thinking".
+            List<int> defaults = new List<int> { 26, 40, 1, 1, 21, 61, 1, 2, 3, 2, 9, 280, 11, 3, 9, 60, 1, 7, 1, 5, 331, 8, 1, 5, 2, 90, 2, 1, 7 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains("de-escalation by thinking"));
         }
     }
 }
