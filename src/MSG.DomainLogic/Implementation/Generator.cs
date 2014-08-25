@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
@@ -18,10 +17,8 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                     return Managing() + Age() + Exec() + Title() + " of " + Department() + " ";
-                case 2:
-                    return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer ";
                 default:
-                    return string.Empty;
+                    return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer ";
             }
             
         }
@@ -428,7 +425,7 @@ namespace MSG.DomainLogic.Implementation
                     return "by thinking outside the box";
                 case 10:
                     Plurality plurality = GetRandomPlurality();
-                    return "using " + GetRandomArticle(plurality, GetThing(plurality));
+                    return "using " + GetRandomArticle(plurality, GetThing(plurality)).TrimEnd();
 
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");

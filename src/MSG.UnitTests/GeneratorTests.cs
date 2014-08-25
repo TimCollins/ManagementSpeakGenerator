@@ -312,5 +312,31 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.Contains("de-escalations consistently"));
         }
+
+        [Test]
+        public void FixSpaceAtEnd()
+        {
+            List<int> defaults = new List<int> { 6, 26, 1, 2, 13, 95, 2, 4, 1, 4, 8, 203, 1, 2, 10, 2, 4, 6, 9, 50, 11, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains("de-escalations."));
+        }
+
+        [Test]
+        public void FixMissingWord()
+        {
+            // This sentence is "the significantly think differently across the board."
+            // which is missing a word, not sure what.
+            List<int> defaults = new List<int> { 5, 43, 1, 15, 4, 16, 8, 1, 9, 3, 1, 1, 1, 1 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.Contains("Chief Human Resources Officer."));
+        }
     }
 }
