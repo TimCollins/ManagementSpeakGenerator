@@ -20,8 +20,8 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual(2, output.Count);
-            Assert.AreEqual("we need to interactively streamline the process going forward", output[0]);
-            Assert.AreEqual("we need to interactively streamline the process across the board; this is why pursuing this route will enable us to credibly address the overarching issues going forward", output[1]);
+            Assert.AreEqual("we need to interactively streamline the process going forward.", output[0]);
+            Assert.AreEqual("we need to interactively streamline the process across the board; this is why pursuing this route will enable us to credibly address the overarching issues going forward.", output[1]);
         }
     }
 }

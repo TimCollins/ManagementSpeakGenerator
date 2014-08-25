@@ -190,26 +190,26 @@ namespace MSG.DomainLogic.Implementation
                 case 15:
                 case 16:
                 case 17:
-                    return GetProposition();
+                    return GetProposition() + ".";
                 case 18:
-                    return GetProposition() + "; this is why " + GetProposition();
+                    return GetProposition() + "; this is why " + GetProposition() + ".";
                 case 19:
-                    return GetProposition() + "; nevertheless " + GetProposition();
+                    return GetProposition() + "; nevertheless " + GetProposition() + ".";
                 case 20:
-                    return GetProposition() + "; whereas " + GetProposition();
+                    return GetProposition() + "; whereas " + GetProposition() + ".";
                 case 21:
-                    return "our gut feeling is that " + GetProposition();
+                    return "our gut feeling is that " + GetProposition() + ".";
                 case 22:
                 case 23:
                 case 24:
                 case 25:
-                    return GetProposition() + ", while " + GetProposition();
+                    return GetProposition() + ", while " + GetProposition() + ".";
                 case 26:
-                    return GetProposition() + ". At the same time, " + GetProposition();
+                    return GetProposition() + ". At the same time, " + GetProposition() + ".";;
                 case 27:
-                    return GetProposition() + ". As a result " + GetProposition();
+                    return GetProposition() + ". As a result " + GetProposition() + ".";;
                 case 28:
-                    return GetProposition() + ", whilst " + GetProposition();
+                    return GetProposition() + ", whilst " + GetProposition() + ".";;
 
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
@@ -383,17 +383,14 @@ namespace MSG.DomainLogic.Implementation
                 case "s":
                 case "z":
                     return verb + "es";
-                    //return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
                 case "h":
                     string secondLast = verb.Substring(verb.Length - 2, 1);
                     if (secondLast == "c" || secondLast == "s")
                     {
-                        // This is the same as above.
                         return verb + "es";
                     }
                     return verb + "s";
                 case "y":
-                    // Check if the 2nd last char is a vowel.
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
                         return verb + "s";
@@ -402,35 +399,6 @@ namespace MSG.DomainLogic.Implementation
                 default:
                     return verb + "s";
             }
-
-            //Last:= Verb'Last;
-            //for I in reverse Verb'First + 1 .. Verb'Last loop
-            //   if Verb (I) = ' ' then
-            //      Last := I - 1;
-            //   end if;
-            //end loop;
-            //case P is
-            //   when Plural   => return Verb;
-            //   when Singular =>
-            //      case Verb (Last) is
-            //         when 'o' | 's' | 'z' =>
-            //            return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-            //         when 'h' =>
-            //            case Verb (Last - 1) is
-            //               when 'c' | 's' => -- catch -> catches; establish -> establishes
-            //                 return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-            //               when others => -- plough -> ploughs
-            //                 return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-            //            end case;
-            //         when 'y' =>
-            //            if Vowel (Verb (Last - 1)) then -- ploy -> ploys
-            //               return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-            //            else -- try -> tries
-            //               return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
-            //            end if;
-            //         when others =>
-            //            return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-            //      end case;
         }
 
         private string GetEventualPostfixedAdverb()

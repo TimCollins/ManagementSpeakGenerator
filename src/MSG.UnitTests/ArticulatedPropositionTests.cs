@@ -23,6 +23,18 @@ namespace MSG.UnitTests
         }
 
         [Test]
+        public void VerifyArticulatedProposition()
+        {
+            _defaults.Insert(0, 6);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.IsTrue(output.Contains("tirelessly and diligently"));
+            Assert.IsTrue(output.EndsWith("."));
+        }
+
+        [Test]
         public void VerifyArticulatedPropositionIsWhy()
         {
             _defaults.Insert(0, 18);
@@ -31,16 +43,18 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("; this is why "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
-        public void VerifyArticulatedPropositionNeverTheLess()
+        public void VerifyArticulatedPropositionNevertheless()
         {
             _defaults.Insert(0, 19);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("; nevertheless "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -51,6 +65,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("; whereas "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -61,6 +76,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("our gut feeling is that "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -71,6 +87,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(", while "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -81,6 +98,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(". At the same time, "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -91,6 +109,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(". As a result "));
+            Assert.IsTrue(output.EndsWith("."));
         }
 
         [Test]
@@ -101,6 +120,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains(", whilst "));
+            Assert.IsTrue(output.EndsWith("."));
         }
     }
 }
