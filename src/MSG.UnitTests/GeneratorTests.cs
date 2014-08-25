@@ -300,21 +300,17 @@ namespace MSG.UnitTests
             Assert.IsTrue(output.Contains("timelines throughout"));
         }
 
+        [Test]
+        public void EnsureDeEscalationSpacing()
+        {
+            // This sentence contains "de-escalations  consistently"
+            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 119, 9, 3, 9, 58, 2, 7, 1, 5, 179, 11, 11, 22, 1, 80, 1, 16, 2, 1, 17, 6 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //[Test]
-        //public void EnsureFullStopAtEnd()
-        //{
-        //    // This sentence contains "de-escalations  consistently" as well as serving as
-        //    // a test for full stop at the end.
-        //    List<int> defaults = new List<int> {23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 119, 9, 3, 9, 58, 2, 7, 1, 5, 179, 11, 11, 22, 1, 80, 1, 16, 2, 1, 17, 6};
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            
-
-
-        //    MoqUtil.UndoMockRandomNumber();
-        //}
+            Assert.IsTrue(output.Contains("de-escalations consistently"));
+        }
     }
 }
