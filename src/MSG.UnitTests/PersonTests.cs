@@ -53,7 +53,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("the resources streamline "));
+            Assert.IsTrue(output.StartsWith("The resources streamline "));
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("the key people streamline "));
+            Assert.IsTrue(output.StartsWith("The key people streamline "));
         }
 
         [Test]
@@ -75,7 +75,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("the business leaders streamline "));
+            Assert.IsTrue(output.StartsWith("The business leaders streamline "));
         }
 
         //[Test]

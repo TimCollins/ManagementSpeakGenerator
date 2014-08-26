@@ -353,5 +353,29 @@ namespace MSG.UnitTests
 
             Assert.IsTrue(output.Contains("de-escalation by thinking"));
         }
+
+        [Test]
+        public void CapitalLetterAtStartGetPerson()
+        {
+            // "the Chief Operations Officer consistently" should become
+            // "The Chief Operations Officer consistently"
+
+            // Change the 14 to hit other branches of GetProposition() and make sure they
+            // are all capitalised.
+            List<int> defaults = new List<int> {5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 48, 3, 15, 8};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("The Chief Operations Officer consistently"));
+        }
+
+        [Test]
+        public void IncorrectPluralTest()
+        {
+            // the Chief Operations Officer consistently target strong, proactive, guidelines as part of the plan.
+
+        }
     }
 }

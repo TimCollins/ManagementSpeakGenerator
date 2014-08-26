@@ -225,7 +225,7 @@ namespace MSG.DomainLogic.Implementation
             if (result > 5 && result < 51)
             {
                 Plurality plurality = GetRandomPlurality();
-                return "the " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding() +
+                return "The " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding() +
                        GetEventualPostfixedAdverb();
             }
 
