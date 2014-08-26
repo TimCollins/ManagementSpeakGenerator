@@ -423,11 +423,7 @@ namespace MSG.UnitTests
         }
 
         // TODO: Test the rest of the possible outputs from GetArticulatedProposition()
-        // Wrap the sentence case operation into a function like this:
-        private string ApplySentenceCase(string input)
-        {
-            return input.Substring(0, 1).ToUpper() + input.Substring(1) + ".";
-        }
+
 
         [Test]
         public void IncorrectPluralTest()

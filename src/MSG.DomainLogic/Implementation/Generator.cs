@@ -187,32 +187,35 @@ namespace MSG.DomainLogic.Implementation
                 case 15:
                 case 16:
                 case 17:
-                    string sentence = GetProposition();
-                    sentence = sentence.Substring(0, 1).ToUpper() + sentence.Substring(1) + ".";
-                    return sentence;
+                    return ApplySentenceCase(GetProposition());
                 case 18:
-                    return GetProposition() + "; this is why " + GetProposition() + ".";
+                    return ApplySentenceCase(GetProposition() + "; this is why " + GetProposition());
                 case 19:
-                    return GetProposition() + "; nevertheless " + GetProposition() + ".";
+                    return ApplySentenceCase(GetProposition() + "; nevertheless " + GetProposition());
                 case 20:
-                    return GetProposition() + "; whereas " + GetProposition() + ".";
+                    return ApplySentenceCase(GetProposition() + "; whereas " + GetProposition());
                 case 21:
-                    return "our gut feeling is that " + GetProposition() + ".";
+                    return ApplySentenceCase("our gut feeling is that " + GetProposition());
                 case 22:
                 case 23:
                 case 24:
                 case 25:
-                    return GetProposition() + ", while " + GetProposition() + ".";
+                    return ApplySentenceCase(GetProposition() + ", while " + GetProposition());
                 case 26:
-                    return GetProposition() + ". At the same time, " + GetProposition() + ".";;
+                    return ApplySentenceCase(GetProposition() + ". At the same time, " + GetProposition());
                 case 27:
-                    return GetProposition() + ". As a result " + GetProposition() + ".";;
+                    return ApplySentenceCase(GetProposition() + ". As a result " + GetProposition());
                 case 28:
-                    return GetProposition() + ", whilst " + GetProposition() + ".";;
+                    return ApplySentenceCase(GetProposition() + ", whilst " + GetProposition());
 
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
+        }
+
+        private string ApplySentenceCase(string input)
+        {
+            return input.Substring(0, 1).ToUpper() + input.Substring(1) + ".";
         }
 
         private string GetProposition()

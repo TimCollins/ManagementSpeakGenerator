@@ -30,6 +30,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains("tirelessly and diligently"));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -38,10 +39,13 @@ namespace MSG.UnitTests
         public void VerifyArticulatedPropositionIsWhy()
         {
             _defaults.Insert(0, 18);
+            _defaults.Insert(2, 7);
+            _defaults.Remove(3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We will go"));
             Assert.IsTrue(output.Contains("; this is why "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -53,6 +57,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains("; nevertheless "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -64,6 +69,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains("; whereas "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -75,7 +81,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("our gut feeling is that "));
+            Assert.IsTrue(output.Contains("Our gut feeling is that "));
             Assert.IsTrue(output.EndsWith("."));
         }
 
@@ -86,6 +92,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains(", while "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -97,6 +104,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains(". At the same time, "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -108,6 +116,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains(". As a result "));
             Assert.IsTrue(output.EndsWith("."));
         }
@@ -119,6 +128,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            Assert.IsTrue(output.StartsWith("We continue to"));
             Assert.IsTrue(output.Contains(", whilst "));
             Assert.IsTrue(output.EndsWith("."));
         }
