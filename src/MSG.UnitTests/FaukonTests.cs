@@ -16,7 +16,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual(1, output.Count);
-            Assert.IsTrue(output[0].StartsWith("we need to "));
+            Assert.IsTrue(output[0].StartsWith("We need to "));
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("we've got to "));
+            Assert.IsTrue(output.StartsWith("We've got to "));
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual(1, output.Count);
-            Assert.IsTrue(output[0].StartsWith("the reporting unit should "));
+            Assert.IsTrue(output[0].StartsWith("The reporting unit should "));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("controlling should "));
+            Assert.IsTrue(output.StartsWith("Controlling should "));
         }
 
         [Test]
@@ -61,7 +61,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("we must activate "));
+            Assert.IsTrue(output.StartsWith("We must activate "));
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("pursuing this route will enable us to "));
+            Assert.IsTrue(output.StartsWith("Pursuing this route will enable us to "));
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("we will go the extra mile to "));
+            Assert.IsTrue(output.StartsWith("We will go the extra mile to "));
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("we are working hard to "));
+            Assert.IsTrue(output.StartsWith("We are working hard to "));
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("we continue to work tirelessly and diligently to "));
+            Assert.IsTrue(output.StartsWith("We continue to work tirelessly and diligently to "));
         }
 
     }

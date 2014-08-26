@@ -187,7 +187,9 @@ namespace MSG.DomainLogic.Implementation
                 case 15:
                 case 16:
                 case 17:
-                    return GetProposition() + ".";
+                    string sentence = GetProposition();
+                    sentence = sentence.Substring(0, 1).ToUpper() + sentence.Substring(1) + ".";
+                    return sentence;
                 case 18:
                     return GetProposition() + "; this is why " + GetProposition() + ".";
                 case 19:
@@ -217,7 +219,7 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 101);
 
-            if (result > 0 && result < 6)
+            if (result > 0 && result < 6)            
             {
                 return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
             }

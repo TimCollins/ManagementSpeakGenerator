@@ -372,9 +372,68 @@ namespace MSG.UnitTests
         }
 
         [Test]
+        public void CapitalLetterAtStartGetFaukon()
+        {
+            List<int> defaults = new List<int> {5, 4, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 48, 3, 15, 8};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("We need to"));
+        }
+
+        [Test]
+        public void CapitalLetterAtStartGetRandomArticle()
+        {
+            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 15, 8};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("A constructive, global, timeline"));
+        }
+
+        [Test]
+        public void CapitalLetterAtStartGetThingAtomAnd()
+        {
+            // This test can also form the basis of more spacing tests:
+            // Quarter resultsand focusglobally boost our strategic, strategic, key target markets in this space.
+            // Just going to assert what is expected here.
+            List<int> defaults = new List<int> {5, 97, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 15, 8};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("Quarter results"));
+        }
+
+        [Test]
+        public void CapitalLetterAtStartGetThingAtom()
+        {
+            List<int> defaults = new List<int> {5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("Quarter results, focus and roadmap "));
+        }
+
+        // TODO: Test the rest of the possible outputs from GetArticulatedProposition()
+        // Wrap the sentence case operation into a function like this:
+        private string ApplySentenceCase(string input)
+        {
+            return input.Substring(0, 1).ToUpper() + input.Substring(1) + ".";
+        }
+
+        [Test]
         public void IncorrectPluralTest()
         {
-            // the Chief Operations Officer consistently target strong, proactive, guidelines as part of the plan.
+            // "the Chief Operations Officer consistently target strong " should become
+            // "the Chief Operations Officer consistently targets strong ".
 
         }
     }
