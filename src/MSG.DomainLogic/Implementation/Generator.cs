@@ -250,8 +250,8 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 98 && result < 101)
             {
-                return GetThingAtom(Plurality.Singular) + ", " + GetThingAtom(Plurality.Singular)
-                       + " and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
+                return GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
+                       + "and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
                        GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
@@ -934,7 +934,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "team building";
                 case 3:
-                    return "focus";
+                    return "focus ";
                 // ...etc
                 default:
                     return GetInner().Trim();
@@ -1179,7 +1179,7 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     return "client-event";
                 case 4:
-                    return "quarter results";
+                    return "quarter results ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }            

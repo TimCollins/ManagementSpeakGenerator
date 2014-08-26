@@ -400,14 +400,14 @@ namespace MSG.UnitTests
         {
             // This test can also form the basis of more spacing tests:
             // Quarter resultsand focusglobally boost our strategic, strategic, key target markets in this space.
-            // Just going to assert what is expected here.
+            // Just going to assert what is expected here for now.
             List<int> defaults = new List<int> {5, 97, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 15, 8};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("Quarter results"));
+            Assert.IsTrue(output.StartsWith("Quarter results and focus globally"));
         }
 
         [Test]
@@ -422,15 +422,13 @@ namespace MSG.UnitTests
             Assert.IsTrue(output.StartsWith("Quarter results, focus and roadmap "));
         }
 
-        // TODO: Test the rest of the possible outputs from GetArticulatedProposition()
-
-
         [Test]
         public void IncorrectPluralTest()
         {
-            // "the Chief Operations Officer consistently target strong " should become
-            // "the Chief Operations Officer consistently targets strong ".
-
+            // "The Chief Legal Officer technically streamline a key, constructive, roadmap throughout the organisation." should become
+            // "The Chief Legal Officer technically streamlines a key, constructive roadmap throughout the organisation."
+            // "streamlines" should be plural and the comma after constructive shouldn't be there.
+            Assert.Fail("Not done yet.");
         }
     }
 }
