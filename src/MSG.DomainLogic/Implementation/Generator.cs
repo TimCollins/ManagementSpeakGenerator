@@ -20,7 +20,7 @@ namespace MSG.DomainLogic.Implementation
                 default:
                     return Groupal() + "Chief " + DepartmentOrTopRole() + " Officer ";
             }
-            
+
         }
 
         public string GetPerson(Plurality plurality)
@@ -143,7 +143,7 @@ namespace MSG.DomainLogic.Implementation
         {
             //int result = DomainFactory.RandomNumber.GetRand(1, 64);
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
-            
+
             switch (result)
             {
                 case 1:
@@ -222,15 +222,16 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 101);
 
-            if (result > 0 && result < 6)            
+            if (result > 0 && result < 6)
             {
-                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding() + GetEventualPostfixedAdverb();
+                Plurality plurality = GetRandomPlurality();
+                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
             }
 
             if (result > 5 && result < 51)
             {
                 Plurality plurality = GetRandomPlurality();
-                return "The " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding() +
+                return "The " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) +
                        GetEventualPostfixedAdverb();
             }
 
@@ -435,37 +436,35 @@ namespace MSG.DomainLogic.Implementation
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
-             //when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
-             //when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
-             //when 13 => return " within the " & Matrix_Or_So;
-             //when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-             //when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-             //when 16 => return " resulting in " & Growth;
-             //when 17 => return " reaped from our " & Growth;
-             //when 18 => return " as a consequence of " & Growth;
-             //when 19 => return " because " & Add_Random_Article (P, Thing (P))
-             //                  & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
-             //when 20 => return " ahead of schedule";
-             //when 21 => return ", relative to our peers";
-             //when 22 => return " on a transitional basis";
-             //when 23 => return " by expanding boundaries";
-             //when 24 => return " by nurturing talent";
-             //when 25 => return ", as a Tier 1 company";
-             //when 26 => return " up-front";
-             //when 27 => return " on-the-fly";
-             //when 28 => return " across our portfolio";
-             //when 29 => return " 50/50";
-             //when 30 => return " up, down and across the " & Matrix_Or_So;
-             //when 31 => return " in the marketplace";
-             //when 32 => return " by thinking and acting beyond boundaries";
-             //when 33 => return " at the individual, team and organizational level";
+            //when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
+            //when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
+            //when 13 => return " within the " & Matrix_Or_So;
+            //when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
+            //when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
+            //when 16 => return " resulting in " & Growth;
+            //when 17 => return " reaped from our " & Growth;
+            //when 18 => return " as a consequence of " & Growth;
+            //when 19 => return " because " & Add_Random_Article (P, Thing (P))
+            //                  & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
+            //when 20 => return " ahead of schedule";
+            //when 21 => return ", relative to our peers";
+            //when 22 => return " on a transitional basis";
+            //when 23 => return " by expanding boundaries";
+            //when 24 => return " by nurturing talent";
+            //when 25 => return ", as a Tier 1 company";
+            //when 26 => return " up-front";
+            //when 27 => return " on-the-fly";
+            //when 28 => return " across our portfolio";
+            //when 29 => return " 50/50";
+            //when 30 => return " up, down and across the " & Matrix_Or_So;
+            //when 31 => return " in the marketplace";
+            //when 32 => return " by thinking and acting beyond boundaries";
+            //when 33 => return " at the individual, team and organizational level";
         }
 
-        private string GetPersonVerbAndEnding()
+        private string GetPersonVerbAndEnding(Plurality plurality)
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 96);
-
-            Plurality plurality = GetRandomPlurality();
 
             if (result > 0 && result < 11)
             {
@@ -530,7 +529,7 @@ namespace MSG.DomainLogic.Implementation
                     return "focused";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
-            }            
+            }
         }
 
         // Thing() is implemented on 840.
@@ -550,29 +549,29 @@ namespace MSG.DomainLogic.Implementation
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
-      //            case R21 is
-      //   when 1  => return "issues";
-      //   when 2  => return "intricacies";
-      //   when 3  => return "organizational diseconomies";
-      //   when 4  => return "black swans";
-      //   when 5  => return "gaps";
-      //   when 6  => return "inefficiencies";
-      //   when 7  => return "overlaps";
-      //   when 8  => return "known unknowns";
-      //   when 9  => return "unknown unknowns";
-      //   when 10 => return "soft cycle issues";
-      //   when 11 => return "obstacles";
-      //   when 12 => return "surprises";
-      //   when 13 => return "weaknesses"; -- The W in SWOT
-      //   when 14 => return "threats";    -- The T in SWOT
-      //   when 15 => return "barriers to success";
-      //   when 16 => return "barriers";
-      //   when 17 => return "shortcomings";
-      //   when 18 => return "problems";
-      //   when 19 => return "uncertainties";
-      //   when 20 => return "unfavorable developments";
-      //   when 21 => return "consumer/agent disconnects";
-      //end case;
+            //            case R21 is
+            //   when 1  => return "issues";
+            //   when 2  => return "intricacies";
+            //   when 3  => return "organizational diseconomies";
+            //   when 4  => return "black swans";
+            //   when 5  => return "gaps";
+            //   when 6  => return "inefficiencies";
+            //   when 7  => return "overlaps";
+            //   when 8  => return "known unknowns";
+            //   when 9  => return "unknown unknowns";
+            //   when 10 => return "soft cycle issues";
+            //   when 11 => return "obstacles";
+            //   when 12 => return "surprises";
+            //   when 13 => return "weaknesses"; -- The W in SWOT
+            //   when 14 => return "threats";    -- The T in SWOT
+            //   when 15 => return "barriers to success";
+            //   when 16 => return "barriers";
+            //   when 17 => return "shortcomings";
+            //   when 18 => return "problems";
+            //   when 19 => return "uncertainties";
+            //   when 20 => return "unfavorable developments";
+            //   when 21 => return "consumer/agent disconnects";
+            //end case;
         }
 
         public Plurality GetRandomPlurality()
@@ -820,7 +819,7 @@ namespace MSG.DomainLogic.Implementation
                 case 1:
                 case 2:
                     return "organisation";
-                case 3:                    
+                case 3:
                 case 4:
                 case 5:
                 case 6:
@@ -940,7 +939,7 @@ namespace MSG.DomainLogic.Implementation
                     return GetInner().Trim();
             }
         }
-       
+
         private string GetInner()
         {
             //int result = DomainFactory.RandomNumber.GetRand(1, 192);
@@ -1182,7 +1181,7 @@ namespace MSG.DomainLogic.Implementation
                     return "quarter results ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
-            }            
+            }
         }
 
         private string GetPluralAtom(int rand)
