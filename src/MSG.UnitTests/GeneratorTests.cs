@@ -440,6 +440,14 @@ namespace MSG.UnitTests
         {
             // The key people expediently managesa proactive, key, win-win solution throughout the organisation. At the same time, a focused, efficient, mission 24/7 streamlines key, efficient, roadmaps across the board.
             // 26,36,2,1,13,27,1,1,5,4,6,404,7,12,7,69,1,7,10,1,226,1,14,6,2,14,1,7,6,1,184,4,13,3
+
+            List<int> defaults = new List<int> { 26, 36, 2, 1, 13, 27, 1, 1, 5, 4, 6, 404, 7, 12, 7, 69, 1, 7, 10, 1, 226, 1, 14, 6, 2, 14, 1, 7, 6, 1, 184, 4, 13, 3};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("The key people expediently manage a proactive"));
         }
     }
 }
