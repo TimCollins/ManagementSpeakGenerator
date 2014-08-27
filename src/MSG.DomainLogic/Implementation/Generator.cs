@@ -143,17 +143,17 @@ namespace MSG.DomainLogic.Implementation
         {
             //int result = DomainFactory.RandomNumber.GetRand(1, 64);
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
-
+            
             switch (result)
             {
                 case 1:
-                    return "manage ";
+                    return BuildPluralVerb("manage ", plurality);
                 case 2:
-                    return "target ";
+                    return BuildPluralVerb("target ", plurality);
                 case 3:
-                    return "streamline ";
+                    return BuildPluralVerb("streamline ", plurality);
                 case 4:
-                    return "improve ";
+                    return BuildPluralVerb("improve ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

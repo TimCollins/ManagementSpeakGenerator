@@ -425,10 +425,21 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectPluralTest()
         {
-            // "The Chief Legal Officer technically streamline a key, constructive, roadmap throughout the organisation." should become
-            // "The Chief Legal Officer technically streamlines a key, constructive roadmap throughout the organisation."
-            // "streamlines" should be plural and the comma after constructive shouldn't be there.
-            Assert.Fail("Not done yet.");
+            // The project manager proactively target a strategic, cost-effective, roadmap across the board.
+            List<int> defaults = new List<int> { 13, 28, 1, 3, 4, 93, 1, 2, 3, 2, 9, 458, 4, 12, 3 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.IsTrue(output.StartsWith("The project manager proactively targets"));
+        }
+
+        [Test]
+        public void AnotherPluralTest()
+        {
+            // The key people expediently managesa proactive, key, win-win solution throughout the organisation. At the same time, a focused, efficient, mission 24/7 streamlines key, efficient, roadmaps across the board.
+            // 26,36,2,1,13,27,1,1,5,4,6,404,7,12,7,69,1,7,10,1,226,1,14,6,2,14,1,7,6,1,184,4,13,3
         }
     }
 }
