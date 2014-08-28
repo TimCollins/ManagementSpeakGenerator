@@ -48,7 +48,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyResourcesSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 5, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
+            List<int> defaults = new List<int> { 26, 29, 2, 1, 5, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

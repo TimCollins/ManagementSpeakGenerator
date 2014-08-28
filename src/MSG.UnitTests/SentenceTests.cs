@@ -22,7 +22,6 @@ namespace MSG.UnitTests
             Assert.AreEqual(2, output.Count);
             Assert.AreEqual("We need to interactively streamline the process going forward.", output[0]);
             Assert.AreEqual("We need to interactively streamline the process across the board; this is why we've got to 200% address the overarching issues going forward.", output[1]);
-            
         }
     }
 }
