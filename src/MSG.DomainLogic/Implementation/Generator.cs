@@ -537,7 +537,7 @@ namespace MSG.DomainLogic.Implementation
         private string GetBadThings()
         {
             //int result = DomainFactory.RandomNumber.GetRand(1, 22);
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            int result = DomainFactory.RandomNumber.GetRand(1, 6);
 
             switch (result)
             {
@@ -545,16 +545,16 @@ namespace MSG.DomainLogic.Implementation
                     return "issues";
                 case 2:
                     return "intricacies";
+                case 3:
+                    return "organisational diseconomies";
+                case 4:
+                    return "black swans";
+                case 5:
+                    return "gaps";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
-            //            case R21 is
-            //   when 1  => return "issues";
-            //   when 2  => return "intricacies";
-            //   when 3  => return "organizational diseconomies";
-            //   when 4  => return "black swans";
-            //   when 5  => return "gaps";
             //   when 6  => return "inefficiencies";
             //   when 7  => return "overlaps";
             //   when 8  => return "known unknowns";

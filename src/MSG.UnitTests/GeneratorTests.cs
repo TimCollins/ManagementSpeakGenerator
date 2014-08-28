@@ -345,10 +345,24 @@ namespace MSG.UnitTests
             Assert.IsTrue(output.Contains("Chief Human Resources Officer"));
         }
 
+        //[Test]
+        //public void DeEscalationSpacingAgain()
+        //{
+        //    // This is a long sentence but contains an extra space in the middle: 
+        //    // "de-escalation  by thinking".
+        //    List<int> defaults = new List<int> { 26, 40, 1, 1, 21, 61, 1, 2, 3, 2, 9, 280, 11, 3, 9, 60, 1, 7, 1, 5, 331, 8, 1, 5, 2, 90, 2, 1, 7 };
+        //    MoqUtil.SetupRandMock(defaults.ToArray());
+
+        //    string output = DomainFactory.Generator.GetSentences(1)[0];
+        //    MoqUtil.UndoMockRandomNumber();
+
+        //    Assert.IsTrue(output.Contains("de-escalation by thinking"));
+        //}
+
         [Test]
         public void AddressesShouldBePlural()
         {
-            // The original of this test has been removed altogether.
+            // The original of this test has been removed altogether (see above).
             List<int> defaults = new List<int> { 26, 40, 1, 7, 61, 1, 2, 3, 2, 9, 6, 11, 3, 9, 8, 1, 7, 1, 5, 331, 8, 1, 5, 2, 90, 2, 1, 7 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -366,7 +380,7 @@ namespace MSG.UnitTests
 
             // Change the 14 to hit other branches of GetProposition() and make sure they
             // are all capitalised.
-            List<int> defaults = new List<int> {5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 4, 3, 6, 8};
+            List<int> defaults = new List<int> {5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 4, 3, 6};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -378,7 +392,7 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetFaukon()
         {
-            List<int> defaults = new List<int> {5, 4, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 48, 3, 15, 8};
+            List<int> defaults = new List<int> {5, 4, 1, 1, 3, 11, 4, 5, 22, 2};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
