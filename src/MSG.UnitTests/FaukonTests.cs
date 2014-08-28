@@ -7,25 +7,38 @@ namespace MSG.UnitTests
     [TestFixture]
     class FaukonTests
     {
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int> {17, 5, 1, 2, 1, 1, 1};
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
+
         [Test]
         public void VerifyFaukonNeedTo()
         {
-            MoqUtil.SetupRandMock(17, 5, 1, 2, 1, 1, 1, 1);
+            _defaults.Insert(3, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
             List<string> output = DomainFactory.Generator.GetSentences(1);
 
-            MoqUtil.UndoMockRandomNumber();
-
-            Assert.AreEqual(1, output.Count);
             Assert.IsTrue(output[0].StartsWith("We need to "));
         }
 
         [Test]
         public void VerifyFaukonGotTo()
         {
-            MoqUtil.SetupRandMock(17, 5, 2, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 2);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("We've got to "));
         }
@@ -33,22 +46,21 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonUnitShould()
         {
-            MoqUtil.SetupRandMock(17, 5, 3, 1, 1, 1, 1, 1);
+            _defaults.Insert(3, 3);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
             List<string> output = DomainFactory.Generator.GetSentences(1);
 
-            MoqUtil.UndoMockRandomNumber();
-
-            Assert.AreEqual(1, output.Count);
             Assert.IsTrue(output[0].StartsWith("The reporting unit should "));
         }
 
         [Test]
         public void VerifyFaukonControllingShould()
         {
-            MoqUtil.SetupRandMock(17, 5, 4, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("Controlling should "));
         }
@@ -56,10 +68,12 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonActivate()
         {
-            MoqUtil.SetupRandMock(17, 5, 5, 1, 1, 1, 1, 1, 1);
+            _defaults.Insert(3, 5);
+            _defaults.Add(1);
+            _defaults.Add(1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());            
+            //MoqUtil.SetupRandMock(17, 5, 1, 5, 1, 1, 1, 1, 1);
             string output = DomainFactory.Generator.GetSentences(1)[0];
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.IsTrue(output.StartsWith("We must activate "));
         }
@@ -67,10 +81,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonPursuing()
         {
-            MoqUtil.SetupRandMock(17, 5, 6, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 6);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("Pursuing this route will enable us to "));
         }
@@ -78,10 +92,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonExtraMile()
         {
-            MoqUtil.SetupRandMock(17, 5, 7, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 7);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("We will go the extra mile to "));
         }
@@ -89,10 +103,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonWorkingHard()
         {
-            MoqUtil.SetupRandMock(17, 5, 8, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 8);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("We are working hard to "));
         }
@@ -100,13 +114,12 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonTirelessly()
         {
-            MoqUtil.SetupRandMock(17, 5, 9, 1, 1, 1, 1, 1);
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            _defaults.Insert(3, 9);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.StartsWith("We continue to work tirelessly and diligently to "));
         }
-
     }
 }
