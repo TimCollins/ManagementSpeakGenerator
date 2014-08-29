@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticulatedPropositionTests.cs" />
+    <Compile Include="BadThingsTests.cs" />
     <Compile Include="DepartmentTests.cs" />
     <Compile Include="EventualAdverbTests.cs" />
     <Compile Include="FaukonTests.cs" />
     <Compile Include="GeneratorTests.cs" />
+    <Compile Include="ListUtil.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="MoqUtil.cs" />
     <Compile Include="PersonTests.cs" />

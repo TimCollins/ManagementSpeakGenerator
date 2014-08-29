@@ -58,11 +58,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingIdentify()
         {
-            _defaults.Insert(5, 11);
-            _defaults.RemoveAt(6);
-
-            _defaults.Insert(6, 2);
-            _defaults.RemoveAt(7);
+            _defaults.ReplaceAt(5, 11);
+            _defaults.ReplaceAt(6, 2);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -74,11 +71,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingMitigate()
         {
-            _defaults.Insert(5, 11);
-            _defaults.RemoveAt(6);
-
-            _defaults.Insert(6, 4);
-            _defaults.RemoveAt(7);
+            _defaults.ReplaceAt(5, 11);
+            _defaults.ReplaceAt(6, 4);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -90,14 +84,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyRandomArticleThe()
         {
-            _defaults.Insert(5, 11);
-            _defaults.RemoveAt(6);
-
-            _defaults.Insert(6, 4);
-            _defaults.RemoveAt(7);
-
-            _defaults.Insert(9, 2);
-            _defaults.RemoveAt(10);
+            _defaults.ReplaceAt(5, 11);
+            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(9, 2);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -124,14 +113,9 @@ namespace MSG.UnitTests
             //_defaults.Insert(5, 2);
             //_defaults.RemoveAt(6);
 
-            _defaults.Insert(5, 11);
-            _defaults.RemoveAt(6);
-
-            _defaults.Insert(6, 4);
-            _defaults.RemoveAt(7);
-
-            _defaults.Insert(8, 3);
-            _defaults.RemoveAt(9);
+            _defaults.ReplaceAt(5, 11);
+            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(8, 3);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -143,14 +127,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyGetPersonVerbAndEndingThirdBranch()
         {
-            _defaults.Insert(5, 17);
-            _defaults.RemoveAt(6);
-
-            _defaults.Insert(6, 4);
-            _defaults.RemoveAt(7);
-            
-            _defaults.Insert(8, 3);
-            _defaults.RemoveAt(9);
+            _defaults.ReplaceAt(5, 17);
+            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(8, 3);
 
             _defaults.Add(2);
             _defaults.Add(2);
