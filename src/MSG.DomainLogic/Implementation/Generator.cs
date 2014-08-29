@@ -549,8 +549,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetBadThings()
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 22);
-            int result = DomainFactory.RandomNumber.GetRand(1, 6);
+            int result = DomainFactory.RandomNumber.GetRand(1, 22);
 
             switch (result)
             {
@@ -564,27 +563,41 @@ namespace MSG.DomainLogic.Implementation
                     return "black swans";
                 case 5:
                     return "gaps ";
+                case 6:
+                    return "inefficiencies";
+                case 7:
+                    return "overlaps";
+                case 8:
+                    return "known unknowns";
+                case 9:
+                    return "unknown unknowns";
+                case 10:
+                    return "soft cycle issues";
+                case 11:
+                    return "obstacles";
+                case 12:
+                    return "surprises";
+                case 13:
+                    return "weaknesses";
+                case 14:
+                    return "threats";
+                case 15:
+                    return "barriers to success";
+                case 16:
+                    return "barriers";
+                case 17:
+                    return "shortcomings";
+                case 18:
+                    return "problems";
+                case 19:
+                    return "uncertainties";
+                case 20:
+                    return "unfavorable developments";
+                case 21:
+                    return "consumer/agent disconnects";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
-
-            //   when 6  => return "inefficiencies";
-            //   when 7  => return "overlaps";
-            //   when 8  => return "known unknowns";
-            //   when 9  => return "unknown unknowns";
-            //   when 10 => return "soft cycle issues";
-            //   when 11 => return "obstacles";
-            //   when 12 => return "surprises";
-            //   when 13 => return "weaknesses"; -- The W in SWOT
-            //   when 14 => return "threats";    -- The T in SWOT
-            //   when 15 => return "barriers to success";
-            //   when 16 => return "barriers";
-            //   when 17 => return "shortcomings";
-            //   when 18 => return "problems";
-            //   when 19 => return "uncertainties";
-            //   when 20 => return "unfavorable developments";
-            //   when 21 => return "consumer/agent disconnects";
-            //end case;
         }
 
         public Plurality GetRandomPlurality()
