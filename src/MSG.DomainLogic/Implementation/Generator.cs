@@ -49,19 +49,17 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 9);
 
+            if (result > 2 && result < 9)
+            {
+                return string.Empty;
+            }
+
             switch (result)
             {
                 case 1:
                     return "Managing ";
                 case 2:
                     return "Acting ";
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                    return string.Empty;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
@@ -168,26 +166,13 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 29);
 
+            if (result > 0 && result < 18)
+            {
+                return ApplySentenceCase(GetProposition());
+            }
+
             switch (result)
             {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                    return ApplySentenceCase(GetProposition());
                 case 18:
                     return ApplySentenceCase(GetProposition() + "; this is why " + GetProposition());
                 case 19:
@@ -207,7 +192,6 @@ namespace MSG.DomainLogic.Implementation
                     return ApplySentenceCase(GetProposition() + ". As a result " + GetProposition());
                 case 28:
                     return ApplySentenceCase(GetProposition() + ", whilst " + GetProposition());
-
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
