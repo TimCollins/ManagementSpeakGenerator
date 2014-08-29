@@ -554,7 +554,7 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return "issues";
+                    return "issues ";
                 case 2:
                     return "intricacies";
                 case 3:

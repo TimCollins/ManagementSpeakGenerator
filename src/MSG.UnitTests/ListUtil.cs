@@ -11,7 +11,7 @@ namespace MSG.UnitTests
         /// <param name="source"></param>
         /// <param name="index"></param>
         /// <param name="item"></param>
-        public static void ReplaceAt<T>(this List<T> source, int index, T item)
+        public static void ReplaceAt<T>(this IList<T> source, int index, T item)
         {
             source.Insert(index, item);
             source.RemoveAt(++index);
