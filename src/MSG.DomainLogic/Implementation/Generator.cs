@@ -396,9 +396,20 @@ namespace MSG.DomainLogic.Implementation
                 case "y":
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
+                        // If the second-last char is a vowel then append 's'.
+                        // This covers "ploy" to "ploys".
                         return verb + "s";
                     }
-                    return verb.Substring(0, verb.Length - 2) + "s";
+                    else
+                    {
+                        // Remove the 'y' and append "ies".
+                        // This covers "identify" to "identifies".
+                        return verb.Substring(0, verb.Length - 1) + "ies";
+                    }
+                    // TODO: Review the original for what should be returned in the default
+                    // case. It doesn't look right currently.
+                    // This will not now be hit.
+                    //return verb.Substring(0, verb.Length - 2) + "s";
                 default:
                     return verb + "s";
             }
@@ -622,17 +633,16 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
-            // TODO: Add Build_Plural_Verb call like the original code here.
             switch (result)
             {
                 case 1:
-                    return "address";
+                    return BuildPluralVerb("address", plurality);
                 case 2:
-                    return "identify";
+                    return BuildPluralVerb("identify", plurality);
                 case 3:
-                    return "avoid";
+                    return BuildPluralVerb("avoid", plurality);
                 case 4:
-                    return "mitigate";
+                    return BuildPluralVerb("mitigate", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

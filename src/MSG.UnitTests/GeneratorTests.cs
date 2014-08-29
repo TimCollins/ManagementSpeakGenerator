@@ -363,14 +363,18 @@ namespace MSG.UnitTests
         public void AddressesShouldBePlural()
         {
             // The original of this test has been removed altogether (see above).
-            List<int> defaults = new List<int> { 26, 40, 1, 7, 61, 1, 2, 3, 2, 9, 6, 11, 3, 9, 8, 1, 7, 1, 5, 331, 8, 1, 5, 2, 90, 2, 1, 7 };
+            // This test won't work in its current form as "address the overarching issues "
+            // is one complete string on its own. A test calling the 
+            // GetPersonVerbHavingBadThingComplement() function is needed.
+            // There are spacing issues which will be dealt with separately.
+            List<int> defaults = new List<int> { 17, 5, 1, 8, 1, 11, 1, 1, 1, 1 };
+
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            //Assert.IsTrue(output.Contains("addresses"));
-            Assert.Ignore("Do this once the broken tests are fixed.");
+            Assert.IsTrue(output.Contains("addresses"));
         }
 
         [Test]
