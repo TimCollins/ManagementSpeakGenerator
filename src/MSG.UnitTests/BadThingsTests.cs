@@ -27,12 +27,21 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyExceptionThrownForInvalidInput()
         {
-            //_defaults.ReplaceAt(3, 3);
+            _defaults.ReplaceAt(3, 50);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
+        }
+
+        [Test]
+        public void VerifyIssuesOutput()
+        {
+            _defaults.ReplaceAt(7, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The stakeholders 24/7 avoid gaps as part of the plan.", output);
+            Assert.AreEqual("The stakeholders 24/7 avoid issues as part of the plan.", output);
         }
     }
 }
