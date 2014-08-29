@@ -556,45 +556,45 @@ namespace MSG.DomainLogic.Implementation
                 case 1:
                     return "issues ";
                 case 2:
-                    return "intricacies";
+                    return "intricacies ";
                 case 3:
-                    return "organisational diseconomies";
+                    return "organisational diseconomies ";
                 case 4:
-                    return "black swans";
+                    return "black swans ";
                 case 5:
                     return "gaps ";
                 case 6:
-                    return "inefficiencies";
+                    return "inefficiencies ";
                 case 7:
-                    return "overlaps";
+                    return "overlaps ";
                 case 8:
-                    return "known unknowns";
+                    return "known unknowns ";
                 case 9:
-                    return "unknown unknowns";
+                    return "unknown unknowns ";
                 case 10:
-                    return "soft cycle issues";
+                    return "soft cycle issues ";
                 case 11:
-                    return "obstacles";
+                    return "obstacles ";
                 case 12:
-                    return "surprises";
+                    return "surprises ";
                 case 13:
-                    return "weaknesses";
+                    return "weaknesses ";
                 case 14:
-                    return "threats";
+                    return "threats ";
                 case 15:
-                    return "barriers to success";
+                    return "barriers to success ";
                 case 16:
-                    return "barriers";
+                    return "barriers ";
                 case 17:
-                    return "shortcomings";
+                    return "shortcomings ";
                 case 18:
-                    return "problems";
+                    return "problems ";
                 case 19:
-                    return "uncertainties";
+                    return "uncertainties ";
                 case 20:
-                    return "unfavorable developments";
+                    return "unfavorable developments ";
                 case 21:
-                    return "consumer/agent disconnects";
+                    return "consumer/agent disconnects ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
