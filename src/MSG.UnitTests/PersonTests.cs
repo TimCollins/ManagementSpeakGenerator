@@ -8,11 +8,13 @@ namespace MSG.UnitTests
     class PersonTests
     {
         private List<int> _defaults;
+        private List<int> _otherSpacingDefaults;
 
         [SetUp]
         public void SetUpDefaultNumbers()
         {
             _defaults = new List<int> { 23, 16, 1, 38, 47, 1, 3, 9, 3, 3, 247, 6, 13, 3, 9, 2, 8, 6, 7, 2, 1, 8, 1, 3, 187, 52, 8, 2 };
+            _otherSpacingDefaults = new List<int> { 26, 29, 2,/*here*/55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, /*here*/1, 1, 6, 1, 3, 226, 60, 15, 3 };
         }
 
         [TearDown]
@@ -56,8 +58,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyResourcesSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 5, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 10, 3, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _otherSpacingDefaults.Insert(3, 5);
+            _otherSpacingDefaults.Insert(18, 10);
+            _otherSpacingDefaults.Insert(19, 3);
+            MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -67,8 +71,11 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyKeyPeopleSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 1, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 8, 10, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _otherSpacingDefaults.Insert(3, 1);
+            _otherSpacingDefaults.Insert(18, 8);
+            _otherSpacingDefaults.Insert(19, 10);
+            MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
+
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -78,8 +85,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBusinessLeadersSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 8, 10, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _otherSpacingDefaults.Insert(3, 11);
+            _otherSpacingDefaults.Insert(18, 8);
+            _otherSpacingDefaults.Insert(19, 10);
+            MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
