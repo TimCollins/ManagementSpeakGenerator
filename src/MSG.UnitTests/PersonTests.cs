@@ -7,14 +7,26 @@ namespace MSG.UnitTests
     [TestFixture]
     class PersonTests
     {
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int> { 23, 16, 1, 38, 47, 1, 3, 9, 3, 3, 247, 6, 13, 3, 9, 2, 8, 6, 7, 2, 1, 8, 1, 3, 187, 52, 8, 2 };
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
+
         [Test]
         public void PersonTestSingular()
         {
             MoqUtil.SetupRandMock(1);
             Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
             string output = DomainFactory.Generator.GetPerson(plurality);
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("steering committee ", output);
         }
@@ -26,8 +38,6 @@ namespace MSG.UnitTests
                 Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
                 string output = DomainFactory.Generator.GetPerson(plurality);
 
-                MoqUtil.UndoMockRandomNumber();
-
                 Assert.AreEqual("Acting Chief of Management Office ", output);
         }
 
@@ -37,8 +47,6 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(2, 1);
             Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
             string output = DomainFactory.Generator.GetPerson(plurality);
-
-            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("key people ", output);
         }
@@ -70,7 +78,6 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBusinessLeadersSpacing()
         {
-            //List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 8, 10, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -79,51 +86,37 @@ namespace MSG.UnitTests
             Assert.IsTrue(output.StartsWith("The business leaders target "));
         }
 
-        //[Test]
-        //public void Something()
-        //{
-        //    List<int> defaults = new List<int> {27, 99, 9, 1, 7, 79, 46, 2, 3, 7, 1, 3, 45, 49, 15, 2};
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
-
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-
-        //    Assert.IsTrue(output.Contains("the business leaders streamline "));
-        //}
-
         [Test]
         public void VerifyCommitteeSpacing()
         {
-            List<int> defaults = new List<int> { 23, 16, 1, 1, 38, 47, 1, 3, 9, 3, 3, 247, 65, 13, 3, 50, 2, 8, 48, 48, 2, 1, 8, 1, 3, 187, 52, 8, 2 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _defaults.Insert(3, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-            MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("steering committee "));
+            Assert.IsTrue(output.Contains("The steering committee manages"));
         }
 
         [Test]
         public void VerifyChampionSpacing()
         {
-            List<int> defaults = new List<int> { 23, 16, 1, 8, 38, 47, 1, 3, 9, 3, 3, 247, 65, 13, 3, 50, 2, 8, 48, 48, 2, 1, 8, 1, 3, 187, 52, 8, 2 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _defaults.Insert(3, 8);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-            MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("powerful champion "));
+            Assert.IsTrue(output.Contains("The powerful champion manages"));
         }
 
         [Test]
         public void VerifyResourceSpacing()
         {
-            List<int> defaults = new List<int> { 23, 16, 1, 11, 38, 47, 1, 3, 9, 3, 3, 247, 65, 13, 3, 50, 2, 8, 48, 48, 2, 1, 8, 1, 3, 187, 52, 8, 2 };
-            MoqUtil.SetupRandMock(defaults.ToArray());
+            _defaults.Insert(3, 11);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-            MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("resource "));
+            Assert.IsTrue(output.Contains("The resource manages"));
         }
     }
 }
