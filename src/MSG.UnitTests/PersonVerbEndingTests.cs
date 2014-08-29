@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> { 17, 5, 9, 10, 1, 1, 1, 1, 1, 1 };
+            _defaults = new List<int> { 17, 5, 9, 8, 1, 1, 1, 1, 1, 1 };
         }
 
         [TearDown]
@@ -58,8 +58,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingIdentify()
         {
-            _defaults.Insert(4, 11);
-            _defaults.RemoveAt(5);
+            _defaults.Insert(5, 11);
+            _defaults.RemoveAt(6);
 
             _defaults.Insert(6, 2);
             _defaults.RemoveAt(7);
@@ -74,8 +74,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingMitigate()
         {
-            _defaults.Insert(4, 11);
-            _defaults.RemoveAt(5);
+            _defaults.Insert(5, 11);
+            _defaults.RemoveAt(6);
 
             _defaults.Insert(6, 4);
             _defaults.RemoveAt(7);
@@ -90,8 +90,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyRandomArticleThe()
         {
-            _defaults.Insert(4, 11);
-            _defaults.RemoveAt(5);
+            _defaults.Insert(5, 11);
+            _defaults.RemoveAt(6);
 
             _defaults.Insert(6, 4);
             _defaults.RemoveAt(7);
@@ -124,8 +124,8 @@ namespace MSG.UnitTests
             //_defaults.Insert(5, 2);
             //_defaults.RemoveAt(6);
 
-            _defaults.Insert(4, 11);
-            _defaults.RemoveAt(5);
+            _defaults.Insert(5, 11);
+            _defaults.RemoveAt(6);
 
             _defaults.Insert(6, 4);
             _defaults.RemoveAt(7);
@@ -143,8 +143,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyGetPersonVerbAndEndingThirdBranch()
         {
-            _defaults.Insert(4, 17);
-            _defaults.RemoveAt(5);
+            _defaults.Insert(5, 17);
+            _defaults.RemoveAt(6);
 
             _defaults.Insert(6, 4);
             _defaults.RemoveAt(7);
