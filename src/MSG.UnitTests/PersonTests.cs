@@ -48,34 +48,35 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyResourcesSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 5, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
+            List<int> defaults = new List<int> { 26, 29, 2, 5, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 10, 3, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("The resources streamline "));
+            Assert.IsTrue(output.StartsWith("The resources target "));
         }
 
         [Test]
         public void VerifyKeyPeopleSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 1, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
+            List<int> defaults = new List<int> { 26, 29, 2, 1, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 8, 10, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("The key people streamline "));
+            Assert.IsTrue(output.StartsWith("The key people target "));
         }
 
         [Test]
         public void VerifyBusinessLeadersSpacing()
         {
-            List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
+            //List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 38, 13, 1, 40, 1, 8, 79, 79, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
+            List<int> defaults = new List<int> { 26, 29, 2, 11, 55, 67, 2, 3, 3, 2, 1, 114, 6, 13, 1, 9, 1, 8, 8, 10, 1, 1, 6, 1, 3, 226, 60, 15, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("The business leaders streamline "));
+            Assert.IsTrue(output.StartsWith("The business leaders target "));
         }
 
         //[Test]
