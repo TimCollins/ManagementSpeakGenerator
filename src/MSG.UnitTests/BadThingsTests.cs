@@ -43,5 +43,51 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The stakeholders 24/7 avoid issues as part of the plan.", output);
         }
+
+        [Test]
+        public void VerifyKnownUnknowns()
+        {
+            _defaults.ReplaceAt(1, 2);
+            _defaults.ReplaceAt(7, 8);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We are working hard to 24/7 avoid known unknowns as part of the plan.", output);
+        }
+
+        [Test]
+        public void VerifySurprises()
+        {
+            _defaults.ReplaceAt(1, 3);
+            _defaults.ReplaceAt(7, 12);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We are working hard to 24/7 avoid surprises as part of the plan.", output);
+        }
+
+        [Test]
+        public void VerifyProblems()
+        {
+            _defaults.ReplaceAt(7, 18);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The stakeholders 24/7 avoid problems as part of the plan.", output);
+        }
+
+        [Test]
+        public void VerifyConsumer()
+        {
+            _defaults.ReplaceAt(7, 21);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The stakeholders 24/7 avoid consumer/agent disconnects as part of the plan.", output);
+        }
     }
 }
