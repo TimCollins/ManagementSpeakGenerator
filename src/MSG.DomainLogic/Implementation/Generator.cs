@@ -224,8 +224,10 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 6)
             {
+                // TODO: See line 1303 - I think this plurality should be plural always.
                 Plurality plurality = GetRandomPlurality();
-                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
+                //return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
+                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
             if (result > 5 && result < 51)
@@ -561,7 +563,7 @@ namespace MSG.DomainLogic.Implementation
                 case 4:
                     return "black swans";
                 case 5:
-                    return "gaps";
+                    return "gaps ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
@@ -590,11 +592,6 @@ namespace MSG.DomainLogic.Implementation
             int result = DomainFactory.RandomNumber.GetRand(1, 3);
 
             return result == 1 ? Plurality.Singular : Plurality.Plural;
-        }
-
-        private string GetPersonHavingThingComplement(Plurality plurality)
-        {
-            return string.Empty;
         }
 
         private string GetRandomArticle(Plurality plurality, string item)
@@ -640,7 +637,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return BuildPluralVerb("identify", plurality);
                 case 3:
-                    return BuildPluralVerb("avoid", plurality);
+                    return BuildPluralVerb("avoid", plurality) + " ";
                 case 4:
                     return BuildPluralVerb("mitigate", plurality);
                 default:
