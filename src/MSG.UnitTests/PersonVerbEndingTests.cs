@@ -24,8 +24,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPersonVerbAndComplementStreamline()
         {
-            // Insert 1 at position 6.
-            _defaults.Insert(6, 1);
+            _defaults.Insert(5, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -36,7 +35,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPersonVerbAndComplementOverarching()
         {
-            _defaults.Insert(6, 2);
+            _defaults.Insert(5, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -47,7 +46,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPersonVerbAndComplementValueChain()
         {
-            _defaults.Insert(6, 10);
+            _defaults.Insert(5, 10);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -58,8 +57,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingIdentify()
         {
-            _defaults.ReplaceAt(5, 11);
-            _defaults.ReplaceAt(6, 2);
+            _defaults.ReplaceAt(4, 11);
+            _defaults.ReplaceAt(5, 2);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -71,8 +70,8 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyBadThingMitigate()
         {
-            _defaults.ReplaceAt(5, 11);
-            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(4, 11);
+            _defaults.ReplaceAt(5, 4);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -84,9 +83,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyRandomArticleThe()
         {
-            _defaults.ReplaceAt(5, 11);
-            _defaults.ReplaceAt(6, 4);
-            _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(4, 11);
+            _defaults.ReplaceAt(5, 4);
+            _defaults.ReplaceAt(8, 2);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -98,24 +97,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyRandomArticleOur()
         {
-            // Within the industry
-            //_defaults.Insert(9, 2);
-            //_defaults.RemoveAt(10);
-
-            // going forward
-            //_defaults.Insert(8, 2);
-            //_defaults.RemoveAt(9);
-
-            // intricacies
-            //_defaults.Insert(7, 2);
-            //_defaults.RemoveAt(8);
-
-            //_defaults.Insert(5, 2);
-            //_defaults.RemoveAt(6);
-
-            _defaults.ReplaceAt(5, 11);
-            _defaults.ReplaceAt(6, 4);
-            _defaults.ReplaceAt(8, 3);
+            _defaults.ReplaceAt(4, 11);
+            _defaults.ReplaceAt(5, 4);
+            _defaults.ReplaceAt(7, 3);
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
@@ -127,11 +111,10 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyGetPersonVerbAndEndingThirdBranch()
         {
-            _defaults.ReplaceAt(5, 17);
-            _defaults.ReplaceAt(6, 4);
-            _defaults.ReplaceAt(8, 3);
+            _defaults.ReplaceAt(4, 17);
+            _defaults.ReplaceAt(5, 4);
+            _defaults.ReplaceAt(7, 3);
 
-            _defaults.Add(2);
             _defaults.Add(2);
             _defaults.Add(3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
