@@ -203,9 +203,8 @@ namespace MSG.UnitTests
 
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
-
             Assert.IsNotNull(boss);
+            Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
         }
 
         [Test]
@@ -216,9 +215,8 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Group Chief Technical Officer ", boss);
-
             Assert.IsNotNull(boss);
+            Assert.AreEqual("Group Chief Technical Officer ", boss);
         }
 
         [Test]
@@ -230,9 +228,8 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Chief Operations Officer ", boss);
-
             Assert.IsNotNull(boss);
+            Assert.AreEqual("Chief Operations Officer ", boss);
         }
 
         [Test]
@@ -244,9 +241,8 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Group Chief Digital Officer ", boss);
-
             Assert.IsNotNull(boss);
+            Assert.AreEqual("Group Chief Digital Officer ", boss);
         }
 
         [Test]
@@ -258,9 +254,8 @@ namespace MSG.UnitTests
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Global Chief Digital Officer ", boss);
-
             Assert.IsNotNull(boss);
+            Assert.AreEqual("Global Chief Digital Officer ", boss);            
         }
 
         [Test]
@@ -276,13 +271,13 @@ namespace MSG.UnitTests
             // a small number of possible selections listed but have huge random number ranges.
             // This means that the app is often selecting 41 as a value with only 1-3 producing 
             // output.
+            // TODO: Review this output as there are still problems with the output.
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("efficient,"));
-            Assert.IsTrue(output.Contains(" targets "));
+            Assert.AreEqual("An efficient, constructive,  seamlessly targets the enablers using our constructive, strategic,.", output);
         }
 
         [Test]
@@ -297,24 +292,21 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("timelines throughout"));
+            // TODO: Review this output too.
+            Assert.AreEqual("Win-win solutionand timeline24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
         }
 
         [Test]
         public void EnsureDeEscalationSpacing()
         {
             // This sentence contains "de-escalations  consistently"
-            //List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 119, 9, 3, 9, 58, 2, 7, 1, 5, 179, 11, 11, 22, 1, 80, 1, 16, 2, 1, 17, 6 };
-            //List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 22, 1, 80, 1, 16, 2, 1, 17, 6 };
-            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 7, 1, 80, 1, 16, 2, 1, 9, 6 };
+            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // Changes the assertion to match what happens now.
-            //Assert.IsTrue(output.Contains("de-escalations consistently"));
-            Assert.IsTrue(output.Contains("de-escalations throughout the organisation"));
+            Assert.AreEqual("The team players proactively target corporate, proactive, de-escalations throughout the organisation, while we are working hard to interactively target the cost-effective, key, guidelines going forward.", output);
         }
 
         [Test]
@@ -327,7 +319,8 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("industry."));
+            // TODO: Review this output as there are a couple of errors with it.
+            Assert.AreEqual("The group expediently targetsthe efficient, proactive,  within the industry.", output);
         }
 
         [Test]
@@ -342,7 +335,8 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.Contains("Chief Human Resources Officer"));
+            // TODO: Review this. The word "streamline" should be plural. 
+            Assert.AreEqual("The Chief Human Resources Officer technically streamline the process going forward.", output);
         }
 
         //[Test]
@@ -391,19 +385,20 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("The Chief Operations Officer consistently"));
+            // TODO: Review this output as there are spacing issues.
+            Assert.AreEqual("The Chief Operations Officer consistently targetsour efficient, strong, roadmap at the end of the day.", output);
         }
 
         [Test]
         public void CapitalLetterAtStartGetFaukon()
         {
-            List<int> defaults = new List<int> {5, 4, 1, 1, 3, 11, 4, 5, 22, 2};
+            List<int> defaults = new List<int> {5, 4, 1, 3, 11, 4, 5, 22, 2};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("We need to"));
+            Assert.AreEqual("We need to quickly mitigate gaps within the industry.", output);
         }
 
         [Test]
@@ -415,7 +410,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("A constructive, global, timeline"));
+            Assert.AreEqual("A constructive, global, timeline adequately streamlines proactive, corporate, style guidelines as part of the plan.", output);
         }
 
         [Test]
@@ -430,7 +425,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("Quarter results and focus globally"));
+            Assert.AreEqual("Quarter results and focus globally boost our strategic, strategic, key target markets in this space.", output);
         }
 
         [Test]
@@ -442,7 +437,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("Quarter results, focus and roadmap "));
+            Assert.AreEqual("Quarter results, focus and roadmap 200% interact with the efficient, strong, baseline starting points by thinking outside the box.", output);
         }
 
         [Test]
@@ -455,7 +450,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("The project manager proactively targets"));
+            Assert.AreEqual("The project manager proactively targetsa strategic, cost-effective, roadmap across the board.", output);
         }
 
         [Test]
@@ -467,7 +462,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.IsTrue(output.StartsWith("The key people expediently manage strong"));
+            Assert.AreEqual("The key people expediently manage strong, proactive,  as part of the plan. At the same time, The steering committee globally streamline the process from the get-go.", output);
         }
 
         [Test]
@@ -478,6 +473,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("The stakeholders 24/7 avoid gaps as part of the plan.", output);
         }
