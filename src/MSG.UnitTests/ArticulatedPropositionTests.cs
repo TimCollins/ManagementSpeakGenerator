@@ -12,8 +12,8 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int>{5, 2, 9, 10, 1, 1, 1, 1,
-                                      5, 2, 9, 10, 1, 1, 1, 1};
+            _defaults = new List<int>{5, 9, 10, 1, 1, 1, 1,
+                                      5, 9, 10, 1, 1, 1, 1};
         }
 
         [TearDown]
@@ -39,8 +39,8 @@ namespace MSG.UnitTests
         public void VerifyArticulatedPropositionIsWhy()
         {
             _defaults.Insert(0, 18);
-            _defaults.Insert(3, 7);
-            _defaults.Remove(3);
+            _defaults.Insert(2, 7);
+            _defaults.Remove(2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

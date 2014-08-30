@@ -48,7 +48,8 @@ namespace MSG.UnitTests
         public void VerifyKnownUnknowns()
         {
             _defaults.ReplaceAt(1, 2);
-            _defaults.ReplaceAt(7, 8);
+            _defaults.RemoveAt(2);
+            _defaults.ReplaceAt(6, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

@@ -209,7 +209,7 @@ namespace MSG.DomainLogic.Implementation
             if (result > 0 && result < 6)
             {
                 // TODO: See line 1303 - I think this plurality should be plural always.
-                Plurality plurality = GetRandomPlurality();
+                //Plurality plurality = GetRandomPlurality();
                 //return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
                 return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
