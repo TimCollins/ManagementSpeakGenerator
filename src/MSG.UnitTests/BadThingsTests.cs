@@ -61,7 +61,8 @@ namespace MSG.UnitTests
         public void VerifySurprises()
         {
             _defaults.ReplaceAt(1, 3);
-            _defaults.ReplaceAt(7, 12);
+            _defaults.RemoveAt(2);
+            _defaults.ReplaceAt(6, 12);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
