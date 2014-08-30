@@ -630,13 +630,13 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return BuildPluralVerb("address", plurality);
+                    return BuildPluralVerb("address", plurality) + " ";
                 case 2:
-                    return BuildPluralVerb("identify", plurality);
+                    return BuildPluralVerb("identify", plurality) + " ";
                 case 3:
                     return BuildPluralVerb("avoid", plurality) + " ";
                 case 4:
-                    return BuildPluralVerb("mitigate", plurality);
+                    return BuildPluralVerb("mitigate", plurality) + " ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

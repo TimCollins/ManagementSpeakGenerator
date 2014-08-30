@@ -29,7 +29,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             
-            Assert.IsTrue(output.Contains("streamline the process "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally streamline the process going forward.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("address the overarching issues "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address the overarching issues going forward.", output);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("think across the full value chain "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally think across the full value chain going forward.", output);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("identify"));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally identify the issues going forward.", output);
         }
 
         [Test]
@@ -77,7 +77,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("mitigate"));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues going forward.", output);
         }
         
         [Test]
@@ -91,7 +91,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("the issues"));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues within the industry.", output);
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("our issues"));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate our issues going forward.", output);
         }
 
         [Test]
@@ -121,7 +121,21 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("across the board"));
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally improve the constructive, efficient, key target markets across the board.", output);
+        }
+
+        [Test]
+        public void VerifySpacingAddress()
+        {
+            _defaults.ReplaceAt(4, 11);
+            _defaults.ReplaceAt(5, 1);
+            _defaults.ReplaceAt(7, 3);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address our issues going forward.", output);
         }
     }
 }
