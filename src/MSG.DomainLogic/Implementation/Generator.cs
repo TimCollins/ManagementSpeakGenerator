@@ -208,9 +208,6 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 6)
             {
-                // TODO: See line 1303 - I think this plurality should be plural always.
-                //Plurality plurality = GetRandomPlurality();
-                //return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
                 return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
@@ -230,8 +227,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 93 && result < 98)
             {
+                // TODO: Review this as it fails some unit tests but passes others.
+                // The general spacing guidelines are:
+                //For strings that are expected to join to others there should be a 1 character space at the end so the output from the Managing function should be "Managing " or "Acting " as they always join to the output of the Age function.
+                //For strings that form the end of a collection of tokens there is no right-hand space e.g. Title() returns "Director", "Chief" etc. They are joined to a text string " of department ". Note that it has both left and right space as it takes tokens on both sides.
                 return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
-                       + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                       + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
                        + GetEventualPostfixedAdverb();
             }
 

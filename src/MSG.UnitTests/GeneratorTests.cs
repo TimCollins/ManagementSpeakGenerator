@@ -261,7 +261,7 @@ namespace MSG.UnitTests
         [Test]
         public void FixExtraSpace()
         {
-            List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 82, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 61, 4 };
+            List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 11, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 8, 4};
             // This sentence contains a couple of double spaces
             // "an efficient , constructive,  targets the enablers using our constructive, strategic, "
             // 1. Fix the space between "efficient" and the comma.
@@ -271,13 +271,12 @@ namespace MSG.UnitTests
             // a small number of possible selections listed but have huge random number ranges.
             // This means that the app is often selecting 41 as a value with only 1-3 producing 
             // output.
-            // TODO: Review this output as there are still problems with the output.
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("An efficient, constructive,  seamlessly targets the enablers using our constructive, strategic,.", output);
+            Assert.AreEqual("An efficient, constructive, de-escalation seamlessly targets the enablers using our constructive, strategic, baseline starting point.", output);
         }
 
         [Test]
