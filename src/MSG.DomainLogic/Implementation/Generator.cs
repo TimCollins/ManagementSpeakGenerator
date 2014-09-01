@@ -232,7 +232,8 @@ namespace MSG.DomainLogic.Implementation
                 //For strings that are expected to join to others there should be a 1 character space at the end so the output from the Managing function should be "Managing " or "Acting " as they always join to the output of the Age function.
                 //For strings that form the end of a collection of tokens there is no right-hand space e.g. Title() returns "Director", "Chief" etc. They are joined to a text string " of department ". Note that it has both left and right space as it takes tokens on both sides.
                 return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
-                       + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                    + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
+                    //+ " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
                        + GetEventualPostfixedAdverb();
             }
 
@@ -259,7 +260,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 56 && result < 101)
             {
-                return GetThingVerbHavingPersonComplement(plurality) + " the " + GetPerson(innerPlurality);
+                return GetThingVerbHavingPersonComplement(plurality) + "the " + GetPerson(innerPlurality);
             }
 
             return BuildPluralVerb("add", plurality) + " value";
@@ -364,8 +365,8 @@ namespace MSG.DomainLogic.Implementation
             }
 
             // I think the original code is checking for spaces at the end of the input string.
-            string last = verb.Substring(verb.Length - 1, 1);
             verb = verb.Trim();
+            string last = verb.Substring(verb.Length - 1, 1);
 
             switch (last)
             {
@@ -398,7 +399,7 @@ namespace MSG.DomainLogic.Implementation
                     // This will not now be hit.
                     //return verb.Substring(0, verb.Length - 2) + "s";
                 default:
-                    return verb + "s";
+                    return verb + "s ";
             }
         }
 
