@@ -292,7 +292,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Review this output too.
-            Assert.AreEqual("Win-win solutionand timeline24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
+            Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
         }
 
         [Test]
@@ -319,7 +319,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Review this output as there are a couple of errors with it.
-            Assert.AreEqual("The group expediently targetsthe efficient, proactive,  within the industry.", output);
+            Assert.AreEqual("The group expediently targets the efficient, proactive,  within the industry.", output);
         }
 
         [Test]
@@ -385,7 +385,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Review this output as there are spacing issues.
-            Assert.AreEqual("The Chief Operations Officer consistently targetsour efficient, strong, roadmap at the end of the day.", output);
+            Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong, roadmap at the end of the day.", output);
         }
 
         [Test]
@@ -409,6 +409,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
+            // TODO: Fix the double space before "proactive".
             Assert.AreEqual("A constructive, global, timeline adequately streamlines proactive, corporate, style guidelines as part of the plan.", output);
         }
 
@@ -449,7 +450,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The project manager proactively targetsa strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective, roadmap across the board.", output);
         }
 
         [Test]

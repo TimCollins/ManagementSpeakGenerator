@@ -139,8 +139,10 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbHavingThingComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 64);
-            int result = DomainFactory.RandomNumber.GetRand(1, 5);
+            int result = DomainFactory.RandomNumber.GetRand(1, 67);
+
+            // TODO: Add an Americanize function to randomly switch the spelling of these
+            // words so e.g. "optimise" will occasionally become "optimize".
 
             switch (result)
             {
@@ -152,6 +154,130 @@ namespace MSG.DomainLogic.Implementation
                     return BuildPluralVerb("streamline ", plurality);
                 case 4:
                     return BuildPluralVerb("improve ", plurality);
+                case 5:
+                    return BuildPluralVerb("optimise ", plurality);
+                case 6:
+                    return BuildPluralVerb("achieve ", plurality);
+                case 7:
+                    return BuildPluralVerb("secure ", plurality);
+                case 8:
+                    return BuildPluralVerb("address ", plurality);
+                case 9:
+                    return BuildPluralVerb("boost ", plurality);
+                case 10:
+                    return BuildPluralVerb("deploy ", plurality);
+                case 11:
+                    return BuildPluralVerb("innovate ", plurality);
+                case 12:
+                    return BuildPluralVerb("right-scale ", plurality);
+                case 13:
+                    return BuildPluralVerb("formulate ", plurality);
+                case 14:
+                    return BuildPluralVerb("transition ", plurality);
+                case 15:
+                    return BuildPluralVerb("leverage ", plurality);
+                case 16:
+                    return BuildPluralVerb("focus on ", plurality);
+                case 17:
+                    return BuildPluralVerb("synergise ", plurality);
+                case 18:
+                    return BuildPluralVerb("generate ", plurality);
+                case 19:
+                    return BuildPluralVerb("analyse ", plurality);
+                case 20:
+                    return BuildPluralVerb("integrate ", plurality);
+                case 21:
+                    return BuildPluralVerb("empower ", plurality);
+                case 22:
+                    return BuildPluralVerb("benchmark ", plurality);
+                case 23:
+                    return BuildPluralVerb("learn ", plurality);
+                case 24:
+                    return BuildPluralVerb("adapt ", plurality);
+                case 25:
+                    return BuildPluralVerb("enable ", plurality);
+                case 26:
+                    return BuildPluralVerb("strategise ", plurality);
+                case 27:
+                    return BuildPluralVerb("prioritise ", plurality);
+                case 28:
+                    return BuildPluralVerb("pre-prepare ", plurality);
+                case 29:
+                    return BuildPluralVerb("deliver ", plurality);
+                case 30:
+                    return BuildPluralVerb("champion ", plurality);
+                case 31:
+                    return BuildPluralVerb("embrace ", plurality);
+                case 32:
+                    return BuildPluralVerb("enhance ", plurality);
+                case 33:
+                    return BuildPluralVerb("engineer ", plurality);
+                case 34:
+                    return BuildPluralVerb("envision ", plurality);
+                case 35:
+                    return BuildPluralVerb("incentivise ", plurality);
+                case 36:
+                    return BuildPluralVerb("maximise ", plurality);
+                case 37:
+                    return BuildPluralVerb("visualise ", plurality);
+                case 38:
+                    return BuildPluralVerb("whiteboard ", plurality);
+                case 39:
+                    return BuildPluralVerb("institutionalise ", plurality);
+                case 40:
+                    return BuildPluralVerb("promote ", plurality);
+                case 41:
+                    return BuildPluralVerb("overdeliver ", plurality);
+                case 42:
+                    return BuildPluralVerb("right-size ", plurality);
+                case 43:
+                    return BuildPluralVerb("rebalance ", plurality);
+                case 44:
+                    return BuildPluralVerb("re-imagine ", plurality);
+                case 45:
+                    return BuildPluralVerb("influence ", plurality);
+                case 46:
+                    return BuildPluralVerb("facilitate ", plurality);
+                case 47:
+                    return BuildPluralVerb("drive ", plurality);
+                case 48:
+                    return BuildPluralVerb("structure ", plurality);
+                case 49:
+                    return BuildPluralVerb("standardise ", plurality);
+                case 50:
+                    return BuildPluralVerb("accelerate ", plurality);
+                case 51:
+                    return BuildPluralVerb("deepen ", plurality);
+                case 52:
+                    return BuildPluralVerb("strengthen ", plurality);
+                case 53:
+                    return BuildPluralVerb("broaden ", plurality);
+                case 54:
+                    return BuildPluralVerb("enforce ", plurality);
+                case 55:
+                    return BuildPluralVerb("establish ", plurality);
+                case 56:
+                    return BuildPluralVerb("foster ", plurality);
+                case 57:
+                    return BuildPluralVerb("build ", plurality);
+                case 58:
+                    return BuildPluralVerb("differentiate ", plurality);
+                case 59:
+                    return BuildPluralVerb("take a bite out of ", plurality);
+                case 60:
+                    return BuildPluralVerb("table ", plurality);
+                case 61:
+                    return BuildPluralVerb("flesh out ", plurality);
+                case 62:
+                    return BuildPluralVerb("reach out ", plurality);
+                case 63:
+                    return BuildPluralVerb("jump-start ", plurality);
+                case 64:
+                    return BuildPluralVerb("telegraph ", plurality);
+                case 65:
+                    return BuildPluralVerb("justify ", plurality);
+                case 66:
+                    return BuildPluralVerb("display ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
@@ -231,15 +357,15 @@ namespace MSG.DomainLogic.Implementation
                 // The general spacing guidelines are:
                 //For strings that are expected to join to others there should be a 1 character space at the end so the output from the Managing function should be "Managing " or "Acting " as they always join to the output of the Age function.
                 //For strings that form the end of a collection of tokens there is no right-hand space e.g. Title() returns "Director", "Chief" etc. They are joined to a text string " of department ". Note that it has both left and right space as it takes tokens on both sides.
-                return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
-                       + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                return GetThingAtom(Plurality.Singular) + " and " + GetThingAtom(Plurality.Singular)
+                    + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
                        + GetEventualPostfixedAdverb();
             }
 
             if (result > 98 && result < 101)
             {
                 return GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
-                       + "and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
+                       + " and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
                        GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
@@ -253,13 +379,15 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 56)
             {
-                return GetThingVerbHavingThingComplement(plurality) + " " +
+                //return GetThingVerbHavingThingComplement(plurality) + " " +
+                //       GetRandomArticle(innerPlurality, GetThing(innerPlurality));
+                return GetThingVerbHavingThingComplement(plurality) +
                        GetRandomArticle(innerPlurality, GetThing(innerPlurality));
             }
 
             if (result > 56 && result < 101)
             {
-                return GetThingVerbHavingPersonComplement(plurality) + " the " + GetPerson(innerPlurality);
+                return GetThingVerbHavingPersonComplement(plurality) + "the " + GetPerson(innerPlurality);
             }
 
             return BuildPluralVerb("add", plurality) + " value";
@@ -267,8 +395,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThingVerbHavingPersonComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 13);
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            int result = DomainFactory.RandomNumber.GetRand(1, 13);
             string item;
 
             switch (result)
@@ -279,25 +406,44 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     item = "target";
                     break;
+                case 3:
+                    item = "enable";
+                    break;
+                case 4:
+                    item = "drive";
+                    break;
+                case 5:
+                    item = "synergise";
+                    break;
+                case 6:
+                    item = "empower";
+                    break;
+                case 7:
+                    item = "prioritise";
+                    break;
+                case 8:
+                    item = "incentivise";
+                    break;
+                case 9:
+                    item = "inspire";
+                    break;
+                case 10:
+                    item = "transfer";
+                    break;
+                case 11:
+                    item = "promote";
+                    break;
+                case 12:
+                    item = "influence";
+                    break;
+                case 13:
+                    item = "strengthen";
+                    break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
             return BuildPluralVerb(item, plurality);
-
-            //when 3 => return "enable";
-            //when 4 => return "drive";
-            //when 5 => return "synergize";
-            //when 6 => return "empower";
-            //when 7 => return "prioritize";
-            //-- BBC office-speak phrases
-            //when 8 => return "incentivise";
-            //when 9 => return "inspire";
-            //--
-            //when 10 => return "transfer";
-            //when 11 => return "promote";
-            //when 12 => return "influence";
-            //when 13 => return "strengthen";
         }
 
         private string GetThingVerbHavingThingComplement(Plurality plurality)
@@ -312,10 +458,10 @@ namespace MSG.DomainLogic.Implementation
                     item = "streamline";
                     break;
                 case 2:
-                    item = "interact with";
+                    item = "interact with ";
                     break;
                 case 3:
-                    item = "boost";
+                    item = "boost ";
                     break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
@@ -364,8 +510,8 @@ namespace MSG.DomainLogic.Implementation
             }
 
             // I think the original code is checking for spaces at the end of the input string.
-            string last = verb.Substring(verb.Length - 1, 1);
             verb = verb.Trim();
+            string last = verb.Substring(verb.Length - 1, 1);
 
             switch (last)
             {
@@ -377,28 +523,25 @@ namespace MSG.DomainLogic.Implementation
                     string secondLast = verb.Substring(verb.Length - 2, 1);
                     if (secondLast == "c" || secondLast == "s")
                     {
-                        return verb + "es";
+                        return verb + "es ";
                     }
-                    return verb + "s";
+                    return verb + "s ";
                 case "y":
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
                         // If the second-last char is a vowel then append 's'.
                         // This covers "ploy" to "ploys".
-                        return verb + "s";
+                        return verb + "s ";
                     }
-                    else
-                    {
-                        // Remove the 'y' and append "ies".
-                        // This covers "identify" to "identifies".
-                        return verb.Substring(0, verb.Length - 1) + "ies";
-                    }
+                    // Remove the 'y' and append "ies".
+                    // This covers "identify" to "identifies".
+                    return verb.Substring(0, verb.Length - 1) + "ies ";
                     // TODO: Review the original for what should be returned in the default
                     // case. It doesn't look right currently.
                     // This will not now be hit.
                     //return verb.Substring(0, verb.Length - 2) + "s";
                 default:
-                    return verb + "s";
+                    return verb + "s ";
             }
         }
 
@@ -938,7 +1081,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "team building";
                 case 3:
-                    return "focus ";
+                    return "focus";
                 // ...etc
                 default:
                     return GetInner().Trim();
@@ -1183,7 +1326,7 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     return "client-event";
                 case 4:
-                    return "quarter results ";
+                    return "quarter results";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
