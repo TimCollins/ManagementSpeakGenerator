@@ -1,0 +1,68 @@
+﻿using System.Collections.Generic;
+using MSG.DomainLogic;
+using NUnit.Framework;
+
+namespace MSG.UnitTests
+{
+    [TestFixture]
+    class BuildPluralVerbTests
+    {
+        private List<int> _defaults;
+
+        [SetUp]
+        public void SetUpDefaultNumbers()
+        {
+            _defaults = new List<int> { 13, 28, 1, 3, 4, 93, 3, 2, 9, 458, 4, 9, 3 };
+        }
+
+        [TearDown]
+        public void UndoRandomNumberSetting()
+        {
+            MoqUtil.UndoMockRandomNumber();
+        }
+
+        [Test]
+        public void BuildPluralVerbManages()
+        {
+            _defaults.Insert(6, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively manages a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbTargets()
+        {
+            _defaults.Insert(6, 2); 
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbStreamlines()
+        {
+            _defaults.Insert(6, 3);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively streamlines a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbImproves()
+        {
+            _defaults.Insert(6, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager improves streamlines a strategic, cost-effective, roadmap across the board.", output);
+        }
+    }
+}
