@@ -108,5 +108,25 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The project manager proactively displays a strategic, cost-effective, roadmap across the board.", output);
         }
+
+        // Tests for GetThingVerbHavingPersonComplement
+        [Test]
+        public void GetThingVerbHavingPersonComplement1()
+        {
+            _defaults.ReplaceAt(1, 52);
+            _defaults.ReplaceAt(5, 6);
+            _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(11, 1);
+            _defaults.Add(4);
+            _defaults.Add(5);
+            _defaults.Add(2);
+            _defaults.Add(6);
+            _defaults.Add(1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The proactive, key, focus technically streamlines our proactive, strong, style guidelines going forward.", output);
+        }
     }
 }

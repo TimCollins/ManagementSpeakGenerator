@@ -357,16 +357,15 @@ namespace MSG.DomainLogic.Implementation
                 // The general spacing guidelines are:
                 //For strings that are expected to join to others there should be a 1 character space at the end so the output from the Managing function should be "Managing " or "Acting " as they always join to the output of the Age function.
                 //For strings that form the end of a collection of tokens there is no right-hand space e.g. Title() returns "Director", "Chief" etc. They are joined to a text string " of department ". Note that it has both left and right space as it takes tokens on both sides.
-                return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
-                    + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
-                    //+ " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
+                return GetThingAtom(Plurality.Singular) + " and " + GetThingAtom(Plurality.Singular)
+                    + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
                        + GetEventualPostfixedAdverb();
             }
 
             if (result > 98 && result < 101)
             {
                 return GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
-                       + "and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
+                       + " and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
                        GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
@@ -380,7 +379,9 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 56)
             {
-                return GetThingVerbHavingThingComplement(plurality) + " " +
+                //return GetThingVerbHavingThingComplement(plurality) + " " +
+                //       GetRandomArticle(innerPlurality, GetThing(innerPlurality));
+                return GetThingVerbHavingThingComplement(plurality) +
                        GetRandomArticle(innerPlurality, GetThing(innerPlurality));
             }
 
@@ -439,10 +440,10 @@ namespace MSG.DomainLogic.Implementation
                     item = "streamline";
                     break;
                 case 2:
-                    item = "interact with";
+                    item = "interact with ";
                     break;
                 case 3:
-                    item = "boost";
+                    item = "boost ";
                     break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
@@ -1062,7 +1063,7 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     return "team building";
                 case 3:
-                    return "focus ";
+                    return "focus";
                 // ...etc
                 default:
                     return GetInner().Trim();
@@ -1307,7 +1308,7 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     return "client-event";
                 case 4:
-                    return "quarter results ";
+                    return "quarter results";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

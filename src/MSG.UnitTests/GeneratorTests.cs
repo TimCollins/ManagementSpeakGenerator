@@ -292,7 +292,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Review this output too.
-            Assert.AreEqual("Win-win solutionand timeline24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
+            Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
         }
 
         [Test]
@@ -410,7 +410,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Fix the double space before "proactive".
-            Assert.AreEqual("A constructive, global, timeline adequately streamlines  proactive, corporate, style guidelines as part of the plan.", output);
+            Assert.AreEqual("A constructive, global, timeline adequately streamlines proactive, corporate, style guidelines as part of the plan.", output);
         }
 
         [Test]
