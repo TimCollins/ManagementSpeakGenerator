@@ -264,7 +264,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("An efficient, constructive, de-escalation seamlessly targets the enablers using our constructive, strategic, baseline starting point.", output);
+            Assert.AreEqual("An efficient, constructive, trigger event seamlessly targets the enablers using our constructive, strategic, baseline starting point.", output);
         }
 
         [Test]
@@ -289,7 +289,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The team players proactively target corporate, proactive, de-escalations throughout the organisation, while we are working hard to interactively target the cost-effective, key, guidelines going forward.", output);
+            Assert.AreEqual("The team players proactively target corporate, proactive, trigger events throughout the organisation, while we are working hard to interactively target the cost-effective, key, guidelines going forward.", output);
         }
 
         [Test]
