@@ -173,5 +173,74 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The proactive, key, focus technically strengthens the customers in this space.", output);
         }
+
+        // Tests for GetThingVerbHavingThingComplement
+
+        [Test]
+        public void BuildPluralVerbStreamlineThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 1, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            
+            Assert.AreEqual("Quarter results, focus and roadmap 200% streamline the efficient, strong, baseline starting points by thinking outside the box.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbInteractThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("Quarter results, focus and roadmap 200% interact with the efficient, strong, baseline starting points by thinking outside the box.", output);
+        }
+
+        
+        [Test]
+        public void BuildPluralVerbEmpowerThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 10, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("Quarter results, focus and roadmap 200% empower the efficient, strong, baseline starting points by thinking outside the box.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbInfluenceThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 17, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("Quarter results, focus and roadmap 200% influence the efficient, strong, baseline starting points by thinking outside the box.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbAccelerateThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 25, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("Quarter results, focus and roadmap 200% accelerate the efficient, strong, baseline starting points by thinking outside the box.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbFosterThing()
+        {
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 1, 9, 29, 2, 1, 5, 4, 8, 2, 9, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("Quarter results, focus and roadmap 200% foster the efficient, strong, baseline starting point by thinking outside the box.", output);
+        }
     }
 }

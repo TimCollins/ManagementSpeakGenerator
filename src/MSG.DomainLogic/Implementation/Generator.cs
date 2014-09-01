@@ -379,8 +379,6 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 56)
             {
-                //return GetThingVerbHavingThingComplement(plurality) + " " +
-                //       GetRandomArticle(innerPlurality, GetThing(innerPlurality));
                 return GetThingVerbHavingThingComplement(plurality) +
                        GetRandomArticle(innerPlurality, GetThing(innerPlurality));
             }
@@ -448,14 +446,13 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThingVerbHavingThingComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 29);
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            int result = DomainFactory.RandomNumber.GetRand(1, 30);
             string item;
 
             switch (result)
             {
                 case 1:
-                    item = "streamline";
+                    item = "streamline ";
                     break;
                 case 2:
                     item = "interact with ";
@@ -463,38 +460,89 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     item = "boost ";
                     break;
+                case 4:
+                    item = "generate ";
+                    break;
+                case 5:
+                    item = "impact ";
+                    break;
+                case 6:
+                    item = "enhance ";
+                    break;
+                case 7:
+                    item = "leverage ";
+                    break;
+                case 8:
+                    item = "synergise ";
+                    break;
+                case 9:
+                    item = "generate ";
+                    break;
+                case 10:
+                    item = "empower ";
+                    break;
+                case 11:
+                    item = "enable ";
+                    break;
+                case 12:
+                    item = "prioritise ";
+                    break;
+                case 13:
+                    item = "transfer ";
+                    break;
+                case 14:
+                    item = "drive ";
+                    break;
+                case 15:
+                    item = "result in ";
+                    break;
+                case 16:
+                    item = "promote ";
+                    break;
+                case 17:
+                    item = "influence ";
+                    break;
+                case 18:
+                    item = "facilitate ";
+                    break;
+                case 19:
+                    item = "aggregate ";
+                    break;
+                case 20:
+                    item = "architect ";
+                    break;
+                case 21:
+                    item = "cultivate ";
+                    break;
+                case 22:
+                    item = "engage ";
+                    break;
+                case 23:
+                    item = "structure ";
+                    break;
+                case 24:
+                    item = "standardise ";
+                    break;
+                case 25:
+                    item = "accelerate ";
+                    break;
+                case 26:
+                    item = "deepen ";
+                    break;
+                case 27:
+                    item = "strengthen ";
+                    break;
+                case 28:
+                    item = "enforce ";
+                    break;
+                case 29:
+                    item = "foster ";
+                    break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
             return BuildPluralVerb(item, plurality);
-
-            //when 4  => return "generate";
-            //when 5  => return "impact";
-            //when 6  => return "enhance";
-            //when 7  => return "leverage";
-            //when 8  => return "synergize";
-            //when 9  => return "generate";
-            //when 10 => return "empower";
-            //when 11 => return "enable";
-            //when 12 => return "prioritize";
-            //when 13 => return "transfer";
-            //when 14 => return "drive";
-            //when 15 => return "result in";
-            //when 16 => return "promote";
-            //when 17 => return "influence";
-            //when 18 => return "facilitate";
-            //when 19 => return "aggregate";
-            //when 20 => return "architect";
-            //when 21 => return "cultivate";
-            //when 22 => return "engage";
-            //when 23 => return "structure";
-            //when 24 => return "standardize";
-            //when 25 => return "accelerate";
-            //when 26 => return "deepen";
-            //when 27 => return "strengthen";
-            //when 28 => return "enforce";
-            //when 29 => return "foster";
         }
 
         private bool IsVowel(string input)
