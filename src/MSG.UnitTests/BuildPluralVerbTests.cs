@@ -111,22 +111,67 @@ namespace MSG.UnitTests
 
         // Tests for GetThingVerbHavingPersonComplement
         [Test]
-        public void GetThingVerbHavingPersonComplement1()
+        public void BuildPluralVerbMotivates()
         {
-            _defaults.ReplaceAt(1, 52);
+            _defaults.ReplaceAt(1, 52);            
             _defaults.ReplaceAt(5, 6);
             _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(10, 66);
             _defaults.ReplaceAt(11, 1);
             _defaults.Add(4);
-            _defaults.Add(5);
-            _defaults.Add(2);
-            _defaults.Add(6);
-            _defaults.Add(1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The proactive, key, focus technically streamlines our proactive, strong, style guidelines going forward.", output);
+            Assert.AreEqual("The proactive, key, focus technically motivates the customers in this space.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbInspires()
+        {
+            _defaults.ReplaceAt(1, 52);
+            _defaults.ReplaceAt(5, 6);
+            _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(10, 66);
+            _defaults.ReplaceAt(11, 9);
+            _defaults.Add(4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The proactive, key, focus technically inspires the customers in this space.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbTransfer()
+        {
+            _defaults.ReplaceAt(1, 52);
+            _defaults.ReplaceAt(5, 6);
+            _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(10, 66);
+            _defaults.ReplaceAt(11, 10);
+            _defaults.Add(4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The proactive, key, focus technically transfers the customers in this space.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbStrengthen()
+        {
+            _defaults.ReplaceAt(1, 52);
+            _defaults.ReplaceAt(5, 6);
+            _defaults.ReplaceAt(9, 2);
+            _defaults.ReplaceAt(10, 66);
+            _defaults.ReplaceAt(11, 13);
+            _defaults.Add(4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The proactive, key, focus technically strengthens the customers in this space.", output);
         }
     }
 }

@@ -395,8 +395,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThingVerbHavingPersonComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 13);
-            int result = DomainFactory.RandomNumber.GetRand(1, 3);
+            int result = DomainFactory.RandomNumber.GetRand(1, 13);
             string item;
 
             switch (result)
@@ -407,25 +406,44 @@ namespace MSG.DomainLogic.Implementation
                 case 2:
                     item = "target";
                     break;
+                case 3:
+                    item = "enable";
+                    break;
+                case 4:
+                    item = "drive";
+                    break;
+                case 5:
+                    item = "synergise";
+                    break;
+                case 6:
+                    item = "empower";
+                    break;
+                case 7:
+                    item = "prioritise";
+                    break;
+                case 8:
+                    item = "incentivise";
+                    break;
+                case 9:
+                    item = "inspire";
+                    break;
+                case 10:
+                    item = "transfer";
+                    break;
+                case 11:
+                    item = "promote";
+                    break;
+                case 12:
+                    item = "influence";
+                    break;
+                case 13:
+                    item = "strengthen";
+                    break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
 
             return BuildPluralVerb(item, plurality);
-
-            //when 3 => return "enable";
-            //when 4 => return "drive";
-            //when 5 => return "synergize";
-            //when 6 => return "empower";
-            //when 7 => return "prioritize";
-            //-- BBC office-speak phrases
-            //when 8 => return "incentivise";
-            //when 9 => return "inspire";
-            //--
-            //when 10 => return "transfer";
-            //when 11 => return "promote";
-            //when 12 => return "influence";
-            //when 13 => return "strengthen";
         }
 
         private string GetThingVerbHavingThingComplement(Plurality plurality)
