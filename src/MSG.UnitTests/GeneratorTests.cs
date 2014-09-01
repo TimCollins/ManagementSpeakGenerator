@@ -222,7 +222,6 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyChiefSpacing()
         {
-            // Titles like " Chief Operations Officer" should not have a space at the start.
             MoqUtil.SetupRandMock(2, 3, 14, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
@@ -235,7 +234,6 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyGroupChiefSpacing()
         {
-            // Titles like "GroupChief Digital Officer" should have a space between group + chief.
             MoqUtil.SetupRandMock(2, 1, 16, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
@@ -248,7 +246,6 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyGlobalChiefSpacing()
         {
-            // Titles like "GlobalChief Digital Officer" should have a space between global + chief.
             MoqUtil.SetupRandMock(2, 2, 16, 5);
 
             string boss = DomainFactory.Generator.GetBoss();
@@ -262,15 +259,6 @@ namespace MSG.UnitTests
         public void FixExtraSpace()
         {
             List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 11, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 8, 4};
-            // This sentence contains a couple of double spaces
-            // "an efficient , constructive,  targets the enablers using our constructive, strategic, "
-            // 1. Fix the space between "efficient" and the comma.
-            // 2. Fix the space between the comma and "targets".
-            // 3. See why the sentence ends at strategic.
-            // I think 2 and 3 are related to the fact that GetInner and GetSingularAtom only have 
-            // a small number of possible selections listed but have huge random number ranges.
-            // This means that the app is often selecting 41 as a value with only 1-3 producing 
-            // output.
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -282,10 +270,7 @@ namespace MSG.UnitTests
         [Test]
         public void FixPluralSpace()
         {
-            // This sentence has a few more spaces as well as an odd plural space after timeline.
-            //win-win solution  and timeline  24/7 interact with our cost-effective, strategic, timeline sthroughout the organisation
             List<int> defaults = new List<int> {16, 95, 173, 7, 159, 5, 6, 2, 29, 2, 3, 9, 2, 105, 5, 4, 7};
-
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -298,7 +283,6 @@ namespace MSG.UnitTests
         [Test]
         public void EnsureDeEscalationSpacing()
         {
-            // This sentence contains "de-escalations  consistently"
             List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -311,7 +295,6 @@ namespace MSG.UnitTests
         [Test]
         public void FixSpaceAtEnd()
         {
-            // There is a separate spacing error in the middle of this sentence.
             List<int> defaults = new List<int> { 6, 26, 1, 2, 13, 95, 2, 4, 1, 4, 8, 203, 1, 2, 10, 2, 4, 6, 9, 50, 11, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -325,9 +308,6 @@ namespace MSG.UnitTests
         [Test]
         public void FixMissingWord()
         {
-            // This sentence is "the significantly think differently across the board."
-            // which is missing a word, not sure what.
-            // Word was the output from GetBoss which was wrong.
             List<int> defaults = new List<int> { 5, 43, 1, 15, 4, 16, 8, 1, 9, 3, 1, 1, 1, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -373,9 +353,6 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetPerson()
         {
-            // "the Chief Operations Officer consistently" should become
-            // "The Chief Operations Officer consistently"
-
             // Change the 14 to hit other branches of GetProposition() and make sure they
             // are all capitalised.
             List<int> defaults = new List<int> {5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 4, 3, 6};
@@ -384,7 +361,6 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this output as there are spacing issues.
             Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong, roadmap at the end of the day.", output);
         }
 
@@ -409,16 +385,13 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Fix the double space before "proactive".
             Assert.AreEqual("A constructive, global, timeline adequately streamlines proactive, corporate, style guidelines as part of the plan.", output);
         }
 
         [Test]
         public void CapitalLetterAtStartGetThingAtomAnd()
         {
-            // This test can also form the basis of more spacing tests:
-            // Quarter resultsand focusglobally boost our strategic, strategic, key target markets in this space.
-            // Just going to assert what is expected here for now.
+            // Note the duplicated "strategic" in the output.
             List<int> defaults = new List<int> {5, 97, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 15, 8};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -443,7 +416,6 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectPluralTest()
         {
-            // The project manager proactively target a strategic, cost-effective, roadmap across the board.
             List<int> defaults = new List<int> { 13, 28, 1, 3, 4, 93, 2, 3, 2, 9, 458, 4, 9, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -468,7 +440,6 @@ namespace MSG.UnitTests
         [Test]
         public void TwoSpacingErrors()
         {
-            // This sentence currently contains "avoidgapsas part of"
             List<int> defaults = new List<int> {17, 8, 2, 8, 6, 11, 3, 5,  12, 8};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
