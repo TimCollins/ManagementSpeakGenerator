@@ -62,7 +62,51 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager improves streamlines a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively improves a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbEstablishes()
+        {
+            _defaults.Insert(6, 55);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbTelegraphs()
+        {
+            _defaults.Insert(6, 64);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbJustifies()
+        {
+            _defaults.Insert(6, 65);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively justifies a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralVerbDisplays()
+        {
+            _defaults.Insert(6, 66);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively displays a strategic, cost-effective, roadmap across the board.", output);
         }
     }
 }
