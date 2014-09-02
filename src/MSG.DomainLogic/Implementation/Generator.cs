@@ -1617,8 +1617,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetInner()
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 192);
-            int result = DomainFactory.RandomNumber.GetRand(1, 12);
+            int result = DomainFactory.RandomNumber.GetRand(1, 192);
 
             switch (result)
             {
@@ -1643,9 +1642,6 @@ namespace MSG.DomainLogic.Implementation
                 case 10:
                     return "escalation ";
                 case 11:
-                    //return "de-escalation "; // Note this doesn't exist in original.
-                    // This is the actual value. It was added out of sequence in the original
-                    // source.
                     return "trigger event";
                 case 12:
                     return "system";

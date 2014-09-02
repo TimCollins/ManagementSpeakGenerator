@@ -449,6 +449,30 @@ namespace MSG.UnitTests
             Assert.AreEqual("The stakeholders 24/7 avoid gaps as part of the plan.", output);
         }
 
+        [Test]
+        public void SpacingErrorsTargetSignOff()
+        {
+            // Original sentence was Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
+
+            //GetArticulatedProposition()		25 ", while"
+            //GetProposition
+            //GetEventualPlural or 			3
+            //GetSingularAtom 				4 (to call GetInner)
+            //GetInner						7 (to call GetMatrix)
+            //GetMatrix						6 silo
+            //GetInner()						9 sign-off
+            //GetInner()						7 win-win solution
+            //GetEventualAdverb()				4 proactively
+            
+            List<int> defaults = new List<int> { 25, 6, 9, 7, 4};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Silo, sign-off and win-win solution proactively target the sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergise the team players from the get-go.", output);
+        }
+
         // Other problematic sentences that have emerged. Unfortunately the numbers will
         // have to be derived manually as the number logs are unable to show where individual 
         // sentences start and finish.
