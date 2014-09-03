@@ -340,7 +340,7 @@ namespace MSG.DomainLogic.Implementation
             if (result > 5 && result < 51)
             {
                 Plurality plurality = GetRandomPlurality();
-                return "The " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) +
+                return "the " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) +
                        GetEventualPostfixedAdverb();
             }
 
@@ -399,43 +399,43 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    item = "motivate";
+                    item = "motivate ";
                     break;
                 case 2:
-                    item = "target";
+                    item = "target ";
                     break;
                 case 3:
-                    item = "enable";
+                    item = "enable ";
                     break;
                 case 4:
-                    item = "drive";
+                    item = "drive ";
                     break;
                 case 5:
-                    item = "synergise";
+                    item = "synergise ";
                     break;
                 case 6:
-                    item = "empower";
+                    item = "empower ";
                     break;
                 case 7:
-                    item = "prioritise";
+                    item = "prioritise ";
                     break;
                 case 8:
-                    item = "incentivise";
+                    item = "incentivise ";
                     break;
                 case 9:
-                    item = "inspire";
+                    item = "inspire ";
                     break;
                 case 10:
-                    item = "transfer";
+                    item = "transfer ";
                     break;
                 case 11:
-                    item = "promote";
+                    item = "promote ";
                     break;
                 case 12:
-                    item = "influence";
+                    item = "influence ";
                     break;
                 case 13:
-                    item = "strengthen";
+                    item = "strengthen ";
                     break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
