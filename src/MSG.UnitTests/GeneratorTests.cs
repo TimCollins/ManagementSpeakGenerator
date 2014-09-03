@@ -449,28 +449,65 @@ namespace MSG.UnitTests
             Assert.AreEqual("The stakeholders 24/7 avoid gaps as part of the plan.", output);
         }
 
-        [Test]
-        public void SpacingErrorsTargetSignOff()
-        {
-            // Original sentence was Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
+        //[Test]
+        //public void SpacingErrorsTargetSignOff()
+        //{
+        //    // Original sentence was Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
 
-            //GetArticulatedProposition()		25 ", while"
-            //GetProposition
-            //GetEventualPlural or 			3
-            //GetSingularAtom 				4 (to call GetInner)
-            //GetInner						7 (to call GetMatrix)
-            //GetMatrix						6 silo
-            //GetInner()						9 sign-off
-            //GetInner()						7 win-win solution
-            //GetEventualAdverb()				4 proactively
+        //    //GetArticulatedProposition()		25 ", while"
+        //    //GetProposition
+        //    //GetEventualPlural or 			3
+        //    //GetSingularAtom 				4 (to call GetInner)
+        //    //GetInner						7 (to call GetMatrix)
+        //    //GetMatrix						6 silo
+        //    //GetInner()						9 sign-off
+        //    //GetInner()						7 win-win solution
+        //    //GetEventualAdverb()				4 proactively
             
-            List<int> defaults = new List<int> { 25, 6, 9, 7, 4};
+        //    List<int> defaults = new List<int> { 25, 6, 9, 7, 4};
+        //    MoqUtil.SetupRandMock(defaults.ToArray());
+
+        //    string output = DomainFactory.Generator.GetSentences(1)[0];
+        //    MoqUtil.UndoMockRandomNumber();
+
+        //    Assert.AreEqual("Silo, sign-off and win-win solution proactively target the sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergise the team players from the get-go.", output);
+        //}
+
+        [Test]
+        public void IncorrectBossCapitalisation()
+        {
+            //The resources cautiously prioritise outsourced, hyper-hybrid, customer centricities going forward, while The sales manager expediently optimises our phased, fine-grained, empowerment going forward.
+            //22,46,2,5,12,61,27,7,166,231,55,137,10,1,47,1,6,13,70,5,3,197,206,180,46,4,1,
+
+            List<int> defaults = new List<int> { 22, 46, 2, 5, 12, 61, 27, 7, 166, 231, 55, 137, 10, 1, 47, 1, 6, 13, 70, 5, 3, 197, 206, 180, 46, 4, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Silo, sign-off and win-win solution proactively target the sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergise the team players from the get-go.", output);
+            Assert.AreEqual("The resources cautiously prioritise outsourced, hyper-hybrid, customer centricities going forward, while the sales manager expediently optimises our phased, fine-grained, empowerment going forward.", output);
+        }
+
+        [Test]
+        public void IncorrectBossCapitalisation2()
+        {
+            //The stakeholders expediently enable end-to-end, collaborative, sign-offs as part of the plan. As a result The business leaders credibly benchmark the portfolio by thinking outside the box.
+            //27,13,2,8,13,65,25,9,223,149,187,9,11,8,12,2,11,2,1,3,9,
+        }
+
+        [Test]
+        public void IncorrectPluralSurprise()
+        {
+            //The Group Chief Internal Audit Officer credibly addresses a surprises in this space. As a result our nimble, rock-solid, focus cautiously influences the team players at the end of the day.
+            //27,17,1,16,4,1,12,3,2,14,1,12,11,4,79,1,7,196,191,3,3,12,2,96,12,6,6,
+        }
+
+        [Test]
+        public void SpacingErrorPrioritise()
+        {
+            //Bottom-up, customer-centric, supply-chains efficiently prioritisethe senior support staff by thinking outside the box.
+            //13,61,2,1,168,86,143,104,12,20,1,69,7,12,9,
+
         }
 
         // Other problematic sentences that have emerged. Unfortunately the numbers will

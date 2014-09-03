@@ -16,7 +16,7 @@ namespace MSG.ConsoleApp
 
             using (StreamWriter sw = new StreamWriter(fileName))
             {
-                const int max = 10;
+                const int max = 1;
 
                 List<string> sentences = DomainFactory.Generator.GetSentences(max);
                 for (int i = 0; i < max; i++)
