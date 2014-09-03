@@ -532,5 +532,17 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("Spectral, customer-centric, executions strategically generate top-level, end-to-end, structures going forward; nevertheless the Chief Digital Officer globally rebalances an efficient, competitive, challenge across the board.", output);
         }
+
+        [Test]
+        public void SpacingErrorsValueIn()
+        {
+            List<int> defaults = new List<int> { 15, 52, 1, 5, 80, 61, 5, 90, 16, 16, 1, 101, 4 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
+            
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("An enhanced, responsive, pillar significantly adds value in this space.", output);
+        }
     }
 }
