@@ -179,18 +179,17 @@ namespace MSG.UnitTests
         [Test]
         public void BuildPluralVerbStreamlineThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 1, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 1, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
-            
-            Assert.AreEqual("Quarter results, focus and roadmap 200% streamline the efficient, strong, baseline starting points by thinking outside the box.", output);
+
+            Assert.AreEqual("Our optimal, global, strategy quickly streamlines strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]
         public void BuildPluralVerbInteractThing()
         {
-            //List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
             List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -201,11 +200,10 @@ namespace MSG.UnitTests
             Assert.AreEqual("Our optimal, global, strategy quickly interact withs strong, proactive, visions as part of the plan.", output);
         }
 
-        
         [Test]
         public void BuildPluralVerbEmpowerThing()
         {
-            List<int> defaults = new List<int>   { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 10, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 10, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -217,37 +215,37 @@ namespace MSG.UnitTests
         [Test]
         public void BuildPluralVerbInfluenceThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 17, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 17, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% influence the efficient, strong, baseline starting points by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly influences strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]
         public void BuildPluralVerbAccelerateThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 25, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 25, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% accelerate the efficient, strong, baseline starting points by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly accelerates strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]
         public void BuildPluralVerbFosterThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 1, 9, 29, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 29, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% foster the efficient, strong, baseline starting point by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly fosters strong, proactive, visions as part of the plan.", output);
         }
     }
 }
