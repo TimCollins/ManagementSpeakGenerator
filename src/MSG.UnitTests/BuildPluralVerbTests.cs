@@ -183,8 +183,9 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly streamlines strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly streamlines the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -196,8 +197,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Fix plural here too.
-            Assert.AreEqual("Our optimal, global, strategy quickly interacts with strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly interacts with the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -209,7 +209,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly empowers strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly empowers the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -221,7 +221,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly influences strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly influences the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -233,7 +233,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly accelerates strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly accelerates the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -245,7 +245,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly fosters strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly fosters the strong, proactive, organizing principles by thinking outside the box.", output);
         }
     }
 }

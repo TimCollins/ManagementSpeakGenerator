@@ -283,13 +283,13 @@ namespace MSG.UnitTests
         [Test]
         public void EnsureDeEscalationSpacing()
         {
-            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
+            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 1, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The team players proactively target corporate, proactive, trigger events throughout the organisation, while we are working hard to interactively target the cost-effective, key, guidelines going forward.", output);
+            Assert.AreEqual("The team players proactively target corporate, proactive, roles and responsibilities going forward, while the powerful champion interactively targets our cost-effective, key, strategy within the industry.", output);
         }
 
         [Test]
@@ -378,13 +378,13 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetRandomArticle()
         {
-            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 15, 8};
+            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 9, 8};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our constructive, global, strategy consistently interacts with strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our constructive, global, strategy consistently interacts with the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -409,7 +409,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and implementation proactively generate strategic, efficient, roadmaps within the industry.", output);
+            Assert.AreEqual("Quarter results, focus and implementation proactively generate our strategic, efficient, market forces as part of the plan.", output);
         }
 
         [Test]
@@ -433,7 +433,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The key people expediently manage strong, proactive,  as part of the plan. At the same time, the steering committee globally streamline the process from the get-go.", output);
+            Assert.AreEqual("The key people expediently manage strong, proactive, market opportunities throughout the organisation. At the same time, the key people interactively think across the full value chain going forward.", output);
         }
 
         [Test]
@@ -523,27 +523,17 @@ namespace MSG.UnitTests
             Assert.AreEqual("Bottom-up, customer-centric, supply-chains efficiently prioritise the senior support staff by thinking outside the box.", output);
         }
 
-        // Other problematic sentences that have emerged. Unfortunately the numbers will
-        // have to be derived manually as the number logs are unable to show where individual 
-        // sentences start and finish.
-        // Focus initially on the spacing and capitalisation errors as they have been 
-        // introduced in the porting. After that analyse the grammar. After that focus on 
-        // the repeated words.
+        [Test]
+        public void SpacingErrorAvoids()
+        {
+            List<int> defaults = new List<int> { 25, 10, 1, 12, 16, 11, 3, 1, 5, 7, 61, 5, 90, 16, 16, 1, 101, 4, 1, 2, 3, 4, 5, 6, 7, 8 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
-        //The strategic, cost-effective, guidelines 24/7 empowerthe enabler going forward.
-        //Pursuing this route will enable us to carefully maximise cost-effective, constructive, key target markets within the industry, while The matrixcredibly right-scales a key, proactive, timeline from the get-go.
-        //The Global Chief Legal Officer credibly think differently going forward.
-        //A focused, global, roadmap carefully drives the customers using a key, key, baseline starting point.
-        //The partners proactively jump-start the constructive, cost-effective, guidelines using proactive, focused, sign-offs, while The key people cautiously address overlaps across the board.
-        //The strategic, cost-effective, guidelines 24/7 empowerthe enabler going forward.
-        //Our gut feeling is that constructive, constructive, escalations 24/7 influence global, efficient, roadmaps in this space.
-        //The standard-setters technically prioritise efficient, efficient, visions from the get-go.
-        //The steering committee globally addressesour cross-industry, strategic, guideline throughout the organisation.
-        //Our robust, future, roadmaps 200% promotethe enablers across the board, while the vertical, principle-based, escalation efficiently prioritises a vision-setting, operational, timeline by thinking outside the box.
-        //Our gut feeling is that The partners efficiently manage socially conscious, long-established, roadmaps in this space.
-        //A well-planned, collaborative, trigger event technically boosts our far-reaching, future-ready, win-win solution within the industry. As a result spectral, interactive, timelines efficiently drivethe senior support staff from the get-go.
-        //The team players adequately accelerate feedback-based, innovation-driven, baseline starting points by thinking outside the box, while The project manager 200% delivers an awesome, market-driven, sign-off going forward.
-        //Value-enhancing, leveraged, escalations conservatively targetthe clients throughout the organisation, whilst The gatekeeper conservatively facilitates our reliable, vertical, sign-off from the get-go.
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            // TODO: Fix the double space after "avoids"
+            Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
+        }
     }
 }

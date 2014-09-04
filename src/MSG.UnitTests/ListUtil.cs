@@ -10,8 +10,8 @@ namespace MSG.UnitTests
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
-        /// <param name="index"></param>
-        /// <param name="item"></param>
+        /// <param name="index">Position of item to replace.</param>
+        /// <param name="item">Object to insert in place of object at specified index.</param>
         public static void ReplaceAt<T>(this IList<T> source, int index, T item)
         {
             // Note that some of these exceptions are already handled by Insert. They were added for
