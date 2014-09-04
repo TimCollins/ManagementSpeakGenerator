@@ -1313,7 +1313,6 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbAndComplement(Plurality plurality)
         {
-            // Implements a function called Inner which I think is referenced in a few places.
             //int result = DomainFactory.RandomNumber.GetRand(1, 61);
             int result = DomainFactory.RandomNumber.GetRand(1, 11);
 
@@ -1607,7 +1606,196 @@ namespace MSG.DomainLogic.Implementation
                     return "team building";
                 case 3:
                     return "focus";
-                // ...etc
+                case 4:
+                    return "strategy";
+                case 5:
+                    return "planning granularity";
+                case 6:
+                    return "core business";
+                case 7:
+                    return "implementation";
+                case 8:
+                    return "intelligence";
+                case 9:
+                    return "governance";
+                case 10:
+                    return "ROE";
+                case 11:
+                    return "EBITDA";
+                case 12:
+                    return "enterprise content management";
+                case 13:
+                    return "excellence";
+                case 14:
+                    return "trust";
+                case 15:
+                    return "respect";
+                case 16:
+                    return "openness";
+                case 17:
+                    return "transparency";
+                case 18:
+                    return "Quality Research";
+                case 19:
+                    return "decision making";
+                case 20:
+                    return "risk management";
+                case 21:
+                    return "enterprise risk management";
+                case 22:
+                    return "leverage";
+                case 23:
+                    return "diversification";
+                case 24:
+                    return "successful execution";
+                case 25:
+                    return "effective execution";
+                case 26:
+                    return "selectivity";
+                case 27:
+                    return "optionality";
+                case 28:
+                    return "expertise";
+                case 29:
+                    return "awareness";
+                case 30:
+                    return "broader thinking";
+                case 31:
+                    return "client focus";
+                case 32:
+                    return "thought leadership";
+                case 33:
+                    return "quest for quality";
+                case 34:
+                    return "360-degree thinking";
+                case 35:
+                    return "drill-down";
+                case 36:
+                    return "impetus";
+                case 37:
+                    return "fairness";
+                case 38:
+                    return "intellect";
+                case 39:
+                    return "emotional impact";
+                case 40:
+                    return "emotional intelligence";
+                case 41:
+                    return "adaptability";
+                case 42:
+                    return "stress management";
+                case 43:
+                    return "self-awareness";
+                case 44:
+                    return "strategic thinking";
+                case 45:
+                    return "cross fertilization";
+                case 46:
+                    return "cross-breeding";
+                case 47:
+                    return "customer experience";
+                case 48:
+                    return "centerpiece";
+                case 49:
+                    return "SWOT analysis";
+                case 50:
+                    return "responsibility";
+                case 51:
+                    return "accountability";
+                case 52:
+                    return "ROI";
+                case 53:
+                    return "line of business";
+                case 54:
+                    return "serviceability";
+                case 55:
+                    return "responsiveness";
+                case 56:
+                    return "simplicity";
+                case 57:
+                    return "portfolio shaping";
+                case 58:
+                    return "knowledge sharing";
+                case 59:
+                    return "continuity";
+                case 60:
+                    return "visual thinking";
+                case 61:
+                    return "interoperability";
+                case 62:
+                    return "compliance";
+                case 63:
+                    return "teamwork";
+                case 64:
+                    return "self-efficacy";
+                case 65:
+                    return "decision-making";
+                case 66:
+                    return "line-of-sight";
+                case 67:
+                    return "scoping";
+                case 68:
+                    return "line-up";
+                case 69:
+                    return "predictability";
+                case 70:
+                    return "recognition";
+                case 71:
+                    return "investor confidence";
+                case 72:
+                    return "competitive advantage";
+                case 73:
+                    return "uniformity";
+                case 74:
+                    return "connectivity";
+                case 75:
+                    return "big picture";
+                case 76:
+                    return "big-picture thinking";
+                case 77:
+                    return "quality";
+                case 78:
+                    return "upside focus";
+                case 79:
+                    return "sustainability";
+                case 80:
+                    return "resiliency";
+                case 81:
+                    return "social sphere";
+                case 82:
+                    return "intuitiveness";
+                case 83:
+                    return "effectiveness";
+                case 84:
+                    return "competitiveness";
+                case 85:
+                    return "resourcefulness";
+                case 86:
+                    return "informationalization";
+                case 87:
+                    return "role building";
+                case 88:
+                    return "talent retention";
+                case 89:
+                    return "innovativeness";
+                case 90:
+                    return "Economic Value Creation";
+                case 91:
+                    return "intellectual capital";
+                case 92:
+                    return "high quality";
+                case 93:
+                    return "full range of products";
+                case 94:
+                    return "technical strength";
+                case 95:
+                    return "quality assurance";
+                case 96:
+                    return "specification quality";
+                case 97:
+                    return "market environment";
+                case 98:
+                    return "client perspective";
                 default:
                     return GetInner().Trim();
             }

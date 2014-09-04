@@ -190,24 +190,28 @@ namespace MSG.UnitTests
         [Test]
         public void BuildPluralVerbInteractThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
+            //List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int> { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% interact with the efficient, strong, baseline starting points by thinking outside the box.", output);
+            // TODO: Fix plural here too.
+            Assert.AreEqual("Our optimal, global, strategy quickly interact withs strong, proactive, visions as part of the plan.", output);
         }
 
         
         [Test]
         public void BuildPluralVerbEmpowerThing()
         {
-            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 10, 2, 1, 5, 4, 8, 2, 9, 8 };
+            List<int> defaults = new List<int>   { 5, 74, 1, 4, 17, 7, 4, 5, 3, 9, 10, 10, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% empower the efficient, strong, baseline starting points by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly empowers strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]
@@ -217,6 +221,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Quarter results, focus and roadmap 200% influence the efficient, strong, baseline starting points by thinking outside the box.", output);
         }
@@ -228,6 +233,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Quarter results, focus and roadmap 200% accelerate the efficient, strong, baseline starting points by thinking outside the box.", output);
         }
@@ -239,6 +245,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Quarter results, focus and roadmap 200% foster the efficient, strong, baseline starting point by thinking outside the box.", output);
         }

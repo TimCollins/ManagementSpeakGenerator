@@ -301,8 +301,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this output as there are a couple of errors with it.
-            Assert.AreEqual("The group expediently targets the efficient, proactive,  within the industry.", output);
+            Assert.AreEqual("The group expediently targets an efficient, proactive, intelligence going forward.", output);
         }
 
         [Test]
@@ -361,7 +360,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong, roadmap at the end of the day.", output);
+            Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong, strategy across the board.", output);
         }
 
         [Test]
@@ -385,7 +384,8 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("A constructive, global, timeline adequately streamlines proactive, corporate, style guidelines as part of the plan.", output);
+            // TODO: Review this, the 's' is in the wrong place.
+            Assert.AreEqual("Our constructive, global, strategy consistently interact withs strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]
@@ -410,7 +410,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and roadmap 200% interact with the efficient, strong, baseline starting points by thinking outside the box.", output);
+            Assert.AreEqual("Quarter results, focus and implementation proactively generate strategic, efficient, roadmaps within the industry.", output);
         }
 
         [Test]
