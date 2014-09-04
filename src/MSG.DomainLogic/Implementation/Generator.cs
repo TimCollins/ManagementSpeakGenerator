@@ -682,6 +682,8 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThing(Plurality plurality)
         {
+            // TODO: Change the random number generator here to hit the other branches and add unit tests for each branch.
+
             //int result = DomainFactory.RandomNumber.GetRand(1, 111);
             int result = DomainFactory.RandomNumber.GetRand(1, 10);
 
@@ -690,7 +692,42 @@ namespace MSG.DomainLogic.Implementation
                 return string.Format("{0}, {1}, {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
-            throw new RandomNumberException(result + " is an invalid value.");
+            if (result > 9 && result < 15)
+            {
+                return string.Format("{0} and {1} {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            if (result > 14 && result < 71)
+            {
+                return string.Format("{0} {1} ", GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            if (result > 70 && result < 73)
+            {
+                return string.Format("{0} and/or {1} {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            if (result > 72 && result < 75)
+            {
+                return GetGrowth();
+            }
+
+            if (result > 74 && result < 81)
+            {
+                return string.Format("{0}, {1} and {2} {3} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            if (result > 80 && result < 85)
+            {
+                return string.Format("{0}, {1}, {2} and {3} {4} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+            }
+
+            return GetThingAtom(plurality);
+        }
+
+        private string GetGrowth()
+        {
+            throw new System.NotImplementedException();
         }
 
         private string GetThingAdjective()
