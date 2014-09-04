@@ -594,10 +594,6 @@ namespace MSG.DomainLogic.Implementation
                     // Remove the 'y' and append "ies".
                     // This covers "identify" to "identifies".
                     return verb.Substring(0, verb.Length - 1) + "ies ";
-                    // TODO: Review the original for what should be returned in the default
-                    // case. It doesn't look right currently.
-                    // This will not now be hit.
-                    //return verb.Substring(0, verb.Length - 2) + "s";
                 default:
                     return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
                         : verb + "s ";
