@@ -662,7 +662,8 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 10 && result < 16)
             {
-                return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle(plurality, GetBadThings());
+                //return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle(plurality, GetBadThings());
+                return GetPersonVerbHavingBadThingComplement(plurality) + GetRandomArticle(Plurality.Plural, GetBadThings());
             }
 
             if (result > 15 && result < 96)
@@ -691,8 +692,6 @@ namespace MSG.DomainLogic.Implementation
             // LGA banned word list: http://news.bbc.co.uk/2/hi/7949077.stm
             int result = DomainFactory.RandomNumber.GetRand(1, 251);
 
-            // The implementation of this list starts on line 191 of the original source. 
-            // There's a lot so I'm not copying them in here in one lump.
             switch (result)
             {
                 case 1:

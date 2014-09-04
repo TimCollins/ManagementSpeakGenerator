@@ -491,15 +491,25 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectBossCapitalisation2()
         {
-            //The stakeholders expediently enable end-to-end, collaborative, sign-offs as part of the plan. As a result The business leaders credibly benchmark the portfolio by thinking outside the box.
-            //27,13,2,8,13,65,25,9,223,149,187,9,11,8,12,2,11,2,1,3,9,
+            List<int> defaults = new List<int> {27, 13, 2, 8, 13, 65, 25, 9, 223, 149, 187, 9, 11, 8, 12, 2, 11, 2, 1, 3, 9};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The stakeholders expediently enable end-to-end, collaborative, sign-offs as part of the plan. As a result the business leaders credibly benchmark the portfolio by thinking outside the box.", output);
         }
 
         [Test]
         public void IncorrectPluralSurprise()
         {
-            //The Group Chief Internal Audit Officer credibly addresses a surprises in this space. As a result our nimble, rock-solid, focus cautiously influences the team players at the end of the day.
-            //27,17,1,16,4,1,12,3,2,14,1,12,11,4,79,1,7,196,191,3,3,12,2,96,12,6,6,
+            List<int> defaults = new List<int> {14, 17, 1, 16, 4, 1, 12, 3, 2, 14, 1, 12, 11, 4};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The Group Chief Internal Audit Officer credibly addresses surprises in this space.", output);
         }
 
         [Test]
