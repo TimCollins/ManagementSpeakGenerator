@@ -434,7 +434,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The key people expediently manage strong, proactive,  as part of the plan. At the same time, The steering committee globally streamline the process from the get-go.", output);
+            Assert.AreEqual("The key people expediently manage strong, proactive,  as part of the plan. At the same time, the steering committee globally streamline the process from the get-go.", output);
         }
 
         [Test]
