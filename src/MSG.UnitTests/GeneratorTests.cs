@@ -384,8 +384,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this, the 's' is in the wrong place.
-            Assert.AreEqual("Our constructive, global, strategy consistently interact withs strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our constructive, global, strategy consistently interacts with strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]

@@ -197,7 +197,7 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             // TODO: Fix plural here too.
-            Assert.AreEqual("Our optimal, global, strategy quickly interact withs strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our optimal, global, strategy quickly interacts with strong, proactive, visions as part of the plan.", output);
         }
 
         [Test]

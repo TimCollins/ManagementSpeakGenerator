@@ -557,9 +557,19 @@ namespace MSG.DomainLogic.Implementation
                 return verb;
             }
 
-            // I think the original code is checking for spaces at the end of the input string.
+            // There is a situation where we end up with verbs like "interact with" passed 
+            // in here. See BuildPluralVerbInteractThing() for example.
+            // In this case we need to pluralise the first word, not the second.
             verb = verb.Trim();
             string last = verb.Substring(verb.Length - 1, 1);
+            int lastSpaceIndex = verb.LastIndexOf(' ');
+            for (int i = verb.Length - 1; i > 0; i--)
+            {
+                if (verb[i] == ' ')
+                {
+                    last = verb[i - 1].ToString();
+                }
+            }
 
             switch (last)
             {
@@ -589,7 +599,8 @@ namespace MSG.DomainLogic.Implementation
                     // This will not now be hit.
                     //return verb.Substring(0, verb.Length - 2) + "s";
                 default:
-                    return verb + "s ";
+                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+                        : verb + "s ";
             }
         }
 
