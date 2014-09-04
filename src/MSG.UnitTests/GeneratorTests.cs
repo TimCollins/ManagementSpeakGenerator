@@ -283,13 +283,13 @@ namespace MSG.UnitTests
         [Test]
         public void EnsureDeEscalationSpacing()
         {
-            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 11, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
+            List<int> defaults = new List<int> { 23, 34, 2, 6, 4, 32, 2, 4, 8, 4, 10, 11, 1, 7, 1, 8, 1, 16, 2, 1, 9, 6, 4, 3, 2, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The team players proactively target corporate, proactive, trigger events throughout the organisation, while we are working hard to interactively target the cost-effective, key, guidelines going forward.", output);
+            Assert.AreEqual("The team players proactively target corporate, proactive, roles and responsibilities going forward, while the powerful champion interactively targets our cost-effective, key, strategy within the industry.", output);
         }
 
         [Test]
@@ -524,15 +524,16 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        public void SpacingErrorChannel()
+        public void SpacingErrorAvoids()
         {
-            List<int> defaults = new List<int> { 25, 10, 1, 97, 16, 11, 52, 1, 5, 80, 61, 5, 90, 16, 16, 1, 101, 4 };
+            List<int> defaults = new List<int> { 25, 10, 1, 12, 16, 11, 3, 1, 5, 7, 61, 5, 90, 16, 16, 1, 101, 4, 1, 2, 3, 4, 5, 6, 7, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The channel significantly innovates a future, balanced, market practice at the end of the day, while the business leaders consistently leverage our consistent, responsive, frameworks using our top-level, functional, core competency.", output);
+            // TODO: Fix the double space after "avoids"
+            Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
         }
     }
 }

@@ -682,10 +682,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetThing(Plurality plurality)
         {
-            // TODO: Change the random number generator here to hit the other branches and add unit tests for each branch.
-
-            //int result = DomainFactory.RandomNumber.GetRand(1, 111);
-            int result = DomainFactory.RandomNumber.GetRand(1, 10);
+            int result = DomainFactory.RandomNumber.GetRand(1, 111);
 
             if (result > 0 && result < 10)
             {
@@ -727,7 +724,29 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetGrowth()
         {
-            throw new System.NotImplementedException();
+            int result = DomainFactory.RandomNumber.GetRand(1, 22);
+
+            switch (result)
+            {
+                case 1:
+                    return "organic ";
+                case 2:
+                    return "double-digit ";
+                case 3:
+                    return "upper single-digit ";
+                case 4:
+                    return "breakout ";
+                case 5:
+                    return "unprecedented ";
+                case 6:
+                    return "unparallelled ";
+                case 7:
+                    return "proven ";
+                case 8:
+                    return "measured ";
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
         }
 
         private string GetThingAdjective()
@@ -2292,7 +2311,7 @@ namespace MSG.DomainLogic.Implementation
                 case 15:
                     return "mobile strategies";
                 case 16:
-                    return "expectations and allocations";
+                    return "expectations and allocations ";
                 default:
                     // TODO: As elsewhere, check if this should be random or derived from parent.
                     return GetEventualPlural(GetInner(), Plurality.Plural);
