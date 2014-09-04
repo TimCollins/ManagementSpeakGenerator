@@ -378,13 +378,13 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetRandomArticle()
         {
-            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 15, 8};
+            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 9, 8};
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our constructive, global, strategy consistently interacts with strong, proactive, visions as part of the plan.", output);
+            Assert.AreEqual("Our constructive, global, strategy consistently interacts with the strong, proactive, organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -409,7 +409,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and implementation proactively generate strategic, efficient, roadmaps within the industry.", output);
+            Assert.AreEqual("Quarter results, focus and implementation proactively generate our strategic, efficient, market forces as part of the plan.", output);
         }
 
         [Test]
@@ -433,7 +433,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The key people expediently manage strong, proactive,  as part of the plan. At the same time, the steering committee globally streamline the process from the get-go.", output);
+            Assert.AreEqual("The key people expediently manage strong, proactive, market opportunities throughout the organisation. At the same time, the key people interactively think across the full value chain going forward.", output);
         }
 
         [Test]
@@ -532,8 +532,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The channelsignificantly innovates a future, balanced, market practice at the end of the day, while the business leaders consistently leverage our consistent, responsive, frameworks using our top-level, functional, core competency.", output);
-
+            Assert.AreEqual("The channel significantly innovates a future, balanced, market practice at the end of the day, while the business leaders consistently leverage our consistent, responsive, frameworks using our top-level, functional, core competency.", output);
         }
     }
 }
