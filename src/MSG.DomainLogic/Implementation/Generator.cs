@@ -2228,6 +2228,34 @@ namespace MSG.DomainLogic.Implementation
                     return "key target markets";
                 case 2:
                     return "style guidelines";
+                case 3:
+                    return "key performance indicators";
+                case 4:
+                    return "market conditions";
+                case 5:
+                    return "market forces";
+                case 6:
+                    return "market opportunities";
+                case 7:
+                    return "tactics";
+                case 8:
+                    return "organizing principles";
+                case 9:
+                    return "interpersonal skills";
+                case 10:
+                    return "roles and responsibilities";
+                case 11:
+                    return "cost savings";
+                case 12:
+                    return "lessons learned";
+                case 13:
+                    return "client needs";
+                case 14:
+                    return "requests / solutions";
+                case 15:
+                    return "mobile strategies";
+                case 16:
+                    return "expectations and allocations";
                 default:
                     // TODO: As elsewhere, check if this should be random or derived from parent.
                     return GetEventualPlural(GetInner(), Plurality.Plural);
