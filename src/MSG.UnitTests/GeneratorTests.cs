@@ -523,27 +523,17 @@ namespace MSG.UnitTests
             Assert.AreEqual("Bottom-up, customer-centric, supply-chains efficiently prioritise the senior support staff by thinking outside the box.", output);
         }
 
-        // Other problematic sentences that have emerged. Unfortunately the numbers will
-        // have to be derived manually as the number logs are unable to show where individual 
-        // sentences start and finish.
-        // Focus initially on the spacing and capitalisation errors as they have been 
-        // introduced in the porting. After that analyse the grammar. After that focus on 
-        // the repeated words.
+        [Test]
+        public void SpacingErrorChannel()
+        {
+            List<int> defaults = new List<int> { 25, 10, 1, 97, 16, 11, 52, 1, 5, 80, 61, 5, 90, 16, 16, 1, 101, 4 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
-        //The strategic, cost-effective, guidelines 24/7 empowerthe enabler going forward.
-        //Pursuing this route will enable us to carefully maximise cost-effective, constructive, key target markets within the industry, while The matrixcredibly right-scales a key, proactive, timeline from the get-go.
-        //The Global Chief Legal Officer credibly think differently going forward.
-        //A focused, global, roadmap carefully drives the customers using a key, key, baseline starting point.
-        //The partners proactively jump-start the constructive, cost-effective, guidelines using proactive, focused, sign-offs, while The key people cautiously address overlaps across the board.
-        //The strategic, cost-effective, guidelines 24/7 empowerthe enabler going forward.
-        //Our gut feeling is that constructive, constructive, escalations 24/7 influence global, efficient, roadmaps in this space.
-        //The standard-setters technically prioritise efficient, efficient, visions from the get-go.
-        //The steering committee globally addressesour cross-industry, strategic, guideline throughout the organisation.
-        //Our robust, future, roadmaps 200% promotethe enablers across the board, while the vertical, principle-based, escalation efficiently prioritises a vision-setting, operational, timeline by thinking outside the box.
-        //Our gut feeling is that The partners efficiently manage socially conscious, long-established, roadmaps in this space.
-        //A well-planned, collaborative, trigger event technically boosts our far-reaching, future-ready, win-win solution within the industry. As a result spectral, interactive, timelines efficiently drivethe senior support staff from the get-go.
-        //The team players adequately accelerate feedback-based, innovation-driven, baseline starting points by thinking outside the box, while The project manager 200% delivers an awesome, market-driven, sign-off going forward.
-        //Value-enhancing, leveraged, escalations conservatively targetthe clients throughout the organisation, whilst The gatekeeper conservatively facilitates our reliable, vertical, sign-off from the get-go.
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The channelsignificantly innovates a future, balanced, market practice at the end of the day, while the business leaders consistently leverage our consistent, responsive, frameworks using our top-level, functional, core competency.", output);
+
+        }
     }
 }
