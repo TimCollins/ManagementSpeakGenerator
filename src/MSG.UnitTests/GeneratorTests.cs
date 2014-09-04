@@ -515,9 +515,13 @@ namespace MSG.UnitTests
         [Test]
         public void SpacingErrorPrioritise()
         {
-            //Bottom-up, customer-centric, supply-chains efficiently prioritisethe senior support staff by thinking outside the box.
-            //13,61,2,1,168,86,143,104,12,20,1,69,7,12,9,
+            List<int> defaults = new List<int> {13, 61, 2, 1, 168, 86, 143, 104, 12, 20, 1, 69, 7, 12, 9};
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Bottom-up, customer-centric, supply-chains efficiently prioritise the senior support staff by thinking outside the box.", output);
         }
 
         // Other problematic sentences that have emerged. Unfortunately the numbers will
