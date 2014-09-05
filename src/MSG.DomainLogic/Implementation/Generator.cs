@@ -1461,105 +1461,105 @@ namespace MSG.DomainLogic.Implementation
                 case 10:
                     return BuildPluralVerb("think across the full value chain ", plurality);
                 case 11:
-                    return BuildPluralVerb("loop back", plurality);
+                    return BuildPluralVerb("loop back ", plurality);
                 case 12:
-                    return BuildPluralVerb("conversate", plurality);
+                    return BuildPluralVerb("conversate ", plurality);
                 case 13:
-                    return BuildPluralVerb("go forward together", plurality);
+                    return BuildPluralVerb("go forward together ", plurality);
                 case 14:
-                    return BuildPluralVerb("achieve efficiencies", plurality);
+                    return BuildPluralVerb("achieve efficiencies ", plurality);
                 case 15:
-                    return BuildPluralVerb("deliver", plurality);
+                    return BuildPluralVerb("deliver ", plurality);
                 case 16:
-                    return BuildPluralVerb("stay in the mix", plurality);
+                    return BuildPluralVerb("stay in the mix ", plurality);
                 case 17:
-                    return BuildPluralVerb("stay in the zone", plurality);
+                    return BuildPluralVerb("stay in the zone ", plurality);
                 case 18:
-                    return BuildPluralVerb("evolve", plurality);
+                    return BuildPluralVerb("evolve ", plurality);
                 case 19:
-                    return BuildPluralVerb("exceed expectations", plurality);
+                    return BuildPluralVerb("exceed expectations ", plurality);
                 case 20:
-                    return BuildPluralVerb("develop the plan", plurality);
+                    return BuildPluralVerb("develop the plan ", plurality);
                 case 21:
-                    return BuildPluralVerb("develop the blue print for execution", plurality);
+                    return BuildPluralVerb("develop the blue print for execution ", plurality);
                 case 22:
-                    return BuildPluralVerb("grow and diversify", plurality);
+                    return BuildPluralVerb("grow and diversify ", plurality);
                 case 23:
-                    return BuildPluralVerb("fuel changes", plurality);
+                    return BuildPluralVerb("fuel changes ", plurality);
                 case 24:
-                    return BuildPluralVerb("nurture talent", plurality);
+                    return BuildPluralVerb("nurture talent ", plurality);
                 case 25:
-                    return BuildPluralVerb("cultivate talent", plurality);
+                    return BuildPluralVerb("cultivate talent ", plurality);
                 case 26:
-                    return BuildPluralVerb("make it possible", plurality);
+                    return BuildPluralVerb("make it possible ", plurality);
                 case 27:
-                    return BuildPluralVerb("manage the portfolio", plurality);
+                    return BuildPluralVerb("manage the portfolio ", plurality);
                 case 28:
-                    return BuildPluralVerb("align resources", plurality);
+                    return BuildPluralVerb("align resources ", plurality);
                 case 29:
-                    return BuildPluralVerb("drive the business forward", plurality);
+                    return BuildPluralVerb("drive the business forward ", plurality);
                 case 30:
-                    return BuildPluralVerb("make things happen", plurality);
+                    return BuildPluralVerb("make things happen ", plurality);
                 case 31:
-                    return BuildPluralVerb("stay ahead", plurality);
+                    return BuildPluralVerb("stay ahead ", plurality);
                 case 32:
-                    return BuildPluralVerb("outperform peers", plurality);
+                    return BuildPluralVerb("outperform peers ", plurality);
                 case 33:
-                    return BuildPluralVerb("surge ahead", plurality);
+                    return BuildPluralVerb("surge ahead ", plurality);
                 case 34:
-                    return BuildPluralVerb("manage the downside", plurality);
+                    return BuildPluralVerb("manage the downside ", plurality);
                 case 35:
-                    return BuildPluralVerb("stay in the wings", plurality);
+                    return BuildPluralVerb("stay in the wings ", plurality);
                 case 36:
-                    return BuildPluralVerb("come to a landing", plurality);
+                    return BuildPluralVerb("come to a landing ", plurality);
                 case 37:
-                    return BuildPluralVerb("shoot it over", plurality);
+                    return BuildPluralVerb("shoot it over ", plurality);
                 case 38:
-                    return BuildPluralVerb("move the needle", plurality);
+                    return BuildPluralVerb("move the needle ", plurality);
                 case 39:
-                    return BuildPluralVerb("connect the dots", plurality);
+                    return BuildPluralVerb("connect the dots ", plurality);
                 case 40:
-                    return BuildPluralVerb("connect the dots to the end game", plurality);
+                    return BuildPluralVerb("connect the dots to the end game ", plurality);
                 case 41:
-                    return BuildPluralVerb("reset the benchmark", plurality);
+                    return BuildPluralVerb("reset the benchmark ", plurality);
                 case 42:
-                    return BuildPluralVerb("take it offline", plurality);
+                    return BuildPluralVerb("take it offline ", plurality);
                 case 43:
-                    return BuildPluralVerb("peel the onion", plurality);
+                    return BuildPluralVerb("peel the onion ", plurality);
                 case 44:
-                    return BuildPluralVerb("drill down", plurality);
+                    return BuildPluralVerb("drill down ", plurality);
                 case 45:
-                    return BuildPluralVerb("get from here to here", plurality);
+                    return BuildPluralVerb("get from here to here ", plurality);
                 case 46:
-                    return BuildPluralVerb("do things differently", plurality);
+                    return BuildPluralVerb("do things differently ", plurality);
                 case 47:
-                    return BuildPluralVerb("stretch the status quo", plurality);
+                    return BuildPluralVerb("stretch the status quo ", plurality);
                 case 48:
-                    return BuildPluralVerb("challenge the status quo", plurality);
+                    return BuildPluralVerb("challenge the status quo ", plurality);
                 case 49:
-                    return BuildPluralVerb("challenge established ideas", plurality);
+                    return BuildPluralVerb("challenge established ideas ", plurality);
                 case 50:
-                    return BuildPluralVerb("increase customer satisfaction", plurality);
+                    return BuildPluralVerb("increase customer satisfaction ", plurality);
                 case 51:
-                    return BuildPluralVerb("enable customer interaction", plurality);
+                    return BuildPluralVerb("enable customer interaction ", plurality);
                 case 52:
-                    return BuildPluralVerb("manage the balance", plurality);
+                    return BuildPluralVerb("manage the balance ", plurality);
                 case 53:
-                    return BuildPluralVerb("turn every stone", plurality);
+                    return BuildPluralVerb("turn every stone ", plurality);
                 case 54:
-                    return BuildPluralVerb("drive revenue", plurality);
+                    return BuildPluralVerb("drive revenue ", plurality);
                 case 55:
-                    return BuildPluralVerb("rise to the challenge", plurality);
+                    return BuildPluralVerb("rise to the challenge ", plurality);
                 case 56:
-                    return BuildPluralVerb("keep it on the radar", plurality);
+                    return BuildPluralVerb("keep it on the radar ", plurality);
                 case 57:
-                    return BuildPluralVerb("stay on trend", plurality);
+                    return BuildPluralVerb("stay on trend ", plurality);
                 case 58:
-                    return BuildPluralVerb("hunt the business down", plurality);
+                    return BuildPluralVerb("hunt the business down ", plurality);
                 case 59:
-                    return BuildPluralVerb("push the envelope to the tilt", plurality);
+                    return BuildPluralVerb("push the envelope to the tilt ", plurality);
                 case 60:
-                    return BuildPluralVerb("execute on priorities", plurality);
+                    return BuildPluralVerb("execute on priorities ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

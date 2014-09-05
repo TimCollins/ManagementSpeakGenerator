@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> { 17, 5, 9, 10, 7, 3};
+            _defaults = new List<int> {17, 5, 9, 10, 7, 3};
         }
 
         [TearDown]
@@ -24,10 +24,14 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyInvalidValueHandled()
         {
+            _defaults.Insert(5, 888);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
         }
 
         [Test]
-        public void VerifyStreamlines()
+        public void VerifyStreamline()
         {
             _defaults.Insert(5, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
@@ -40,32 +44,56 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPortfolio()
         {
-            
+            _defaults.Insert(5, 3);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically benchmark the portfolio across the board.", output);
         }
 
         [Test]
         public void VerifyOutsideTheBox()
         {
-            
+            _defaults.Insert(5, 8);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically think outside the box across the board.", output);
         }
 
         [Test]
         public void VerifyDownside()
         {
-            // 34
+            _defaults.Insert(5, 34);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically manage the downside across the board.", output);
         }
 
         [Test]
         public void VerifyStatusQuo()
         {
-            // 48
+            _defaults.Insert(5, 48);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically challenge the status quo across the board.", output);
         }
 
         [Test]
         public void VerifyPriorities()
         {
-            // 60
-        }
+            _defaults.Insert(5, 60);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically execute on priorities across the board.", output);
+        }
     }
 }
