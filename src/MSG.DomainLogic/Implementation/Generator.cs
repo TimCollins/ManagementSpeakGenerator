@@ -719,12 +719,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 14 && result < 71)
             {
-                return string.Format("{0} {1} ", GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0} {1}", GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 70 && result < 73)
             {
-                return string.Format("{0} and/or {1} {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0} and/or {1} {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 72 && result < 75)
@@ -734,12 +734,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 74 && result < 81)
             {
-                return string.Format("{0}, {1} and {2} {3} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1} and {2} {3}", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 80 && result < 85)
             {
-                return string.Format("{0}, {1}, {2} and {3} {4} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1}, {2} and {3} {4}", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             return GetThingAtom(plurality);
@@ -1415,6 +1415,7 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
+            // TODO: Add more tests for this method. I don't like how one value has no space at the end.
             switch (result)
             {
                 case 1:
