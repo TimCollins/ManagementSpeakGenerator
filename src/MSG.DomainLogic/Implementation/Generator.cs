@@ -1567,8 +1567,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetEventualAdverb()
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 93);
-            int result = DomainFactory.RandomNumber.GetRand(1, 24);
+            int result = DomainFactory.RandomNumber.GetRand(1, 93);
 
             switch (result)
             {
