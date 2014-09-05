@@ -628,34 +628,59 @@ namespace MSG.DomainLogic.Implementation
                 case 10:
                     Plurality plurality = GetRandomPlurality();
                     return "using " + GetRandomArticle(plurality, GetThing(plurality)).TrimEnd();
-
+                case 11:
+                    plurality = GetRandomPlurality();
+                    return "by leveraging " + GetRandomArticle(plurality, GetThing(plurality));
+                case 12:
+                    plurality = GetRandomPlurality();
+                    return "taking advantage of " + GetRandomArticle(plurality, GetThing(plurality));
+                case 13:
+                    return "within the " + GetMatrix();
+                case 14:
+                    return "across the " + GetEventualPlural(GetMatrix(), Plurality.Plural);
+                case 15:
+                    return "across and beyond the " + GetEventualPlural(GetMatrix(), Plurality.Plural);
+                case 16:
+                    return "resulting in " + GetGrowth();
+                case 17:
+                    return "reaped from our " + GetGrowth();
+                case 18:
+                    return "as a consequence of " + GetGrowth();
+                case 19:
+                    plurality = GetRandomPlurality();
+                    return "because " + GetRandomArticle(plurality, GetThing(plurality))
+                           + " " + BuildPluralVerb("produce", plurality) + " " + GetGrowth();
+                case 20:
+                    return "ahead of schedule";
+                case 21:
+                    return ", relative to our peers";
+                case 22:
+                    return "on a transitional basis";
+                case 23:
+                    return "by expanding boundaries";
+                case 24:
+                    return "by nurturing talent";
+                case 25:
+                    return ", as a Tier 1 company";
+                case 26:
+                    return "up-front";
+                case 27:
+                    return "on-the-fly";
+                case 28:
+                    return "across our portfolio";
+                case 29:
+                    return "50/50";
+                case 30:
+                    return "up, down and across the " + GetMatrix();
+                case 31:
+                    return "in the marketplace";
+                case 32:
+                    return "by thinking and acting beyond boundaries";
+                case 33:
+                    return "at the individual, team and organizational level";
                 default:
-                    throw new RandomNumberException(result + " is an invalid value.");
+                    return string.Empty;
             }
-            //when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
-            //when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
-            //when 13 => return " within the " & Matrix_Or_So;
-            //when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-            //when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-            //when 16 => return " resulting in " & Growth;
-            //when 17 => return " reaped from our " & Growth;
-            //when 18 => return " as a consequence of " & Growth;
-            //when 19 => return " because " & Add_Random_Article (P, Thing (P))
-            //                  & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
-            //when 20 => return " ahead of schedule";
-            //when 21 => return ", relative to our peers";
-            //when 22 => return " on a transitional basis";
-            //when 23 => return " by expanding boundaries";
-            //when 24 => return " by nurturing talent";
-            //when 25 => return ", as a Tier 1 company";
-            //when 26 => return " up-front";
-            //when 27 => return " on-the-fly";
-            //when 28 => return " across our portfolio";
-            //when 29 => return " 50/50";
-            //when 30 => return " up, down and across the " & Matrix_Or_So;
-            //when 31 => return " in the marketplace";
-            //when 32 => return " by thinking and acting beyond boundaries";
-            //when 33 => return " at the individual, team and organizational level";
         }
 
         private string GetPersonVerbAndEnding(Plurality plurality)
@@ -1295,8 +1320,6 @@ namespace MSG.DomainLogic.Implementation
                     throw new RandomNumberException(result + " is an invalid value.");
             }
         }
-
-        // Thing() is implemented on 840.
 
         private string GetBadThings()
         {
