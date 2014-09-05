@@ -22,7 +22,7 @@ namespace MSG.UnitTests
         public void VerifySpacingInManagingHead()
         {
             MoqUtil.SetupRandMock(1, 1, 2, 2, 3, 2, 14);
-            
+
             string boss = DomainFactory.Generator.GetBoss();
             MoqUtil.UndoMockRandomNumber();
 
@@ -252,13 +252,13 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.IsNotNull(boss);
-            Assert.AreEqual("Global Chief Digital Officer ", boss);            
+            Assert.AreEqual("Global Chief Digital Officer ", boss);
         }
 
         [Test]
         public void FixExtraSpace()
         {
-            List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 11, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 8, 4};
+            List<int> defaults = new List<int> { 14, 51, 1, 2, 1, 3, 277, 11, 11, 21, 2, 82, 2, 7, 10, 1, 8, 3, 2, 250, 8, 4 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -270,13 +270,12 @@ namespace MSG.UnitTests
         [Test]
         public void FixPluralSpace()
         {
-            List<int> defaults = new List<int> {16, 95, 173, 7, 159, 5, 6, 2, 29, 2, 3, 9, 2, 105, 5, 4, 7};
+            List<int> defaults = new List<int> { 16, 95, 173, 7, 159, 5, 6, 2, 29, 2, 3, 9, 2, 105, 5, 4, 7 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this output too.
             Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
         }
 
@@ -353,7 +352,7 @@ namespace MSG.UnitTests
         {
             // Change the 14 to hit other branches of GetProposition() and make sure they
             // are all capitalised.
-            List<int> defaults = new List<int> {5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 4, 3, 6};
+            List<int> defaults = new List<int> { 5, 14, 1, 15, 3, 11, 4, 5, 22, 54, 2, 2, 1, 5, 4, 4, 3, 6 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -365,7 +364,7 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetFaukon()
         {
-            List<int> defaults = new List<int> {5, 4, 1, 3, 11, 4, 5, 22, 2};
+            List<int> defaults = new List<int> { 5, 4, 1, 3, 11, 4, 5, 22, 2 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -377,7 +376,7 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetRandomArticle()
         {
-            List<int> defaults = new List<int> {5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 9, 8};
+            List<int> defaults = new List<int> { 5, 66, 1, 5, 3, 7, 4, 5, 22, 18, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -390,7 +389,7 @@ namespace MSG.UnitTests
         public void CapitalLetterAtStartGetThingAtomAnd()
         {
             // Note the duplicated "strategic" in the output.
-            List<int> defaults = new List<int> {5, 97, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 15, 8};
+            List<int> defaults = new List<int> { 5, 97, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 15, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -402,7 +401,7 @@ namespace MSG.UnitTests
         [Test]
         public void CapitalLetterAtStartGetThingAtom()
         {
-            List<int> defaults = new List<int> {5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8};
+            List<int> defaults = new List<int> { 5, 100, 1, 4, 3, 7, 4, 5, 3, 9, 2, 2, 1, 5, 4, 8, 2, 9, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -426,7 +425,7 @@ namespace MSG.UnitTests
         [Test]
         public void AnotherPluralTest()
         {
-            List<int> defaults = new List<int> { 26, 36, 2, 1, 13, 27, 1, 1, 5, 4, 6, 404, 7, 8, 7, 1, 1, 7, 10, 1, 5, 1, 14, 6, 2, 14, 1, 7, 6, 1, 184, 4, 13, 3};
+            List<int> defaults = new List<int> { 26, 36, 2, 1, 13, 27, 1, 1, 5, 4, 6, 404, 7, 8, 7, 1, 1, 7, 10, 1, 5, 1, 14, 6, 2, 14, 1, 7, 6, 1, 184, 4, 13, 3 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -438,7 +437,7 @@ namespace MSG.UnitTests
         [Test]
         public void TwoSpacingErrors()
         {
-            List<int> defaults = new List<int> {17, 8, 2, 8, 6, 11, 3, 5,  12, 8};
+            List<int> defaults = new List<int> { 17, 8, 2, 8, 6, 11, 3, 5, 12, 8 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -461,7 +460,7 @@ namespace MSG.UnitTests
         //    //GetInner()						9 sign-off
         //    //GetInner()						7 win-win solution
         //    //GetEventualAdverb()				4 proactively
-            
+
         //    List<int> defaults = new List<int> { 25, 6, 9, 7, 4};
         //    MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -474,9 +473,6 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectBossCapitalisation()
         {
-            //The resources cautiously prioritise outsourced, hyper-hybrid, customer centricities going forward, while The sales manager expediently optimises our phased, fine-grained, empowerment going forward.
-            //22,46,2,5,12,61,27,7,166,231,55,137,10,1,47,1,6,13,70,5,3,197,206,180,46,4,1,
-
             List<int> defaults = new List<int> { 22, 46, 2, 5, 12, 61, 27, 7, 166, 231, 55, 137, 10, 1, 47, 1, 6, 13, 70, 5, 3, 197, 206, 180, 46, 4, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -489,7 +485,7 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectBossCapitalisation2()
         {
-            List<int> defaults = new List<int> {27, 13, 2, 8, 13, 65, 25, 9, 223, 149, 187, 9, 11, 8, 12, 2, 11, 2, 1, 3, 9};
+            List<int> defaults = new List<int> { 27, 13, 2, 8, 13, 65, 25, 9, 223, 149, 187, 9, 11, 8, 12, 2, 11, 2, 1, 3, 9 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -501,7 +497,7 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectPluralSurprise()
         {
-            List<int> defaults = new List<int> {14, 17, 1, 16, 4, 1, 12, 3, 2, 14, 1, 12, 11, 4};
+            List<int> defaults = new List<int> { 14, 17, 1, 16, 4, 1, 12, 3, 2, 14, 1, 12, 11, 4 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -513,7 +509,7 @@ namespace MSG.UnitTests
         [Test]
         public void SpacingErrorPrioritise()
         {
-            List<int> defaults = new List<int> {13, 61, 2, 1, 168, 86, 143, 104, 12, 20, 1, 69, 7, 12, 9};
+            List<int> defaults = new List<int> { 13, 61, 2, 1, 168, 86, 143, 104, 12, 20, 1, 69, 7, 12, 9 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -538,7 +534,7 @@ namespace MSG.UnitTests
         [Test]
         public void SpaceBeforeFullStop()
         {
-            List<int> defaults = new List<int> { 2, 57, 2, 13, 135, 239, 183, 60, 8, 9, 2, 3, 7, 25, 191, 143, 179, 4, 49};
+            List<int> defaults = new List<int> { 2, 57, 2, 13, 135, 239, 183, 60, 8, 9, 2, 3, 7, 25, 191, 143, 179, 4, 49 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -550,26 +546,13 @@ namespace MSG.UnitTests
         [Test]
         public void SpacingErrorMeasurementShorter()
         {
-            List<int> defaults = new List<int> {10, 75, 1, 89, 117, 162, 5, 46, 1, 16, 17, 104, 285, 37, 8, 89 };
+            List<int> defaults = new List<int> { 10, 75, 1, 89, 117, 162, 5, 46, 1, 16, 17, 104, 285, 37, 8, 89 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Our footprint influences a content.", output);
-        }
-
-
-        [Test]
-        public void SpacingErrorMeasurement()
-        {
-            List<int> defaults = new List<int> {23, 29, 2, 5, 15, 49, 27, 97, 73, 127, 3, 30, 1, 75, 1, 89, 117, 162, 5, 46, 1, 16, 17, 104, 285, 37, 8, 89};
-            MoqUtil.SetupRandMock(defaults.ToArray());
-
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            MoqUtil.UndoMockRandomNumber();
-
-            Assert.AreEqual("The resources carefully prioritise our measurements up, down and across the organisation, while our footprint influences a content.", output);
         }
 
         //[Test]

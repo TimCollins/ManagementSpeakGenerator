@@ -353,19 +353,15 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 92 && result < 98)
             {
-                // TODO: Review this as it fails some unit tests but passes others.
-                // The general spacing guidelines are:
-                //For strings that are expected to join to others there should be a 1 character space at the end so the output from the Managing function should be "Managing " or "Acting " as they always join to the output of the Age function.
-                //For strings that form the end of a collection of tokens there is no right-hand space e.g. Title() returns "Director", "Chief" etc. They are joined to a text string " of department ". Note that it has both left and right space as it takes tokens on both sides.
-                return GetThingAtom(Plurality.Singular) + " and " + GetThingAtom(Plurality.Singular)
-                    + " " + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
+                return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
+                    + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)
                        + GetEventualPostfixedAdverb();
             }
 
             if (result > 97 && result < 101)
             {
                 return GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
-                       + " and " + GetThingAtom(Plurality.Singular) + " " + GetEventualAdverb() +
+                       + "and " + GetThingAtom(Plurality.Singular) + GetEventualAdverb() +
                        GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
             }
 
@@ -579,7 +575,7 @@ namespace MSG.DomainLogic.Implementation
                 case "o":
                 case "s":
                 case "z":
-                    return verb + "es";
+                    return verb + "es ";
                 case "h":
                     string secondLast = verb.Substring(verb.Length - 2, 1);
                     if (secondLast == "c" || secondLast == "s")
@@ -713,12 +709,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 10)
             {
-                return string.Format("{0}, {1}, {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1}, {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 9 && result < 15)
             {
-                return string.Format("{0} and {1} {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0} and {1} {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 14 && result < 71)
@@ -1422,7 +1418,7 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return BuildPluralVerb("address", plurality) + " ";
+                    return BuildPluralVerb("address", plurality);
                 case 2:
                     return BuildPluralVerb("identify", plurality) + " ";
                 case 3:
@@ -1771,201 +1767,202 @@ namespace MSG.DomainLogic.Implementation
                 case 1:
                     return GetTimelessEvent();
                 case 2:
-                    return "team building";
+                    return "team building ";
                 case 3:
-                    return "focus";
+                    return "focus ";
                 case 4:
-                    return "strategy";
+                    return "strategy ";
                 case 5:
-                    return "planning granularity";
+                    return "planning granularity ";
                 case 6:
-                    return "core business";
+                    return "core business ";
                 case 7:
-                    return "implementation";
+                    return "implementation ";
                 case 8:
-                    return "intelligence";
+                    return "intelligence ";
                 case 9:
-                    return "governance";
+                    return "governance ";
                 case 10:
-                    return "ROE";
+                    return "ROE ";
                 case 11:
-                    return "EBITDA";
+                    return "EBITDA ";
                 case 12:
-                    return "enterprise content management";
+                    return "enterprise content management ";
                 case 13:
-                    return "excellence";
+                    return "excellence ";
                 case 14:
-                    return "trust";
+                    return "trust ";
                 case 15:
-                    return "respect";
+                    return "respect ";
                 case 16:
-                    return "openness";
+                    return "openness ";
                 case 17:
-                    return "transparency";
+                    return "transparency ";
                 case 18:
-                    return "Quality Research";
+                    return "Quality Research ";
                 case 19:
-                    return "decision making";
+                    return "decision making ";
                 case 20:
-                    return "risk management";
+                    return "risk management ";
                 case 21:
-                    return "enterprise risk management";
+                    return "enterprise risk management ";
                 case 22:
-                    return "leverage";
+                    return "leverage ";
                 case 23:
-                    return "diversification";
+                    return "diversification ";
                 case 24:
-                    return "successful execution";
+                    return "successful execution ";
                 case 25:
-                    return "effective execution";
+                    return "effective execution ";
                 case 26:
-                    return "selectivity";
+                    return "selectivity ";
                 case 27:
-                    return "optionality";
+                    return "optionality ";
                 case 28:
-                    return "expertise";
+                    return "expertise ";
                 case 29:
-                    return "awareness";
+                    return "awareness ";
                 case 30:
-                    return "broader thinking";
+                    return "broader thinking ";
                 case 31:
-                    return "client focus";
+                    return "client focus ";
                 case 32:
-                    return "thought leadership";
+                    return "thought leadership ";
                 case 33:
-                    return "quest for quality";
+                    return "quest for quality ";
                 case 34:
-                    return "360-degree thinking";
+                    return "360-degree thinking ";
                 case 35:
-                    return "drill-down";
+                    return "drill-down ";
                 case 36:
-                    return "impetus";
+                    return "impetus ";
                 case 37:
-                    return "fairness";
+                    return "fairness ";
                 case 38:
-                    return "intellect";
+                    return "intellect ";
                 case 39:
-                    return "emotional impact";
+                    return "emotional impact ";
                 case 40:
-                    return "emotional intelligence";
+                    return "emotional intelligence ";
                 case 41:
-                    return "adaptability";
+                    return "adaptability ";
                 case 42:
-                    return "stress management";
+                    return "stress management ";
                 case 43:
-                    return "self-awareness";
+                    return "self-awareness ";
                 case 44:
-                    return "strategic thinking";
+                    return "strategic thinking ";
                 case 45:
-                    return "cross fertilization";
+                    return "cross fertilization ";
                 case 46:
-                    return "cross-breeding";
+                    return "cross-breeding ";
                 case 47:
-                    return "customer experience";
+                    return "customer experience ";
                 case 48:
-                    return "centerpiece";
+                    return "centerpiece ";
                 case 49:
-                    return "SWOT analysis";
+                    return "SWOT analysis ";
                 case 50:
-                    return "responsibility";
+                    return "responsibility ";
                 case 51:
-                    return "accountability";
+                    return "accountability ";
                 case 52:
-                    return "ROI";
+                    return "ROI ";
                 case 53:
-                    return "line of business";
+                    return "line of business ";
                 case 54:
-                    return "serviceability";
+                    return "serviceability ";
                 case 55:
-                    return "responsiveness";
+                    return "responsiveness ";
                 case 56:
-                    return "simplicity";
+                    return "simplicity ";
                 case 57:
-                    return "portfolio shaping";
+                    return "portfolio shaping ";
                 case 58:
-                    return "knowledge sharing";
+                    return "knowledge sharing ";
                 case 59:
-                    return "continuity";
+                    return "continuity ";
                 case 60:
-                    return "visual thinking";
+                    return "visual thinking ";
                 case 61:
-                    return "interoperability";
+                    return "interoperability ";
                 case 62:
-                    return "compliance";
+                    return "compliance ";
                 case 63:
-                    return "teamwork";
+                    return "teamwork ";
                 case 64:
-                    return "self-efficacy";
+                    return "self-efficacy ";
                 case 65:
-                    return "decision-making";
+                    return "decision-making ";
                 case 66:
-                    return "line-of-sight";
+                    return "line-of-sight ";
                 case 67:
-                    return "scoping";
+                    return "scoping ";
                 case 68:
-                    return "line-up";
+                    return "line-up ";
                 case 69:
-                    return "predictability";
+                    return "predictability ";
                 case 70:
-                    return "recognition";
+                    return "recognition ";
                 case 71:
-                    return "investor confidence";
+                    return "investor confidence ";
                 case 72:
-                    return "competitive advantage";
+                    return "competitive advantage ";
                 case 73:
-                    return "uniformity";
+                    return "uniformity ";
                 case 74:
-                    return "connectivity";
+                    return "connectivity ";
                 case 75:
-                    return "big picture";
+                    return "big picture ";
                 case 76:
-                    return "big-picture thinking";
+                    return "big-picture thinking ";
                 case 77:
-                    return "quality";
+                    return "quality ";
                 case 78:
-                    return "upside focus";
+                    return "upside focus ";
                 case 79:
-                    return "sustainability";
+                    return "sustainability ";
                 case 80:
-                    return "resiliency";
+                    return "resiliency ";
                 case 81:
-                    return "social sphere";
+                    return "social sphere ";
                 case 82:
-                    return "intuitiveness";
+                    return "intuitiveness ";
                 case 83:
-                    return "effectiveness";
+                    return "effectiveness ";
                 case 84:
-                    return "competitiveness";
+                    return "competitiveness ";
                 case 85:
-                    return "resourcefulness";
+                    return "resourcefulness ";
                 case 86:
-                    return "informationalization";
+                    return "informationalization ";
                 case 87:
-                    return "role building";
+                    return "role building ";
                 case 88:
-                    return "talent retention";
+                    return "talent retention ";
                 case 89:
-                    return "innovativeness";
+                    return "innovativeness ";
                 case 90:
-                    return "Economic Value Creation";
+                    return "Economic Value Creation ";
                 case 91:
-                    return "intellectual capital";
+                    return "intellectual capital ";
                 case 92:
-                    return "high quality";
+                    return "high quality ";
                 case 93:
-                    return "full range of products";
+                    return "full range of products ";
                 case 94:
-                    return "technical strength";
+                    return "technical strength ";
                 case 95:
-                    return "quality assurance";
+                    return "quality assurance ";
                 case 96:
-                    return "specification quality";
+                    return "specification quality ";
                 case 97:
-                    return "market environment";
+                    return "market environment ";
                 case 98:
-                    return "client perspective";
+                    return "client perspective ";
                 default:
-                    return GetInner().Trim();
+                    //return GetInner().Trim();
+                    return GetInner();
             }
         }
 
@@ -2369,13 +2366,13 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return "kick-off";
+                    return "kick-off ";
                 case 2:
-                    return "roll-out";
+                    return "roll-out ";
                 case 3:
-                    return "client-event";
+                    return "client-event ";
                 case 4:
-                    return "quarter results";
+                    return "quarter results ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
@@ -2386,35 +2383,35 @@ namespace MSG.DomainLogic.Implementation
             switch (rand)
             {
                 case 1:
-                    return "key target markets";
+                    return "key target markets ";
                 case 2:
-                    return "style guidelines";
+                    return "style guidelines ";
                 case 3:
-                    return "key performance indicators";
+                    return "key performance indicators ";
                 case 4:
-                    return "market conditions";
+                    return "market conditions ";
                 case 5:
-                    return "market forces";
+                    return "market forces ";
                 case 6:
-                    return "market opportunities";
+                    return "market opportunities ";
                 case 7:
-                    return "tactics";
+                    return "tactics ";
                 case 8:
-                    return "organizing principles";
+                    return "organizing principles ";
                 case 9:
-                    return "interpersonal skills";
+                    return "interpersonal skills ";
                 case 10:
-                    return "roles and responsibilities";
+                    return "roles and responsibilities ";
                 case 11:
-                    return "cost savings";
+                    return "cost savings ";
                 case 12:
-                    return "lessons learned";
+                    return "lessons learned ";
                 case 13:
-                    return "client needs";
+                    return "client needs ";
                 case 14:
-                    return "requests / solutions";
+                    return "requests / solutions ";
                 case 15:
-                    return "mobile strategies";
+                    return "mobile strategies ";
                 case 16:
                     return "expectations and allocations ";
                 default:
@@ -2448,11 +2445,11 @@ namespace MSG.DomainLogic.Implementation
                 case 'x':
                 case 'z':
                 case 'h':
-                    return inner + "es";
+                    return inner + "es ";
                 case 'y':
-                    return inner.Substring(0, inner.Length - 1) + "ies";
+                    return inner.Substring(0, inner.Length - 1) + "ies ";
                 default:
-                    return inner + "s";
+                    return inner + "s ";
             }
         }
 
