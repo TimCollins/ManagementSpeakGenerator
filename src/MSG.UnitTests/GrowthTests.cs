@@ -59,5 +59,56 @@ namespace MSG.UnitTests
             Assert.AreEqual("An organic growth credibly accelerates strong mobile strategies at the end of the day.", output);
         }
 
+        [Test]
+        public void VerifyUnprecedentedThroughputIncrease()
+        {
+            _defaults.Insert(4, 5);
+            _defaults.Insert(5, 3);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("An unprecedented throughput increase credibly accelerates strong mobile strategies at the end of the day.", output);
+        }
+
+        [Test]
+        public void VerifyUpperSingleDigitEfficiencyGain()
+        {
+            _defaults.Insert(4, 3);
+            _defaults.Insert(5, 4);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
+        }
+
+        [Test]
+        public void VerifyProvenImprovement()
+        {
+            _defaults.Insert(4, 3);
+            _defaults.Insert(5, 4);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
+        }
+
+        [Test]
+        public void VerifyMeasuredYieldEnhancement()
+        {
+            _defaults.Insert(4, 8);
+            _defaults.Insert(5, 5);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("A measured yield enhancement credibly accelerates strong mobile strategies at the end of the day.", output);
+        }
     }
 }
