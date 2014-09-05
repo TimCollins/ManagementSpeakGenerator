@@ -347,8 +347,8 @@ namespace MSG.DomainLogic.Implementation
             if (result > 50 && result < 93)
             {
                 Plurality plurality = GetRandomPlurality();
-                return GetRandomArticle(plurality, GetThing(plurality)) + GetEventualAdverb()
-                       + GetThingVerbAndEnding(plurality) + GetEventualPostfixedAdverb();
+                return (GetRandomArticle(plurality, GetThing(plurality)) + GetEventualAdverb()
+                       + GetThingVerbAndEnding(plurality) + GetEventualPostfixedAdverb()).Trim();
             }
 
             if (result > 92 && result < 98)
