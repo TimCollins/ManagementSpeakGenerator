@@ -48,6 +48,7 @@
     <Compile Include="FaukonTests.cs" />
     <Compile Include="GeneratorTests.cs" />
     <Compile Include="GetThingTests.cs" />
+    <Compile Include="GrowthTests.cs" />
     <Compile Include="ListUtil.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="MoqUtil.cs" />

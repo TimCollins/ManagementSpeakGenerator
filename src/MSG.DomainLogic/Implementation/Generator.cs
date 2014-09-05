@@ -724,29 +724,64 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetGrowth()
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 22);
+            int result = DomainFactory.RandomNumber.GetRand(1, 9);
+            string superlative;
+            string improvement;
 
             switch (result)
             {
                 case 1:
-                    return "organic ";
+                    superlative = "organic";
+                    break;
                 case 2:
-                    return "double-digit ";
+                    superlative = "double-digit";
+                    break;
                 case 3:
-                    return "upper single-digit ";
+                    superlative = "upper single-digit";
+                    break;
                 case 4:
-                    return "breakout ";
+                    superlative = "breakout";
+                    break;
                 case 5:
-                    return "unprecedented ";
+                    superlative = "unprecedented";
+                    break;
                 case 6:
-                    return "unparallelled ";
+                    superlative = "unparallelled";
+                    break;
                 case 7:
-                    return "proven ";
+                    superlative = "proven";
+                    break;
                 case 8:
-                    return "measured ";
+                    superlative = "measured";
+                    break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
+
+            result = DomainFactory.RandomNumber.GetRand(1, 5);
+
+            switch (result)
+            {
+                case 1:
+                    improvement = "growth";
+                    break;
+                case 2:
+                    improvement = "improvement";
+                    break;
+                case 3:
+                    improvement = "throughput increase";
+                    break;
+                case 4:
+                    improvement = "efficiency gain";
+                    break;
+                case 5:
+                    improvement = "yield enhancement";
+                    break;
+                default:
+                    throw new RandomNumberException(result + " is an invalid value.");
+            }
+
+            return string.Format("{0} {1} ", superlative, improvement);
         }
 
         private string GetThingAdjective()

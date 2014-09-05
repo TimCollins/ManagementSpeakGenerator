@@ -7,7 +7,6 @@ namespace MSG.UnitTests
     [TestFixture]
     class GetThingTests
     {
-
         private List<int> _defaults;
 
         [SetUp]
@@ -72,6 +71,8 @@ namespace MSG.UnitTests
         {
             _defaults.Insert(3, 74);
             _defaults.ReplaceAt(4, 2);
+            _defaults.ReplaceAt(5, 4);
+            _defaults.ReplaceAt(15, 6);
             _defaults.Add(2);
             _defaults.Add(3);
             _defaults.Add(4);
@@ -80,7 +81,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("A double-digit consistently streamlines versatile market forces using our efficient, strategic, key performance indicators.", output);
+            Assert.AreEqual("A double-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
         }
 
         [Test]
