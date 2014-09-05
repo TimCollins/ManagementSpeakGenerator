@@ -560,6 +560,8 @@ namespace MSG.DomainLogic.Implementation
             // There is a situation where we end up with verbs like "interact with" passed 
             // in here. See BuildPluralVerbInteractThing() for example.
             // In this case we need to pluralise the first word, not the second.
+            // This also handles 3 letter phrases like "streamline the process". See
+            // FixMissingWord() for an example.
             verb = verb.Trim();
             string last = verb.Substring(verb.Length - 1, 1);
             int lastSpaceIndex = verb.LastIndexOf(' ');
@@ -568,6 +570,7 @@ namespace MSG.DomainLogic.Implementation
                 if (verb[i] == ' ')
                 {
                     last = verb[i - 1].ToString();
+                    lastSpaceIndex = i;
                 }
             }
 
@@ -1439,25 +1442,25 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 1:
-                    return "streamline the process ";
+                    return BuildPluralVerb("streamline the process ", plurality);
                 case 2:
-                    return "address the overarching issues ";
+                    return BuildPluralVerb("address the overarching issues ", plurality);
                 case 3:
-                    return "benchmark the portfolio ";
+                    return BuildPluralVerb("benchmark the portfolio ", plurality);
                 case 4:
-                    return "manage the cycle ";
+                    return BuildPluralVerb("manage the cycle ", plurality);
                 case 5:
-                    return "figure out where we come from, where we are going to ";
+                    return BuildPluralVerb("figure out where we come from, where we are going to ", plurality);
                 case 6:
-                    return "maximise the value ";
+                    return BuildPluralVerb("maximise the value ", plurality);
                 case 7:
-                    return "execute the strategy ";
+                    return BuildPluralVerb("execute the strategy ", plurality);
                 case 8:
-                    return "think outside the box ";
+                    return BuildPluralVerb("think outside the box ", plurality);
                 case 9:
-                    return "think differently ";
+                    return BuildPluralVerb("think differently ", plurality);
                 case 10:
-                    return "think across the full value chain ";
+                    return BuildPluralVerb("think across the full value chain ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

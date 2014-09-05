@@ -313,8 +313,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this. The word "streamline" should be plural. 
-            Assert.AreEqual("The Chief Human Resources Officer technically streamline the process going forward.", output);
+            Assert.AreEqual("The Chief Human Resources Officer technically streamlines the process going forward.", output);
         }
 
         //[Test]
