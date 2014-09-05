@@ -276,7 +276,6 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Review this output too.
             Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
         }
 
@@ -474,9 +473,6 @@ namespace MSG.UnitTests
         [Test]
         public void IncorrectBossCapitalisation()
         {
-            //The resources cautiously prioritise outsourced, hyper-hybrid, customer centricities going forward, while The sales manager expediently optimises our phased, fine-grained, empowerment going forward.
-            //22,46,2,5,12,61,27,7,166,231,55,137,10,1,47,1,6,13,70,5,3,197,206,180,46,4,1,
-
             List<int> defaults = new List<int> { 22, 46, 2, 5, 12, 61, 27, 7, 166, 231, 55, 137, 10, 1, 47, 1, 6, 13, 70, 5, 3, 197, 206, 180, 46, 4, 1 };
             MoqUtil.SetupRandMock(defaults.ToArray());
 
@@ -557,19 +553,6 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("Our footprint influences a content.", output);
-        }
-
-
-        [Test]
-        public void SpacingErrorMeasurement()
-        {
-            List<int> defaults = new List<int> {23, 29, 2, 5, 15, 49, 27, 97, 73, 127, 3, 30, 1, 75, 1, 89, 117, 162, 5, 46, 1, 16, 17, 104, 285, 37, 8, 89};
-            MoqUtil.SetupRandMock(defaults.ToArray());
-
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            MoqUtil.UndoMockRandomNumber();
-
-            Assert.AreEqual("The resources carefully prioritise our measurements up, down and across the organisation, while our footprint influences a content.", output);
         }
 
         //[Test]
