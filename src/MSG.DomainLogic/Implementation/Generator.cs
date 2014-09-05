@@ -648,7 +648,7 @@ namespace MSG.DomainLogic.Implementation
                 case 19:
                     plurality = GetRandomPlurality();
                     return "because " + GetRandomArticle(plurality, GetThing(plurality))
-                           + " " + BuildPluralVerb("produce", plurality) + " " + GetGrowth();
+                           + BuildPluralVerb("produce", plurality) + " " + GetGrowth();
                 case 20:
                     return "ahead of schedule";
                 case 21:
