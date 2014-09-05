@@ -25,9 +25,25 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        public void VerifyExceptionThrownForInvalidValue()
+        public void VerifyExceptionThrownForInvalidSuperlative()
         {
-            
+            _defaults.Insert(4, 123);
+            _defaults.Insert(5, 1);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
+        }
+
+        [Test]
+        public void VerifyExceptionThrownForInvalidImprovement()
+        {
+            _defaults.Insert(4, 1);
+            _defaults.Insert(5, 123);
+
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
         }
 
         [Test]
