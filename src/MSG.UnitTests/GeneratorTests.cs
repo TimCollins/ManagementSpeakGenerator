@@ -534,5 +534,49 @@ namespace MSG.UnitTests
             // TODO: Fix the double space after "avoids"
             Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
         }
+
+        [Test]
+        public void SpaceBeforeFullStop()
+        {
+            List<int> defaults = new List<int> { 2, 57, 2, 13, 135, 239, 183, 60, 8, 9, 2, 3, 7, 25, 191, 143, 179, 4, 49};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Time-phased and innovative strategy formulations technically leverage our rock-solid capabilities.", output);
+        }
+
+        [Test]
+        public void SpacingErrorMeasurement()
+        {
+            List<int> defaults = new List<int> {23, 29, 2, 5, 15, 49, 27, 97, 73, 127, 3, 30, 1, 75, 1, 89, 117, 162, 5, 46, 1, 16, 17, 104, 285, 37, 8, 89};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The resources carefully prioritise our measurements up, down and across the organisation, while our footprint influences a content.", output);
+        }
+
+        //[Test]
+        //public void SpacingErrorSynergises()
+        //{
+        //    // Need to manually put together the numbers for this
+        //GetRandomArticle					3 (our)
+        //GetInner							102 (relationship)
+        //GetPersonVerbHavingThingComplement	17 (synergises)
+        //GetPluralPerson						10 (partners)
+        //    // Two errors in this:
+        //    // Our relationshipsynergises the partners .
+
+        //    List<int> defaults = new List<int> {17, 5, 1, 12, 16, 11, 3, 1, 5, 7, 61, 5, 90, 16, 16, 1, 101, 4, 1, 2, 3, 4, 5, 6, 7, 8 };
+        //    MoqUtil.SetupRandMock(defaults.ToArray());
+
+        //    string output = DomainFactory.Generator.GetSentences(1)[0];
+        //    MoqUtil.UndoMockRandomNumber();
+
+        //    Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
+        //}
     }
 }

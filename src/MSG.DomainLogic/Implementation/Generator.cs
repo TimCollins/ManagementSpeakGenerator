@@ -1996,367 +1996,367 @@ namespace MSG.DomainLogic.Implementation
                 case 10:
                     return "escalation ";
                 case 11:
-                    return "trigger event";
+                    return "trigger event ";
                 case 12:
-                    return "system";
+                    return "system ";
                 case 13:
-                    return "Management Information System";
+                    return "Management Information System ";
                 case 14:
-                    return "Quality Management System";
+                    return "Quality Management System ";
                 case 15:
-                    return "planning";
+                    return "planning ";
                 case 16:
-                    return "target";
+                    return "target ";
                 case 17:
-                    return "calibration";
+                    return "calibration ";
                 case 18:
-                    return "Control Information System";
+                    return "Control Information System ";
                 case 19:
-                    return "process";
+                    return "process ";
                 case 20:
-                    return "talent";
+                    return "talent ";
                 case 21:
-                    return "execution";
+                    return "execution ";
                 case 22:
-                    return "leadership";
+                    return "leadership ";
                 case 23:
-                    return "performance";
+                    return "performance ";
                 case 24:
-                    return "solution provider";
+                    return "solution provider ";
                 case 25:
-                    return "value";
+                    return "value ";
                 case 26:
-                    return "value creation";
+                    return "value creation ";
                 case 27:
-                    return "feedback";
+                    return "feedback ";
                 case 28:
-                    return "document";
+                    return "document ";
                 case 29:
-                    return "bottom line";
+                    return "bottom line ";
                 case 30:
-                    return "momentum";
+                    return "momentum ";
                 case 31:
-                    return "opportunity";
+                    return "opportunity ";
                 case 32:
-                    return "credibility";
+                    return "credibility ";
                 case 33:
-                    return "issue";
+                    return "issue ";
                 case 34:
-                    return "core meeting";
+                    return "core meeting ";
                 case 35:
-                    return "platform";
+                    return "platform ";
                 case 36:
-                    return "niche";
+                    return "niche ";
                 case 37:
-                    return "content";
+                    return "content ";
                 case 38:
-                    return "communication";
+                    return "communication ";
                 case 39:
-                    return "goal";
+                    return "goal ";
                 case 40:
-                    return "skill";
+                    return "skill ";
                 case 41:
-                    return "alternative";
+                    return "alternative ";
                 case 42:
-                    return "culture";
+                    return "culture ";
                 case 43:
-                    return "requirement";
+                    return "requirement ";
                 case 44:
-                    return "potential";
+                    return "potential ";
                 case 45:
-                    return "challenge";
+                    return "challenge ";
                 case 46:
-                    return "empowerment";
+                    return "empowerment ";
                 case 47:
-                    return "benchmarking";
+                    return "benchmarking ";
                 case 48:
-                    return "framework";
+                    return "framework ";
                 case 49:
-                    return "benchmark";
+                    return "benchmark ";
                 case 50:
-                    return "implication";
+                    return "implication ";
                 case 51:
-                    return "integration";
+                    return "integration ";
                 case 52:
-                    return "enabler";
+                    return "enabler ";
                 case 53:
-                    return "control";
+                    return "control ";
                 case 54:
-                    return "trend";
+                    return "trend ";
                 case 55:
-                    return "business case";
+                    return "business case ";
                 case 56:
-                    return "architecture";
+                    return "architecture ";
                 case 57:
-                    return "action plan";
+                    return "action plan ";
                 case 58:
-                    return "project";
+                    return "project ";
                 case 59:
-                    return "review cycle";
+                    return "review cycle ";
                 case 60:
-                    return "strategy formulation";
+                    return "strategy formulation ";
                 case 61:
-                    return "decision";
+                    return "decision ";
                 case 62:
-                    return "enhanced data capture";
+                    return "enhanced data capture ";
                 case 63:
-                    return "energy";
+                    return "energy ";
                 case 64:
-                    return "plan";
+                    return "plan ";
                 case 65:
-                    return "initiative";
+                    return "initiative ";
                 case 66:
-                    return "priority";
+                    return "priority ";
                 case 67:
-                    return "synergy";
+                    return "synergy ";
                 case 68:
-                    return "incentive";
+                    return "incentive ";
                 case 69:
-                    return "dialogue";
+                    return "dialogue ";
                 case 70:
-                    return "concept";
+                    return "concept ";
                 case 71:
-                    return "time-phase";
+                    return "time-phase ";
                 case 72:
-                    return "projection";
+                    return "projection ";
                 case 73:
-                    return "blended approach";
+                    return "blended approach ";
                 case 74:
-                    return "low hanging fruit";
+                    return "low hanging fruit ";
                 case 75:
-                    return "forward planning";
+                    return "forward planning ";
                 case 76:
-                    return "pre-plan";
+                    return "pre-plan ";
                 case 77:
-                    return "pipeline";
+                    return "pipeline ";
                 case 78:
-                    return "bandwidth";
+                    return "bandwidth ";
                 case 79:
-                    return "workshop";
+                    return "workshop ";
                 case 80:
-                    return "paradigm";
+                    return "paradigm ";
                 case 81:
-                    return "paradigm shift";
+                    return "paradigm shift ";
                 case 82:
-                    return "strategic staircase";
+                    return "strategic staircase ";
                 case 83:
-                    return "cornerstone";
+                    return "cornerstone ";
                 case 84:
-                    return "executive talent";
+                    return "executive talent ";
                 case 85:
-                    return "evolution";
+                    return "evolution ";
                 case 86:
-                    return "workflow";
+                    return "workflow ";
                 case 87:
-                    return "message";
+                    return "message ";
                 case 88:
-                    return "risk/return profile";
+                    return "risk/return profile ";
                 case 89:
-                    return "efficient frontier";
+                    return "efficient frontier ";
                 case 90:
-                    return "pillar";
+                    return "pillar ";
                 case 91:
-                    return "internal client";
+                    return "internal client ";
                 case 92:
-                    return "consistency";
+                    return "consistency ";
                 case 93:
-                    return "on-boarding process";
+                    return "on-boarding process ";
                 case 94:
-                    return "dotted line";
+                    return "dotted line ";
                 case 95:
-                    return "action item";
+                    return "action item ";
                 case 96:
-                    return "cost efficiency";
+                    return "cost efficiency ";
                 case 97:
-                    return "channel";
+                    return "channel ";
                 case 98:
-                    return "convergence";
+                    return "convergence ";
                 case 99:
-                    return "infrastructure";
+                    return "infrastructure ";
                 case 100:
-                    return "metric";
+                    return "metric ";
                 case 101:
-                    return "technology";
+                    return "technology ";
                 case 102:
-                    return "relationship";
+                    return "relationship ";
                 case 103:
-                    return "partnership";
+                    return "partnership ";
                 case 104:
-                    return "supply-chain";
+                    return "supply-chain ";
                 case 105:
-                    return "portal";
+                    return "portal ";
                 case 106:
-                    return "solution";
+                    return "solution ";
                 case 107:
-                    return "business line";
+                    return "business line ";
                 case 108:
-                    return "white paper";
+                    return "white paper ";
                 case 109:
-                    return "scalability";
+                    return "scalability ";
                 case 110:
-                    return "innovation";
+                    return "innovation ";
                 case 111:
-                    return "Strategic Management System";
+                    return "Strategic Management System ";
                 case 112:
-                    return "Balanced Scorecard";
+                    return "Balanced Scorecard ";
                 case 113:
-                    return "differentiator";
+                    return "differentiator ";
                 case 114:
-                    return "case study";
+                    return "case study ";
                 case 115:
-                    return "idiosyncrasy";
+                    return "idiosyncrasy ";
                 case 116:
-                    return "benefit";
+                    return "benefit ";
                 case 117:
-                    return "say/do ratio";
+                    return "say/do ratio ";
                 case 118:
-                    return "segmentation";
+                    return "segmentation ";
                 case 119:
-                    return "image";
+                    return "image ";
                 case 120:
-                    return "realignment";
+                    return "realignment ";
                 case 121:
-                    return "business model";
+                    return "business model ";
                 case 122:
-                    return "business philosophy";
+                    return "business philosophy ";
                 case 123:
-                    return "branding";
+                    return "branding ";
                 case 124:
-                    return "methodology";
+                    return "methodology ";
                 case 125:
-                    return "profile";
+                    return "profile ";
                 case 126:
-                    return "measure";
+                    return "measure ";
                 case 127:
-                    return "measurement";
+                    return "measurement ";
                 case 128:
-                    return "philosophy";
+                    return "philosophy ";
                 case 129:
-                    return "branding strategy";
+                    return "branding strategy ";
                 case 130:
-                    return "efficiency";
+                    return "efficiency ";
                 case 131:
-                    return "industry";
+                    return "industry ";
                 case 132:
-                    return "commitment";
+                    return "commitment ";
                 case 133:
-                    return "perspective";
+                    return "perspective ";
                 case 134:
-                    return "risk appetite";
+                    return "risk appetite ";
                 case 135:
-                    return "best practice";
+                    return "best practice ";
                 case 136:
-                    return "brand identity";
+                    return "brand identity ";
                 case 137:
-                    return "customer centricity";
+                    return "customer centricity ";
                 case 138:
-                    return "shareholder value";
+                    return "shareholder value ";
                 case 139:
-                    return "attitude";
+                    return "attitude ";
                 case 140:
-                    return "mindset";
+                    return "mindset ";
                 case 141:
-                    return "flexibility";
+                    return "flexibility ";
                 case 142:
-                    return "granularity";
+                    return "granularity ";
                 case 143:
-                    return "engagement";
+                    return "engagement ";
                 case 144:
-                    return "pyramid";
+                    return "pyramid ";
                 case 145:
-                    return "market";
+                    return "market ";
                 case 146:
-                    return "diversity";
+                    return "diversity ";
                 case 147:
-                    return "interdependency";
+                    return "interdependency ";
                 case 148:
-                    return "scaling";
+                    return "scaling ";
                 case 149:
-                    return "asset";
+                    return "asset ";
                 case 150:
-                    return "flow charting";
+                    return "flow charting ";
                 case 151:
-                    return "value proposition";
+                    return "value proposition ";
                 case 152:
-                    return "performance culture";
+                    return "performance culture ";
                 case 153:
-                    return "change";
+                    return "change ";
                 case 154:
-                    return "reward";
+                    return "reward ";
                 case 155:
-                    return "learning";
+                    return "learning ";
                 case 156:
-                    return "next step";
+                    return "next step ";
                 case 157:
-                    return "delivery framework";
+                    return "delivery framework ";
                 case 158:
-                    return "structure";
+                    return "structure ";
                 case 159:
-                    return "support structure";
+                    return "support structure ";
                 case 160:
-                    return "standardization";
+                    return "standardization ";
                 case 161:
-                    return "objective";
+                    return "objective ";
                 case 162:
-                    return "footprint";
+                    return "footprint ";
                 case 163:
-                    return "transformation process";
+                    return "transformation process ";
                 case 164:
-                    return "policy";
+                    return "policy ";
                 case 165:
-                    return "sales target";
+                    return "sales target ";
                 case 166:
-                    return "ecosystem";
+                    return "ecosystem ";
                 case 167:
-                    return "landscape";
+                    return "landscape ";
                 case 168:
-                    return "atmosphere";
+                    return "atmosphere ";
                 case 169:
-                    return "environment";
+                    return "environment ";
                 case 170:
-                    return "core competency";
+                    return "core competency ";
                 case 171:
-                    return "market practice";
+                    return "market practice ";
                 case 172:
-                    return "operating strategy";
+                    return "operating strategy ";
                 case 173:
-                    return "insight";
+                    return "insight ";
                 case 174:
-                    return "accomplishment";
+                    return "accomplishment ";
                 case 175:
-                    return "correlation";
+                    return "correlation ";
                 case 176:
-                    return "touchpoint";
+                    return "touchpoint ";
                 case 177:
-                    return "knowledge transfer";
+                    return "knowledge transfer ";
                 case 178:
-                    return "correlation";
+                    return "correlation ";
                 case 179:
-                    return "capability";
+                    return "capability ";
                 case 180:
-                    return "gamification";
+                    return "gamification ";
                 case 181:
-                    return "smooth transition";
+                    return "smooth transition ";
                 case 182:
-                    return "leadership strategy";
+                    return "leadership strategy ";
                 case 183:
-                    return "collaboration";
+                    return "collaboration ";
                 case 184:
-                    return "success factor";
+                    return "success factor ";
                 case 185:
-                    return "lever";
+                    return "lever ";
                 case 186:
-                    return "breakthrough";
+                    return "breakthrough ";
                 case 187:
-                    return "open-door policy";
+                    return "open-door policy ";
                 case 188:
-                    return "recalibration";
+                    return "recalibration ";
                 case 189:
-                    return "wow factor";
+                    return "wow factor ";
                 case 190:
-                    return "onboarding solution";
+                    return "onboarding solution ";
                 case 191:
-                    return "brand pyramid";
+                    return "brand pyramid ";
                 default:
                     return string.Empty;
             }
@@ -2418,7 +2418,6 @@ namespace MSG.DomainLogic.Implementation
                 case 16:
                     return "expectations and allocations ";
                 default:
-                    // TODO: As elsewhere, check if this should be random or derived from parent.
                     return GetEventualPlural(GetInner(), Plurality.Plural);
             }
         }
