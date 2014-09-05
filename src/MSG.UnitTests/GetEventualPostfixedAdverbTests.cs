@@ -21,8 +21,6 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
         }
 
-        // Test first, last and all the complicated ones that call multiple other functions.
-
         [Test]
         public void VerifyGoingForward()
         {

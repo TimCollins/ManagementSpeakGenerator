@@ -1436,8 +1436,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbAndComplement(Plurality plurality)
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 61);
-            int result = DomainFactory.RandomNumber.GetRand(1, 11);
+            int result = DomainFactory.RandomNumber.GetRand(1, 61);
 
             switch (result)
             {
@@ -1461,62 +1460,109 @@ namespace MSG.DomainLogic.Implementation
                     return BuildPluralVerb("think differently ", plurality);
                 case 10:
                     return BuildPluralVerb("think across the full value chain ", plurality);
+                case 11:
+                    return BuildPluralVerb("loop back", plurality);
+                case 12:
+                    return BuildPluralVerb("conversate", plurality);
+                case 13:
+                    return BuildPluralVerb("go forward together", plurality);
+                case 14:
+                    return BuildPluralVerb("achieve efficiencies", plurality);
+                case 15:
+                    return BuildPluralVerb("deliver", plurality);
+                case 16:
+                    return BuildPluralVerb("stay in the mix", plurality);
+                case 17:
+                    return BuildPluralVerb("stay in the zone", plurality);
+                case 18:
+                    return BuildPluralVerb("evolve", plurality);
+                case 19:
+                    return BuildPluralVerb("exceed expectations", plurality);
+                case 20:
+                    return BuildPluralVerb("develop the plan", plurality);
+                case 21:
+                    return BuildPluralVerb("develop the blue print for execution", plurality);
+                case 22:
+                    return BuildPluralVerb("grow and diversify", plurality);
+                case 23:
+                    return BuildPluralVerb("fuel changes", plurality);
+                case 24:
+                    return BuildPluralVerb("nurture talent", plurality);
+                case 25:
+                    return BuildPluralVerb("cultivate talent", plurality);
+                case 26:
+                    return BuildPluralVerb("make it possible", plurality);
+                case 27:
+                    return BuildPluralVerb("manage the portfolio", plurality);
+                case 28:
+                    return BuildPluralVerb("align resources", plurality);
+                case 29:
+                    return BuildPluralVerb("drive the business forward", plurality);
+                case 30:
+                    return BuildPluralVerb("make things happen", plurality);
+                case 31:
+                    return BuildPluralVerb("stay ahead", plurality);
+                case 32:
+                    return BuildPluralVerb("outperform peers", plurality);
+                case 33:
+                    return BuildPluralVerb("surge ahead", plurality);
+                case 34:
+                    return BuildPluralVerb("manage the downside", plurality);
+                case 35:
+                    return BuildPluralVerb("stay in the wings", plurality);
+                case 36:
+                    return BuildPluralVerb("come to a landing", plurality);
+                case 37:
+                    return BuildPluralVerb("shoot it over", plurality);
+                case 38:
+                    return BuildPluralVerb("move the needle", plurality);
+                case 39:
+                    return BuildPluralVerb("connect the dots", plurality);
+                case 40:
+                    return BuildPluralVerb("connect the dots to the end game", plurality);
+                case 41:
+                    return BuildPluralVerb("reset the benchmark", plurality);
+                case 42:
+                    return BuildPluralVerb("take it offline", plurality);
+                case 43:
+                    return BuildPluralVerb("peel the onion", plurality);
+                case 44:
+                    return BuildPluralVerb("drill down", plurality);
+                case 45:
+                    return BuildPluralVerb("get from here to here", plurality);
+                case 46:
+                    return BuildPluralVerb("do things differently", plurality);
+                case 47:
+                    return BuildPluralVerb("stretch the status quo", plurality);
+                case 48:
+                    return BuildPluralVerb("challenge the status quo", plurality);
+                case 49:
+                    return BuildPluralVerb("challenge established ideas", plurality);
+                case 50:
+                    return BuildPluralVerb("increase customer satisfaction", plurality);
+                case 51:
+                    return BuildPluralVerb("enable customer interaction", plurality);
+                case 52:
+                    return BuildPluralVerb("manage the balance", plurality);
+                case 53:
+                    return BuildPluralVerb("turn every stone", plurality);
+                case 54:
+                    return BuildPluralVerb("drive revenue", plurality);
+                case 55:
+                    return BuildPluralVerb("rise to the challenge", plurality);
+                case 56:
+                    return BuildPluralVerb("keep it on the radar", plurality);
+                case 57:
+                    return BuildPluralVerb("stay on trend", plurality);
+                case 58:
+                    return BuildPluralVerb("hunt the business down", plurality);
+                case 59:
+                    return BuildPluralVerb("push the envelope to the tilt", plurality);
+                case 60:
+                    return BuildPluralVerb("execute on priorities", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
-
-            //when 11 => return "loop back";
-            //when 12 => return "conversate";
-            //when 13 => return "go forward together";
-            //   --
-            //when 14 => return "achieve efficiencies";
-            //when 15 => return "deliver"; -- deliver, form without complement
-            //                             -- GAC 2010
-            //when 16 => return "stay in the mix";
-            //when 17 => return "stay in the zone";
-            //when 18 => return "evolve";
-            //when 19 => return "exceed expectations";
-            //when 20 => return "develop the plan";
-            //when 21 => return "develop the blue print for execution";
-            //when 22 => return "grow and diversify";
-            //when 23 => return "fuel changes";
-            //when 24 => return "nurture talent";
-            //when 25 => return "cultivate talent";
-            //when 26 => return "make it possible";
-            //when 27 => return "manage the portfolio";
-            //when 28 => return "align resources";
-            //when 29 => return "drive the business forward";
-            //when 30 => return "make things happen";
-            //when 31 => return "stay ahead";
-            //when 32 => return "outperform peers";
-            //when 33 => return "surge ahead";
-            //when 34 => return "manage the downside";
-            //when 35 => return "stay in the wings";
-            //when 36 => return "come to a landing";
-            //when 37 => return "shoot it over";
-            //when 38 => return "move the needle";
-            //when 39 => return "connect the dots";
-            //when 40 => return "connect the dots to the end game";
-            //when 41 => return "reset the benchmark";
-            //when 42 => return "take it offline";
-            //when 43 => return "peel the onion";
-            //when 44 => return "drill down";
-            //when 45 => return "get from here to here";
-            //when 46 => return "do things differently";
-            //when 47 => return "stretch the status quo";
-            //when 48 => return "challenge the status quo";
-            //when 49 => return "challenge established ideas";
-            //when 50 => return "increase customer satisfaction";
-            //when 51 => return "enable customer interaction";
-            //when 52 => return "manage the balance";
-            //when 53 => return "turn every stone";
-            //when 54 => return "drive revenue";
-            //when 55 => return "rise to the challenge";
-            //when 56 => return "keep it on the radar";
-            //when 57 => return "stay on trend";
-            //when 58 => return "hunt the business down";
-            //when 59 => return "push the envelope to the tilt";
-            //when 60 => return "execute on priorities";
         }
 
         private string GetEventualAdverb()
