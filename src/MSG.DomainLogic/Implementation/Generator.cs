@@ -340,8 +340,8 @@ namespace MSG.DomainLogic.Implementation
             if (result > 5 && result < 51)
             {
                 Plurality plurality = GetRandomPlurality();
-                return "the " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) +
-                       GetEventualPostfixedAdverb();
+                return ("the " + GetPerson(plurality) + GetEventualAdverb() + GetPersonVerbAndEnding(plurality) +
+                       GetEventualPostfixedAdverb()).Trim();
             }
 
             if (result > 50 && result < 93)
@@ -602,8 +602,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetEventualPostfixedAdverb()
         {
-            //int result = DomainFactory.RandomNumber.GetRand(1, 156);
-            int result = DomainFactory.RandomNumber.GetRand(1, 11);
+            int result = DomainFactory.RandomNumber.GetRand(1, 156);
 
             switch (result)
             {
