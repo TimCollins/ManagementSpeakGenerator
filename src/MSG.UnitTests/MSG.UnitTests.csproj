@@ -58,6 +58,7 @@
     <Compile Include="PersonVerbEndingTests.cs" />
     <Compile Include="PluralityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropositionSemiColonTests.cs" />
     <Compile Include="RandomNumberTests.cs" />
     <Compile Include="ReplaceAtTests.cs" />
     <Compile Include="SentenceTests.cs" />

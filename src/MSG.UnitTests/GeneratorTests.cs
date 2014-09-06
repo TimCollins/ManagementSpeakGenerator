@@ -534,5 +534,19 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("Our footprint influences a content.", output);
         }
+
+        [Test]
+        public void FullStopSpaceBefore()
+        {
+            //1,93,306,129,232,117,70,2,84,10,4,138
+            //"Branding strategy and say/do ratio transfer the clients ."
+        }
+
+        [Test]
+        public void NewPluralProblem()
+        {
+            //17,31,1,2,21,10,31,143,
+            // The group seamlessly stay aheads.
+        }
     }
 }

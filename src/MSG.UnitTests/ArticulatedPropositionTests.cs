@@ -115,5 +115,14 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward, whilst we must activate the matrix to strategically streamline the process going forward.", output);
         }
+
+        [Test]
+        public void VerifyExceptionThrown()
+        {
+            _defaults.Insert(0, 555);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
+        }
     }
 }

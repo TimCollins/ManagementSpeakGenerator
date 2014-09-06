@@ -301,24 +301,24 @@ namespace MSG.DomainLogic.Implementation
             switch (result)
             {
                 case 18:
-                    return ApplySentenceCase(GetProposition() + "; this is why " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + "; this is why " + GetProposition());
                 case 19:
-                    return ApplySentenceCase(GetProposition() + "; nevertheless " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + "; nevertheless " + GetProposition());
                 case 20:
-                    return ApplySentenceCase(GetProposition() + "; whereas " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + "; whereas " + GetProposition());
                 case 21:
                     return ApplySentenceCase("our gut feeling is that " + GetProposition());
                 case 22:
                 case 23:
                 case 24:
                 case 25:
-                    return ApplySentenceCase(GetProposition() + ", while " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + ", while " + GetProposition());
                 case 26:
-                    return ApplySentenceCase(GetProposition() + ". At the same time, " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + ". At the same time, " + GetProposition());
                 case 27:
-                    return ApplySentenceCase(GetProposition() + ". As a result " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + ". As a result " + GetProposition());
                 case 28:
-                    return ApplySentenceCase(GetProposition() + ", whilst " + GetProposition());
+                    return ApplySentenceCase(GetProposition().Trim() + ", whilst " + GetProposition());
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
