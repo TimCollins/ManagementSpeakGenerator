@@ -29,7 +29,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains(" interactively "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to interactively streamline the process going forward.", output);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains(" credibly "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains(" strategically "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains(" conservatively "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to conservatively streamline the process going forward.", output);
         }
     }
 }
