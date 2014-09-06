@@ -734,12 +734,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 74 && result < 81)
             {
-                return string.Format("{0}, {1} and {2} {3} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1} and {2} {3}", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 80 && result < 85)
             {
-                return string.Format("{0}, {1}, {2} and {3} {4} ", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1}, {2} and {3} {4}", GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             return GetThingAtom(plurality);
