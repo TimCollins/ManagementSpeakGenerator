@@ -538,15 +538,25 @@ namespace MSG.UnitTests
         [Test]
         public void FullStopSpaceBefore()
         {
-            //1,93,306,129,232,117,70,2,84,10,4,138
-            //"Branding strategy and say/do ratio transfer the clients ."
+            List<int> defaults = new List<int> {1, 93, 306, 129, 232, 117, 70, 2, 84, 10, 4, 138};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Branding strategy and say/do ratio transfer the clients.", output);
         }
 
         [Test]
         public void NewPluralProblem()
         {
-            //17,31,1,2,21,10,31,143,
-            // The group seamlessly stay aheads.
+            List<int> defaults = new List<int> {17, 31, 1, 2, 21, 10, 31, 143,};
+            MoqUtil.SetupRandMock(defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The group seamlessly stays ahead.", output);
         }
     }
 }

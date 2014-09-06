@@ -295,7 +295,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 18)
             {
-                return ApplySentenceCase(GetProposition());
+                return ApplySentenceCase(GetProposition().Trim());
             }
 
             switch (result)
@@ -589,12 +589,15 @@ namespace MSG.DomainLogic.Implementation
                     {
                         // If the second-last char is a vowel then append 's'.
                         // This covers "ploy" to "ploys".
-                        return verb + "s ";
+                        //return verb + "s ";
+                        return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+                            : verb + "s ";
                     }
                     // Remove the 'y' and append "ies".
                     // This covers "identify" to "identifies".
                     return verb.Substring(0, verb.Length - 1) + "ies ";
                 default:
+                    // If there was more than one word in the passed string then append "s" to the first word.
                     return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
                         : verb + "s ";
             }
@@ -1973,7 +1976,6 @@ namespace MSG.DomainLogic.Implementation
                 case 98:
                     return "client perspective ";
                 default:
-                    //return GetInner().Trim();
                     return GetInner();
             }
         }
