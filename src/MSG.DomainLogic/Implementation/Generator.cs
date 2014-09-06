@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
@@ -1414,20 +1415,32 @@ namespace MSG.DomainLogic.Implementation
         private string GetPersonVerbHavingBadThingComplement(Plurality plurality)
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
+            StringBuilder output = new StringBuilder();
 
             switch (result)
             {
                 case 1:
-                    return BuildPluralVerb("address", plurality);
+                    output.Append(BuildPluralVerb("address", plurality));
+                    break;
                 case 2:
-                    return BuildPluralVerb("identify", plurality) + " ";
+                    output.Append(BuildPluralVerb("identify", plurality));
+                    break;
                 case 3:
-                    return BuildPluralVerb("avoid", plurality) + " ";
+                    output.Append(BuildPluralVerb("avoid", plurality));
+                    break;
                 case 4:
-                    return BuildPluralVerb("mitigate", plurality) + " ";
+                    output.Append(BuildPluralVerb("mitigate", plurality));
+                    break;
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
+
+            if (plurality == Plurality.Plural)
+            {
+                output.Append(" ");
+            }
+
+            return output.ToString();
         }
 
         private string GetPersonVerbAndComplement(Plurality plurality)

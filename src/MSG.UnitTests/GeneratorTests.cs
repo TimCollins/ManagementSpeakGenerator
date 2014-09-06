@@ -527,8 +527,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            // TODO: Fix the double space after "avoids"
-            Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
+            Assert.AreEqual("The senior support staff significantly avoids our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
         }
 
         [Test]
