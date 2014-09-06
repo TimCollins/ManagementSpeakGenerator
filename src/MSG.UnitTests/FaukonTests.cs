@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(2, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            List<string> output = DomainFactory.Generator.GetSentences(1);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output[0].StartsWith("We need to "));
+            Assert.AreEqual("We need to credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We've got to "));
+            Assert.AreEqual("We've got to credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -49,9 +49,9 @@ namespace MSG.UnitTests
             _defaults.Insert(2, 3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            List<string> output = DomainFactory.Generator.GetSentences(1);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output[0].StartsWith("The reporting unit should "));
+            Assert.AreEqual("The reporting unit should credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("Controlling should "));
+            Assert.AreEqual("Controlling should credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -75,7 +75,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We must activate "));
+            Assert.AreEqual("We must activate the organisation to interactively streamline the process going forward.", output);
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("Pursuing this route will enable us to "));
+            Assert.AreEqual("Pursuing this route will enable us to credibly streamline the process going forward.", output  );
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We will go the extra mile to "));
+            Assert.AreEqual("We will go the extra mile to credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We are working hard to "));
+            Assert.AreEqual("We are working hard to credibly streamline the process going forward.", output);
         }
 
         [Test]
@@ -119,7 +119,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to work tirelessly and diligently to "));
+            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output);
         }
     }
 }
