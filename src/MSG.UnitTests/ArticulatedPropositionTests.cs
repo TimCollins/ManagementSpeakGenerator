@@ -30,9 +30,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains("tirelessly and diligently"));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -45,9 +43,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We will go"));
-            Assert.IsTrue(output.Contains("; this is why "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We will go the extra mile to technically streamline the process going forward; this is why we need to 200% think across the full value chain going forward.", output);
         }
 
         [Test]
@@ -57,9 +53,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains("; nevertheless "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward; nevertheless we must activate the matrix to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -69,9 +63,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains("; whereas "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward; whereas we must activate the matrix to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -81,8 +73,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("Our gut feeling is that "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("Our gut feeling is that we continue to work tirelessly and diligently to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -92,9 +83,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains(", while "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward, while we must activate the matrix to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -104,9 +93,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains(". At the same time, "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward. At the same time, we must activate the matrix to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -116,9 +103,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains(". As a result "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward. As a result we must activate the matrix to strategically streamline the process going forward.", output);
         }
 
         [Test]
@@ -128,9 +113,7 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("We continue to"));
-            Assert.IsTrue(output.Contains(", whilst "));
-            Assert.IsTrue(output.EndsWith("."));
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward, whilst we must activate the matrix to strategically streamline the process going forward.", output);
         }
     }
 }
