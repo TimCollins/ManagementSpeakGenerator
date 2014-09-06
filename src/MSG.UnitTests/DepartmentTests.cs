@@ -29,7 +29,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("Human Resources "));
+            Assert.AreEqual("The Group Chief Human Resources Officer globally streamlines the process across the board.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("Customer Relations "));
+            Assert.AreEqual("The Group Chief Customer Relations Officer globally streamlines the process across the board.", output);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.Contains("Marketing "));
+            Assert.AreEqual("The Group Chief Marketing Officer globally streamlines the process across the board.", output);
         }
 
         [Test]
