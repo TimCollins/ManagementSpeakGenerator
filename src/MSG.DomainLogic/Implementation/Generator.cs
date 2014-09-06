@@ -1376,7 +1376,7 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        public Plurality GetRandomPlurality()
+        private Plurality GetRandomPlurality()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 3);
 

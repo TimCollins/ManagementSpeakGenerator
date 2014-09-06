@@ -7,6 +7,5 @@ namespace MSG.DomainLogic.Interfaces
         string GetBoss();
         string GetPerson(Plurality plurality);
         List<string> GetSentences(int count);
-        Plurality GetRandomPlurality();
     }
 }
