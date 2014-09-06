@@ -719,12 +719,12 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 14 && result < 71)
             {
-                return string.Format("{0} {1} ", GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0} {1}", GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 70 && result < 73)
             {
-                return string.Format("{0} and/or {1} {2} ", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0} and/or {1} {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 72 && result < 75)

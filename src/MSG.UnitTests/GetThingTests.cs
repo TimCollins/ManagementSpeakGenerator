@@ -52,6 +52,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
+            // Space between governance and credibly.
             Assert.AreEqual("A holistic governance credibly accelerates strong mobile strategies within the industry.", output);
         }
 
