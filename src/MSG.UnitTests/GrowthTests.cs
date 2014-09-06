@@ -7,8 +7,6 @@ namespace MSG.UnitTests
     [TestFixture]
     class GrowthTests
     {
-        // Verify various combinations from GetGrowth.
-
         private List<int> _defaults;
 
         [SetUp]
