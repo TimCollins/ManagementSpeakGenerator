@@ -315,37 +315,30 @@ namespace MSG.UnitTests
             Assert.AreEqual("The Chief Human Resources Officer technically streamlines the process going forward.", output);
         }
 
-        //[Test]
-        //public void DeEscalationSpacingAgain()
-        //{
-        //    // This is a long sentence but contains an extra space in the middle: 
-        //    // "de-escalation  by thinking".
-        //    List<int> defaults = new List<int> { 26, 40, 1, 1, 21, 61, 1, 2, 3, 2, 9, 280, 11, 3, 9, 60, 1, 7, 1, 5, 331, 8, 1, 5, 2, 90, 2, 1, 7 };
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
+        [Test]
+        public void SpacingAgain()
+        {
+            List<int> defaults = new List<int> { 26, 40, 1, 1, 21, 61, 1, 2, 3, 2, 9, 280, 11, 3, 9, 60, 1, 7, 1, 5, 7, 8, 1, 5, 2, 90, 2, 1, 7 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-        //    Assert.IsTrue(output.Contains("de-escalation by thinking"));
-        //}
+            Assert.AreEqual("The steering committee seamlessly manages a constructive, strategic, governance by leveraging the parallel, efficient, tactics. At the same time, we will go the extra mile to culturally figure out where we come from, where we are going to within the industry.", output);
+        }
 
-        //[Test]
-        //public void AddressesShouldBePlural()
-        //{
-        //    // The original of this test has been removed altogether (see above).
-        //    // This test won't work in its current form as "address the overarching issues "
-        //    // is one complete string on its own. A test calling the 
-        //    // GetPersonVerbHavingBadThingComplement() function is needed.
-        //    // There are spacing issues which will be dealt with separately.
-        //    List<int> defaults = new List<int> { 17, 5, 1, 8, 1, 11, 1, 1, 1, 1 };
+        [Test]
+        public void LoopBackGoingForward()
+        {
+            List<int> defaults = new List<int> { 17, 5, 1, 8, 1, 11, 1, 1, 1, 1 };
 
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-        //    Assert.IsTrue(output.Contains("addresses"));
-        //}
+            Assert.AreEqual("We need to culturally loop back going forward.", output);
+        }
 
         [Test]
         public void CapitalLetterAtStartGetPerson()
@@ -446,29 +439,17 @@ namespace MSG.UnitTests
             Assert.AreEqual("The stakeholders 24/7 avoid gaps as part of the plan.", output);
         }
 
-        //[Test]
-        //public void SpacingErrorsTargetSignOff()
-        //{
-        //    // Original sentence was Silo, sign-off and win-win solution proactively targetthe sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergisethe team players from the get-go.
+        [Test]
+        public void SpacingErrorsEnablers()
+        {
+            List<int> defaults = new List<int> { 25, 6, 9, 7, 4, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5 };
+            MoqUtil.SetupRandMock(defaults.ToArray());
 
-        //    //GetArticulatedProposition()		25 ", while"
-        //    //GetProposition
-        //    //GetEventualPlural or 			3
-        //    //GetSingularAtom 				4 (to call GetInner)
-        //    //GetInner						7 (to call GetMatrix)
-        //    //GetMatrix						6 silo
-        //    //GetInner()						9 sign-off
-        //    //GetInner()						7 win-win solution
-        //    //GetEventualAdverb()				4 proactively
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
 
-        //    List<int> defaults = new List<int> { 25, 6, 9, 7, 4};
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
-
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Silo, sign-off and win-win solution proactively target the sign-offthroughout the organisation, while trigger event, guideline and sign-off conservatively synergise the team players from the get-go.", output);
-        //}
+            Assert.AreEqual("The enablers proactively figure out where we come from, where we are going to in this space, while we've got to interactively benchmark the portfolio in this space.", output);
+        }
 
         [Test]
         public void IncorrectBossCapitalisation()
@@ -553,25 +534,5 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("Our footprint influences a content.", output);
         }
-
-        //[Test]
-        //public void SpacingErrorSynergises()
-        //{
-        //    // Need to manually put together the numbers for this
-        //GetRandomArticle					3 (our)
-        //GetInner							102 (relationship)
-        //GetPersonVerbHavingThingComplement	17 (synergises)
-        //GetPluralPerson						10 (partners)
-        //    // Two errors in this:
-        //    // Our relationshipsynergises the partners .
-
-        //    List<int> defaults = new List<int> {17, 5, 1, 12, 16, 11, 3, 1, 5, 7, 61, 5, 90, 16, 16, 1, 101, 4, 1, 2, 3, 4, 5, 6, 7, 8 };
-        //    MoqUtil.SetupRandMock(defaults.ToArray());
-
-        //    string output = DomainFactory.Generator.GetSentences(1)[0];
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("The senior support staff significantly avoids  our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
-        //}
     }
 }
