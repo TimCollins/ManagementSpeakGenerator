@@ -65,7 +65,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.IsTrue(output.StartsWith("The resources target "));
+            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the thought leader interactively thinks across the full value chain across the board.", output);
         }
 
         [Test]
@@ -126,6 +126,36 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.IsTrue(output.Contains("The resource manages"));
+        }
+
+        [Test]
+        public void GetSingularPersonCase4Singular()
+        {
+            _otherSpacingDefaults.Insert(3, 5);
+            _otherSpacingDefaults.Insert(18, 10);
+            _otherSpacingDefaults.Insert(19, 3);
+            _otherSpacingDefaults.ReplaceAt(15, 4);
+            _otherSpacingDefaults.ReplaceAt(16, 1);
+            MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the intelligence strategically streamlines the process going forward.", output);
+        }
+
+        [Test]
+        public void GetSingularPersonCase4Plural()
+        {
+            _otherSpacingDefaults.Insert(3, 5);
+            _otherSpacingDefaults.Insert(18, 10);
+            _otherSpacingDefaults.Insert(19, 3);
+            _otherSpacingDefaults.ReplaceAt(15, 4);
+            _otherSpacingDefaults.ReplaceAt(16, 2);
+            MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the organizing principles strategically streamlines the process going forward.", output);
         }
     }
 }

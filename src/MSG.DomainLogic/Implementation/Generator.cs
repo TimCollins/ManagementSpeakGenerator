@@ -1417,7 +1417,6 @@ namespace MSG.DomainLogic.Implementation
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
             StringBuilder output = new StringBuilder();
 
-            // TODO: Add more tests for this method. I don't like how one value has no space at the end.
             switch (result)
             {
                 case 1:
@@ -1734,9 +1733,8 @@ namespace MSG.DomainLogic.Implementation
                 case 3:
                     return "project manager ";
                 case 4:
-                    // TODO: Establish if this should be a random choice between singular and plural
-                    // or whether it should do as here and follow the parent method.
-                    return GetThingAtom(Plurality.Singular);
+                    //return GetThingAtom(Plurality.Singular);
+                    return GetThingAtom(GetRandomPlurality());
                 case 5:
                     return "community ";
                 case 6:
