@@ -139,107 +139,84 @@ namespace MSG.UnitTests
             Assert.AreEqual("The Corporate Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
         }
 
-        //[Test]
-        //public void VerifySeniorAge()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 1, 2, 4, 8, 7);
+        [Test]
+        public void VerifySeniorAge()
+        {
+            _defaults.ReplaceAt(6, 1);
+            _defaults.ReplaceAt(8, 4);
+            _defaults.Insert(9, 6);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Senior Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    Assert.AreEqual("Senior Vice President of Customer Relations ", boss);
-        //}
+        [Test]
+        public void VerifySeniorExecutive()
+        {
+            _defaults.ReplaceAt(7, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //[Test]
-        //public void VerifyNoSeniorAge()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 1, 2, 4, 8, 14);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Executive Chief of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+        [Test]
+        public void VerifyDepartment()
+        {
+            _defaults.ReplaceAt(5, 2);
+            _defaults.ReplaceAt(8, 3);
+            _defaults.Insert(9, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    Assert.AreEqual("Senior Vice President of Marketing ", boss);
-        //}
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //[Test]
-        //public void VerifySeniorExecutive()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 1, 2, 7);
+        [Test]
+        public void VerifySpacingInActingSeniorExecutiveHead()
+        {
+            _defaults.ReplaceAt(5, 2);
+            _defaults.ReplaceAt(6, 1);
+            _defaults.ReplaceAt(7, 1);
+            _defaults.ReplaceAt(8, 3);
+            _defaults.Insert(9, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Senior Executive Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    Assert.AreEqual("Executive Chief of Customer Relations ", boss);
-        //}
+        [Test]
+        public void VerifySpacingInManagingDirector()
+        {
+            _defaults.ReplaceAt(5, 1);
+            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(8, 1);
+            _defaults.Insert(10, 14);
 
-        //[Test]
-        //public void VerifyNoSeniorExecutive()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 2, 2, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Managing Director of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    Assert.AreEqual("Chief of Legal ", boss);
-        //}
+        //_defaults = new List<int> {1, 7, 1, 17, 1, 5, 6, 3, 2, 14, 8, 9, 19, 33};
 
-        //[Test]
-        //public void VerifyDepartment()
-        //{
-        //    MoqUtil.SetupRandMock(1, 2, 2, 2, 3, 2, 9);
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+        [Test]
+        public void VerifyBossAlt()
+        {
+            _defaults.ReplaceAt(4, 2);
+            _defaults.ReplaceAt(5, 1);
+            _defaults.ReplaceAt(6, 17);
+            _defaults.RemoveAt(8);
+            _defaults.RemoveAt(9);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    Assert.AreEqual("Acting Head of Client Relationship ", boss);
-        //}
-
-        //[Test]
-        //public void VerifySpacingInActingSeniorExecutiveHead()
-        //{
-        //    MoqUtil.SetupRandMock(1, 2, 1, 1, 3, 2, 12);
-
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
-        //}
-
-        //[Test]
-        //public void VerifySpacingInManagingDirector()
-        //{
-        //    MoqUtil.SetupRandMock(1, 1, 2, 2, 1, 12, 10);
-
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Managing Director of Business Planning ", boss);
-        //}
-
-        //[Test]
-        //public void VerifyBoss()
-        //{
-        //    MoqUtil.SetupRandMock(1, 2, 1, 1, 3, 12, 12);
-
-        //    string boss = DomainFactory.Generator.GetBoss();
-
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.IsNotNull(boss);
-        //    Assert.AreEqual("Acting Senior Executive Head of IT Strategy ", boss);
-        //}
-
-        //[Test]
-        //public void VerifyBossAlt()
-        //{
-        //    MoqUtil.SetupRandMock(2, 1, 17);
-
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.IsNotNull(boss);
-        //    Assert.AreEqual("Group Chief Technical Officer ", boss);
-        //}
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Group Chief Technical Officer of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
         //[Test]
         //public void VerifyChiefSpacing()
