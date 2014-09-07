@@ -27,8 +27,7 @@ namespace MSG.UnitTests
         public void PersonTestSingular()
         {
             MoqUtil.SetupRandMock(1);
-            Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
-            string output = DomainFactory.Generator.GetPerson(plurality);
+            string output = DomainFactory.Generator.GetPerson(Plurality.Singular);
 
             Assert.AreEqual("steering committee ", output);
         }
@@ -36,19 +35,18 @@ namespace MSG.UnitTests
         [Test]
         public void PersonTestSingularWithBoss()
         {
-                MoqUtil.SetupRandMock(1, 17, 1, 2, 3, 4, 2, 6);
-                Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
-                string output = DomainFactory.Generator.GetPerson(plurality);
+            MoqUtil.SetupRandMock(17, 1, 2, 3, 4, 2, 6);
 
-                Assert.AreEqual("Acting Chief of Management Office ", output);
+            string output = DomainFactory.Generator.GetPerson(Plurality.Singular);
+
+            Assert.AreEqual("Acting Chief of Management Office ", output);
         }
 
         [Test]
         public void PersonTestPlural()
         {
-            MoqUtil.SetupRandMock(2, 1);
-            Plurality plurality = DomainFactory.Generator.GetRandomPlurality();
-            string output = DomainFactory.Generator.GetPerson(plurality);
+            MoqUtil.SetupRandMock(1);
+            string output = DomainFactory.Generator.GetPerson(Plurality.Plural);
 
             Assert.AreEqual("key people ", output);
         }
