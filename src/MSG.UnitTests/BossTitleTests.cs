@@ -95,49 +95,49 @@ namespace MSG.UnitTests
             Assert.AreEqual("The Head of Legal culturally exceeds expectations at the individual, team and organizational level.", output);
         }
 
-        //[Test]
-        //public void VerifyCoHeadTitle()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 2, 3, 1, 5);
+        [Test]
+        public void VerifyCoHeadTitle()
+        {
+            _defaults.ReplaceAt(8, 3);
+            _defaults.Insert(9, 1);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Co-Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    Assert.AreEqual("Co-Head of Operations ", boss);
-        //}
+        [Test]
+        public void VerifyPresidentTitle()
+        {
+            _defaults.ReplaceAt(8, 4);
+            _defaults.Insert(9, 12);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //[Test]
-        //public void VerifyPresidentTitle()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 17, 7);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
+        [Test]
+        public void VerifyVicePresidentTitle()
+        {
+            _defaults.ReplaceAt(8, 4);
+            _defaults.Insert(9, 6);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    Assert.AreEqual("President of Customer Relations ", boss);
-        //}
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
-        //[Test]
-        //public void VerifyVicePresidentTitle()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 8, 14);
+        [Test]
+        public void VerifyCorporateVicePresidentTitle()
+        {
+            _defaults.ReplaceAt(8, 4);
+            _defaults.Insert(9, 11);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Vice President of Marketing ", boss);
-        //}
-
-        //[Test]
-        //public void VerifyCorporateVicePresidentTitle()
-        //{
-        //    MoqUtil.SetupRandMock(1, 3, 2, 2, 4, 11, 13);
-
-        //    string boss = DomainFactory.Generator.GetBoss();
-        //    MoqUtil.UndoMockRandomNumber();
-
-        //    Assert.AreEqual("Corporate Vice President of IT Operations ", boss);
-        //}
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Corporate Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+        }
 
         //[Test]
         //public void VerifySeniorAge()
