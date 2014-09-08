@@ -26,29 +26,37 @@ namespace MSG.UnitTests
         [Test]
         public void PersonTestSingular()
         {
-            MoqUtil.SetupRandMock(1);
-            string output = DomainFactory.Generator.GetPerson(Plurality.Singular);
+            _defaults.Insert(3, 1);
+            _defaults.ReplaceAt(8, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            Assert.AreEqual("steering committee ", output);
-        }
+            string output = DomainFactory.Generator.GetSentences(1)[0];
 
-        [Test]
-        public void PersonTestSingularWithBoss()
-        {
-            MoqUtil.SetupRandMock(17, 1, 2, 3, 4, 2, 6);
-
-            string output = DomainFactory.Generator.GetPerson(Plurality.Singular);
-
-            Assert.AreEqual("Acting Chief of Management Office ", output);
+            Assert.AreEqual("The steering committee manages a proactive, constructive, focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
         }
 
         [Test]
         public void PersonTestPlural()
         {
-            MoqUtil.SetupRandMock(1);
-            string output = DomainFactory.Generator.GetPerson(Plurality.Plural);
+            //_defaults.Insert(3, 2);
+            _defaults.ReplaceAt(2, 2);
+            _defaults.ReplaceAt(3, 1);
+            _defaults.ReplaceAt(8, 4);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            Assert.AreEqual("key people ", output);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The key people benchmark the portfolio by thinking outside the box, while the reporting unit should go forward together across the board.", output);
+        }
+
+        [Test]
+        public void PersonTestSingularWithBoss()
+        {
+            _defaults = new List<int> { 1, 7, 1, 17, 1, 2, 4, 3, 2, 6, 8, 9, 19, 33 };
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Chief of Management Office culturally exceeds expectations at the individual, team and organizational level.", output);
         }
 
         // GetPluralPersonTests

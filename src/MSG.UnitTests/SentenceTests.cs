@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MSG.DomainLogic;
 using NUnit.Framework;
 
@@ -7,6 +8,18 @@ namespace MSG.UnitTests
     [TestFixture]
     class SentenceTests
     {
+        [Test]
+        public void ExceptionThrownForNegativeCount()
+        {
+            Assert.Throws<ArgumentException>(() => DomainFactory.Generator.GetSentences(-2));
+        }
+
+        [Test]
+        public void ExceptionThrownForZeroCount()
+        {
+            Assert.Throws<ArgumentException>(() => DomainFactory.Generator.GetSentences(0));
+        }
+
         [Test]
         public void VerifyGetSentences()
         {

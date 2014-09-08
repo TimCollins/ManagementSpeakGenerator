@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using MSG.DomainLogic.Interfaces;
 
@@ -31,6 +32,11 @@ namespace MSG.DomainLogic.Implementation
 
         public List<string> GetSentences(int count)
         {
+            if (count <= 0)
+            {
+                throw new ArgumentException("count");
+            }
+
             List<string> sentences = new List<string>();
 
             for (int i = 0; i < count; i++)
