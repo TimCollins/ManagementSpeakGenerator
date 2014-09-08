@@ -30,10 +30,6 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            // TODO: Fix the two issues that have arisen in this one:
-            //MoqUtil.SetupRandMock(1, 7, 1, 17, 1, 4, 5, 6, 3, 2, 14, 8, 9, 2, 33);
-            // 1: address should be addresses
-            // 2: issueses shouldn't be pluralised.
             Assert.AreEqual("The Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
         }
 
