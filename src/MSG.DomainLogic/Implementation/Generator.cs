@@ -577,31 +577,31 @@ namespace MSG.DomainLogic.Implementation
                 case "o":
                 case "s":
                 case "z":
-                    //return verb + "es ";
                     return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
                         : verb + "es ";
                 case "h":
-                    //string secondLast = verb.Substring(verb.Length - 2, 1);
                     string secondLast = lastSpaceIndex > 0
                         ? verb.Substring(lastSpaceIndex - 2, 1)
                         : verb.Substring(verb.Length - 2, 1);
 
                     if (secondLast == "c" || secondLast == "s")
                     {
-                        return verb + "es ";
-                        //return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
-                        //    : verb + "es ";
+                        //return verb + "es ";
+                        return lastSpaceIndex > 0 
+                            ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
+                            : verb + "es ";
                     }
-                    //return verb + "s ";                    
-                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+
+                    return lastSpaceIndex > 0 ? 
+                        verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
                         : verb + "s ";
                 case "y":
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
                         // If the second-last char is a vowel then append 's'.
                         // This covers "ploy" to "ploys".
-                        //return verb + "s ";
-                        return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+                        return lastSpaceIndex > 0 
+                            ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
                             : verb + "s ";
                     }
                     // Remove the 'y' and append "ies".
@@ -609,7 +609,8 @@ namespace MSG.DomainLogic.Implementation
                     return verb.Substring(0, verb.Length - 1) + "ies ";
                 default:
                     // If there was more than one word in the passed string then append "s" to the first word.
-                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+                    return lastSpaceIndex > 0 
+                        ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
                         : verb + "s ";
             }
         }
@@ -1459,7 +1460,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbAndComplement(Plurality plurality)
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 62);
+            int result = DomainFactory.RandomNumber.GetRand(1, 63);
 
             switch (result)
             {
@@ -1585,6 +1586,8 @@ namespace MSG.DomainLogic.Implementation
                     return BuildPluralVerb("execute on priorities ", plurality);
                 case 61:
                     return BuildPluralVerb("telegraph the pass ", plurality);
+                case 62:
+                    return BuildPluralVerb("catch the high ball ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

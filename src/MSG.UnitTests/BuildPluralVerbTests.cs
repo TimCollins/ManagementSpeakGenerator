@@ -269,11 +269,5 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective, roadmap across the board.", output);
         }
-
-        // Can we create unit tests for the other branch in BuildPluralVerb?
-        // We need two phrases:
-        // 1: Where the first word ends in 'sh' or 'ch'
-        // 2: Where the first word ends in 'h' e.g. telegraph
-        // in 'h' How about "follow the happy path"?
     }
 }
