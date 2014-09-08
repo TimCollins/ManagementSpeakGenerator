@@ -11,7 +11,7 @@ namespace MSG.DomainLogic.Implementation
         /// Get a string representing the job title of a boss.
         /// </summary>
         /// <returns></returns>
-        public string GetBoss()
+        private string GetBoss()
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 5);
 
@@ -25,7 +25,7 @@ namespace MSG.DomainLogic.Implementation
 
         }
 
-        public string GetPerson(Plurality plurality)
+        private string GetPerson(Plurality plurality)
         {
             return plurality == Plurality.Singular ? GetSingularPerson() : GetPluralPerson();
         }
