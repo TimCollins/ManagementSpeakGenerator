@@ -276,7 +276,7 @@ namespace MSG.DomainLogic.Implementation
                 case 61:
                     return BuildPluralVerb("flesh out ", plurality);
                 case 62:
-                    return BuildPluralVerb("reach out ", plurality);
+                    return BuildPluralVerb("reach out to ", plurality);
                 case 63:
                     return BuildPluralVerb("jump-start ", plurality);
                 case 64:
