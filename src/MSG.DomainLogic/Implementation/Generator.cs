@@ -577,8 +577,8 @@ namespace MSG.DomainLogic.Implementation
                 case "o":
                 case "s":
                 case "z":
-                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
-                        : verb + "es ";
+                    return PluraliseVerb(verb, lastSpaceIndex, "es ");
+
                 case "h":
                     string secondLast = lastSpaceIndex > 0
                         ? verb.Substring(lastSpaceIndex - 2, 1)
@@ -586,33 +586,34 @@ namespace MSG.DomainLogic.Implementation
 
                     if (secondLast == "c" || secondLast == "s")
                     {
-                        //return verb + "es ";
-                        return lastSpaceIndex > 0 
-                            ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
-                            : verb + "es ";
+                        return PluraliseVerb(verb, lastSpaceIndex, "es ");
                     }
 
-                    return lastSpaceIndex > 0 ? 
-                        verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
-                        : verb + "s ";
+                    return PluraliseVerb(verb, lastSpaceIndex, "s ");
+
                 case "y":
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
                         // If the second-last char is a vowel then append 's'.
                         // This covers "ploy" to "ploys".
-                        return lastSpaceIndex > 0 
-                            ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
-                            : verb + "s ";
+                        return PluraliseVerb(verb, lastSpaceIndex, "s ");
                     }
+
                     // Remove the 'y' and append "ies".
                     // This covers "identify" to "identifies".
                     return verb.Substring(0, verb.Length - 1) + "ies ";
+
                 default:
                     // If there was more than one word in the passed string then append "s" to the first word.
-                    return lastSpaceIndex > 0 
-                        ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
-                        : verb + "s ";
+                    return PluraliseVerb(verb, lastSpaceIndex, "s ");
             }
+        }
+
+        private string PluraliseVerb(string verb, int lastSpaceIndex, string suffix)
+        {
+            return lastSpaceIndex > 0
+                ? verb.Substring(0, lastSpaceIndex) + suffix + verb.Substring(lastSpaceIndex + 1) + " "
+                : verb + suffix;
         }
 
         private string GetEventualPostfixedAdverb()
