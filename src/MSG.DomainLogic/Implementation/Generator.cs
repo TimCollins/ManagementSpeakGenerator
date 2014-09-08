@@ -148,9 +148,6 @@ namespace MSG.DomainLogic.Implementation
         {
             int result = DomainFactory.RandomNumber.GetRand(1, 67);
 
-            // TODO: Add an Americanize function to randomly switch the spelling of these
-            // words so e.g. "optimise" will occasionally become "optimize".
-
             switch (result)
             {
                 case 1:
@@ -674,7 +671,7 @@ namespace MSG.DomainLogic.Implementation
                 case 20:
                     return "ahead of schedule";
                 case 21:
-                    return ", relative to our peers";
+                    return "relative to our peers";
                 case 22:
                     return "on a transitional basis";
                 case 23:
@@ -682,7 +679,7 @@ namespace MSG.DomainLogic.Implementation
                 case 24:
                     return "by nurturing talent";
                 case 25:
-                    return ", as a Tier 1 company";
+                    return "as a Tier 1 company";
                 case 26:
                     return "up-front";
                 case 27:

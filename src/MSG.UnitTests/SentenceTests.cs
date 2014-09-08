@@ -56,5 +56,15 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The standard-setters reach out to our value-driven initiatives up-front.", output);
         }
+
+        [Test]
+        public void FixExtraSpaceBeforeComma()
+        {
+            MoqUtil.SetupRandMock(new[] {18, 100, 45, 71, 268, 123, 88, 1, 94, 4, 17, 1, 1, 3, 6, 3, 1, 7, 128, 56, 1, 19, 109, 304, 153, 4, 72, 2, 98, 11, 2, 21});
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Cross fertilization, investor confidence and branding drive the Managing Co-Head of Customer Relations; this is why our long-term change promotes the human resources relative to our peers.", output);
+        }
     }
 }
