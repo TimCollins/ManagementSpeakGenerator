@@ -247,5 +247,33 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("Our optimal, global, strategy quickly fosters the strong, proactive, organizing principles by thinking outside the box.", output);
         }
+
+        [Test]
+        public void BuildPluralEndsInSh()
+        {
+            _defaults.Insert(6, 55);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        [Test]
+        public void BuildPluralEndsInTh()
+        {
+            _defaults.Insert(6, 64);
+            MoqUtil.SetupRandMock(_defaults.ToArray());
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+
+            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective, roadmap across the board.", output);
+        }
+
+        // Can we create unit tests for the other branch in BuildPluralVerb?
+        // We need two phrases:
+        // 1: Where the first word ends in 'sh' or 'ch'
+        // 2: Where the first word ends in 'h' e.g. telegraph
+        // in 'h' How about "follow the happy path"?
     }
 }

@@ -310,5 +310,38 @@ namespace MSG.UnitTests
 
             Assert.AreEqual("The group seamlessly stays ahead.", output);
         }
+
+        [Test]
+        public void FixIssuesPlural()
+        {
+            MoqUtil.SetupRandMock(1, 7, 1, 17, 1, 4, 5, 6, 3, 2, 14, 8, 9, 2, 33);
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The Head of Marketing culturally addresses the overarching issues at the individual, team and organizational level.", output);
+        }
+
+        [Test]
+        public void PluraliseElevenWordPhrase()
+        {
+            MoqUtil.SetupRandMock(1, 7, 1, 17, 1, 4, 5, 6, 3, 2, 14, 8, 9, 5, 33);
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The Head of Marketing culturally figures out where we come from, where we are going to at the individual, team and organizational level.", output);
+        }
+
+        [Test]
+        public void PluralisePhraseWithPh()
+        {
+            MoqUtil.SetupRandMock(1, 7, 1, 17, 1, 4, 5, 6, 3, 2, 14, 8, 9, 61, 33);
+
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The Head of Marketing culturally telegraphs the pass at the individual, team and organizational level.", output);
+        }
     }
 }

@@ -557,8 +557,9 @@ namespace MSG.DomainLogic.Implementation
             // There is a situation where we end up with verbs like "interact with" passed 
             // in here. See BuildPluralVerbInteractThing() for example.
             // In this case we need to pluralise the first word, not the second.
-            // This also handles 3 letter phrases like "streamline the process". See
+            // This also handles 3 word phrases like "streamline the process". See
             // FixMissingWord() for an example.
+            // Seems now 4 letter phrases and higher are required (see GetPersonVerbAndComplement())
             verb = verb.Trim();
             string last = verb.Substring(verb.Length - 1, 1);
             int lastSpaceIndex = verb.LastIndexOf(' ');
@@ -576,14 +577,24 @@ namespace MSG.DomainLogic.Implementation
                 case "o":
                 case "s":
                 case "z":
-                    return verb + "es ";
+                    //return verb + "es ";
+                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
+                        : verb + "es ";
                 case "h":
-                    string secondLast = verb.Substring(verb.Length - 2, 1);
+                    //string secondLast = verb.Substring(verb.Length - 2, 1);
+                    string secondLast = lastSpaceIndex > 0
+                        ? verb.Substring(lastSpaceIndex - 2, 1)
+                        : verb.Substring(verb.Length - 2, 1);
+
                     if (secondLast == "c" || secondLast == "s")
                     {
                         return verb + "es ";
+                        //return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "es " + verb.Substring(lastSpaceIndex + 1) + " "
+                        //    : verb + "es ";
                     }
-                    return verb + "s ";
+                    //return verb + "s ";                    
+                    return lastSpaceIndex > 0 ? verb.Substring(0, lastSpaceIndex) + "s " + verb.Substring(lastSpaceIndex + 1) + " "
+                        : verb + "s ";
                 case "y":
                     if (IsVowel(verb.Substring(verb.Length - 2, 1)))
                     {
@@ -1448,7 +1459,7 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetPersonVerbAndComplement(Plurality plurality)
         {
-            int result = DomainFactory.RandomNumber.GetRand(1, 61);
+            int result = DomainFactory.RandomNumber.GetRand(1, 62);
 
             switch (result)
             {
@@ -1572,6 +1583,8 @@ namespace MSG.DomainLogic.Implementation
                     return BuildPluralVerb("push the envelope to the tilt ", plurality);
                 case 60:
                     return BuildPluralVerb("execute on priorities ", plurality);
+                case 61:
+                    return BuildPluralVerb("telegraph the pass ", plurality);
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }
