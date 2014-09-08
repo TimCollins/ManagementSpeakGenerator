@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="ArticulatedPropositionTests.cs" />
     <Compile Include="BadThingsTests.cs" />
-    <Compile Include="BossTitleTests.cs" />
     <Compile Include="BuildPluralVerbTests.cs" />
     <Compile Include="DepartmentTests.cs" />
     <Compile Include="EventualAdverbTests.cs" />
