@@ -341,7 +341,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 6)
             {
-                return GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
+                return (GetFaukon() + GetEventualAdverb() + GetPersonVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb()).Trim();
             }
 
             if (result > 5 && result < 51)
