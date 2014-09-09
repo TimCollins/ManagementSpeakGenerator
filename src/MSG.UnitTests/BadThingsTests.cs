@@ -15,7 +15,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> { 17, 8, 2, 8, 6, 11, 3, 5, 12, 8 };
+            _defaults = new List<int> {0, 17, 8, 2, 8, 6, 11, 3, 5, 12, 8};
         }
 
         [TearDown]
@@ -27,7 +27,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyExceptionThrownForInvalidInput()
         {
-            _defaults.ReplaceAt(3, 50);
+            _defaults.ReplaceAt(4, 50);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
@@ -36,7 +36,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyIssuesOutput()
         {
-            _defaults.ReplaceAt(7, 1);
+            _defaults.ReplaceAt(8, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -47,9 +47,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyKnownUnknowns()
         {
-            _defaults.ReplaceAt(1, 2);
-            _defaults.RemoveAt(2);
-            _defaults.ReplaceAt(6, 8);
+            _defaults.ReplaceAt(2, 2);
+            _defaults.RemoveAt(3);
+            _defaults.ReplaceAt(7, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -60,9 +60,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifySurprises()
         {
-            _defaults.ReplaceAt(1, 3);
-            _defaults.RemoveAt(2);
-            _defaults.ReplaceAt(6, 12);
+            _defaults.ReplaceAt(2, 3);
+            _defaults.RemoveAt(3);
+            _defaults.ReplaceAt(7, 12);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -73,7 +73,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyProblems()
         {
-            _defaults.ReplaceAt(7, 18);
+            _defaults.ReplaceAt(8, 18);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -84,7 +84,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyConsumer()
         {
-            _defaults.ReplaceAt(7, 21);
+            _defaults.ReplaceAt(8, 21);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
