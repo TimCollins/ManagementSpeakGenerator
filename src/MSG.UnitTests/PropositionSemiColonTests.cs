@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {100, 230, 23, 22, 203, 71, 75, 2, 63, 4, 2, 70, 57, 2, 85, 119, 110, 13, 20, 1, 80, 12, 2, 104};
+            _defaults = new List<int> {0, 100, 230, 23, 22, 203, 71, 75, 2, 63, 4, 2, 70, 57, 2, 85, 119, 110, 13, 20, 1, 80, 12, 2, 104};
         }
 
         [TearDown]
@@ -25,7 +25,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement18()
         {
-            _defaults.Insert(0, 18);
+            _defaults.Insert(1, 18);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -36,7 +36,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement19()
         {
-            _defaults.Insert(0, 19);
+            _defaults.Insert(1, 19);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -47,7 +47,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement20()
         {
-            _defaults.Insert(0, 20);
+            _defaults.Insert(1, 20);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -58,7 +58,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement25()
         {
-            _defaults.Insert(0, 25);
+            _defaults.Insert(1, 25);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -69,7 +69,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement26()
         {
-            _defaults.Insert(0, 26);
+            _defaults.Insert(1, 26);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -80,7 +80,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement27()
         {
-            _defaults.Insert(0, 27);
+            _defaults.Insert(1, 27);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -91,7 +91,7 @@ namespace MSG.UnitTests
         [Test]
         public void SemiColonPlacement28()
         {
-            _defaults.Insert(0, 28);
+            _defaults.Insert(1, 28);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

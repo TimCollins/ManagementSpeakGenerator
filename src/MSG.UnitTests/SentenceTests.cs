@@ -26,8 +26,8 @@ namespace MSG.UnitTests
             // If GetSentences is called twice then there should be 2 sentences in the output.
             // Specify some numbers to get specific output and verify spacing.
 
-            MoqUtil.SetupRandMock(  17, 5, 1, 1, 1, 1, 1, 
-                                    18, 5, 1, 1, 1, 1, 3, 4, 6, 2, 5, 1, 2, 1);
+            MoqUtil.SetupRandMock(0, 17, 5, 1, 1, 1, 1, 1, 
+                                  0, 18, 5, 1, 1, 1, 1, 3, 4, 6, 2, 5, 1, 2, 1);
             List<string> output = DomainFactory.Generator.GetSentences(2);
 
             MoqUtil.UndoMockRandomNumber();
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
         [Test]
         public void FullStopErrorProjections()
         {
-            MoqUtil.SetupRandMock(new[]{19, 24, 2, 5, 49, 17, 36, 8, 25, 161, 80, 122, 1, 134, 5, 5, 5, 20, 26, 1, 88, 182, 72, 5, 146});
+            MoqUtil.SetupRandMock(0, 19, 24, 2, 5, 49, 17, 36, 8, 25, 161, 80, 122, 1, 134, 5, 5, 5, 20, 26, 1, 88, 182, 72, 5, 146);
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
@@ -50,7 +50,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyReachOutTo()
         {
-            MoqUtil.SetupRandMock(new[] {8, 46, 2, 9, 66, 66, 62, 17, 143, 189, 65, 6, 26});
+            MoqUtil.SetupRandMock(0, 8, 46, 2, 9, 66, 66, 62, 17, 143, 189, 65, 6, 26);
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
@@ -60,7 +60,7 @@ namespace MSG.UnitTests
         [Test]
         public void FixExtraSpaceBeforeComma()
         {
-            MoqUtil.SetupRandMock(new[] {18, 100, 45, 71, 268, 123, 88, 1, 94, 4, 17, 1, 1, 3, 6, 3, 1, 7, 128, 56, 1, 19, 109, 304, 153, 4, 72, 2, 98, 11, 2, 21});
+            MoqUtil.SetupRandMock(0, 18, 100, 45, 71, 268, 123, 88, 1, 94, 4, 17, 1, 1, 3, 6, 3, 1, 7, 128, 56, 1, 19, 109, 304, 153, 4, 72, 2, 98, 11, 2, 21);
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
