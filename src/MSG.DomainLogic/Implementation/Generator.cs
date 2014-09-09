@@ -391,7 +391,8 @@ namespace MSG.DomainLogic.Implementation
                 return GetThingVerbHavingPersonComplement(plurality) + "the " + GetPerson(innerPlurality);
             }
 
-            return BuildPluralVerb("add", plurality) + " value";
+            return BuildPluralVerb("add", plurality) +
+                (plurality == Plurality.Singular ? "value" : " value");
         }
 
         private string GetThingVerbHavingPersonComplement(Plurality plurality)

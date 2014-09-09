@@ -67,6 +67,17 @@ namespace MSG.UnitTests
             Assert.AreEqual("Cross fertilization, investor confidence and branding drive the Managing Co-Head of Customer Relations; this is why our long-term change promotes the human resources relative to our peers.", output);
         }
 
+        [Test]
+        public void FixExtraSpaceAddsValue()
+        {
+            MoqUtil.SetupRandMock(0, 17, 55, 1, 100, 105, 186, 3, 30, 186, 102, 1);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            // Assert.AreEqual("Our dynamic breakthrough adds  value.", output);
+            Assert.AreEqual("Our breakthrough adds valuegoing forward.", output);
+        }
+
         //[Test]
         //public void FixVowelAtStart()
         //{
