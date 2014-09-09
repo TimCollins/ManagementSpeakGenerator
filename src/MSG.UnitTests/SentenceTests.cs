@@ -92,5 +92,11 @@ namespace MSG.UnitTests
         //17,34,1,11,28,76,4,3,86,243,158,12,14,97,
         //The resource improves a customer-centric, innovation-driven, system.
 
+        // The senior support staff proactively maximises an on-message value proposition, while image and decision making drive an efficient, consumer-facing, sales target .
+        // Our on-message cornerstone streamlines our outward-looking breakthroughes.
+        // The Chief Client Relationship Officer consistently resets the benchmark; this is why simplicity and strategic thinking engage business enabling, replacement, high-level and cultural executive talents .
+        // Our trusted perspectives drive the enabler. At the same time, knowledge transfer, innovation and portal promote the thought leader .
+        // Our dynamic breakthrough adds  value.
+        // Our efficient frontier culturally adds  value, while the key people swiftly influence recalibrations.
     }
 }
