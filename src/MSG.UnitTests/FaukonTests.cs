@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {17, 5, 2, 1, 1, 1};
+            _defaults = new List<int> {0, 17, 5, 2, 1, 1, 1};
         }
 
         [TearDown]
@@ -24,7 +24,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonNeedTo()
         {
-            _defaults.Insert(2, 1);
+            _defaults.Insert(3, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -35,7 +35,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonGotTo()
         {
-            _defaults.Insert(2, 2);
+            _defaults.Insert(3, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -46,7 +46,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonUnitShould()
         {
-            _defaults.Insert(2, 3);
+            _defaults.Insert(3, 3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -57,7 +57,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonControllingShould()
         {
-            _defaults.Insert(2, 4);
+            _defaults.Insert(3, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -68,7 +68,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonActivate()
         {
-            _defaults.Insert(2, 5);
+            _defaults.Insert(3, 5);
             _defaults.Add(1);
             _defaults.Add(1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
@@ -81,7 +81,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonPursuing()
         {
-            _defaults.Insert(2, 6);
+            _defaults.Insert(3, 6);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -92,7 +92,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonExtraMile()
         {
-            _defaults.Insert(2, 7);
+            _defaults.Insert(3, 7);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -103,7 +103,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonWorkingHard()
         {
-            _defaults.Insert(2, 8);
+            _defaults.Insert(3, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -114,7 +114,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyFaukonTirelessly()
         {
-            _defaults.Insert(2, 9);
+            _defaults.Insert(3, 9);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

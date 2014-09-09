@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {17, 5, 9, 10, 7, 3};
+            _defaults = new List<int> {0, 17, 5, 9, 10, 7, 3};
         }
 
         [TearDown]
@@ -24,7 +24,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyInvalidValueHandled()
         {
-            _defaults.Insert(5, 888);
+            _defaults.Insert(6, 888);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
@@ -33,7 +33,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyStreamline()
         {
-            _defaults.Insert(5, 1);
+            _defaults.Insert(6, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -44,7 +44,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPortfolio()
         {
-            _defaults.Insert(5, 3);
+            _defaults.Insert(6, 3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -55,7 +55,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyOutsideTheBox()
         {
-            _defaults.Insert(5, 8);
+            _defaults.Insert(6, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -66,7 +66,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyDownside()
         {
-            _defaults.Insert(5, 34);
+            _defaults.Insert(6, 34);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -77,7 +77,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyStatusQuo()
         {
-            _defaults.Insert(5, 48);
+            _defaults.Insert(6, 48);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -88,7 +88,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyPriorities()
         {
-            _defaults.Insert(5, 60);
+            _defaults.Insert(6, 60);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];

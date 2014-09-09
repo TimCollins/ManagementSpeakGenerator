@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {10, 55, 1, 14, 9, 22, 2, 5, 1, 25, 28, 5, 15, 10, 23, 6, 1};
+            _defaults = new List<int> {0, 10, 55, 1, 14, 9, 22, 2, 5, 1, 25, 28, 5, 15, 10, 23, 6, 1};
         }
 
         [TearDown]
@@ -24,7 +24,7 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingFirstBranch()
         {
-            _defaults.Insert(3, 1);
+            _defaults.Insert(4, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -35,7 +35,7 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingSecondBranch()
         {
-            _defaults.Insert(3, 13);
+            _defaults.Insert(4, 13);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -46,8 +46,8 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingThirdBranch()
         {
-            _defaults.Insert(3, 50);
-            _defaults.ReplaceAt(15, 2);
+            _defaults.Insert(4, 50);
+            _defaults.ReplaceAt(16, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -58,7 +58,7 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingFourthBranch()
         {
-            _defaults.Insert(3, 72);
+            _defaults.Insert(4, 72);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -69,10 +69,10 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingFifthBranch()
         {
-            _defaults.Insert(3, 74);
-            _defaults.ReplaceAt(4, 2);
-            _defaults.ReplaceAt(5, 4);
-            _defaults.ReplaceAt(15, 6);
+            _defaults.Insert(4, 74);
+            _defaults.ReplaceAt(5, 2);
+            _defaults.ReplaceAt(6, 4);
+            _defaults.ReplaceAt(16, 6);
             _defaults.Add(2);
             _defaults.Add(3);
             _defaults.Add(4);
@@ -87,7 +87,7 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingSixthBranch()
         {
-            _defaults.Insert(3, 78);
+            _defaults.Insert(4, 78);
             _defaults.Add(2);
             _defaults.Add(3);
 
@@ -101,7 +101,7 @@ namespace MSG.UnitTests
         [Test]
         public void GetThingSeventhBranch()
         {
-            _defaults.Insert(3, 84);
+            _defaults.Insert(4, 84);
             _defaults.Add(2);
             _defaults.Add(3);
             

@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> { 17, 7, 2, 10, 23, 11, 3, 5, 12};
+            _defaults = new List<int> {0, 17, 7, 2, 10, 23, 11, 3, 5, 12};
         }
 
         [TearDown]
