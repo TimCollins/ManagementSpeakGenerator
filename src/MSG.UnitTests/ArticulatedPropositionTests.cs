@@ -13,7 +13,7 @@ namespace MSG.UnitTests
         public void SetUpDefaultNumbers()
         {
             _defaults = new List<int>{0, 5, 9, 10, 1, 1, 1, 1,
-                                      0, 5, 9, 10, 1, 1, 1, 1};
+                                         5, 9, 10, 1, 1, 1, 1};
         }
 
         [TearDown]
@@ -25,7 +25,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedProposition()
         {
-            _defaults.Insert(0, 6);
+            _defaults.Insert(1, 6);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -36,9 +36,9 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionIsWhy()
         {
-            _defaults.Insert(0, 18);
-            _defaults.Insert(2, 7);
-            _defaults.Remove(2);
+            _defaults.Insert(1, 18);
+            _defaults.Insert(3, 7);
+            _defaults.Remove(3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -49,7 +49,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionNevertheless()
         {
-            _defaults.Insert(0, 19);
+            _defaults.Insert(1, 19);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -59,7 +59,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhereas()
         {
-            _defaults.Insert(0, 20);
+            _defaults.Insert(1, 20);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -69,7 +69,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionGutFeeling()
         {
-            _defaults.Insert(0, 21);
+            _defaults.Insert(1, 21);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -79,7 +79,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhile()
         {
-            _defaults.Insert(0, 25);
+            _defaults.Insert(1, 25);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -89,7 +89,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionSameTime()
         {
-            _defaults.Insert(0, 26);
+            _defaults.Insert(1, 26);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -99,7 +99,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionResult()
         {
-            _defaults.Insert(0, 27);
+            _defaults.Insert(1, 27);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -109,7 +109,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyArticulatedPropositionWhilst()
         {
-            _defaults.Insert(0, 28);
+            _defaults.Insert(1, 28);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -119,7 +119,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyExceptionThrown()
         {
-            _defaults.Insert(0, 555);
+            _defaults.Insert(1, 555);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             Assert.Throws<RandomNumberException>(() => DomainFactory.Generator.GetSentences(1));
