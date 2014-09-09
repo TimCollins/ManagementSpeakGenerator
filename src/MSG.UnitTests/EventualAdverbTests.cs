@@ -12,7 +12,7 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int> {17, 5, 9, 1, 1, 1};
+            _defaults = new List<int> {0, 17, 5, 9, 1, 1, 1};
         }
 
         [TearDown]
@@ -24,7 +24,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbInteractively()
         {
-            _defaults.Insert(3, 1);
+            _defaults.Insert(4, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -35,7 +35,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbCredibly()
         {
-            _defaults.Insert(3, 2);
+            _defaults.Insert(4, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -45,7 +45,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbStrategically()
         {
-            _defaults.Insert(3, 10);
+            _defaults.Insert(4, 10);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
@@ -55,7 +55,7 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyEventualAdverbConservatively()
         {
-            _defaults.Insert(3, 17);
+            _defaults.Insert(4, 17);
             MoqUtil.SetupRandMock(_defaults.ToArray());
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
