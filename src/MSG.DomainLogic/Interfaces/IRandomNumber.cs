@@ -1,4 +1,4 @@
-﻿namespace MSG.DomainLogic
+﻿namespace MSG.DomainLogic.Interfaces
 {
     public interface IRandomNumber
     {

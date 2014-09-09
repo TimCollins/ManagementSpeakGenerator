@@ -9,3 +9,9 @@
 /docs/orig_src
 /docs/readme.txt
 /docs
+/src/MSG.ConsoleApp/obj/Release
+/src/MSG.ConsoleApp/bin/Release
+/src/MSG.DomainLogic/obj/Release
+/src/MSG.UnitTests/bin/Release
+/src/MSG.UnitTests/obj/Release
+/src/MSG.DomainLogic/bin/Release

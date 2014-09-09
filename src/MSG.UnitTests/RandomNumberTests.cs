@@ -50,5 +50,16 @@ namespace MSG.UnitTests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => DomainFactory.RandomNumber.GetRand(2, 1));
         }
+
+        /// <summary>
+        /// Verify that when start = 0 and end = 0 that 0 is returned.
+        /// </summary>
+        [Test]
+        public void ZeroOutputTest()
+        {
+            int result = DomainFactory.RandomNumber.GetRand(0, 0);
+
+            Assert.AreEqual(0, result);
+        }
     }
 }

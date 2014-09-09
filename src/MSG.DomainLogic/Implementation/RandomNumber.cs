@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation
 {

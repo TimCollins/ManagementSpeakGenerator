@@ -1,5 +1,6 @@
 ﻿using Moq;
 using MSG.DomainLogic;
+using MSG.DomainLogic.Interfaces;
 
 namespace MSG.UnitTests
 {
