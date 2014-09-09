@@ -12,8 +12,8 @@ namespace MSG.UnitTests
         [SetUp]
         public void SetUpDefaultNumbers()
         {
-            _defaults = new List<int>{5, 9, 10, 1, 1, 1, 1,
-                                      5, 9, 10, 1, 1, 1, 1};
+            _defaults = new List<int>{0, 5, 9, 10, 1, 1, 1, 1,
+                                      0, 5, 9, 10, 1, 1, 1, 1};
         }
 
         [TearDown]

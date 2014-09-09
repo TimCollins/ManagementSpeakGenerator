@@ -294,6 +294,9 @@ namespace MSG.DomainLogic.Implementation
 
         private string GetArticulatedProposition()
         {
+            // Mark the start of a sentence.
+            DomainFactory.RandomNumber.GetRand(0, 0);
+
             int result = DomainFactory.RandomNumber.GetRand(1, 29);
 
             if (result > 0 && result < 18)
