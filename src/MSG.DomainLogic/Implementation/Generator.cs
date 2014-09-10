@@ -360,9 +360,9 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 92 && result < 98)
             {
-                return GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
+                return (GetThingAtom(Plurality.Singular) + "and " + GetThingAtom(Plurality.Singular)
                     + GetEventualAdverb() + GetThingVerbAndEnding(Plurality.Plural)   
-                       + GetEventualPostfixedAdverb();
+                       + GetEventualPostfixedAdverb()).Trim();
             }
 
             if (result > 97 && result < 101)

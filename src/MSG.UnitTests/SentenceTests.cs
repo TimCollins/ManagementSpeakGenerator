@@ -96,7 +96,7 @@ namespace MSG.UnitTests
         [Test]
         public void FixGetPropositionFourthBranch()
         {
-            // This test verifies the second-last branch in GetProposition (result > 97 && result < 101)
+            // This test verifies the second-last branch in GetProposition
 
             MoqUtil.SetupRandMock(0, 27, 67, 2, 60, 88, 88, 65, 8, 45, 1, 61, 9, 8, 17, 7, 2, 99, 73, 424, 182, 427, 94, 83, 2, 5, 23, 66, 131, 38, 159, 2, 42);
             string output = DomainFactory.Generator.GetSentences(1)[0];
@@ -113,6 +113,27 @@ namespace MSG.UnitTests
             MoqUtil.UndoMockRandomNumber();
 
             Assert.AreEqual("The reporting unit should embrace parallel, goal-directed, roles and responsibilities because a non-standard implication produces measured growth.", output);
+        }
+
+        [Test]
+        public void FixSpaceAfterEvents()
+        {
+            MoqUtil.SetupRandMock(0, 18, 9, 2, 3, 25, 86, 37, 42, 138, 68, 76, 13, 139, 93, 381, 132, 206, 64, 19, 2, 6, 22, 48, 113, 193, 11, 13, 40);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The customers visualise medium-to-long-term pre-plans; this is why commitment and plan genuinely engage robust trigger events.", output);
+        }
+
+
+        [Test]
+        public void OtherVowelUsage()
+        {
+            MoqUtil.SetupRandMock(0,16,7,1,9,8,90,26,44,212,83,15,121);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The thought leader culturally strategises an usage-based effectiveness.", output);
         }
 
 
@@ -147,6 +168,7 @@ namespace MSG.UnitTests
 
         //    Assert.AreEqual("A unified convergence incentivises the customers; nevertheless our mindsets influence the key people.", output);
         //}
+
 
         //25,1,7,70,36,16,7,245,204,123,57,7,3,96,346,148,108,28,67,1,28,8,97,38,10,25,
         //We will go the extra mile to focus on outstanding, high-definition, action plans across the board, while scaling and document synergise an intellect as a Tier 1 company.

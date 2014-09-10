@@ -14,6 +14,7 @@ namespace MSG.DomainLogic.Implementation
             int r = _random.Next(start, end);
             using (StreamWriter sw = new StreamWriter(_fileName, true))
             {
+                sw.Write(r == 0 ? Environment.NewLine : string.Empty);
                 sw.Write("{0},", r);
             }
             return r;
