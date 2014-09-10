@@ -94,6 +94,18 @@ namespace MSG.UnitTests
         }
 
         [Test]
+        public void FixGetPropositionFourthBranch()
+        {
+            // This test verifies the second-last branch in GetProposition (result > 97 && result < 101)
+
+            MoqUtil.SetupRandMock(0, 27, 67, 2, 60, 88, 88, 65, 8, 45, 1, 61, 9, 8, 17, 7, 2, 99, 73, 424, 182, 427, 94, 83, 2, 5, 23, 66, 131, 38, 159, 2, 42);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Well-communicated initiatives inspire the powerful champion reaped from our proven improvement. As a result uniformity, leadership strategy and dotted line structure the sustainable support structures.", output);
+        }
+
+        [Test]
         public void FixDoubleSpaceProduces()
         {
             MoqUtil.SetupRandMock(0, 10, 2, 3, 38, 86, 31, 1, 60, 171, 10, 9, 19, 1, 57, 39, 411, 50, 14, 8, 1);
