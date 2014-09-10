@@ -143,7 +143,6 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
             Assert.AreEqual("The partners diligently avoid gaps because the key, constructive, organizing principles produce proven yield enhancement.", output);
-
         }
     }
 }

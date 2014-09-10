@@ -81,6 +81,28 @@ namespace MSG.UnitTests
             Assert.AreEqual("Our breakthrough adds value going forward.", output);
         }
 
+        [Test]
+        public void FixPlannings()
+        {
+            // I think this should read "Forward planning engages"
+            MoqUtil.SetupRandMock(0, 11, 68, 2, 90, 184, 75, 9, 80, 1, 39, 22, 79, 244, 243, 107, 144, 140, 9, 35);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            //Assert.AreEqual("Forward plannings engage a customised, innovation-driven and insightful mindset.", output);
+            Assert.AreEqual("Forward planning engages a customised, innovation-driven and insightful mindset.", output);
+        }
+
+        [Test]
+        public void FixDoubleSpaceProduces()
+        {
+            MoqUtil.SetupRandMock(0, 10, 2, 3, 38, 86, 31, 1, 60, 171, 10, 9, 19, 1, 57, 39, 411, 50, 14, 8, 1);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The reporting unit should embrace parallel, goal-directed, roles and responsibilities because a non-standard implication produces measured growth.", output);
+        }
+
         //[Test]
         //public void FixVowelAtStart()
         //{
