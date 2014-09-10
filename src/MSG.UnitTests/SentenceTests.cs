@@ -74,8 +74,11 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
+            // This should be fixed by the update to GetThingVerbAndEnding()
             // Assert.AreEqual("Our dynamic breakthrough adds  value.", output);
-            Assert.AreEqual("Our breakthrough adds valuegoing forward.", output);
+
+            // This one arose instead during testing.
+            Assert.AreEqual("Our breakthrough adds value going forward.", output);
         }
 
         //[Test]

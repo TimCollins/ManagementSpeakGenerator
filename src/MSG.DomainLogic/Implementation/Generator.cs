@@ -392,7 +392,7 @@ namespace MSG.DomainLogic.Implementation
             }
 
             return BuildPluralVerb("add", plurality) +
-                (plurality == Plurality.Singular ? "value" : " value");
+                (plurality == Plurality.Singular ? "value " : " value ");
         }
 
         private string GetThingVerbHavingPersonComplement(Plurality plurality)
