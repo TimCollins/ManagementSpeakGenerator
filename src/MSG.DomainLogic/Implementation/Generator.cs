@@ -367,9 +367,9 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 97 && result < 101)
             {
-                return GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
+                return (GetThingAtom(Plurality.Singular).Trim() + ", " + GetThingAtom(Plurality.Singular)
                        + "and " + GetThingAtom(Plurality.Singular) + GetEventualAdverb() +
-                       GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb();
+                       GetThingVerbAndEnding(Plurality.Plural) + GetEventualPostfixedAdverb()).Trim();
             }
 
             throw new RandomNumberException(result + " is an invalid value.");
