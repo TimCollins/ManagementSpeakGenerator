@@ -156,6 +156,36 @@ namespace MSG.UnitTests
             Assert.AreEqual("An underlying convergence incentivises the customers; nevertheless our mindsets influence the key people.", output);
         }
 
+        [Test]
+        public void FixBandWithes()
+        {
+            MoqUtil.SetupRandMock(0, 6, 28, 2, 8, 57, 30, 1, 93, 173, 78, 14, 133);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The stakeholders manage bandwidths.", output);
+        }
+
+        [Test]
+        public void VerifyBlendedApproaches()
+        {
+            MoqUtil.SetupRandMock(0, 6, 28, 2, 8, 57, 30, 1, 93, 173, 73, 14, 133);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The stakeholders manage blended approaches.", output);
+        }
+
+        [Test]
+        public void VerifyBreakthroughs()
+        {
+            MoqUtil.SetupRandMock(0, 6, 28, 2, 8, 57, 30, 1, 93, 173, 186, 14, 133);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The stakeholders manage breakthroughs.", output);
+        }
+
 
         // I'm not sure this can be fixed without a lot of fiddling with the code.
         //[Test]

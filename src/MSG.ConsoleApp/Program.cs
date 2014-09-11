@@ -13,7 +13,7 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Management-Speak Generator.");
 
             Console.WriteLine("Writing test data to file...");
-            string fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\output.txt";
+            string fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\msg_output.txt";
             const int max = 500;
             StringBuilder output = new StringBuilder();
 
