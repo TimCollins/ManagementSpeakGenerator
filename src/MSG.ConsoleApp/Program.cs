@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
+using System.Text;
 using MSG.DomainLogic;
 
 namespace MSG.ConsoleApp
@@ -15,15 +15,18 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Writing test data to file...");
             string fileName = Directory.GetCurrentDirectory() + "\\output.txt";
 
+            const int max = 500;
+            StringBuilder output = new StringBuilder();
+
+            List<string> sentences = DomainFactory.Generator.GetSentences(max);
+            for (int i = 0; i < max; i++)
+            {
+                output.Append(string.Format("{0}. {1}{2}", i + 1, sentences[i], Environment.NewLine));
+            }
+
             using (StreamWriter sw = new StreamWriter(fileName))
             {
-                const int max = 10;
-
-                List<string> sentences = DomainFactory.Generator.GetSentences(max);
-                for (int i = 0; i < max; i++)
-                {
-                    sw.Write("{0}. {1}{2}", i + 1, sentences[i], Environment.NewLine);
-                }
+                sw.Write(output.ToString());
             }
 
             Console.WriteLine("Data written to {0}", fileName);

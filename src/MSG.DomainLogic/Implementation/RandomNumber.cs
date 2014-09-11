@@ -7,16 +7,19 @@ namespace MSG.DomainLogic.Implementation
     class RandomNumber : IRandomNumber
     {
         private static readonly Random _random = new Random();
-        private static readonly string _fileName = Directory.GetCurrentDirectory() + "\\rolls.txt";
 
         public int GetRand(int start, int end)
         {
             int r = _random.Next(start, end);
+#if DEBUG
+            string _fileName = Directory.GetCurrentDirectory() + "\\rolls.txt";
+
             using (StreamWriter sw = new StreamWriter(_fileName, true))
             {
                 sw.Write(r == 0 ? Environment.NewLine : string.Empty);
                 sw.Write("{0},", r);
             }
+#endif
             return r;
         }
 
