@@ -15,7 +15,7 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Writing test data to file...");
             string fileName = Directory.GetCurrentDirectory() + "\\output.txt";
 
-            const int max = 500;
+            const int max = 5000;
             StringBuilder output = new StringBuilder();
 
             List<string> sentences = DomainFactory.Generator.GetSentences(max);

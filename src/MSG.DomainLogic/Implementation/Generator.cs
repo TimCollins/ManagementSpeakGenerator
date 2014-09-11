@@ -1427,7 +1427,24 @@ namespace MSG.DomainLogic.Implementation
                 return to;
             }
 
+            if (to[0].ToString().ToUpper() == "U")
+            {
+                return StartsWithVowelSound(to) ? "an " + to : "a " + to;
+            }
+
             return StartsWithVowel(to) ? "an " + to : "a " + to;
+        }
+
+        /// <summary>
+        /// If the word starts with "u" and the third letter is "d" or "c" then the word 
+        /// has a vowel sound.
+        /// This is a fairly hacky solution.
+        /// </summary>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        private bool StartsWithVowelSound(string to)
+        {
+            return to.Length > 3 && (to[2] == 'd' || to[2] == 'c' || to[2] == 'p');
         }
 
         private bool StartsWithVowel(string source)
