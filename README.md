@@ -12,12 +12,12 @@ Binary versions of the following third-party libraries are linked (see the /lib 
 
 Demo App
 --
-Build and run MSG.ConsoleApp to generate output.txt in the same directory as the executable. By default the file will contain 500 example sentences.
+Build and run MSG.ConsoleApp to generate msg_output.txt on your desktop. By default the file will contain 500 example sentences.
 
 To Do
 --
-- Complete the porting of the source.
-
+- Review output for bugs.
+- Implement different output formats (HTML, JSON, XML).
 
 Useful Links
 --
