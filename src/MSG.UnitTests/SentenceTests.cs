@@ -44,7 +44,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The resources maximise the cultural, fast-growth, business philosophies; nevertheless we must activate the silo to efficiently manage our projections.", output);
+            Assert.AreEqual("The resources maximise the cultural, fast-growth business philosophies; nevertheless we must activate the silo to efficiently manage our projections.", output);
         }
 
         [Test]
@@ -112,7 +112,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The reporting unit should embrace parallel, goal-directed, roles and responsibilities because a non-standard implication produces measured growth.", output);
+            Assert.AreEqual("The reporting unit should embrace parallel, goal-directed roles and responsibilities because a non-standard implication produces measured growth.", output);
         }
 
         [Test]
@@ -186,6 +186,16 @@ namespace MSG.UnitTests
             Assert.AreEqual("The stakeholders manage breakthroughs.", output);
         }
 
+        [Test]
+        public void UnnecessaryComma()
+        {
+            MoqUtil.SetupRandMock(0, 17,34,1,11,28,76,4,3,86,243,158,12,14,97);
+            string output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("The resource improves a customer-centric, innovation-driven system.", output);
+        }
+
 
         // I'm not sure this can be fixed without a lot of fiddling with the code.
         //[Test]
@@ -202,8 +212,5 @@ namespace MSG.UnitTests
 
         //25,1,7,70,36,16,7,245,204,123,57,7,3,96,346,148,108,28,67,1,28,8,97,38,10,25,
         //We will go the extra mile to focus on outstanding, high-definition, action plans across the board, while scaling and document synergise an intellect as a Tier 1 company.
-
-        //17,34,1,11,28,76,4,3,86,243,158,12,14,97,
-        //The resource improves a customer-centric, innovation-driven, system.
     }
 }

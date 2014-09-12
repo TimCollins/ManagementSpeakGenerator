@@ -32,7 +32,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The steering committee manages a proactive, constructive, focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The steering committee manages a proactive, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the thought leader interactively thinks across the full value chain across the board.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks across the full value chain across the board.", output);
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The key people target constructive, strategic, key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient, focus.", output);
+            Assert.AreEqual("The key people target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output);
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The business leaders target constructive, strategic, key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient, focus.", output);
+            Assert.AreEqual("The business leaders target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output);
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The steering committee manages a cost-effective, constructive, focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The steering committee manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
         }
 
         [Test]
@@ -119,7 +119,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The powerful champion manages a cost-effective, constructive, focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The powerful champion manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
         }
 
         [Test]
@@ -130,7 +130,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resource manages a cost-effective, constructive, focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The resource manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
         }
 
         [Test]
@@ -145,7 +145,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the intelligence strategically streamlines the process going forward.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the intelligence strategically streamlines the process going forward.", output);
         }
 
         [Test]
@@ -160,7 +160,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic, key target markets at the end of the day. At the same time, the organizing principles strategically streamlines the process going forward.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the organizing principles strategically streamlines the process going forward.", output);
         }
     }
 }

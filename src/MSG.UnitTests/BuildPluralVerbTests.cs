@@ -29,7 +29,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively manages a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively manages a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively streamlines a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively streamlines a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively improves a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively improves a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -73,7 +73,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively justifies a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively justifies a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -106,7 +106,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively displays a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively displays a strategic, cost-effective roadmap across the board.", output);
         }
 
         // Tests for GetThingVerbHavingPersonComplement
@@ -123,7 +123,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The proactive, key, focus technically motivates the customers in this space.", output);
+            Assert.AreEqual("The proactive, key focus technically motivates the customers in this space.", output);
         }
 
         [Test]
@@ -139,7 +139,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The proactive, key, focus technically inspires the customers in this space.", output);
+            Assert.AreEqual("The proactive, key focus technically inspires the customers in this space.", output);
         }
 
         [Test]
@@ -155,7 +155,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The proactive, key, focus technically transfers the customers in this space.", output);
+            Assert.AreEqual("The proactive, key focus technically transfers the customers in this space.", output);
         }
 
         [Test]
@@ -171,7 +171,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The proactive, key, focus technically strengthens the customers in this space.", output);
+            Assert.AreEqual("The proactive, key focus technically strengthens the customers in this space.", output);
         }
 
         // Tests for GetThingVerbHavingThingComplement
@@ -185,7 +185,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly streamlines the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly streamlines the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -197,7 +197,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly interacts with the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly interacts with the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -209,7 +209,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly empowers the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly empowers the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -221,7 +221,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly influences the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly influences the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -233,7 +233,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly accelerates the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly accelerates the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -245,7 +245,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our optimal, global, strategy quickly fosters the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our optimal, global strategy quickly fosters the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -256,7 +256,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively establishes a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -267,7 +267,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively telegraphs a strategic, cost-effective roadmap across the board.", output);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic, cost-effective, leverage 200% enforces our new, focused, diversification going forward.", output);
+            Assert.AreEqual("The holistic, cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic and cost-effective leverage 200% enforces our new, focused, diversification going forward.", output);
+            Assert.AreEqual("The holistic and cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
         }
 
         [Test]
@@ -63,7 +63,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic and/or cost-effective leverage 200% enforces our new, focused, diversification going forward.", output);
+            Assert.AreEqual("The holistic and/or cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
         }
 
         [Test]

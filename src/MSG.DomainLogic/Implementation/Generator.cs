@@ -733,7 +733,7 @@ namespace MSG.DomainLogic.Implementation
 
             if (result > 0 && result < 10)
             {
-                return string.Format("{0}, {1}, {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
+                return string.Format("{0}, {1} {2}", GetThingAdjective(), GetThingAdjective(), GetThingAtom(plurality));
             }
 
             if (result > 9 && result < 15)

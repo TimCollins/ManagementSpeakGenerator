@@ -121,7 +121,7 @@ namespace MSG.UnitTests
 
             string output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally improve the constructive, efficient, key target markets across the board.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally improve the constructive, efficient key target markets across the board.", output);
         }
 
         [Test]

@@ -16,7 +16,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("An efficient, constructive, trigger event seamlessly targets the enablers using our constructive, strategic, baseline starting point.", output);
+            Assert.AreEqual("An efficient, constructive trigger event seamlessly targets the enablers using our constructive, strategic baseline starting point.", output);
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic, timelines throughout the organisation.", output);
+            Assert.AreEqual("Win-win solution and timeline 24/7 interact with our cost-effective, strategic timelines throughout the organisation.", output);
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The team players proactively target corporate, proactive, roles and responsibilities going forward, while the powerful champion interactively targets our cost-effective, key, strategy within the industry.", output);
+            Assert.AreEqual("The team players proactively target corporate, proactive roles and responsibilities going forward, while the powerful champion interactively targets our cost-effective, key strategy within the industry.", output);
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The group expediently targets an efficient, proactive, intelligence going forward.", output);
+            Assert.AreEqual("The group expediently targets an efficient, proactive intelligence going forward.", output);
         }
 
         [Test]
@@ -76,7 +76,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The steering committee seamlessly manages a constructive, strategic, governance by leveraging the parallel, efficient, tactics. At the same time, we will go the extra mile to culturally figure out where we come from, where we are going to within the industry.", output);
+            Assert.AreEqual("The steering committee seamlessly manages a constructive, strategic governance by leveraging the parallel, efficient tactics. At the same time, we will go the extra mile to culturally figure out where we come from, where we are going to within the industry.", output);
         }
 
         [Test]
@@ -103,7 +103,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong, strategy across the board.", output);
+            Assert.AreEqual("The Chief Operations Officer consistently targets our efficient, strong strategy across the board.", output);
         }
 
         [Test]
@@ -127,7 +127,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Our constructive, global, strategy consistently interacts with the strong, proactive, organizing principles by thinking outside the box.", output);
+            Assert.AreEqual("Our constructive, global strategy consistently interacts with the strong, proactive organizing principles by thinking outside the box.", output);
         }
 
         [Test]
@@ -140,7 +140,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results and focus globally boost our strategic, strategic, key target markets in this space.", output);
+            Assert.AreEqual("Quarter results and focus globally boost our strategic, strategic key target markets in this space.", output);
         }
 
         [Test]
@@ -152,7 +152,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Quarter results, focus and implementation proactively generate our strategic, efficient, market forces as part of the plan.", output);
+            Assert.AreEqual("Quarter results, focus and implementation proactively generate our strategic, efficient market forces as part of the plan.", output);
         }
 
         [Test]
@@ -164,7 +164,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective, roadmap across the board.", output);
+            Assert.AreEqual("The project manager proactively targets a strategic, cost-effective roadmap across the board.", output);
         }
 
         [Test]
@@ -176,7 +176,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The key people expediently manage strong, proactive, market opportunities throughout the organisation. At the same time, the key people interactively think across the full value chain going forward.", output);
+            Assert.AreEqual("The key people expediently manage strong, proactive market opportunities throughout the organisation. At the same time, the key people interactively think across the full value chain going forward.", output);
         }
 
         [Test]
@@ -212,7 +212,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The resources cautiously prioritise outsourced, hyper-hybrid, customer centricities going forward, while the sales manager expediently optimises our phased, fine-grained, empowerment going forward.", output);
+            Assert.AreEqual("The resources cautiously prioritise outsourced, hyper-hybrid customer centricities going forward, while the sales manager expediently optimises our phased, fine-grained empowerment going forward.", output);
         }
 
         [Test]
@@ -224,7 +224,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The stakeholders expediently enable end-to-end, collaborative, sign-offs as part of the plan. As a result the business leaders credibly benchmark the portfolio by thinking outside the box.", output);
+            Assert.AreEqual("The stakeholders expediently enable end-to-end, collaborative sign-offs as part of the plan. As a result the business leaders credibly benchmark the portfolio by thinking outside the box.", output);
         }
 
         [Test]
@@ -248,7 +248,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("Bottom-up, customer-centric, supply-chains efficiently prioritise the senior support staff by thinking outside the box.", output);
+            Assert.AreEqual("Bottom-up, customer-centric supply-chains efficiently prioritise the senior support staff by thinking outside the box.", output);
         }
 
         [Test]
@@ -260,7 +260,7 @@ namespace MSG.UnitTests
             string output = DomainFactory.Generator.GetSentences(1)[0];
             MoqUtil.UndoMockRandomNumber();
 
-            Assert.AreEqual("The senior support staff significantly avoids our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive, market forces throughout the organisation.", output);
+            Assert.AreEqual("The senior support staff significantly avoids our issues throughout the organisation, while expectations and allocations interactively streamline our constructive, proactive market forces throughout the organisation.", output);
         }
 
         [Test]
