@@ -44,6 +44,7 @@
     <Compile Include="BadThingsTests.cs" />
     <Compile Include="BossTitleTests.cs" />
     <Compile Include="BuildPluralVerbTests.cs" />
+    <Compile Include="CommandLineParserTests.cs" />
     <Compile Include="DepartmentTests.cs" />
     <Compile Include="EventualAdverbTests.cs" />
     <Compile Include="FaukonTests.cs" />

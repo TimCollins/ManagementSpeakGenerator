@@ -13,15 +13,21 @@ namespace MSG.ConsoleApp
         {
             Console.WriteLine("Management-Speak Generator.");
 
+            string outputFile;
+            string outputFormat;
+            CommandLineParser.Parse(args, out outputFile);
+
             Console.WriteLine("Writing test data to file...");
-            string fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\msg_output.txt";
+            string basePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+            string baseFile = "msg_output";
+            string fileName = basePath + baseFile + ".txt";
             const int max = 50;
             StringBuilder output = new StringBuilder();
 
             List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
             for (int i = 0; i < max; i++)
             {
-                output.Append(string.Format("{0}. {1}{2}", i + 1, sentences[i], Environment.NewLine));
+                output.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text, Environment.NewLine));
             }
 
             using (StreamWriter sw = new StreamWriter(fileName))
@@ -32,6 +38,12 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Data written to {0}", fileName);
 
             string jsonData = new JavaScriptSerializer().Serialize(sentences);
+            fileName = basePath + baseFile + ".json";
+
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.Write(jsonData);
+            }
 
             Util.WaitForEscape();
         }

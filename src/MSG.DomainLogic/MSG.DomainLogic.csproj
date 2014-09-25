@@ -37,6 +37,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLineParser.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="DomainFactory.cs" />
     <Compile Include="Implementation\Generator.cs" />
