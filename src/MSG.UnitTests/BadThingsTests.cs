@@ -39,9 +39,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(8, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The stakeholders 24/7 avoid issues as part of the plan.", output);
+            Assert.AreEqual("The stakeholders 24/7 avoid issues as part of the plan.", output.Text);
         }
 
         [Test]
@@ -52,9 +52,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(7, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We are working hard to 24/7 avoid known unknowns as part of the plan.", output);
+            Assert.AreEqual("We are working hard to 24/7 avoid known unknowns as part of the plan.", output.Text);
         }
 
         [Test]
@@ -65,9 +65,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(7, 12);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We are working hard to 24/7 avoid surprises as part of the plan.", output);
+            Assert.AreEqual("We are working hard to 24/7 avoid surprises as part of the plan.", output.Text);
         }
 
         [Test]
@@ -76,9 +76,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(8, 18);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The stakeholders 24/7 avoid problems as part of the plan.", output);
+            Assert.AreEqual("The stakeholders 24/7 avoid problems as part of the plan.", output.Text);
         }
 
         [Test]
@@ -87,9 +87,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(8, 21);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The stakeholders 24/7 avoid consumer/agent disconnects as part of the plan.", output);
+            Assert.AreEqual("The stakeholders 24/7 avoid consumer/agent disconnects as part of the plan.", output.Text);
         }
     }
 }

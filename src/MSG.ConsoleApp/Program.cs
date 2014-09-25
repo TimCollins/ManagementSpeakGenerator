@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Web.Script.Serialization;
 using MSG.DomainLogic;
 
 namespace MSG.ConsoleApp
@@ -14,10 +15,10 @@ namespace MSG.ConsoleApp
 
             Console.WriteLine("Writing test data to file...");
             string fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\msg_output.txt";
-            const int max = 500;
+            const int max = 50;
             StringBuilder output = new StringBuilder();
 
-            List<string> sentences = DomainFactory.Generator.GetSentences(max);
+            List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
             for (int i = 0; i < max; i++)
             {
                 output.Append(string.Format("{0}. {1}{2}", i + 1, sentences[i], Environment.NewLine));
@@ -29,6 +30,9 @@ namespace MSG.ConsoleApp
             }
 
             Console.WriteLine("Data written to {0}", fileName);
+
+            string jsonData = new JavaScriptSerializer().Serialize(sentences);
+
             Util.WaitForEscape();
         }
     }

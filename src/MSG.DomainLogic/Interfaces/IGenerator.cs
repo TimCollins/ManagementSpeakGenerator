@@ -4,6 +4,6 @@ namespace MSG.DomainLogic.Interfaces
 {
     public interface IGenerator
     {
-        List<string> GetSentences(int count);
+        List<Sentence> GetSentences(int count);
     }
 }

@@ -51,9 +51,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("An organic growth credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("An organic growth credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
 
         [Test]
@@ -64,9 +64,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("An unprecedented throughput increase credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("An unprecedented throughput increase credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
 
         [Test]
@@ -77,9 +77,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
 
         [Test]
@@ -90,9 +90,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("An upper single-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
 
         [Test]
@@ -103,9 +103,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("A measured yield enhancement credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("A measured yield enhancement credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
     }
 }

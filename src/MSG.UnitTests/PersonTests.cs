@@ -30,9 +30,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(9, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The steering committee manages a proactive, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The steering committee manages a proactive, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output.Text);
         }
 
         [Test]
@@ -43,9 +43,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(9, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The key people benchmark the portfolio by thinking outside the box, while the reporting unit should go forward together across the board.", output);
+            Assert.AreEqual("The key people benchmark the portfolio by thinking outside the box, while the reporting unit should go forward together across the board.", output.Text);
         }
 
         [Test]
@@ -54,8 +54,8 @@ namespace MSG.UnitTests
             _defaults = new List<int> {0, 1, 7, 1, 17, 1, 2, 4, 3, 2, 6, 8, 9, 19, 33};
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Acting Chief of Management Office culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Chief of Management Office culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         // GetPluralPersonTests
@@ -68,9 +68,9 @@ namespace MSG.UnitTests
             _otherSpacingDefaults.Insert(20, 3);
             MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks across the full value chain across the board.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks across the full value chain across the board.", output.Text);
         }
 
         [Test]
@@ -82,9 +82,9 @@ namespace MSG.UnitTests
             MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The key people target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output);
+            Assert.AreEqual("The key people target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output.Text);
         }
 
         [Test]
@@ -95,9 +95,9 @@ namespace MSG.UnitTests
             _otherSpacingDefaults.Insert(20, 10);
             MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The business leaders target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output);
+            Assert.AreEqual("The business leaders target constructive, strategic key target markets at the end of the day. At the same time, the thought leader interactively thinks outside the box using a key, efficient focus.", output.Text);
         }
 
         [Test]
@@ -106,9 +106,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The steering committee manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The steering committee manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output.Text);
         }
 
         [Test]
@@ -117,9 +117,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The powerful champion manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The powerful champion manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output.Text);
         }
 
         [Test]
@@ -128,9 +128,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 11);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resource manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output);
+            Assert.AreEqual("The resource manages a cost-effective, constructive focus at the end of the day, while the standard-setters credibly maximise the value throughout the organisation.", output.Text);
         }
 
         [Test]
@@ -143,9 +143,9 @@ namespace MSG.UnitTests
             _otherSpacingDefaults.ReplaceAt(17, 1);
             MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the intelligence strategically streamlines the process going forward.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the intelligence strategically streamlines the process going forward.", output.Text);
         }
 
         [Test]
@@ -158,9 +158,9 @@ namespace MSG.UnitTests
             _otherSpacingDefaults.ReplaceAt(17, 2);
             MoqUtil.SetupRandMock(_otherSpacingDefaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the organizing principles strategically streamlines the process going forward.", output);
+            Assert.AreEqual("The resources target constructive, strategic key target markets at the end of the day. At the same time, the organizing principles strategically streamlines the process going forward.", output.Text);
         }
     }
 }

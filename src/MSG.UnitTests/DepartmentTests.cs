@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(8, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Group Chief Human Resources Officer globally streamlines the process across the board.", output);
+            Assert.AreEqual("The Group Chief Human Resources Officer globally streamlines the process across the board.", output.Text);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace MSG.UnitTests
             _defaults.Insert(8, 7);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Group Chief Customer Relations Officer globally streamlines the process across the board.", output);
+            Assert.AreEqual("The Group Chief Customer Relations Officer globally streamlines the process across the board.", output.Text);
         }
 
         [Test]
@@ -49,9 +49,9 @@ namespace MSG.UnitTests
             _defaults.Insert(8, 14);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Group Chief Marketing Officer globally streamlines the process across the board.", output);
+            Assert.AreEqual("The Group Chief Marketing Officer globally streamlines the process across the board.", output.Text);
         }
 
         [Test]

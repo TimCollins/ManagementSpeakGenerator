@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic, cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
+            Assert.AreEqual("The holistic, cost-effective leverage 200% enforces our new, focused diversification going forward.", output.Text);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 13);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic and cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
+            Assert.AreEqual("The holistic and cost-effective leverage 200% enforces our new, focused diversification going forward.", output.Text);
         }
 
         [Test]
@@ -50,9 +50,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(16, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("A holistic governance credibly accelerates strong mobile strategies within the industry.", output);
+            Assert.AreEqual("A holistic governance credibly accelerates strong mobile strategies within the industry.", output.Text);
         }
 
         [Test]
@@ -61,9 +61,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 72);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic and/or cost-effective leverage 200% enforces our new, focused diversification going forward.", output);
+            Assert.AreEqual("The holistic and/or cost-effective leverage 200% enforces our new, focused diversification going forward.", output.Text);
         }
 
         [Test]
@@ -79,9 +79,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("A double-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output);
+            Assert.AreEqual("A double-digit efficiency gain credibly accelerates strong mobile strategies at the end of the day.", output.Text);
         }
 
         [Test]
@@ -93,9 +93,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Our holistic, cost-effective and non-linear team building interactively impacts the focused organisations across the board.", output);
+            Assert.AreEqual("Our holistic, cost-effective and non-linear team building interactively impacts the focused organisations across the board.", output.Text);
         }
 
         [Test]
@@ -107,9 +107,9 @@ namespace MSG.UnitTests
             
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The holistic, cost-effective, non-linear and strategic planning granularity results in the problem-solving and key key target markets across the board.", output);
+            Assert.AreEqual("The holistic, cost-effective, non-linear and strategic planning granularity results in the problem-solving and key key target markets across the board.", output.Text);
         }
     }
 }
