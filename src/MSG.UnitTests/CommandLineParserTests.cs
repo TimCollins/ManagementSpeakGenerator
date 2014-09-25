@@ -69,20 +69,25 @@ namespace MSG.UnitTests
         {
             string outputFile;
             bool showHelp;
-            string[] args = { @"/f:C:\Users\tcollins\Desktop\" };
+            string[] args = { @"/f:C:\home\somewhere\test.txt" };
 
             CommandLineParser.Parse(args, out showHelp, out outputFile);
 
-            Assert.AreEqual(@"C:\Users\tcollins\Desktop\", outputFile);
+            Assert.AreEqual(@"C:\home\somewhere\test.txt", outputFile);
         }
 
         [Test]
         public void WhenOutputFileNotSpecifiedDefaultIsUsed()
         {
+            string outputFile;
+            bool showHelp;
+            string[] args = { @"/f:C:\Users\tcollins\Desktop\test.txt" };
 
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+
+            Assert.AreEqual(@"C:\Users\tcollins\Desktop\test.txt", outputFile);
         }
         
-        // Unsupported arg e.g. /z
         // Invalid filename e.g. with spaces not surrounded by quotes.
         // Multiple args e.g. any 2 from 3 and all 3 together.
     }
