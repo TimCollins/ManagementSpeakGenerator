@@ -13,9 +13,17 @@ namespace MSG.ConsoleApp
         {
             Console.WriteLine("Management-Speak Generator.");
 
+            bool showHelp;
             string outputFile;
             string outputFormat;
-            CommandLineParser.Parse(args, out outputFile);
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+
+            if (showHelp)
+            {
+                ShowHelp();
+                Util.WaitForEscape();
+                return;
+            }
 
             Console.WriteLine("Writing test data to file...");
             string basePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
@@ -46,6 +54,18 @@ namespace MSG.ConsoleApp
             }
 
             Util.WaitForEscape();
+        }
+
+        private static void ShowHelp()
+        {
+            Console.WriteLine("Supported command-line arguments:");
+            Console.WriteLine("/?\t\t\tShow help");
+            Console.Write("/o:[x|j|h|t]\t\tSpecify output format of XML, JSON, HTML or Text. If not ");
+            Console.WriteLine("\t\t\tsupplied then a default of text will be used.");
+            Console.WriteLine("/f:[file]\t\tSpecify output filename. If not supplied then a file ");
+            Console.WriteLine("\t\t\tcalled \"msg_output\"in the user's desktop will be ");
+            Console.WriteLine("\t\t\tcreated. The output filename extension will be derived ");
+            Console.WriteLine("\t\t\tfrom the /o parameter.");
         }
     }
 }

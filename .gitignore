@@ -15,3 +15,4 @@
 /src/MSG.UnitTests/bin/Release
 /src/MSG.UnitTests/obj/Release
 /src/MSG.DomainLogic/bin/Release
+/src/MSG.ConsoleApp/MSG.ConsoleApp.csproj.user
