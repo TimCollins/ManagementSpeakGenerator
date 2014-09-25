@@ -20,6 +20,51 @@ namespace MSG.UnitTests
         }
 
         [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void QuestionMarkOnlyForValidHelpSwitch()
+        {
+            string outputFile;
+            bool showHelp;
+            string[] args = { "/?Fred" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void NoSpaceBetweenQuestionMarkAndSlash()
+        {
+            string outputFile;
+            bool showHelp;
+            string[] args = { "/ ?" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+        }
+
+        [Test]
+        public void NoArgsSpecifiedThenHelpShouldBeShown()
+        {
+            string outputFile;
+            bool showHelp;
+            string[] args = new string[0];
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+
+            Assert.IsTrue(showHelp);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void UnsupportArgShouldGiveError()
+        {
+            string outputFile;
+            bool showHelp;
+            string[] args = { "/z" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile);
+        }
+
+        [Test]
         public void WhenOutputFileSpecifiedVarIsSet()
         {
             string outputFile;
@@ -36,12 +81,9 @@ namespace MSG.UnitTests
         {
 
         }
-
-        // No args specified
-
+        
         // Unsupported arg e.g. /z
         // Invalid filename e.g. with spaces not surrounded by quotes.
-        // Unsupported arg like /?fred should produce an error.
-
+        // Multiple args e.g. any 2 from 3 and all 3 together.
     }
 }

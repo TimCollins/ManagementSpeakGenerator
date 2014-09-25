@@ -9,16 +9,24 @@ namespace MSG.DomainLogic
             string parsedFileName = string.Empty;
             showHelp = false;
 
+            if (args.Length == 0)
+            {
+                showHelp = true;
+            }
+
             foreach (string s in args)
             {
                 if (s.StartsWith("/f:"))
                 {
                     parsedFileName = ParseSwitch(s);
                 }
-
-                if (s.Equals("/?"))
+                else if (s.Equals("/?"))
                 {
                     showHelp = true;
+                }
+                else
+                {
+                    throw new UnsupportedSwitchException(s);
                 }
             }
 
