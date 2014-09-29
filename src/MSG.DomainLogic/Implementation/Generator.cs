@@ -2495,7 +2495,7 @@ namespace MSG.DomainLogic.Implementation
             // Fix for bandwithes and breakthroughs
             if (inner.EndsWith("th") || inner.EndsWith("gh"))
             {
-                return inner + "s";
+                return inner + "s ";
             }
 
             char last = inner[inner.Length - 1];
