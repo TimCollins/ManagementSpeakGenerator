@@ -2484,9 +2484,10 @@ namespace MSG.DomainLogic.Implementation
 
             if (inner == "matrix")
             {
-                return "matrices";
+                return "matrices ";
             }
 
+            // This rule doesn't appear to ever be used.
             if (inner == "analysis")
             {
                 return "analyses";

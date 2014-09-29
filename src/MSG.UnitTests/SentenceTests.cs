@@ -206,6 +206,16 @@ namespace MSG.UnitTests
             Assert.AreEqual("Streamlining bandwidths motivate the Chief Marketing Officer, while the Chief Internal Audit Officer visualises a value creation.", output.Text);
         }
 
+        [Test]
+        public void TestMatrixSpacing()
+        {
+            MoqUtil.SetupRandMock(0, 23, 57, 2, 54, 128, 177, 6, 10, 14, 35, 1, 92, 1, 17, 4, 20, 13, 14, 92, 42, 1, 17, 3, 7, 1, 3, 49, 95, 37, 98, 231, 26, 13, 70);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Streamlining matrices motivate the Chief Marketing Officer, while the Chief Internal Audit Officer visualises a value creation.", output.Text);
+        }
+
         // I'm not sure this can be fixed without a lot of fiddling with the code.
         //[Test]
         //public void FixPlannings()
