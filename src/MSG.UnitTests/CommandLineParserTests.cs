@@ -83,6 +83,19 @@ namespace MSG.UnitTests
         }
 
         [Test]
+        public void CapitalOutputFileSwitchIsSupported()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { @"/F:C:\home\somewhere\test.txt" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"C:\home\somewhere\test.txt", outputFile);
+        }
+
+        [Test]
         public void WhenOutputFileNotSpecifiedDefaultIsUsed()
         {
             string outputFile;
@@ -151,15 +164,87 @@ namespace MSG.UnitTests
             Assert.AreEqual(OutputType.XML, outputType);
         }
 
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void UnsupportedOutputSwitchThrowsException()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/o:b" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void CapitalHTMLOutputSwitchRejected()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/o:H" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void CapitalJSONOutputSwitchRejected()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/o:J" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void CapitalTextOutputSwitchRejected()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/o:T" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void CapitalXMLOutputSwitchRejected()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/o:X" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        public void CapitalOutputSwitchSupported()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string[] args = { @"/O:x" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            Assert.AreEqual(OutputType.XML, outputType);
+        }
+
         // Test the output formats
         // When nothing specified, a default of ".txt" should be used.
-        // When "/o:x" specified, XML should be used.
-        // When "/o:j" specified, JSON should be used.
-        // When "/o:h" specified, HTML should be used.
-        // When "/o:t" specified, plain text should be used.
-
-        // Test capitalisation on all options.
-
+        
 
         // Invalid filename e.g. with spaces not surrounded by quotes.
         // Multiple args e.g. any 2 from 3 and all 3 together.

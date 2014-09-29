@@ -17,7 +17,7 @@ namespace MSG.DomainLogic
 
             foreach (string s in args)
             {
-                if (s.StartsWith("/f:"))
+                if (s.ToLower().StartsWith("/f:"))
                 {
                     parsedFileName = ParseSwitch(s);
                 }
@@ -25,7 +25,7 @@ namespace MSG.DomainLogic
                 {
                     showHelp = true;
                 }
-                else if (s.StartsWith("/o:"))
+                else if (s.ToLower().StartsWith("/o:"))
                 {
                     outputType = ParseOutputType(s);
                 }
