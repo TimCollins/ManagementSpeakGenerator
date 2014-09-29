@@ -63,7 +63,7 @@ namespace MSG.ConsoleApp
             Console.Write("/o:[x|j|h|t]\t\tSpecify output format of XML, JSON, HTML or Text. If not ");
             Console.WriteLine("\t\t\tsupplied then a default of text will be used.");
             Console.WriteLine("/f:[file]\t\tSpecify output filename. If not supplied then a file ");
-            Console.WriteLine("\t\t\tcalled \"msg_output\"in the user's desktop will be ");
+            Console.WriteLine("\t\t\tcalled \"msg_output\" on the user's desktop will be ");
             Console.WriteLine("\t\t\tcreated. The output filename extension will be derived ");
             Console.WriteLine("\t\t\tfrom the /o parameter.");
         }

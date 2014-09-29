@@ -88,6 +88,14 @@ namespace MSG.UnitTests
             Assert.AreEqual(@"C:\Users\tcollins\Desktop\test.txt", outputFile);
         }
         
+        // Test the output formats
+        // When nothing specified, a default of ".txt" should be used.
+        // When "/o:x" specified, XML should be used.
+        // When "/o:j" specified, JSON should be used.
+        // When "/o:h" specified, HTML should be used.
+        // When "/o:t" specified, plain text should be used.
+
+
         // Invalid filename e.g. with spaces not surrounded by quotes.
         // Multiple args e.g. any 2 from 3 and all 3 together.
     }
