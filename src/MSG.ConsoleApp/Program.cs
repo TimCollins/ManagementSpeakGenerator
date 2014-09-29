@@ -17,7 +17,15 @@ namespace MSG.ConsoleApp
             string outputFile;
             string outputFormat;
             OutputType outputType;
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            try
+            {
+                CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+                return;
+            }
 
             if (showHelp)
             {
@@ -27,10 +35,17 @@ namespace MSG.ConsoleApp
             }
 
             Console.WriteLine("Writing test data to file...");
-            string basePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
-            string baseFile = "msg_output";
-            string fileName = basePath + baseFile + ".txt";
+            // None of the logic here is unit tested.
+
+            string basePath = string.IsNullOrEmpty(outputFile)
+                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+                : Environment.CurrentDirectory;
+            string baseFile = string.IsNullOrEmpty(outputFile) 
+                ? "msg_output" 
+                : outputFile;
+            string fileName = basePath + "\\" + baseFile + GetExtension(outputType);
             const int max = 50;
+
             StringBuilder output = new StringBuilder();
 
             List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
@@ -39,22 +54,43 @@ namespace MSG.ConsoleApp
                 output.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text, Environment.NewLine));
             }
 
-            using (StreamWriter sw = new StreamWriter(fileName))
-            {
-                sw.Write(output.ToString());
-            }
-
-            Console.WriteLine("Data written to {0}", fileName);
+            //using (StreamWriter sw = new StreamWriter(fileName))
+            //{
+            //    sw.Write(output.ToString());
+            //}
 
             string jsonData = new JavaScriptSerializer().Serialize(sentences);
-            fileName = basePath + baseFile + ".json";
+            //fileName = basePath + baseFile + ".json";
 
             using (StreamWriter sw = new StreamWriter(fileName))
             {
                 sw.Write(jsonData);
             }
 
+            Console.WriteLine("Data written to {0}", fileName);
+
             Util.WaitForEscape();
+        }
+
+        private static string GetExtension(OutputType outputType)
+        {
+            switch (outputType)
+            {
+                case OutputType.HTML:
+                    return ".html";
+                case OutputType.JSON:
+                    return ".json";
+                case OutputType.Text:
+                    return ".txt";
+                default:
+                    return ".xml";
+            }
+        }
+
+        private static void HandleException(Exception ex)
+        {
+            Console.WriteLine("There was a problem parsing the command-line switches." + 
+                " Please check the inputted data and try again.");
         }
 
         private static void ShowHelp()

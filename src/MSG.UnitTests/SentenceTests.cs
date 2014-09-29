@@ -196,6 +196,15 @@ namespace MSG.UnitTests
             Assert.AreEqual("The resource improves a customer-centric, innovation-driven system.", output.Text);
         }
 
+        [Test]
+        public void FixBandwidthsMotivate()
+        {
+            MoqUtil.SetupRandMock(0,23,57,2,54,128,177,78,14,35,1,92,1,17,4,20,13,14,92,42,1,17,3,7,1,3,49,95,37,98,231,26,13,70);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("Streamlining bandwidths motivate the Chief Marketing Officer, while the Chief Internal Audit Officer visualises a value creation.", output.Text);
+        }
 
         // I'm not sure this can be fixed without a lot of fiddling with the code.
         //[Test]
