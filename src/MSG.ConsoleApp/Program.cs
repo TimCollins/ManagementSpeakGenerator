@@ -16,7 +16,8 @@ namespace MSG.ConsoleApp
             bool showHelp;
             string outputFile;
             string outputFormat;
-            CommandLineParser.Parse(args, out showHelp, out outputFile);
+            OutputType outputType;
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
 
             if (showHelp)
             {
