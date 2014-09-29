@@ -37,13 +37,11 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Writing test data to file...");
             // None of the logic here is unit tested.
 
-            string basePath = string.IsNullOrEmpty(outputFile)
-                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-                : Environment.CurrentDirectory;
+            string basePath = GetBasePath(outputFile);
             string baseFile = string.IsNullOrEmpty(outputFile) 
                 ? "msg_output" 
                 : outputFile;
-            string fileName = basePath + "\\" + baseFile + GetExtension(outputType);
+            string fileName = baseFile + GetExtension(outputType);
             const int max = 50;
 
             StringBuilder output = new StringBuilder();
@@ -54,13 +52,7 @@ namespace MSG.ConsoleApp
                 output.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text, Environment.NewLine));
             }
 
-            //using (StreamWriter sw = new StreamWriter(fileName))
-            //{
-            //    sw.Write(output.ToString());
-            //}
-
             string jsonData = new JavaScriptSerializer().Serialize(sentences);
-            //fileName = basePath + baseFile + ".json";
 
             using (StreamWriter sw = new StreamWriter(fileName))
             {
@@ -70,6 +62,20 @@ namespace MSG.ConsoleApp
             Console.WriteLine("Data written to {0}", fileName);
 
             Util.WaitForEscape();
+        }
+
+        private static string GetBasePath(string outputFile)
+        {
+            if (string.IsNullOrEmpty(outputFile))
+                return Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            // If a full path has been specified then use it otherwise use a path
+            // relative to the current folder.
+            string path = outputFile[1] == ':'
+                ? outputFile
+                : Environment.CurrentDirectory;
+
+            return path;
         }
 
         private static string GetExtension(OutputType outputType)
