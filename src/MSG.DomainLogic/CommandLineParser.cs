@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace MSG.DomainLogic
 {
@@ -35,7 +36,24 @@ namespace MSG.DomainLogic
                 }
             }
 
-            outputFile = parsedFileName;
+            outputFile = string.IsNullOrEmpty(parsedFileName)
+                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(outputType)
+                : parsedFileName;
+        }
+
+        private static string GetExtension(OutputType outputType)
+        {
+            switch (outputType)
+            {
+                case OutputType.HTML:
+                    return ".html";
+                case OutputType.JSON:
+                    return ".json";
+                case OutputType.Text:
+                    return ".txt";
+                default:
+                    return ".xml";
+            }
         }
 
         private static OutputType ParseOutputType(string s)

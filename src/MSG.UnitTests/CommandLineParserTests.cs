@@ -16,7 +16,6 @@ namespace MSG.UnitTests
 
             CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
 
-            Assert.IsEmpty(outputFile);
             Assert.IsTrue(showHelp);
         }
 
@@ -240,6 +239,32 @@ namespace MSG.UnitTests
 
             CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
             Assert.AreEqual(OutputType.XML, outputType);
+        }
+
+        [Test]
+        public void WhenNoOutputFileSpecifiedDefaultIsUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"C:\Users\tcollins\Desktop\msg_output.txt", outputFile);
+        }
+
+        [Test]
+        public void WhenExtensionSpecifiedItIsUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { @"/o:j" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"C:\Users\tcollins\Desktop\msg_output.json", outputFile);
         }
 
         // Test the output formats

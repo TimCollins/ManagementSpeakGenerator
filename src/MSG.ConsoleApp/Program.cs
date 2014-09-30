@@ -80,17 +80,7 @@ namespace MSG.ConsoleApp
 
         private static string GetExtension(OutputType outputType)
         {
-            switch (outputType)
-            {
-                case OutputType.HTML:
-                    return ".html";
-                case OutputType.JSON:
-                    return ".json";
-                case OutputType.Text:
-                    return ".txt";
-                default:
-                    return ".xml";
-            }
+            return string.Empty;
         }
 
         private static void HandleException(Exception ex)
