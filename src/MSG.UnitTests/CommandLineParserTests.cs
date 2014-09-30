@@ -1,4 +1,5 @@
-﻿using MSG.DomainLogic;
+﻿using System.IO;
+using MSG.DomainLogic;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -332,7 +333,71 @@ namespace MSG.UnitTests
             Assert.AreEqual(@"c:\temp\output.xml", outputFile);
         }
 
-        // Invalid filename e.g. with spaces not surrounded by quotes.
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void VerifyFileNameWithSpacesWithoutQuotesFails()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { "/o:x", @"/f:c:\temp\output file.xml" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void VerifyFileNameWithSpacesWithSingleQuoteFails()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { "/o:x", @"/f:""c:\temp\output file.xml" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        public void VerifyFileNameWithSpacesAndQuotesIsHandled()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { "/o:x", @"/f:""c:\temp\output file.xml""" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"""c:\temp\output file.xml""", outputFile);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void VerifyThatDisallowedFileCharsAreHandled()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string borkedFileName = @"/f:c:\temp\test" + string.Join("", Path.GetInvalidFileNameChars());
+            string[] args = { "/o:x", borkedFileName };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        public void VerifyThatDisallowedPathCharsAreHandled()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+
+            string borkedPathName = @"/f:c:\temp" + string.Join("", Path.GetInvalidPathChars());
+            string[] args = { "/o:x", borkedPathName + @"\\test.xml" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+        }
+
         // Multiple args e.g. any 2 from 3 and all 3 together.
     }
 }

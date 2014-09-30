@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text.RegularExpressions;
 
 namespace MSG.DomainLogic
@@ -46,9 +47,39 @@ namespace MSG.DomainLogic
             // If there is no file extension provided then append ".txt"
             // Not 100% sure this is the best thing to do. It might be better to leave the
             // file as-is.
+
+            if (parsedFileName.IndexOfAny(Path.GetInvalidPathChars()) > 0)
+            {
+                throw new UnsupportedSwitchException("Invalid path specified: " + parsedFileName);
+            }
+
+            string fileOnly = GetFileOnly(parsedFileName);
+
+            if ((fileOnly.IndexOfAny(Path.GetInvalidFileNameChars()) > 0) || 
+                (parsedFileName.Contains(" ") && !ContainsMatchedQuotes(parsedFileName)))
+            {
+                throw new UnsupportedSwitchException("Invalid filename specified: " + parsedFileName);
+            }
+
             return parsedFileName.Contains(".")
                 ? parsedFileName
                 : parsedFileName + GetExtension(outputType);
+        }
+
+        private static string GetFileOnly(string parsedFileName)
+        {
+            string fileOnly = parsedFileName.Substring(parsedFileName.LastIndexOf('\\') + 1);
+
+            return fileOnly.EndsWith("\"") 
+                ? fileOnly.Remove(fileOnly.Length - 1) 
+                : fileOnly;
+        }
+
+        private static bool ContainsMatchedQuotes(string s)
+        {
+            Match m = Regex.Match(s, "\".*\"");
+
+            return m.Success;
         }
 
         private static string GetExtension(OutputType outputType)
