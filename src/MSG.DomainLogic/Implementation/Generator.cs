@@ -30,18 +30,18 @@ namespace MSG.DomainLogic.Implementation
             return plurality == Plurality.Singular ? GetSingularPerson() : GetPluralPerson();
         }
 
-        public List<string> GetSentences(int count)
+        public List<Sentence> GetSentences(int count)
         {
             if (count <= 0)
             {
                 throw new ArgumentException("count");
             }
 
-            List<string> sentences = new List<string>();
+            List<Sentence> sentences = new List<Sentence>();
 
             for (int i = 0; i < count; i++)
             {
-                sentences.Add(GetSentence());
+                sentences.Add(new Sentence{ID = i, Text = GetSentenceText()});
             }
 
             return sentences;
@@ -287,7 +287,7 @@ namespace MSG.DomainLogic.Implementation
             }
         }
 
-        private string GetSentence()
+        private string GetSentenceText()
         {
             return GetArticulatedProposition();
         }
@@ -2484,9 +2484,10 @@ namespace MSG.DomainLogic.Implementation
 
             if (inner == "matrix")
             {
-                return "matrices";
+                return "matrices ";
             }
 
+            // This rule doesn't appear to ever be used.
             if (inner == "analysis")
             {
                 return "analyses";
@@ -2495,7 +2496,7 @@ namespace MSG.DomainLogic.Implementation
             // Fix for bandwithes and breakthroughs
             if (inner.EndsWith("th") || inner.EndsWith("gh"))
             {
-                return inner + "s";
+                return inner + "s ";
             }
 
             char last = inner[inner.Length - 1];

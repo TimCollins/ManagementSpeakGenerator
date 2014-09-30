@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(6, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
             
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace MSG.UnitTests
             _defaults.Insert(6, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address the overarching issues going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address the overarching issues going forward.", output.Text);
         }
 
         [Test]
@@ -49,9 +49,9 @@ namespace MSG.UnitTests
             _defaults.Insert(6, 10);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally think across the full value chain going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally think across the full value chain going forward.", output.Text);
         }
 
         [Test]
@@ -62,9 +62,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally identify the issues going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally identify the issues going forward.", output.Text);
         }
 
         [Test]
@@ -75,9 +75,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues going forward.", output.Text);
         }
         
         [Test]
@@ -89,9 +89,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues within the industry.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate the issues within the industry.", output.Text);
         }
 
         [Test]
@@ -103,9 +103,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate our issues going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally mitigate our issues going forward.", output.Text);
         }
 
         [Test]
@@ -119,9 +119,9 @@ namespace MSG.UnitTests
             _defaults.Add(3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally improve the constructive, efficient key target markets across the board.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally improve the constructive, efficient key target markets across the board.", output.Text);
         }
 
         [Test]
@@ -133,9 +133,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address our issues going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to culturally address our issues going forward.", output.Text);
         }
     }
 }

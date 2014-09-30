@@ -28,9 +28,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 18);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; this is why innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; this is why innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -39,9 +39,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 19);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
             
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; nevertheless innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; nevertheless innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -50,9 +50,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 20);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; whereas innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources; whereas innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -61,9 +61,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 25);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources, while innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources, while innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -72,9 +72,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 26);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources. At the same time, innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources. At the same time, innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -83,9 +83,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 27);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources. As a result innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources. As a result innovations efficiently influence the group.", output.Text);
         }
 
         [Test]
@@ -94,9 +94,9 @@ namespace MSG.UnitTests
             _defaults.Insert(1, 28);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Performance, leverage and time-phase drive the human resources, whilst innovations efficiently influence the group.", output);
+            Assert.AreEqual("Performance, leverage and time-phase drive the human resources, whilst innovations efficiently influence the group.", output.Text);
         }
     }
 }

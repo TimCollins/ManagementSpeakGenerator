@@ -28,9 +28,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Assert.AreEqual("The Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -39,9 +39,9 @@ namespace MSG.UnitTests
             _defaults.Insert(6, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Managing Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Assert.AreEqual("The Managing Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -50,9 +50,9 @@ namespace MSG.UnitTests
             _defaults.Insert(6, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Acting Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Assert.AreEqual("The Acting Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -64,9 +64,9 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(10, 12);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Director of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Assert.AreEqual("The Director of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -74,8 +74,8 @@ namespace MSG.UnitTests
         {
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Chief of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Chief of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -86,9 +86,9 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The Head of Legal culturally exceeds expectations at the individual, team and organizational level.", output);
+            Assert.AreEqual("The Head of Legal culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -98,8 +98,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Co-Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Co-Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -109,8 +109,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 12);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -120,8 +120,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 6);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -131,8 +131,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 11);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Corporate Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Corporate Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -143,8 +143,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 6);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Senior Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Senior Vice President of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -153,8 +153,8 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(8, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Executive Chief of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Executive Chief of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -165,8 +165,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Acting Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -179,8 +179,8 @@ namespace MSG.UnitTests
             _defaults.Insert(10, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Acting Senior Executive Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Acting Senior Executive Head of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -193,8 +193,8 @@ namespace MSG.UnitTests
 
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Managing Director of Marketing culturally exceeds expectations at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Managing Director of Marketing culturally exceeds expectations at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -209,8 +209,8 @@ namespace MSG.UnitTests
             _defaults.Add(8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Group Chief Technical Officer quickly avoids uncertainties as part of the plan.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Group Chief Technical Officer quickly avoids uncertainties as part of the plan.", output.Text);
         }
 
         [Test]
@@ -221,8 +221,8 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(11, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Chief Operations Officer credibly addresses unknown unknowns at the individual, team and organizational level.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Chief Operations Officer credibly addresses unknown unknowns at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -235,8 +235,8 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(11, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Group Chief Digital Officer 200% achieves efficiencies going forward.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Group Chief Digital Officer 200% achieves efficiencies going forward.", output.Text);
         }
 
         [Test]
@@ -249,8 +249,8 @@ namespace MSG.UnitTests
             _defaults.ReplaceAt(11, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
-            Assert.AreEqual("The Global Chief Digital Officer 200% achieves efficiencies going forward.", output);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            Assert.AreEqual("The Global Chief Digital Officer 200% achieves efficiencies going forward.", output.Text);
         }
     }
 }

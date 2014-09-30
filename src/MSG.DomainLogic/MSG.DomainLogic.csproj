@@ -37,6 +37,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLineParser.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="DomainFactory.cs" />
     <Compile Include="Implementation\Generator.cs" />
@@ -45,6 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementation\RandomNumber.cs" />
     <Compile Include="RandomNumberException.cs" />
+    <Compile Include="Sentence.cs" />
+    <Compile Include="UnsupportedSwitchException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

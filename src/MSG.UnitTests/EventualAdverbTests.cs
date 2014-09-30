@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(4, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to interactively streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to interactively streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -37,9 +37,9 @@ namespace MSG.UnitTests
         {
             _defaults.Insert(4, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -47,9 +47,9 @@ namespace MSG.UnitTests
         {
             _defaults.Insert(4, 10);
             MoqUtil.SetupRandMock(_defaults.ToArray());
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to strategically streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -57,9 +57,9 @@ namespace MSG.UnitTests
         {
             _defaults.Insert(4, 17);
             MoqUtil.SetupRandMock(_defaults.ToArray());
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to conservatively streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to conservatively streamline the process going forward.", output.Text);
         }
     }
 }

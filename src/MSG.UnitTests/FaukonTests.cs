@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We need to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We need to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We've got to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We've got to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -49,9 +49,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 3);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The reporting unit should credibly streamline the process going forward.", output);
+            Assert.AreEqual("The reporting unit should credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -60,9 +60,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 4);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Controlling should credibly streamline the process going forward.", output);
+            Assert.AreEqual("Controlling should credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -73,9 +73,9 @@ namespace MSG.UnitTests
             _defaults.Add(1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We must activate the organisation to interactively streamline the process going forward.", output);
+            Assert.AreEqual("We must activate the organisation to interactively streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -84,9 +84,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 6);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("Pursuing this route will enable us to credibly streamline the process going forward.", output  );
+            Assert.AreEqual("Pursuing this route will enable us to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -95,9 +95,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 7);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We will go the extra mile to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We will go the extra mile to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -106,9 +106,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We are working hard to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We are working hard to credibly streamline the process going forward.", output.Text);
         }
 
         [Test]
@@ -117,9 +117,9 @@ namespace MSG.UnitTests
             _defaults.Insert(3, 9);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output);
+            Assert.AreEqual("We continue to work tirelessly and diligently to credibly streamline the process going forward.", output.Text);
         }
     }
 }

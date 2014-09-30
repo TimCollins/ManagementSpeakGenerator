@@ -27,9 +27,9 @@ namespace MSG.UnitTests
             _defaults.Add(1);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps going forward.", output);
+            Assert.AreEqual("The partners diligently avoid gaps going forward.", output.Text);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace MSG.UnitTests
             _defaults.Add(222);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps.", output);
+            Assert.AreEqual("The partners diligently avoid gaps.", output.Text);
         }
 
         [Test]
@@ -49,9 +49,9 @@ namespace MSG.UnitTests
             _defaults.Add(33);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps at the individual, team and organizational level.", output);
+            Assert.AreEqual("The partners diligently avoid gaps at the individual, team and organizational level.", output.Text);
         }
 
         [Test]
@@ -65,9 +65,9 @@ namespace MSG.UnitTests
             _defaults.Add(8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps using unparallelled throughput increase.", output);
+            Assert.AreEqual("The partners diligently avoid gaps using unparallelled throughput increase.", output.Text);
         }
 
         [Test]
@@ -81,9 +81,9 @@ namespace MSG.UnitTests
             _defaults.Add(8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps taking advantage of unparallelled throughput increase.", output);
+            Assert.AreEqual("The partners diligently avoid gaps taking advantage of unparallelled throughput increase.", output.Text);
         }
 
         [Test]
@@ -93,9 +93,9 @@ namespace MSG.UnitTests
             _defaults.Add(2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps within the organisation.", output);
+            Assert.AreEqual("The partners diligently avoid gaps within the organisation.", output.Text);
         }
 
         [Test]
@@ -105,9 +105,9 @@ namespace MSG.UnitTests
             _defaults.Add(2);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps across the organisations.", output);
+            Assert.AreEqual("The partners diligently avoid gaps across the organisations.", output.Text);
         }
 
         [Test]
@@ -121,9 +121,9 @@ namespace MSG.UnitTests
             _defaults.Add(8);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps as a consequence of upper single-digit efficiency gain.", output);
+            Assert.AreEqual("The partners diligently avoid gaps as a consequence of upper single-digit efficiency gain.", output.Text);
         }
 
         [Test]
@@ -140,9 +140,9 @@ namespace MSG.UnitTests
             _defaults.Add(5);
             MoqUtil.SetupRandMock(_defaults.ToArray());
 
-            string output = DomainFactory.Generator.GetSentences(1)[0];
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
 
-            Assert.AreEqual("The partners diligently avoid gaps because the key, constructive organizing principles produce proven yield enhancement.", output);
+            Assert.AreEqual("The partners diligently avoid gaps because the key, constructive organizing principles produce proven yield enhancement.", output.Text);
         }
     }
 }
