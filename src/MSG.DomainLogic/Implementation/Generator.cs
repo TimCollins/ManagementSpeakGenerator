@@ -1690,7 +1690,7 @@ namespace MSG.DomainLogic.Implementation
                 case 4:
                     return "controlling should ";
                 case 5:
-                    return "we must activate the " + GetMatrix() + " to ";
+                    return "we must activate the " + GetMatrix() + "to ";
                 case 6:
                     return "pursuing this route will enable us to ";
                 case 7:
@@ -1711,21 +1711,21 @@ namespace MSG.DomainLogic.Implementation
             {
                 case 1:
                 case 2:
-                    return "organisation";
+                    return "organisation ";
                 case 3:
                 case 4:
                 case 5:
                 case 6:
-                    return "silo";
+                    return "silo ";
                 case 7:
                 case 8:
                 case 9:
                 case 10:
-                    return "matrix";
+                    return "matrix ";
                 case 11:
-                    return "cube";
+                    return "cube ";
                 case 12:
-                    return "sphere";
+                    return "sphere ";
                 default:
                     throw new RandomNumberException(result + " is an invalid value.");
             }

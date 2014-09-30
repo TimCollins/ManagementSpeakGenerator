@@ -15,10 +15,11 @@ namespace MSG.ConsoleApp
 
             bool showHelp;
             string outputFile;
+            OutputType outputType;
 
             try
             {
-                OutputType outputType;
+                
                 CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
             }
             catch (Exception ex)
@@ -34,28 +35,40 @@ namespace MSG.ConsoleApp
                 return;
             }
 
-            Console.WriteLine("Writing test data to file...");
-            
+            Console.WriteLine("Writing test data to to {0}...", outputFile);
             const int max = 50;
-
-            StringBuilder output = new StringBuilder();
-
             List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
-            for (int i = 0; i < max; i++)
-            {
-                output.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text, Environment.NewLine));
-            }
-
-            string jsonData = new JavaScriptSerializer().Serialize(sentences);
+            string serialisedData = GetSerialisedData(outputType, sentences, max);
 
             using (StreamWriter sw = new StreamWriter(outputFile))
             {
-                sw.Write(jsonData);
+                sw.Write(serialisedData);
             }
 
             Console.WriteLine("Data written to {0}", outputFile);
 
             Util.WaitForEscape();
+        }
+
+        private static string GetSerialisedData(OutputType outputType, List<Sentence> sentences, int max)
+        {
+            switch (outputType)
+            {
+                case OutputType.HTML:
+                    throw new NotImplementedException("Not written yet.");
+                case OutputType.JSON:
+                    return new JavaScriptSerializer().Serialize(sentences);
+                case OutputType.Text:
+                    StringBuilder textOutput = new StringBuilder();
+                    for (int i = 0; i < max; i++)
+                    {
+                        textOutput.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text,
+                            Environment.NewLine));
+                    }
+                    return textOutput.ToString();
+                default:
+                    throw new NotImplementedException("Not written yet.");
+            }
         }
 
         private static void HandleException(Exception ex)

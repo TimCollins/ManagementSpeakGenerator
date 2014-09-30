@@ -226,6 +226,36 @@ namespace MSG.UnitTests
             Assert.AreEqual("Streamlining matrices motivate the Chief Marketing Officer, while the Chief Internal Audit Officer visualises a value creation.", output.Text);
         }
 
+        [Test]
+        public void TestMatrixSingularSpacing()
+        {   
+            MoqUtil.SetupRandMock(0, 20, 76, 1, 73, 8, 2, 12, 49, 1, 54, 22, 89, 369, 6, 7, 4, 21, 25, 2, 10, 75, 25, 56, 62, 163, 66, 177, 4, 56);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("A measured improvement engages our matrix relative to our peers; whereas the partners foster our high-performing knowledge transfers.", output.Text);
+        }
+
+        [Test]
+        public void TestMatrixSingularCubeSpacing()
+        {
+            MoqUtil.SetupRandMock(0, 20, 76, 1, 73, 8, 2, 12, 49, 1, 54, 22, 89, 369, 6, 11, 4, 21, 25, 2, 10, 75, 25, 56, 62, 163, 66, 177, 4, 56);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("A measured improvement engages our cube relative to our peers; whereas the partners foster our high-performing knowledge transfers.", output.Text);
+        }
+
+        [Test]
+        public void TestMatrixSingularSphereSpacing()
+        {
+            MoqUtil.SetupRandMock(0, 20, 76, 1, 73, 8, 2, 12, 49, 1, 54, 22, 89, 369, 6, 12, 4, 21, 25, 2, 10, 75, 25, 56, 62, 163, 66, 177, 4, 56);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("A measured improvement engages our sphere relative to our peers; whereas the partners foster our high-performing knowledge transfers.", output.Text);
+        }
+
         // I'm not sure this can be fixed without a lot of fiddling with the code.
         //[Test]
         //public void FixPlannings()

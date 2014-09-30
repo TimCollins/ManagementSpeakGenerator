@@ -319,6 +319,19 @@ namespace MSG.UnitTests
             Assert.AreEqual(@"c:\temp\output.json", outputFile);
         }
 
+        [Test]
+        public void WhenXMLSpecifiedItIsUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { "/o:x", @"/f:c:\temp\output.xml" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"c:\temp\output.xml", outputFile);
+        }
+
         // Invalid filename e.g. with spaces not surrounded by quotes.
         // Multiple args e.g. any 2 from 3 and all 3 together.
     }
