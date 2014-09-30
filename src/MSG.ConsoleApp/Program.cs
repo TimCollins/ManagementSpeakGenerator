@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web.Script.Serialization;
+using System.Xml.Serialization;
 using MSG.DomainLogic;
 
 namespace MSG.ConsoleApp
@@ -66,9 +67,24 @@ namespace MSG.ConsoleApp
                             Environment.NewLine));
                     }
                     return textOutput.ToString();
+                case OutputType.XML:
+                    return SerialiseAsXML(sentences);
                 default:
                     throw new NotImplementedException("Not written yet.");
             }
+        }
+
+        private static string SerialiseAsXML(List<Sentence> sentences)
+        {
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add(string.Empty, string.Empty);
+
+            XmlSerializer xs = new XmlSerializer(sentences.GetType());
+            StringWriter sw = new StringWriter();
+
+            xs.Serialize(sw, sentences, ns);
+
+            return sw.GetStringBuilder().ToString();
         }
 
         private static void HandleException(Exception ex)
