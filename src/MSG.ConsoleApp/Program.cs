@@ -15,10 +15,10 @@ namespace MSG.ConsoleApp
 
             bool showHelp;
             string outputFile;
-            string outputFormat;
-            OutputType outputType;
+
             try
             {
+                OutputType outputType;
                 CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
             }
             catch (Exception ex)
@@ -35,13 +35,7 @@ namespace MSG.ConsoleApp
             }
 
             Console.WriteLine("Writing test data to file...");
-            // None of the logic here is unit tested.
-
-            string basePath = GetBasePath(outputFile);
-            string baseFile = string.IsNullOrEmpty(outputFile) 
-                ? "msg_output" 
-                : outputFile;
-            string fileName = baseFile + GetExtension(outputType);
+            
             const int max = 50;
 
             StringBuilder output = new StringBuilder();
@@ -54,33 +48,14 @@ namespace MSG.ConsoleApp
 
             string jsonData = new JavaScriptSerializer().Serialize(sentences);
 
-            using (StreamWriter sw = new StreamWriter(fileName))
+            using (StreamWriter sw = new StreamWriter(outputFile))
             {
                 sw.Write(jsonData);
             }
 
-            Console.WriteLine("Data written to {0}", fileName);
+            Console.WriteLine("Data written to {0}", outputFile);
 
             Util.WaitForEscape();
-        }
-
-        private static string GetBasePath(string outputFile)
-        {
-            if (string.IsNullOrEmpty(outputFile))
-                return Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // If a full path has been specified then use it otherwise use a path
-            // relative to the current folder.
-            string path = outputFile[1] == ':'
-                ? outputFile
-                : Environment.CurrentDirectory;
-
-            return path;
-        }
-
-        private static string GetExtension(OutputType outputType)
-        {
-            return string.Empty;
         }
 
         private static void HandleException(Exception ex)

@@ -255,21 +255,69 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        public void WhenExtensionSpecifiedItIsUsed()
+        public void WhenOutputTypeSpecifiedItIsUsed()
         {
             string outputFile;
             bool showHelp;
             OutputType outputType;
-            string[] args = { @"/o:j" };
+            string[] args = {"/o:j"};
 
             CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
 
             Assert.AreEqual(@"C:\Users\tcollins\Desktop\msg_output.json", outputFile);
         }
 
-        // Test the output formats
-        // When nothing specified, a default of ".txt" should be used.
-        
+        [Test]
+        public void WhenFolderSpecifiedItIsUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = {"/o:j"};
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"C:\Users\tcollins\Desktop\msg_output.json", outputFile);
+        }
+
+        [Test]
+        public void WhenFileNameSpecifiedItIsUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = {@"/f:c:\temp\output"};
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"c:\temp\output.txt", outputFile);
+        }
+
+        [Test]
+        public void WhenOutputTypeAndFileNameSpecifiedTheyAreUsed()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = {"/o:j", @"/f:c:\temp\output.json"};
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"c:\temp\output.json", outputFile);
+        }
+
+        [Test]
+        public void FileNameWithNoExtensionSpecifiedUsesOutputType()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { "/o:j", @"/f:c:\temp\output" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"c:\temp\output.json", outputFile);
+        }
 
         // Invalid filename e.g. with spaces not surrounded by quotes.
         // Multiple args e.g. any 2 from 3 and all 3 together.

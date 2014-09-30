@@ -38,7 +38,17 @@ namespace MSG.DomainLogic
 
             outputFile = string.IsNullOrEmpty(parsedFileName)
                 ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(outputType)
-                : parsedFileName;
+                : GetFileName(parsedFileName, outputType);
+        }
+
+        private static string GetFileName(string parsedFileName, OutputType outputType)
+        {
+            // If there is no file extension provided then append ".txt"
+            // Not 100% sure this is the best thing to do. It might be better to leave the
+            // file as-is.
+            return parsedFileName.Contains(".")
+                ? parsedFileName
+                : parsedFileName + GetExtension(outputType);
         }
 
         private static string GetExtension(OutputType outputType)
