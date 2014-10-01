@@ -398,6 +398,32 @@ namespace MSG.UnitTests
             CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
         }
 
-        // Multiple args e.g. any 2 from 3 and all 3 together.
+        [Test]
+        public void VerifyThatOrderDoesNotMatter()
+        {
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { @"/f:""c:\temp\output file.xml""", "/o:x" };
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.AreEqual(@"""c:\temp\output file.xml""", outputFile);
+        }
+
+        [Test]
+        public void VerifyThatShowHelpTakesPrecedence()
+        {
+            // This doesn't really test that ShowHelp takes precedence. It shows that 3
+            // switches can be specified.
+            string outputFile;
+            bool showHelp;
+            OutputType outputType;
+            string[] args = { @"/f:""c:\temp\output file.xml""", "/o:x", "/?"};
+
+            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+
+            Assert.IsTrue(showHelp);
+        }
     }
 }
