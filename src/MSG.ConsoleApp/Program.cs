@@ -102,7 +102,7 @@ namespace MSG.ConsoleApp
             Console.WriteLine("/f:[file]\t\tSpecify output filename. If not supplied then a file ");
             Console.WriteLine("\t\t\tcalled \"msg_output\" on the user's desktop will be ");
             Console.WriteLine("\t\t\tcreated. The output filename extension will be derived ");
-            Console.WriteLine("\t\t\tfrom the /o parameter.");
+            Console.WriteLine("\t\t\tfrom the /o parameter so if no extension is specified by the user then a default of \".txt\" will be used.");
         }
     }
 }

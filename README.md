@@ -12,12 +12,17 @@ Binary versions of the following third-party libraries are linked (see the /lib 
 
 Demo App
 --
-Build and run MSG.ConsoleApp to generate msg_output.txt on your desktop. By default the file will contain 500 example sentences.
+Build and run MSG.ConsoleApp. As its name suggests, it's a console application so runs on the command line. The following switches are supported:
+
+| Switch        | Purpose              |
+| ------------- |:---------------------|
+| /?            | Show the help screen |
+| /o:[x&#124;j&#124;h&#124;t]  | Specify output format of XML, JSON, HTML or Text. If not supplied then a default of text will be used.|
+| /f:[file]     | Specify output filename. If not supplied then a file called "msg_output" on the user's desktop will be created. The output filename extension will be derived from the /o parameter so if no extension is specified by the user then a default of ".txt" will be used.|
 
 To Do
 --
-- Review output for bugs.
-- Implement different output formats (HTML, JSON, XML).
+- Add a switch to control the number of sentences output by the console app.
 
 Useful Links
 --
