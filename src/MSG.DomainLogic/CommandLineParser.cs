@@ -6,6 +6,11 @@ namespace MSG.DomainLogic
 {
     public static class CommandLineParser
     {
+        public static CommandLineArgs Parse(string[] args)
+        {
+            return new CommandLineArgs();
+        }
+
         public static void Parse(string[] args, out bool showHelp, out string outputFile, out OutputType outputType)
         {
             string parsedFileName = string.Empty;
