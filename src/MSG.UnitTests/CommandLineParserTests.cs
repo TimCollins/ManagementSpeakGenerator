@@ -322,7 +322,39 @@ namespace MSG.UnitTests
         [Test]
         public void VerifyThatNumberParamIsSupported()
         {
-            
+            string[] args = { "/n:25" };
+
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
+
+            Assert.AreEqual(25, clArgs.SentenceCount);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
+        public void VerifyNumberMustBeGreaterThanZero()
+        {
+            string[] args = { "/n:0" };
+
+            CommandLineParser.Parse(args);
+        }
+
+        [Test]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
+        public void VerifyNumberCannotBeNegative()
+        {
+            string[] args = { "/n:-17" };
+
+            CommandLineParser.Parse(args);
+        }
+
+        [Test]
+        public void IfNoCountSpecifiedDefaultIsUsed()
+        {
+            string[] args = { @"/f:C:\home\somewhere\test.txt" };
+
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
+
+            Assert.AreEqual(50, clArgs.SentenceCount);
         }
     }
 }

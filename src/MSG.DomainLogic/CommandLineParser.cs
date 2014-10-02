@@ -8,9 +8,8 @@ namespace MSG.DomainLogic
     {
         public static CommandLineArgs Parse(string[] args)
         {
-            CommandLineArgs commandLineArgs = new CommandLineArgs();
+            CommandLineArgs commandLineArgs = new CommandLineArgs(OutputType.Text, 50);
             string parsedFileName = string.Empty;
-            commandLineArgs.OutputType = OutputType.Text;
 
             if (args.Length == 0)
             {
@@ -31,6 +30,10 @@ namespace MSG.DomainLogic
                 {
                     commandLineArgs.OutputType = ParseOutputType(s);
                 }
+                else if (s.ToLower().StartsWith("/n:"))
+                {
+                    commandLineArgs.SentenceCount = ParseSentenceCount(s);
+                }
                 else
                 {
                     throw new UnsupportedSwitchException(s);
@@ -42,6 +45,18 @@ namespace MSG.DomainLogic
                 : GetFileName(parsedFileName, commandLineArgs.OutputType);
 
             return commandLineArgs;
+        }
+
+        private static int ParseSentenceCount(string s)
+        {
+            int count;
+
+            if (Int32.TryParse(ParseSwitch(s), out count) && count > 0)
+            {
+                return count;    
+            }
+
+            throw new InvalidSwitchException(string.Format("The value of {0} for count is not a valid integer", count));
         }
 
         private static string GetFileName(string parsedFileName, OutputType outputType)

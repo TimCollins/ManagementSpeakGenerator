@@ -44,6 +44,7 @@
     <Compile Include="Implementation\Generator.cs" />
     <Compile Include="Interfaces\IGenerator.cs" />
     <Compile Include="Interfaces\IRandomNumber.cs" />
+    <Compile Include="InvalidSwitchException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementation\RandomNumber.cs" />
     <Compile Include="RandomNumberException.cs" />

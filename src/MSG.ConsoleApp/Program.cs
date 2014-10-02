@@ -33,9 +33,8 @@ namespace MSG.ConsoleApp
             }
 
             Console.WriteLine("Writing test data to to {0}...", cmdArgs.OutputFile);
-            const int max = 50;
-            List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
-            string serialisedData = GetSerialisedData(cmdArgs.OutputType, sentences, max);
+            List<Sentence> sentences = DomainFactory.Generator.GetSentences(cmdArgs.SentenceCount);
+            string serialisedData = GetSerialisedData(cmdArgs.OutputType, sentences, cmdArgs.SentenceCount);
 
             using (StreamWriter sw = new StreamWriter(cmdArgs.OutputFile))
             {
