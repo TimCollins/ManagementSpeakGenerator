@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MSG.DomainLogic.Entities;
 using MSG.DomainLogic.Interfaces;
 
 namespace MSG.DomainLogic.Implementation

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.RegularExpressions;
+using MSG.DomainLogic.Entities;
 
 namespace MSG.DomainLogic
 {
@@ -8,7 +9,7 @@ namespace MSG.DomainLogic
     {
         public static CommandLineArgs Parse(string[] args)
         {
-            CommandLineArgs commandLineArgs = new CommandLineArgs(OutputType.Text, 50);
+            CommandLineArgs commandLineArgs = new CommandLineArgs(OutputType.Text, Constants.DefaultSentenceCount);
             string parsedFileName = string.Empty;
 
             if (args.Length == 0)
@@ -67,7 +68,7 @@ namespace MSG.DomainLogic
 
             if (parsedFileName.IndexOfAny(Path.GetInvalidPathChars()) > 0)
             {
-                throw new UnsupportedSwitchException("Invalid path specified: " + parsedFileName);
+                throw new InvalidSwitchException("Invalid path specified: " + parsedFileName);
             }
 
             string fileOnly = GetFileOnly(parsedFileName);
@@ -75,7 +76,7 @@ namespace MSG.DomainLogic
             if ((fileOnly.IndexOfAny(Path.GetInvalidFileNameChars()) > 0) || 
                 (parsedFileName.Contains(" ") && !ContainsMatchedQuotes(parsedFileName)))
             {
-                throw new UnsupportedSwitchException("Invalid filename specified: " + parsedFileName);
+                throw new InvalidSwitchException("Invalid filename specified: " + parsedFileName);
             }
 
             return parsedFileName.Contains(".")
@@ -130,7 +131,7 @@ namespace MSG.DomainLogic
                     return OutputType.XML;
             }
 
-            throw new UnsupportedSwitchException(s);
+            throw new InvalidSwitchException("Invalid output type specified: " + s);
         }
 
         private static string ParseSwitch(string s)

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using MSG.DomainLogic;
+using MSG.DomainLogic.Entities;
 using NUnit.Framework;
 
 namespace MSG.UnitTests
@@ -125,7 +126,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void UnsupportedOutputSwitchThrowsException()
         {
             string[] args = { @"/o:b" };
@@ -134,7 +135,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void CapitalHTMLOutputSwitchRejected()
         {
             string[] args = { @"/o:H" };
@@ -143,7 +144,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void CapitalJSONOutputSwitchRejected()
         {
             string[] args = { @"/o:J" };
@@ -152,7 +153,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void CapitalTextOutputSwitchRejected()
         {
             string[] args = { @"/o:T" };
@@ -161,7 +162,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void CapitalXMLOutputSwitchRejected()
         {
             string[] args = { @"/o:X" };
@@ -250,7 +251,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void VerifyFileNameWithSpacesWithoutQuotesFails()
         {
             string[] args = { "/o:x", @"/f:c:\temp\output file.xml" };
@@ -259,7 +260,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void VerifyFileNameWithSpacesWithSingleQuoteFails()
         {
             string[] args = { "/o:x", @"/f:""c:\temp\output file.xml" };
@@ -278,7 +279,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void VerifyThatDisallowedFileCharsAreHandled()
         {
             string borkedFileName = @"/f:c:\temp\test" + string.Join("", Path.GetInvalidFileNameChars());
@@ -288,7 +289,7 @@ namespace MSG.UnitTests
         }
 
         [Test]
-        [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
+        [ExpectedException("MSG.DomainLogic.InvalidSwitchException")]
         public void VerifyThatDisallowedPathCharsAreHandled()
         {
             string borkedPathName = @"/f:c:\temp" + string.Join("", Path.GetInvalidPathChars());

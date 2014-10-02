@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MSG.DomainLogic;
+using MSG.DomainLogic.Entities;
 using NUnit.Framework;
 
 namespace MSG.UnitTests

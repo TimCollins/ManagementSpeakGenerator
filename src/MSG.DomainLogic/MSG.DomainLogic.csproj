@@ -37,8 +37,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandLineArgs.cs" />
+    <Compile Include="Entities\CommandLineArgs.cs" />
     <Compile Include="CommandLineParser.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="DomainFactory.cs" />
     <Compile Include="Implementation\Generator.cs" />
@@ -48,7 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementation\RandomNumber.cs" />
     <Compile Include="RandomNumberException.cs" />
-    <Compile Include="Sentence.cs" />
+    <Compile Include="Entities\Sentence.cs" />
     <Compile Include="UnsupportedSwitchException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

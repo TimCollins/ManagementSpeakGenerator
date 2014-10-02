@@ -5,6 +5,7 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 using MSG.DomainLogic;
+using MSG.DomainLogic.Entities;
 
 namespace MSG.ConsoleApp
 {
