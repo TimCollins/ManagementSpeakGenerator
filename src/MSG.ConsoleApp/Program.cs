@@ -14,13 +14,9 @@ namespace MSG.ConsoleApp
         {
             Console.WriteLine("Management-Speak Generator.");
 
-            //bool showHelp;
-            //string outputFile;
-            //OutputType outputType;
-            CommandLineArgs cmdArgs = new CommandLineArgs();
+            CommandLineArgs cmdArgs;
             try
             {
-                //CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
                 cmdArgs = CommandLineParser.Parse(args);
             }
             catch (Exception ex)

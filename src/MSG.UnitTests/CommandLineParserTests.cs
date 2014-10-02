@@ -10,14 +10,11 @@ namespace MSG.UnitTests
         [Test]
         public void WhenQuestionMarkSpecifiedHelpWillBeShown()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = { "/?" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.IsTrue(showHelp);
+            Assert.IsTrue(clArgs.ShowHelp);
         }
 
         [Test]
@@ -47,14 +44,11 @@ namespace MSG.UnitTests
         [Test]
         public void NoArgsSpecifiedThenHelpShouldBeShown()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = new string[0];
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.IsTrue(showHelp);
+            Assert.IsTrue(clArgs.ShowHelp);
         }
 
         [Test]
@@ -424,6 +418,12 @@ namespace MSG.UnitTests
             CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
 
             Assert.IsTrue(showHelp);
+        }
+
+        [Test]
+        public void VerifyThatNumberParamIsSupported()
+        {
+            
         }
     }
 }

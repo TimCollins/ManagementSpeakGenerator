@@ -8,7 +8,22 @@ namespace MSG.DomainLogic
     {
         public static CommandLineArgs Parse(string[] args)
         {
-            return new CommandLineArgs();
+            CommandLineArgs commandLineArgs = new CommandLineArgs();
+
+            if (args.Length == 0)
+            {
+                commandLineArgs.ShowHelp = true;
+            }
+
+            foreach (string s in args)
+            {
+                if (s.Equals("/?"))
+                {
+                    commandLineArgs.ShowHelp = true;
+                }
+            }
+
+            return commandLineArgs;
         }
 
         public static void Parse(string[] args, out bool showHelp, out string outputFile, out OutputType outputType)
