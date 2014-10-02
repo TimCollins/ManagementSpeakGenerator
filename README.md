@@ -19,6 +19,7 @@ Build and run MSG.ConsoleApp. As its name suggests, it's a console application s
 | /?            | Show the help screen |
 | /o:[x&#124;j&#124;h&#124;t]  | Specify output format of XML, JSON, HTML or Text. If not supplied then a default of text will be used.|
 | /f:[file]     | Specify output filename. If not supplied then a file called "msg_output" on the user's desktop will be created. The output filename extension will be derived from the /o parameter so if no extension is specified by the user then a default of ".txt" will be used.|
+| /n:[count]    | Specify the number of sentences to generate. If not supplied then a default of 
 
 | Example       | Result               |
 |:------------- |:---------------------|
@@ -28,7 +29,7 @@ Build and run MSG.ConsoleApp. As its name suggests, it's a console application s
 
 To Do
 --
-- Add a switch to control the number of sentences output by the console app.
+- Find bugs!
 
 Useful Links
 --
