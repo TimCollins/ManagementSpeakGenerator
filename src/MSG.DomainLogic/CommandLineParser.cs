@@ -9,6 +9,7 @@ namespace MSG.DomainLogic
         public static CommandLineArgs Parse(string[] args)
         {
             CommandLineArgs commandLineArgs = new CommandLineArgs();
+            string parsedFileName = string.Empty;
 
             if (args.Length == 0)
             {
@@ -17,11 +18,27 @@ namespace MSG.DomainLogic
 
             foreach (string s in args)
             {
-                if (s.Equals("/?"))
+                if (s.ToLower().StartsWith("/f:"))
+                {
+                    parsedFileName = ParseSwitch(s);
+                }
+                else if (s.Equals("/?"))
                 {
                     commandLineArgs.ShowHelp = true;
                 }
+                else if (s.ToLower().StartsWith("/o:"))
+                {
+                    commandLineArgs.OutputType = ParseOutputType(s);
+                }
+                else
+                {
+                    throw new UnsupportedSwitchException(s);
+                }
             }
+
+            commandLineArgs.OutputFile = string.IsNullOrEmpty(parsedFileName)
+                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(commandLineArgs.OutputType)
+                : GetFileName(parsedFileName, commandLineArgs.OutputType);
 
             return commandLineArgs;
         }

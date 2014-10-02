@@ -21,24 +21,18 @@ namespace MSG.UnitTests
         [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
         public void QuestionMarkOnlyForValidHelpSwitch()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = { "/?Fred" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineParser.Parse(args);
         }
 
         [Test]
         [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
         public void NoSpaceBetweenQuestionMarkAndSlash()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = { "/ ?" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineParser.Parse(args);
         }
 
         [Test]
@@ -55,25 +49,19 @@ namespace MSG.UnitTests
         [ExpectedException("MSG.DomainLogic.UnsupportedSwitchException")]
         public void UnsupportedArgShouldGiveError()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = { "/z" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineParser.Parse(args);
         }
 
         [Test]
         public void WhenOutputFileSpecifiedVarIsSet()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
             string[] args = { @"/f:C:\home\somewhere\test.txt" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.AreEqual(@"C:\home\somewhere\test.txt", outputFile);
+            Assert.AreEqual(@"C:\home\somewhere\test.txt", clArgs.OutputFile);
         }
 
         [Test]
@@ -105,57 +93,41 @@ namespace MSG.UnitTests
         [Test]
         public void HTMLOutputSwitchSupported()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
-
             string[] args = { @"/o:h" };
+           
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
-
-            Assert.AreEqual(OutputType.HTML, outputType);
+            Assert.AreEqual(OutputType.HTML, clArgs.OutputType);
         }
 
         [Test]
         public void JSONOutputSwitchSupported()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
-
             string[] args = { @"/o:j" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.AreEqual(OutputType.JSON, outputType);
+            Assert.AreEqual(OutputType.JSON, clArgs.OutputType);
         }
 
         [Test]
         public void TextOutputSwitchSupported()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
-
             string[] args = { @"/o:t" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.AreEqual(OutputType.Text, outputType);
+            Assert.AreEqual(OutputType.Text, clArgs.OutputType);
         }
 
         [Test]
         public void XMLOutputSwitchSupported()
         {
-            string outputFile;
-            bool showHelp;
-            OutputType outputType;
-            
             string[] args = { @"/o:x" };
 
-            CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+            CommandLineArgs clArgs = CommandLineParser.Parse(args);
 
-            Assert.AreEqual(OutputType.XML, outputType);
+            Assert.AreEqual(OutputType.XML, clArgs.OutputType);
         }
 
         [Test]
