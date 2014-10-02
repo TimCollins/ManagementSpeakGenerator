@@ -10,6 +10,7 @@ namespace MSG.DomainLogic
         {
             CommandLineArgs commandLineArgs = new CommandLineArgs();
             string parsedFileName = string.Empty;
+            commandLineArgs.OutputType = OutputType.Text;
 
             if (args.Length == 0)
             {
@@ -41,42 +42,6 @@ namespace MSG.DomainLogic
                 : GetFileName(parsedFileName, commandLineArgs.OutputType);
 
             return commandLineArgs;
-        }
-
-        public static void Parse(string[] args, out bool showHelp, out string outputFile, out OutputType outputType)
-        {
-            string parsedFileName = string.Empty;
-            showHelp = false;
-            outputType = OutputType.Text;
-
-            if (args.Length == 0)
-            {
-                showHelp = true;
-            }
-
-            foreach (string s in args)
-            {
-                if (s.ToLower().StartsWith("/f:"))
-                {
-                    parsedFileName = ParseSwitch(s);
-                }
-                else if (s.Equals("/?"))
-                {
-                    showHelp = true;
-                }
-                else if (s.ToLower().StartsWith("/o:"))
-                {
-                    outputType = ParseOutputType(s);
-                }
-                else
-                {
-                    throw new UnsupportedSwitchException(s);
-                }
-            }
-
-            outputFile = string.IsNullOrEmpty(parsedFileName)
-                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(outputType)
-                : GetFileName(parsedFileName, outputType);
         }
 
         private static string GetFileName(string parsedFileName, OutputType outputType)
