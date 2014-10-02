@@ -20,7 +20,6 @@ namespace MSG.ConsoleApp
 
             try
             {
-                
                 CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
             }
             catch (Exception ex)
@@ -56,22 +55,41 @@ namespace MSG.ConsoleApp
             switch (outputType)
             {
                 case OutputType.HTML:
-                    throw new NotImplementedException("Not written yet.");
+                    return SerialiseAsHTML(sentences, max);
                 case OutputType.JSON:
                     return new JavaScriptSerializer().Serialize(sentences);
                 case OutputType.Text:
-                    StringBuilder textOutput = new StringBuilder();
-                    for (int i = 0; i < max; i++)
-                    {
-                        textOutput.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text,
-                            Environment.NewLine));
-                    }
-                    return textOutput.ToString();
-                case OutputType.XML:
-                    return SerialiseAsXML(sentences);
+                    return SerialiseAsText(sentences, max);
                 default:
-                    throw new NotImplementedException("Not written yet.");
+                    return SerialiseAsXML(sentences);
             }
+        }
+
+        private static string SerialiseAsHTML(List<Sentence> sentences, int count)
+        {
+            StringBuilder htmlOutput = new StringBuilder();
+
+            htmlOutput.Append("<ol>" + Environment.NewLine);
+
+            for (int i = 0; i < count; i++)
+            {
+                htmlOutput.Append(string.Format("\t<li>{0}</li>{1}", sentences[i].Text, Environment.NewLine));
+            }
+
+            htmlOutput.Append("</ol>");
+
+            return htmlOutput.ToString();
+        }
+
+        private static string SerialiseAsText(List<Sentence> sentences, int count)
+        {
+            StringBuilder textOutput = new StringBuilder();
+            for (int i = 0; i < count; i++)
+            {
+                textOutput.Append(string.Format("{0}. {1}{2}", sentences[i].ID, sentences[i].Text,
+                    Environment.NewLine));
+            }
+            return textOutput.ToString();
         }
 
         private static string SerialiseAsXML(List<Sentence> sentences)
