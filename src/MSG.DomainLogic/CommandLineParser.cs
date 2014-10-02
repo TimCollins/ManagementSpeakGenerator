@@ -6,15 +6,15 @@ namespace MSG.DomainLogic
 {
     public static class CommandLineParser
     {
-        public static void Parse(string[] args, out bool showHelp, out string outputFile, out OutputType outputType)
+        public static CommandLineArgs Parse(string[] args)
         {
+            CommandLineArgs commandLineArgs = new CommandLineArgs();
             string parsedFileName = string.Empty;
-            showHelp = false;
-            outputType = OutputType.Text;
+            commandLineArgs.OutputType = OutputType.Text;
 
             if (args.Length == 0)
             {
-                showHelp = true;
+                commandLineArgs.ShowHelp = true;
             }
 
             foreach (string s in args)
@@ -25,11 +25,11 @@ namespace MSG.DomainLogic
                 }
                 else if (s.Equals("/?"))
                 {
-                    showHelp = true;
+                    commandLineArgs.ShowHelp = true;
                 }
                 else if (s.ToLower().StartsWith("/o:"))
                 {
-                    outputType = ParseOutputType(s);
+                    commandLineArgs.OutputType = ParseOutputType(s);
                 }
                 else
                 {
@@ -37,9 +37,11 @@ namespace MSG.DomainLogic
                 }
             }
 
-            outputFile = string.IsNullOrEmpty(parsedFileName)
-                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(outputType)
-                : GetFileName(parsedFileName, outputType);
+            commandLineArgs.OutputFile = string.IsNullOrEmpty(parsedFileName)
+                ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\msg_output" + GetExtension(commandLineArgs.OutputType)
+                : GetFileName(parsedFileName, commandLineArgs.OutputType);
+
+            return commandLineArgs;
         }
 
         private static string GetFileName(string parsedFileName, OutputType outputType)

@@ -14,13 +14,10 @@ namespace MSG.ConsoleApp
         {
             Console.WriteLine("Management-Speak Generator.");
 
-            bool showHelp;
-            string outputFile;
-            OutputType outputType;
-
+            CommandLineArgs cmdArgs;
             try
             {
-                CommandLineParser.Parse(args, out showHelp, out outputFile, out outputType);
+                cmdArgs = CommandLineParser.Parse(args);
             }
             catch (Exception ex)
             {
@@ -28,24 +25,24 @@ namespace MSG.ConsoleApp
                 return;
             }
 
-            if (showHelp)
+            if (cmdArgs.ShowHelp)
             {
                 ShowHelp();
                 Util.WaitForEscape();
                 return;
             }
 
-            Console.WriteLine("Writing test data to to {0}...", outputFile);
+            Console.WriteLine("Writing test data to to {0}...", cmdArgs.OutputFile);
             const int max = 50;
             List<Sentence> sentences = DomainFactory.Generator.GetSentences(max);
-            string serialisedData = GetSerialisedData(outputType, sentences, max);
+            string serialisedData = GetSerialisedData(cmdArgs.OutputType, sentences, max);
 
-            using (StreamWriter sw = new StreamWriter(outputFile))
+            using (StreamWriter sw = new StreamWriter(cmdArgs.OutputFile))
             {
                 sw.Write(serialisedData);
             }
 
-            Console.WriteLine("Data written to {0}", outputFile);
+            Console.WriteLine("Data written to {0}", cmdArgs.OutputFile);
 
             Util.WaitForEscape();
         }
