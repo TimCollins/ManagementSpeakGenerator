@@ -42,7 +42,7 @@ namespace MSG.DomainLogic.Implementation
 
             for (int i = 0; i < count; i++)
             {
-                sentences.Add(new Sentence{ID = i, Text = GetSentenceText()});
+                sentences.Add(new Sentence{ID = i + 1, Text = GetSentenceText()});
             }
 
             return sentences;

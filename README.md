@@ -26,6 +26,7 @@ Build and run MSG.ConsoleApp. As its name suggests, it's a console application s
 | msg /o:h c:\tmp\output.html            | Create a file called output.html in the c:\tmp folder and output html-formatted sentences into it.|
 | msg /o:j      | Create a file called output.json on the user's desktop and output JSON sentences into it.|
 | msg /o:x /f:output | Create a file called output.xml in the same folder as the executable and output XML sentences into it.|
+| msg /o:t /f:temp.txt /n:5 | Create a file called temp.txt in the same folder as the executable and output 5 text sentences into it.|
 
 To Do
 --

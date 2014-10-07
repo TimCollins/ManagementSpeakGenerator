@@ -257,20 +257,25 @@ namespace MSG.UnitTests
             Assert.AreEqual("A measured improvement engages our sphere relative to our peers; whereas the partners foster our high-performing knowledge transfers.", output.Text);
         }
 
-        // I'm not sure this can be fixed without a lot of fiddling with the code.
-        //[Test]
-        //public void FixPlannings()
-        //{
-        //    // I think this should read "Forward planning engages"
-        //    MoqUtil.SetupRandMock(0, 11, 68, 2, 90, 184, 75, 9, 80, 1, 39, 22, 79, 244, 243, 107, 144, 140, 9, 35);
-        //    Sentence output = DomainFactory.Generator.GetSentences(1)[0];
-        //    MoqUtil.UndoMockRandomNumber();
+        [Test]
+        public void VerifyNumberingStartsAt1()
+        {
+            List<Sentence> output = DomainFactory.Generator.GetSentences(5);
+            MoqUtil.UndoMockRandomNumber();
 
-        //    //Assert.AreEqual("Forward plannings engage a customised, innovation-driven and insightful mindset.", output.Text);
-        //    Assert.AreEqual("Forward planning engages a customised, innovation-driven and insightful mindset.", output.Text);
-        //}
+            Assert.AreEqual(5, output.Count);
+            Assert.AreEqual(1, output[0].ID);
+            Assert.AreEqual(5, output[4].ID);
+        }
 
-        //25,1,7,70,36,16,7,245,204,123,57,7,3,96,346,148,108,28,67,1,28,8,97,38,10,25,
-        //We will go the extra mile to focus on outstanding, high-definition, action plans across the board, while scaling and document synergise an intellect as a Tier 1 company.
+        [Test]
+        public void VerifyCommaAfterDefinition()
+        {
+            MoqUtil.SetupRandMock(0, 25,1,7,70,36,16,7,245,204,123,57,7,3,96,346,148,108,28,67,1,28,8,97,38,10,25);
+            Sentence output = DomainFactory.Generator.GetSentences(1)[0];
+            MoqUtil.UndoMockRandomNumber();
+
+            Assert.AreEqual("We will go the extra mile to focus on outstanding, high-definition action plans across the board, while scaling and document synergise an intellect as a Tier 1 company.", output.Text);
+        }
     }
 }
